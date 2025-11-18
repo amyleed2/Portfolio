@@ -82,7 +82,29 @@ if (contactSection) {
     observer.observe(contactSection);
 }
 
-// Form submission
+// EmailJS 초기화
+// EmailJS에서 발급받은 Public Key를 입력하세요
+// 1. https://www.emailjs.com/ 에서 회원가입
+// 2. Email Services에서 이메일 서비스 추가 (Gmail 추천)
+// 3. Email Templates에서 템플릿 생성
+// 4. Account > General에서 Public Key 확인
+(function() {
+    // EmailJS Public Key (사용자가 직접 입력해야 함)
+    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // 여기에 EmailJS Public Key 입력
+    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // 여기에 Service ID 입력
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // 여기에 Template ID 입력
+    
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+    
+    window.emailConfig = {
+        serviceId: EMAILJS_SERVICE_ID,
+        templateId: EMAILJS_TEMPLATE_ID
+    };
+})();
+
+// Form submission with EmailJS
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
@@ -91,13 +113,11 @@ contactForm.addEventListener('submit', (e) => {
     
     // Get form data
     const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        to_email: 'amy.lee.d2@gmail.com' // 받는 이메일 주소
     };
-    
-    // Simulate form submission
-    // In a real application, you would send this data to a server
     
     // Show loading state
     const submitBtn = contactForm.querySelector('.submit-btn');
@@ -105,25 +125,71 @@ contactForm.addEventListener('submit', (e) => {
     submitBtn.innerHTML = '<span class="btn-text">전송 중...</span>';
     submitBtn.disabled = true;
     
-    // Simulate API call
-    setTimeout(() => {
-        // Show success message
-        formMessage.textContent = '메시지가 성공적으로 전송되었습니다!';
-        formMessage.className = 'form-message success';
-        formMessage.style.display = 'block';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Reset button
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
-        
-        // Hide message after 5 seconds
+    // EmailJS를 사용한 실제 이메일 전송
+    if (typeof emailjs !== 'undefined' && window.emailConfig.serviceId !== 'YOUR_SERVICE_ID') {
+        emailjs.send(
+            window.emailConfig.serviceId,
+            window.emailConfig.templateId,
+            formData
+        ).then(
+            function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                // Show success message
+                formMessage.textContent = '메시지가 성공적으로 전송되었습니다!';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            },
+            function(error) {
+                console.error('FAILED...', error);
+                // Show error message
+                formMessage.textContent = '메시지 전송에 실패했습니다. 다시 시도해주세요.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        );
+    } else {
+        // EmailJS가 설정되지 않은 경우 시뮬레이션
+        console.warn('EmailJS가 설정되지 않았습니다. 시뮬레이션 모드로 실행됩니다.');
         setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
-    }, 1500);
+            // Show success message
+            formMessage.textContent = '메시지가 성공적으로 전송되었습니다! (시뮬레이션 모드)';
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Reset button
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }, 1500);
+    }
 });
 
 // Form validation
@@ -274,30 +340,8 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add typing effect to hero title (optional)
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-    const originalText = heroTitle.textContent;
-    heroTitle.textContent = '';
-    heroTitle.style.borderRight = '2px solid var(--primary-color)';
-    
-    let charIndex = 0;
-    
-    function typeWriter() {
-        if (charIndex < originalText.length) {
-            heroTitle.textContent += originalText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeWriter, 100);
-        } else {
-            setTimeout(() => {
-                heroTitle.style.borderRight = 'none';
-            }, 500);
-        }
-    }
-    
-    // Start typing effect after a short delay
-    setTimeout(typeWriter, 500);
-}
+// 타이핑 효과는 제거하고 즉시 표시되도록 변경
+// 애니메이션은 CSS에서 처리
 
 console.log('Portfolio website loaded successfully! 🚀');
 
