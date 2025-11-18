@@ -383,90 +383,42 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             
-            <!-- 회사별 프로젝트 슬라이더 -->
+            <!-- 회사별 프로젝트 슬라이더 (최신순) -->
             
-            <!-- 디지털다임 프로젝트 -->
-            <div class="company-projects">
+            <!-- 엔카 프로젝트 -->
+            <div class="company-projects" data-company="encar">
                 <div class="company-header">
-                    <div class="company-badge" data-company="digitaldime">디지털다임</div>
-                    <p class="company-period">2014.12 ~ 2017.05</p>
+                    <div class="company-badge" data-company="encar">엔카닷컴</div>
+                    <p class="company-period">2025.06 ~ 2025.08</p>
                 </div>
                 <div class="projects-slider">
-                    <button class="slider-btn prev-btn" onclick="slideProjects('digitaldime', -1)">
+                    <button class="slider-btn prev-btn" onclick="slideProjects('encar', -1)" style="display: none;">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
                     </button>
-                    <div class="slider-container" id="slider-digitaldime">
+                    <div class="slider-container" id="slider-encar">
                         <div class="project-slide">
                             <div class="project-number">1</div>
-                            <h3>프로젝트명</h3>
-                            <p class="project-desc">프로젝트 설명</p>
+                            <h3>엔카 앱 개발</h3>
+                            <p class="project-desc">iOS 앱 개발</p>
                             <div class="project-tech">
-                                <span class="tech-badge">Android</span>
-                                <span class="tech-badge">Java</span>
-                            </div>
-                        </div>
-                        <div class="project-slide">
-                            <div class="project-number">2</div>
-                            <h3>프로젝트명</h3>
-                            <p class="project-desc">프로젝트 설명</p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Android</span>
+                                <span class="tech-badge">iOS</span>
+                                <span class="tech-badge">Swift</span>
                             </div>
                         </div>
                     </div>
-                    <button class="slider-btn next-btn" onclick="slideProjects('digitaldime', 1)">
+                    <button class="slider-btn next-btn" onclick="slideProjects('encar', 1)" style="display: none;">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </button>
                 </div>
-                <div class="slider-dots" id="dots-digitaldime"></div>
-            </div>
-
-            <!-- GS ITM 프로젝트 -->
-            <div class="company-projects">
-                <div class="company-header">
-                    <div class="company-badge" data-company="gsitm">GS ITM</div>
-                    <p class="company-period">2017.06 ~ 2021.09</p>
-                </div>
-                <div class="projects-slider">
-                    <button class="slider-btn prev-btn" onclick="slideProjects('gsitm', -1)">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-                    <div class="slider-container" id="slider-gsitm">
-                        <div class="project-slide">
-                            <div class="project-number">3</div>
-                            <h3>GS Fresh 차세대</h3>
-                            <p class="project-desc">Android / iOS 개발 리더</p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Android</span>
-                                <span class="tech-badge">iOS</span>
-                            </div>
-                        </div>
-                        <div class="project-slide">
-                            <div class="project-number">4</div>
-                            <h3>프로젝트명</h3>
-                            <p class="project-desc">프로젝트 설명</p>
-                            <div class="project-tech">
-                                <span class="tech-badge">iOS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="slider-btn next-btn" onclick="slideProjects('gsitm', 1)">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
-                </div>
-                <div class="slider-dots" id="dots-gsitm"></div>
+                <div class="slider-dots" id="dots-encar"></div>
             </div>
 
             <!-- 원스토어 프로젝트 -->
-            <div class="company-projects">
+            <div class="company-projects" data-company="onestore">
                 <div class="company-header">
                     <div class="company-badge" data-company="onestore">원스토어</div>
                     <p class="company-period">2021.09 ~ 2025.06</p>
@@ -479,9 +431,27 @@
                     </button>
                     <div class="slider-container" id="slider-onestore">
                         <div class="project-slide">
-                            <div class="project-number">5</div>
-                            <h3>프로젝트명</h3>
-                            <p class="project-desc">프로젝트 설명</p>
+                            <div class="project-number">2</div>
+                            <h3>원스토어 앱 개발</h3>
+                            <p class="project-desc">iOS 앱 시스템 운영 및 개발</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">iOS</span>
+                                <span class="tech-badge">Swift</span>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-number">3</div>
+                            <h3>iOS Platform</h3>
+                            <p class="project-desc">iOS Platform 팀 운영</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">iOS</span>
+                                <span class="tech-badge">Swift</span>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-number">4</div>
+                            <h3>스토리 앱</h3>
+                            <p class="project-desc">스토리 앱 개발팀</p>
                             <div class="project-tech">
                                 <span class="tech-badge">iOS</span>
                                 <span class="tech-badge">Swift</span>
@@ -495,6 +465,106 @@
                     </button>
                 </div>
                 <div class="slider-dots" id="dots-onestore"></div>
+            </div>
+
+            <!-- GS ITM 프로젝트 -->
+            <div class="company-projects" data-company="gsitm">
+                <div class="company-header">
+                    <div class="company-badge" data-company="gsitm">GS ITM</div>
+                    <p class="company-period">2017.06 ~ 2021.09</p>
+                </div>
+                <div class="projects-slider">
+                    <button class="slider-btn prev-btn" onclick="slideProjects('gsitm', -1)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="slider-container" id="slider-gsitm">
+                        <div class="project-slide">
+                            <div class="project-number">5</div>
+                            <h3>GS Fresh 차세대</h3>
+                            <p class="project-desc">Android / iOS 개발 리더</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Android</span>
+                                <span class="tech-badge">iOS</span>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-number">6</div>
+                            <h3>GS Retail 앱 통합 운영</h3>
+                            <p class="project-desc">Android / iOS 6개 이상의 Application 운영 및 개발</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Android</span>
+                                <span class="tech-badge">iOS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="slideProjects('gsitm', 1)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="slider-dots" id="dots-gsitm"></div>
+            </div>
+
+            <!-- 디지털다임 프로젝트 -->
+            <div class="company-projects" data-company="digitaldime">
+                <div class="company-header">
+                    <div class="company-badge" data-company="digitaldime">디지털다임</div>
+                    <p class="company-period">2014.12 ~ 2017.05</p>
+                </div>
+                <div class="projects-slider">
+                    <button class="slider-btn prev-btn" onclick="slideProjects('digitaldime', -1)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="slider-container" id="slider-digitaldime">
+                        <div class="project-slide">
+                            <div class="project-number">7</div>
+                            <h3>프로젝트 1</h3>
+                            <p class="project-desc">프로젝트 설명</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Android</span>
+                                <span class="tech-badge">Java</span>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-number">8</div>
+                            <h3>프로젝트 2</h3>
+                            <p class="project-desc">프로젝트 설명</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Android</span>
+                                <span class="tech-badge">Java</span>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-number">9</div>
+                            <h3>프로젝트 3</h3>
+                            <p class="project-desc">프로젝트 설명</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Android</span>
+                                <span class="tech-badge">Java</span>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-number">10</div>
+                            <h3>프로젝트 4</h3>
+                            <p class="project-desc">프로젝트 설명</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Android</span>
+                                <span class="tech-badge">Java</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="slideProjects('digitaldime', 1)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="slider-dots" id="dots-digitaldime"></div>
             </div>
 
         </div>
