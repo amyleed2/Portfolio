@@ -48,7 +48,7 @@
                 <a href="#education" class="hero-btn animate-fade-in-delay-2">더 알아보기</a>
             </div>
             <div class="hero-image animate-fade-in-delay">
-                <img src="profile.jpg" alt="이지은 프로필 사진">
+                <img src="assets/images/profile.jpg" alt="이지은 프로필 사진">
             </div>
         </div>
         <div class="scroll-indicator">
@@ -136,10 +136,11 @@
                             <th>소속 팀</th>
                             <th>직급</th>
                             <th>재직일수</th>
+                            <th>상세보기</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="career-row">
                             <td data-label="회사">디지털다임</td>
                             <td data-label="재직 기간">2014.12 ~ 2017.05</td>
                             <td data-label="소속 팀">모바일팀</td>
@@ -152,8 +153,15 @@
                                     </div>
                                 </div>
                             </td>
+                            <td data-label="상세보기">
+                                <button class="career-detail-btn" onclick="openCareerModal('digitaldime')" title="상세보기">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </td>
                         </tr>
-                        <tr>
+                        <tr class="career-row">
                             <td data-label="회사">GS ITM</td>
                             <td data-label="재직 기간">2017.06 ~ 2021.09</td>
                             <td data-label="소속 팀">e-Commerce팀</td>
@@ -166,8 +174,15 @@
                                     </div>
                                 </div>
                             </td>
+                            <td data-label="상세보기">
+                                <button class="career-detail-btn" onclick="openCareerModal('gsitm')" title="상세보기">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </td>
                         </tr>
-                        <tr>
+                        <tr class="career-row">
                             <td data-label="회사">원스토어</td>
                             <td data-label="재직 기간">2021.09 ~ 2023.12</td>
                             <td data-label="소속 팀">스토리 앱 개발팀</td>
@@ -180,8 +195,15 @@
                                     </div>
                                 </div>
                             </td>
+                            <td data-label="상세보기">
+                                <button class="career-detail-btn" onclick="openCareerModal('onestore1')" title="상세보기">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </td>
                         </tr>
-                        <tr>
+                        <tr class="career-row">
                             <td data-label="회사">원스토어</td>
                             <td data-label="재직 기간">2024.01 ~ 2025.06</td>
                             <td data-label="소속 팀">iOS Platform팀</td>
@@ -194,8 +216,15 @@
                                     </div>
                                 </div>
                             </td>
+                            <td data-label="상세보기">
+                                <button class="career-detail-btn" onclick="openCareerModal('onestore2')" title="상세보기">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </td>
                         </tr>
-                        <tr>
+                        <tr class="career-row">
                             <td data-label="회사">엔카닷컴</td>
                             <td data-label="재직 기간">2025.06 ~ 2025.08</td>
                             <td data-label="소속 팀">모바일 팀</td>
@@ -207,6 +236,13 @@
                                         <div class="progress-fill" style="width: 2.34%;" data-duration="3개월"></div>
                                     </div>
                                 </div>
+                            </td>
+                            <td data-label="상세보기">
+                                <button class="career-detail-btn" onclick="openCareerModal('encar')" title="상세보기">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -576,17 +612,15 @@
                     <div class="slider-container" id="slider-encar">
                         <div class="project-slide" data-project-id="encar-1">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">📱</div>
+                                <img src="assets/images/encar_applogo.png" alt="엔카 앱">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">1</div>
                                 <div class="project-header">
-                                    <h3>엔카 앱 개발</h3>
+                                    <h3>엔카 앱 운영 및 개발</h3>
                                     <p class="project-period">2025.06 ~ 2025.08</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">iOS</span>
-                                    <span class="tech-badge" data-tech="swift">Swift</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('encar-1')">View Project</button>
                             </div>
@@ -616,51 +650,51 @@
                     <div class="slider-container" id="slider-onestore">
                         <div class="project-slide" data-project-id="onestore-1">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">🏪</div>
+                                <img src="assets/images/onestore_applogo.png" alt="원스토어 앱">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">2</div>
+                                <div class="project-number">1</div>
                                 <div class="project-header">
-                                    <h3>원스토어 앱 개발</h3>
-                                    <p class="project-period">2023.01 ~ 2023.12</p>
+                                    <h3>ONEstore Global App Market Prototype 개발</h3>
+                                    <p class="project-period">2024.01 ~ 2024.12</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">iOS</span>
-                                    <span class="tech-badge" data-tech="swift">Swift</span>
+                                    <span class="tech-badge" data-tech="swift">PL</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('onestore-1')">View Project</button>
                             </div>
                         </div>
                         <div class="project-slide" data-project-id="onestore-2">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">⚙️</div>
+                                <img src="assets/images/designsystem_logo.jpeg" alt="iOS Platform">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">3</div>
+                                <div class="project-number">2</div>
                                 <div class="project-header">
-                                    <h3>iOS Platform</h3>
-                                    <p class="project-period">2024.01 ~ 2025.06</p>
+                                    <h3>ONEstore Design System 구축 및 개발</h3>
+                                    <p class="project-period">2024.06 ~ 2025.06</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">iOS</span>
-                                    <span class="tech-badge" data-tech="swift">Swift</span>
+                                    <span class="tech-badge" data-tech="swift">PM</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('onestore-2')">View Project</button>
                             </div>
                         </div>
                         <div class="project-slide" data-project-id="onestore-3">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">📖</div>
+                                <img src="assets/images/onestory_applogo.jpeg" alt="스토리 앱">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">4</div>
+                                <div class="project-number">3</div>
                                 <div class="project-header">
-                                    <h3>스토리 앱</h3>
-                                    <p class="project-period">2021.09 ~ 2022.12</p>
+                                    <h3>ONEstory App 운영 및 개발</h3>
+                                    <p class="project-period">2021.09 ~ 2023.12</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">iOS</span>
-                                    <span class="tech-badge" data-tech="swift">Swift</span>
+                                    <span class="tech-badge" data-tech="swift">Manager</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('onestore-3')">View Project</button>
                             </div>
@@ -690,34 +724,36 @@
                     <div class="slider-container" id="slider-gsitm">
                         <div class="project-slide" data-project-id="gsitm-1">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">🛒</div>
+                                <img src="assets/images/gs fresh.jpeg" alt="GS Fresh">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">5</div>
+                                <div class="project-number">1</div>
                                 <div class="project-header">
-                                    <h3>GS Fresh 차세대</h3>
-                                    <p class="project-period">2020.01 ~ 2021.09</p>
+                                    <h3>GS Retail 통합 커머스 앱 운영 및 개발</h3>
+                                    <p class="project-period">2018.08 ~ 2021.09</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">iOS</span>
-                                    <span class="tech-badge" data-tech="swift">Swift</span>
+                                    <span class="tech-badge" data-tech="tuist">Android</span>
+                                    <span class="tech-badge" data-tech="swift">Developer</span>
+                                    <span class="tech-badge" data-tech="swiftui">Management</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('gsitm-1')">View Project</button>
                             </div>
                         </div>
                         <div class="project-slide" data-project-id="gsitm-2">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">📱</div>
+                                <img src="assets/images/thepop_applogo.png" alt="GS Retail">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">6</div>
+                                <div class="project-number">2</div>
                                 <div class="project-header">
-                                    <h3>GS Retail 앱 통합 운영</h3>
-                                    <p class="project-period">2017.06 ~ 2021.09</p>
+                                    <h3>GS Retail 통합 맴버십 앱 운영 및 개발</h3>
+                                    <p class="project-period">2018.08 ~ 2021.09</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">iOS</span>
-                                    <span class="tech-badge" data-tech="swift">Swift</span>
+                                    <span class="tech-badge" data-tech="swiftui">Management</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('gsitm-2')">View Project</button>
                             </div>
@@ -747,64 +783,68 @@
                     <div class="slider-container" id="slider-digitaldime">
                         <div class="project-slide" data-project-id="digitaldime-1">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">📱</div>
+                                <img src="assets/images/cafeunion_applogo.png" alt="프로젝트 1">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">7</div>
+                                <div class="project-number">1</div>
                                 <div class="project-header">
-                                    <h3>프로젝트 1</h3>
-                                    <p class="project-period">2016.01 ~ 2016.06</p>
+                                    <h3>CafeUnion App 개발</h3>
+                                    <p class="project-period">2016.08 ~ 2017.01</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">Android</span>
+                                    <span class="tech-badge" data-tech="swift">Developer</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('digitaldime-1')">View Project</button>
                             </div>
                         </div>
                         <div class="project-slide" data-project-id="digitaldime-2">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">📱</div>
+                                <img src="assets/images/luxewater_applogo.png" alt="프로젝트 2">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">8</div>
+                                <div class="project-number">2</div>
                                 <div class="project-header">
-                                    <h3>프로젝트 2</h3>
-                                    <p class="project-period">2016.07 ~ 2016.12</p>
+                                    <h3>LuxeWater App 개발</h3>
+                                    <p class="project-period">2015.11 ~ 2015.12</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">Android</span>
+                                    <span class="tech-badge" data-tech="swift">Developer</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('digitaldime-2')">View Project</button>
                             </div>
                         </div>
                         <div class="project-slide" data-project-id="digitaldime-3">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">📱</div>
+                                <img src="assets/images/orga_applogo.png" alt="프로젝트 3">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">9</div>
+                                <div class="project-number">3</div>
                                 <div class="project-header">
-                                    <h3>프로젝트 3</h3>
-                                    <p class="project-period">2015.01 ~ 2015.12</p>
+                                    <h3>올가홀푸드 App 개발</h3>
+                                    <p class="project-period">2016.04 ~ 2016.05</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">Android</span>
+                                    <span class="tech-badge" data-tech="swift">Developer</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('digitaldime-3')">View Project</button>
                             </div>
                         </div>
                         <div class="project-slide" data-project-id="digitaldime-4">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-placeholder">📱</div>
+                                <img src="assets/images/myd2_applogo.png" alt="프로젝트 4">
                             </div>
                             <div class="project-content">
-                                <div class="project-number">10</div>
+                                <div class="project-number">4</div>
                                 <div class="project-header">
-                                    <h3>프로젝트 4</h3>
-                                    <p class="project-period">2014.12 ~ 2015.06</p>
+                                    <h3>MyD2 인트라넷 앱 개발</h3>
+                                    <p class="project-period">2015.07 ~ 2015.09</p>
                                 </div>
                                 <div class="project-tech">
                                     <span class="tech-badge" data-tech="ios">Android</span>
+                                    <span class="tech-badge" data-tech="swift">Developer</span>
                                 </div>
                                 <button class="view-project-btn" onclick="openProjectModal('digitaldime-4')">View Project</button>
                             </div>
@@ -845,9 +885,28 @@
                     <div class="project-tech" id="modalTech"></div>
                 </div>
                 <div class="modal-section">
-                    <h3>주요 기능</h3>
+                    <h3>상세 업무 설명</h3>
                     <p id="modalFeatures">주요 기능이 여기에 표시됩니다.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 경력 상세 모달 -->
+    <div class="career-modal" id="careerModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCareerModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <h2 id="careerModalTitle">회사명</h2>
+                <p class="career-period" id="careerModalPeriod">재직 기간</p>
+            </div>
+            <div class="modal-body" id="careerModalBody">
+                <!-- 상세 업무 내용이 동적으로 삽입됩니다 -->
             </div>
         </div>
     </div>
@@ -922,9 +981,36 @@
         </div>
     </footer>
 
+    <!-- 이미지 뷰어 모달 -->
+    <div id="imageViewerModal" class="image-viewer-modal">
+        <button class="image-viewer-close" onclick="closeImageViewer()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <button class="image-viewer-prev" onclick="prevImage()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="image-viewer-next" onclick="nextImage()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <div class="image-viewer-content">
+            <img id="viewerImage" src="" alt="Screenshot">
+            <div class="image-viewer-counter">
+                <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script src="slider.js"></script>
     <script src="project-modal.js"></script>
+    <script src="career-modal.js"></script>
 </body>
 </html>
 

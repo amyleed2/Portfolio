@@ -343,5 +343,23 @@ window.addEventListener('scroll', () => {
 // 타이핑 효과는 제거하고 즉시 표시되도록 변경
 // 애니메이션은 CSS에서 처리
 
+// 상세 업무 토글 기능
+function toggleDetail(button) {
+    const workDetail = button.nextElementSibling;
+    const isActive = button.classList.contains('active');
+    
+    if (isActive) {
+        // 닫기
+        button.classList.remove('active');
+        workDetail.classList.remove('active');
+        button.innerHTML = '<span class="toggle-icon">▼</span> 상세 업무 보기';
+    } else {
+        // 열기
+        button.classList.add('active');
+        workDetail.classList.add('active');
+        button.innerHTML = '<span class="toggle-icon">▼</span> 상세 업무 닫기';
+    }
+}
+
 console.log('Portfolio website loaded successfully! 🚀');
 
