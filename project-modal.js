@@ -1,10 +1,13 @@
+// Safari 호환성 체크
+console.log('project-modal.js loaded');
+
 // 프로젝트 상세 정보 데이터
 const projectData = {
     'encar-1': {
         title: '엔카닷컴 iOS 앱 개발 및 운영',
         period: '2025.06 ~ 2025.08',
         description: 'iOS 앱 개발 및 유지보수를 담당했습니다.',
-        tech: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'AppsFlyer', 'Braze', 'KakaoAd', 'Firebase', 'FaceBookSDK', 'Kingfisher', 'CryptoSwift', 'lottie-ios', 'Alamofire', 'KissXML', 'SnapKit', 'etc'],
+        tech: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'AppsFlyer', 'Braze', 'KakaoAd', 'Firebase', 'FaceBookSDK', 'Kingfisher', 'CryptoSwift', 'lottie-ios', 'Alamofire', 'KissXML', 'SnapKit', 'Cursor', 'Copilot', 'etc'],
         features: `
             <p><strong>정기 운영 업무</strong></p>
             <ul>
@@ -454,7 +457,7 @@ const projectData = {
         title: 'ONEstore Design System 구축 및 개발',
         period: '2024.06 ~ 2025.06',
         description: '원스토어는 디자인 시스템이 기존에 구축되어 있지 않았습니다. 불필요하고 반복적인 UI 개발 작업으로 인한 업무 비효율이 있었습니다. 이에 UXD팀과 협업을 이뤄 사내 R&D 프로젝트로 진행하게 되었고, 원스토어 디자인 시스템 즉, Wheel Design System이란 프로젝트를 착수하였으며 저는 개발 파트 PM으로 참여했습니다.',
-        tech: ['iOS', 'Swift', 'SwiftUI', 'Tuist', 'Figma', 'Cursor', 'Lottie'],
+        tech: ['iOS', 'Swift', 'SwiftUI', 'Tuist', 'Figma', 'Cursor', 'Copilot', 'Lottie'],
         features: `
             <p><strong>WDS Framework Architecture 설계</strong></p>
             <ul>
@@ -905,62 +908,412 @@ const projectData = {
         `
     },
     'onestore-3': {
-        title: '스토리 앱',
-        period: '2021.09 ~ 2022.12',
-        description: '스토리 앱 개발팀에서 iOS 개발을 담당했습니다.',
-        tech: ['iOS', 'Swift'],
-        features: '스토리 기능 개발 및 UI/UX 개선'
+        title: 'ONEstory iOS Application 운영 및 개발',
+        period: '2021.09 ~ 2023.12',
+        description: '원스토리는 웹툰, 웹소설, 만화, 일반 도서, 오디오북까지 다양한 콘텐츠를 즐길 수 있는 플랫폼 서비스입니다. iPad까지 호환되며, 위젯을 통해 최근 본 작품을 빠르게 이어볼 수 있는 기능부터 비행기모드/오프라인에서도 다운로드 한 작품을 즐길 수 있는 기능을 제공합니다.',
+        tech: ['iOS', 'Swift', 'SwiftUI', 'KeychainAccess', 'Kingfisher', 'CryptoSwift', 'KissXML', 'GoogleSignIn', 'NaverLoginSDK', 'JWTDecode', 'Lottie', 'Amplitude', 'ADpopcorn'],
+        features: `
+            <p><strong>정기 운영 업무</strong></p>
+            <ul>
+                <li>정기 배포 진행</li>
+                <li>앱 안정성 개선 및 버그 수정</li>
+                <li>신규 기능 개발 및 배포</li>
+                <li>OS 업데이트 및 Deprecated Function 대응</li>
+                <li>Crash Report 분석을 통한 앱 장애 요소 예방 및 대응</li>
+                <li>앱 개선 요청 사항 개발 대응</li>
+            </ul>
+            <p><strong>개인 담당 업무</strong></p>
+            <ul>
+                <li>
+                    <strong class="sub-title">내 서재, 구매 목록, 마이 페이지 feature 담당</strong>
+                    <div class="sub-description">
+                        <p class="description-label">📝 상세 설명</p>
+                        <ul class="sub-list">
+                            <li>다운로드 한 도서 DB 관리 및 개발</li>
+                            <li>3rd party 로그인 SDK 관리 및 개발</li>
+                            <li>카카오톡 고객문의 CS 화면 개발 및 운영</li>
+                            <li>기존 웹뷰로 개발된 구매 목록화면을 Native UI로 화면 개발 및 전환</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="sub-title">Java Script Interface 설계 및 개발</strong>
+                </li>
+                <li>
+                    <strong class="sub-title">위젯 개발 및 운영 담당</strong>
+                    <div class="sub-description">
+                        <p class="description-label">📝 상세 설명</p>
+                        <ul class="sub-list">
+                            <li>iPhone & iPad 위젯 개발 및 운영</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="sub-title">컨텐츠 뷰어 추가 기능 개발</strong>
+                    <div class="sub-description">
+                        <p class="description-label">📝 상세 설명</p>
+                        <ul class="sub-list">
+                            <li>Eye Tracking SDK를 활용한 웹툰 뷰어 자동 스크롤링 기능 구현</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="sub-title">운영 업무 효율을 위한 업무</strong>
+                    <div class="sub-description">
+                        <p class="description-label">📝 상세 설명</p>
+                        <ul class="sub-list">
+                            <li>QA 및 개발 테스트를 위한 환경 세팅 조작 및 컨트롤 가능한 Application 개발 및 운영</li>
+                            <li>외부 연동 규격 테스트를 위한 Tracer Application 개발 및 운영</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="app-store-section">
+                <div class="app-store-header">
+                    <span class="app-store-icon">📱</span>
+                    <span class="app-store-title">App Store</span>
+                </div>
+                <div class="app-store-content">
+                    <a href="https://apps.apple.com/kr/app/id637169319" target="_blank" class="app-store-link">
+                        <svg class="app-store-logo" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        <div class="app-store-text">
+                            <span class="download-text">다운로드</span>
+                            <span class="store-name">App Store</span>
+                        </div>
+                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="sub-screenshots">
+                <p class="screenshot-label">📱 결과물</p>
+                <div class="screenshot-grid">
+                    <img src="assets/images/onestory1.jpg" alt="원스토리 스크린샷" class="screenshot-img">
+                    <img src="assets/images/onestory2.jpg" alt="원스토리 스크린샷" class="screenshot-img">
+                    <img src="assets/images/onestory3.jpg" alt="원스토리 스크린샷" class="screenshot-img">
+                    <img src="assets/images/onestory4.jpg" alt="원스토리 스크린샷" class="screenshot-img">
+                    <img src="assets/images/onestory5.jpg" alt="원스토리 스크린샷" class="screenshot-img">
+                    <img src="assets/images/onestory6.jpg" alt="원스토리 스크린샷" class="screenshot-img">
+                </div>
+            </div> 
+        `
     },
     'gsitm-1': {
-        title: 'GS Fresh 차세대',
-        period: '2020.01 ~ 2021.09',
-        description: 'GS Fresh 차세대 프로젝트에서 Android / iOS 개발 리더를 맡았습니다.',
-        tech: ['iOS', 'Swift'],
-        features: '차세대 시스템 구축 및 팀 리딩'
+        title: 'GS Fresh 통합 커머스 앱 운영 및 개발',
+        period: '2018.08 ~ 2021.09',
+        description: 'GS 리테일의 Commerce 사업부의 GS fresh Mall, 달리살다, 마켓포 총 3가지의 어플리케이션을 운영하는 업무를 담당했습니다. 그리고 GS 리테일 커머스 차세대 프로젝트의 모바일 파트 PL로 참여 및 개발을 담당했습니다.',
+        tech: ['iOS', 'Swift', 'Objective-C', 'KeyChainAccess', 'Firebase', 'Alamofire', 'Moya', 'ReachabilitySwift', 'AdbrixRemaster', 'KakaoSDK', 'FacebookSDK', 'naveridlogin-sdk-ios', 'Snapkit'],
+        features:  `
+            <div class="project-overview">
+                <p>✅ 'GS 프레시'는 2014년부터 GS 리테일에서 운영되어온 이커머스 플랫폼입니다.</p>
+                <br>
+                <p>✅ 저는 2018년 GS 리테일 운영팀에 합류하며, GS 프레시를 포함한 GS 리테일의 전사 앱을 운영 및 개발하는 업무를 담당했습니다.</p>
+                <br>
+                <p>✅ 2020년 통합 커머스 시스템 전면 개편 프로젝트로 인해, 'GS 프레시'에서 'GS 프레시몰'로 브랜드명이 변경되며 사이트 업데이트를 이루었고 동시에 '달리살다' 어플리케이션이 출시되었습니다. 더 나아가, 2021년 3월 GS 리테일에만 국한되는 것이 아닌 GS 그룹의 Commerce 플랫폼을 모두 포함한 '마켓포' 어플리케이션을 출시하였습니다.</p>
+            </div>
+            
+            <div class="work-period-section">
+                <p><strong>정기 운영 업무</strong> <span class="period-badge">2018.08 ~ 2021.09</span></p>
+            </div>
+            <ul>
+                <li>월 2회 정기 배포 진행, 긴급 배포 상시</li>
+                <li>VOC 대응 및 오류 대응</li>
+                <li>신규 OS Update 대응 및 Deprecated Function 대응</li>
+                <li>Crash Report 분석을 통한 앱 장애 요소 예방 및 대응</li>
+                <li>현업의 앱 개선 요청 사항 개발 대응</li>
+                <li>운영 시스템 관련 프로젝트에 대한 운영팀으로서의 개발 Inspection 리딩</li>
+                <li>성능 및 안정성 개선</li>
+                <li>신규 기능 개발 및 배포</li>
+            </ul>
+            
+            <div class="work-period-section">
+                <p><strong>GS 커머스 차세대 SI 프로젝트</strong> <span class="period-badge">2020.07 ~ 2020.08</span></p>
+            </div>
+            <ul>
+                <li>
+                    <div class="sub-description">
+                        <p class="description-label">✔️ 프로젝트 배경 설명</p>
+                        <ul class="sub-list">
+                            <p>GS 프레시 운영자로서 차세대 프로젝트 현황을 Follow-up 하고 있던 중, 오픈 2개월 전, 갑작스럽게 모바일 개발자가 퇴사하며 기존 산출물과 작업하던 소스 코드가 무의미하게 된 상황이 발생했었습니다.</p>
+                            <p>이에 팀 내에서 SI 프로젝트 경험이 있으며, Android / iOS 두 POC에 대한 전반적인 개발 지식이 있었던 제가 모바일 파트 핵심 업무를 사실상 주도하게 되었습니다.</p>
+                            <p>해당 프로젝트의 주 핵심은 One-Source Multi Application을 만드는 것과 SSO 기능 구현입니다.</p>
+                        </ul>
+                    </div>
+                    <div class="sub-description">
+                        <p class="description-label">📝 상세 진행 내용</p>
+                        <ul class="sub-list">
+                            <li>GS 차세대 프로젝트 모바일 파트 PL</li>
+                            <li>Android, iOS 개발 총괄 리딩</li>
+                            <li>SSO(Single Sign-On) 기능 구현
+                                <ul class="sub-sub-list">
+                                    <li>SSO Flow 및 시나리오 설계</li>
+                                    <li>기능 개발을 위한 각 POC에 대한 기술 검토</li>
+                                </ul>
+                            </li>
+                            <li>프로젝트 개발 문서 작성
+                                <ul class="sub-sub-list">
+                                    <li>API 설계 및 문서 작성</li>
+                                    <li>개발 시나리오 및 flow chart 작성</li>
+                                    <li>Javascript Interface 설계 및 문서화 작업</li>
+                                    <li>통계 자료를 위한 SDK 연동시 필요한 개발 문서 작성</li>
+                                </ul>
+                            </li>
+                            <li>One Source Multi Application 구축을 위한 scheme 분리 및 환경 분리 작업 진행</li>
+                            <li>UI 개발</li>
+                            <li>API 연동</li>
+                            <li>WKWebView 연동</li>
+                            <li>소셜 로그인 SDK 연동 및 개발
+                                <ul class="sub-sub-list">
+                                    <li>카카오, 네이버, Apple 로그인 구현</li>
+                                </ul>
+                            </li>
+                            <li>Crashlytics 연동</li>
+                            <li>FCM을 활용한 푸시 기능 개발</li>
+                            <li>마케팅 지표 삽입을 위한 SDK 연동 및 개발</li>
+                            <li>외부연동기능(Deeplink)기능 구현</li>
+                        </ul>
+                    </div>
+                    <div class="reference-image">
+                        <p class="reference-image-label">📱 결과물</p>
+                        <img src="assets/images/gsfresh_screenshot.png" alt="gs fresh screenshot" class="reference-img">                        
+                    </div>
+                </li>
+            </ul>
+        `
     },
     'gsitm-2': {
-        title: 'GS Retail 앱 통합 운영',
-        period: '2017.06 ~ 2021.09',
-        description: 'GS Retail의 Android, iOS 총 8개 이상의 Application을 운영 및 개발했습니다.',
-        tech: ['iOS', 'Swift'],
-        features: '다중 앱 통합 관리 및 운영'
+        title: 'GS Fresh 통합 맴버십 앱 운영 및 개발',
+        period: '2018.08 ~ 2021.09',
+        description: 'THE POP, GS수퍼마켓, GS25-나만의 냉장고, 우리동네 딜리버리 4가지 맴버십 어플리케이션을 운영 및 개발하는 업무를 담당했습니다.',
+        tech: ['iOS', 'Swift', 'RxSwift', 'RxCocoa', 'RxWebkit', 'RxViewController', 'ZXingObjc', 'Alamofire', 'Moya', 'ReachabilitySwift', 'KeychainAccess', 'CryptoSwift', 'Adjust', 'Firebase'],
+        features: `
+            <div class="project-overview">
+                <p>THE POP, GS 수퍼마켓, 나만의냉장고는 GS리테일의 통합 맴버십 어플리케이션으로써, GS리테일 통합 커머스 앱과 같이 OneSource-Multi System을 이루고 있습니다. GS리테일 맴버십 이용, 각 채널의 쿠폰 사용, 상품 결제 등을 할 수 있습니다.</p>
+            </div>
+            
+            <div class="work-period-section">
+                <p><strong>정기 운영 업무</strong>
+            </div>
+            <ul>
+                <li>월 2회 정기 배포 진행, 긴급 배포 상시</li>
+                <li>VOC 대응 및 오류 대응</li>
+                <li>신규 OS Update 대응 및 Deprecated Function 대응</li>
+                <li>Crash Report 분석을 통한 앱 장애 요소 예방 및 대응</li>
+                <li>현업의 앱 개선 요청 사항 개발 대응</li>
+                <li>운영 시스템 관련 프로젝트에 대한 운영팀으로서의 개발 Inspection 리딩</li>
+                <li>성능 및 안정성 개선</li>
+                <li>신규 기능 개발 및 배포</li>
+            </ul>
+            <div class="reference-image">
+                <p class="reference-image-label">📱 결과물</p>
+                <img src="assets/images/thepop_screenshot.png" alt="the pop screenshot" class="reference-img">                        
+            </div>
+            </ul>
+        `
     },
     'digitaldime-1': {
-        title: '프로젝트 1',
-        period: '2016.01 ~ 2016.06',
-        description: 'Android 앱 개발',
-        tech: ['Android'],
-        features: 'Android 앱 개발 및 유지보수'
+        title: 'CafeUnion Android Application 개발',
+        period: '2016.08 ~ 2017.01',
+        description: '카페유니온은 중국 시장에 출시될 커피 브랜드 가맹형 O2O 프리오더 서비스 플랫폼 입니다. 국내의 스타벅스 커피 앱과 유사한 Application 입니다.',
+        tech: ['Android', 'Java', 'WeChat SDK', 'QQ SDK', 'Baidu SDK', 'Alipay SDK', 'Picasso', 'Glide', 'gson'],
+        features: `
+            <div class="reference-image">
+                <p class="reference-image-label">요구사항</p>
+                <img src="assets/images/cafeunion1.png" alt="cafeunion 요구사항" class="reference-img">
+                <ul class="sub-list code-explanation">
+                    <li>1. 현재 사용자의 위치를 기반으로 근접한 거리에 있는 매장 리스트 노출</li>
+                    <li>2. 알리바바 지도 연동을 통한 위치 서비스 제공</li>
+                    <li>3. 특정 매장 선택 시, 해당 매장에서 판매하고 있는 상품 리스트 노출</li>
+                    <li>4. 사용자사 선택한 상품의 수량, 사이즈, 추가옵션 등 선택을 통해 해당 상품 장바구니 담기 및 결제 기능 구현</li>
+                </ul>
+            </div>
+            <br>
+            <div class="sub-description">
+                <p class="description-label">📝 상세 진행 내용</p>
+                <ul class="sub-list">
+                    <li>Android Application 개발</li>
+                    <li>API 연동</li>
+                    <li>화면 UI 개발
+                        <ul class="sub-sub-list">
+                            <li>90% 이상 Native 화면으로 구성되어 있었으므로, 모든 페이지의 화면 UI 개발</li>
+                            <li>N depth Expandable ListView 구현</li>
+                            <li>Swipe Delete 기능 구현</li>
+                            <li>Indexable ListView구현</li>
+                            <li>Infinite ViewPager 구현</li>
+                        </ul>
+                    </li>
+                    <li>중국 SNS 연동
+                        <ul class="sub-sub-list">
+                            <li>위쳇, 웨이보, QQ 등 중국 소셜 로그인 및 회원가입 기능 개발</li>
+                        </ul>
+                    </li>
+                    <li>매장 찾기 및 네비게이션 기능 개발
+                        <ul class="sub-sub-list">
+                            <li>바이두 SDK 연동</li>
+                            <li>바이두 SDK를 활용한 네비게이션 기능 구현</li>
+                        </ul>
+                    </li>
+                    <li>바이두 SDK를 활용한 푸시 기능 개발</li>
+                    <li>WKWebView 연동</li>
+                    <li>중국 결제 수단 연동
+                        <ul class="sub-sub-list">
+                            <li>위쳇 페이, 알리페이 등 중국의 소셜 Pay 기능 연동을 위한 SDK 삽입 및 기능 개발</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="sub-screenshots">
+                <p class="screenshot-label">📱 결과물</p>
+                <div class="screenshot-grid">
+                    <img src="assets/images/cafeunion2.png" alt="cafeunion 스크린샷" class="screenshot-img">
+                    <img src="assets/images/cafeunion3.png" alt="cafeunion 스크린샷" class="screenshot-img">
+                </div>
+            </div>
+        `
     },
     'digitaldime-2': {
-        title: '프로젝트 2',
-        period: '2016.07 ~ 2016.12',
-        description: 'Android 앱 개발',
-        tech: ['Android'],
-        features: 'Android 앱 개발 및 유지보수'
+        title: 'LuxeWater Android Application 개발',
+        period: '2015.11 ~ 2015.12',
+        description: '중국 마켓 워터 서플라이 플랫폼 럭스워터 Android Application을 개발했습니다.',
+        tech: ['Android', 'Java', 'Baidu SDK', 'QQ', 'Alipay SDK', 'Wechat SDK'],
+        features: ` 
+            <div class="sub-description">
+                <p class="description-label">✔️ 프로젝트 배경 설명</p>
+                <ul class="sub-list">
+                    <p>전체 화면 구성이 WebView로 구성 되어 있는 Hybrid Application 으로써, 중국 앱 마켓에 출시되었습니다. 중국이라는 국가적 특성에 맞춰 지도, 결제, 푸시, SNS 등의 서비스를 환경에 맞는 SDK로 삽입하여 기능을 구현했습니다.</p>
+                </ul>
+            </div>
+            <div class="sub-description">
+                <p class="description-label">📝 상세 진행 내용</p>
+                <ul class="sub-list">
+                    <li>Android Application 개발</li>
+                    <li>WebView 연동
+                        <ul class="sub-sub-list">
+                            <li>WebView 연동을 위한 기본 세팅 개발</li>
+                            <li>Javascript Interface 설계 및 연동</li>
+                        </ul>
+                    </li>
+                    <li>API 연동</li>
+                    <li>중국 SNS 연동
+                        <ul class="sub-sub-list">
+                            <li>위쳇, 바이두, QQ 등 중국 소셜 로그인 및 회원가입 기능 개발</li>
+                        </ul>
+                    </li>
+                    <li>바이두 SDK를 활용한 푸시 기능 개발</li>
+                    <li>중국 결제 수단 연동
+                        <ul class="sub-sub-list">
+                            <li>중국의 소셜 Pay 기능 연동을 위한 알리페이 SDK 삽입 및 기능 개발</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="sub-screenshots">
+                <p class="screenshot-label">📱 결과물</p>
+                <div class="screenshot-grid">
+                    <img src="assets/images/luxewater1.png" alt="cafeunion 스크린샷" class="screenshot-img">
+                    <img src="assets/images/luxewater2.png" alt="cafeunion 스크린샷" class="screenshot-img">
+                </div>
+            </div>
+        `
     },
     'digitaldime-3': {
-        title: '프로젝트 3',
-        period: '2015.01 ~ 2015.12',
-        description: 'Android 앱 개발',
-        tech: ['Android'],
-        features: 'Android 앱 개발 및 유지보수'
+        title: '올가홀푸드 Android Application 개발',
+        period: '2016.04 ~ 2016.05',
+        description: '기존 올가홀푸드 웹사이트를 모바일용 채널을 확보해 고객 유입을 유도하고자 구축한 올가홀푸드 Android Application 개발을 담당하였습니다.',
+        tech: ['Android', 'Java', 'FingerPush', 'ZXing', 'gson', 'universal image loader', 'viewpagerindicator', 'gms', 'crashlytics'],
+        features: ` 
+            <div class="sub-description">
+                <p class="description-label">✔️ 프로젝트 배경 설명</p>
+                <ul class="sub-list">
+                    <p>기존 올가홀푸드 웹사이트는 모바일용 페이지 부재 등 모바일 환경에 대한 컨텐츠 접근성이 부족했습니다. 기존 웹사이트를 개선하고 모바일 환경을 제공함으로써, 세일즈를 강화하여 고객 유입을 유도할 수 있으며, 급변하는 모바일 커머스 시장에 대한 대응을 통해 안전한 먹거리라는 브랜드 아이덴티티를 전달하여 소비자와의 신뢰를 강화하고자 하였습니다.</p>
+                </ul>
+            </div>
+            <div class="sub-description">
+                <p class="description-label">📝 상세 진행 내용</p>
+                <ul class="sub-list">
+                    <li>Android Application 개발</li>
+                    <li>화면 UI 개발
+                        <ul class="sub-sub-list">
+                            <li>전시 화면 개발</li>
+                            <li>사이드 메뉴 화면 개발</li>
+                            <li>제품 바코드 인식을 위한 스캔 기능 구현 및 화면 개발</li>
+                            <li>설정 화면 개발</li>
+                        </ul>
+                    </li>
+                    <li>API 연동</li>
+                    <li>WebView 연동
+                        <ul class="sub-sub-list">
+                            <li>WebView 연동을 위한 기본 세팅 개발</li>
+                            <li>Javascript Interface 설계 및 연동</li>
+                        </ul>
+                    </li>
+                    <li>FingerPush SDK를 활용한 푸시 기능 개발</li>
+                    <li>제품 바코드 및 QR 코드 인식 기능을 위한 기능 개발
+                        <ul class="sub-sub-list">
+                            <li>Zxing barcode scan library 연동</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reference-image">
+                <p class="reference-image-label">📱 결과물</p>
+                <img src="assets/images/orga_screenshot.png" alt="gs fresh screenshot" class="reference-img">
+            </div>
+        `
     },
     'digitaldime-4': {
-        title: '프로젝트 4',
-        period: '2014.12 ~ 2015.06',
-        description: 'Android 앱 개발',
+        title: '사내 인트라넷 Android Application 개발',
+        period: '2015.07 ~ 2015.09',
+        description: '사내 인프라넷 웹사이트를 기반으로 임직원들의 편의를 위해 제작된 인트라넷 Android Application 개발을 담당하였습니다.',
         tech: ['Android'],
-        features: 'Android 앱 개발 및 유지보수'
+        features:` 
+            <div class="sub-description">
+                <p class="description-label">✔️ 프로젝트 배경 설명</p>
+                <ul class="sub-list">
+                    <p>인트라넷 앱은 업무 커뮤니케이션 강화와 더불어 사내 커뮤니케이션을 활성화하여 정서적인 교류도 함께할 수 있는 플랫폼 구축을 목표로 했습니다. 더불어 사원들이 굳이 데스크탑을 사용하지 않아도 내부 정보나 업무를 효율적으로 진행할 수 있고자 했습니다.</p>
+                    <p>일일 업무 등록, 휴가 결재, 야근 신청, 회의실 예약, 한줄 토크 등 다양한 인트라넷 기능을 모바일 네이티브 앱으로 제작하여 편의성을 극대화 했습니다.</p>
+                </ul>
+            </div>
+            <div class="sub-description">
+                <p class="description-label">📝 상세 진행 내용</p>
+                <ul class="sub-list">
+                    <li>Android Application 개발</li>
+                    <li>전체 화면 UI 개발</li>
+                    <li>API 연동</li>
+                    <li>푸시 기능 연동을 위한 GCM 연동</li>
+                </ul>
+            </div>
+
+            <div class="sub-screenshots">
+                <p class="screenshot-label">📱 결과물</p>
+                <div class="screenshot-grid">
+                    <img src="assets/images/myd22.png" alt="myd2 스크린샷" class="screenshot-img">
+                    <img src="assets/images/myd21.png" alt="myd2 스크린샷" class="screenshot-img">
+                </div>
+            </div>
+        `
     }
 };
 
 // 모달 열기
 function openProjectModal(projectId) {
+    console.log('openProjectModal called with:', projectId);
     const modal = document.getElementById('projectModal');
     const project = projectData[projectId];
     
-    if (!project) return;
+    if (!project) {
+        console.error('Project not found:', projectId);
+        return;
+    }
+    console.log('Opening modal for project:', project.title);
     
     // 모달 내용 업데이트
     document.getElementById('modalTitle').textContent = project.title;
@@ -1144,9 +1497,12 @@ document.addEventListener('keydown', function(e) {
 });
 
 // 이미지 뷰어 모달 외부 클릭 시 닫기
-document.getElementById('imageViewerModal')?.addEventListener('click', function(e) {
-    if (e.target.id === 'imageViewerModal') {
-        closeImageViewer();
-    }
-});
+const imageViewerModal = document.getElementById('imageViewerModal');
+if (imageViewerModal) {
+    imageViewerModal.addEventListener('click', function(e) {
+        if (e.target.id === 'imageViewerModal') {
+            closeImageViewer();
+        }
+    });
+}
 

@@ -3499,6 +3499,205 @@ body {
     line-height: 1.5;
 }
 
+/* App Store 섹션 */
+.app-store-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+    border: 2px dashed rgba(99, 102, 241, 0.25);
+    border-radius: 12px;
+}
+
+.app-store-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.app-store-icon {
+    font-size: 1.5rem;
+}
+
+.app-store-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a5b4fc;
+}
+
+.app-store-content {
+    display: flex;
+    justify-content: center;
+}
+
+.app-store-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    min-width: 280px;
+}
+
+.app-store-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.app-store-logo {
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+}
+
+.app-store-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+}
+
+.download-text {
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.store-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.external-link-icon {
+    width: 20px;
+    height: 20px;
+    color: #a0a0a0;
+}
+
+/* 프로젝트 개요 섹션 */
+.project-overview {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.08));
+    border-left: 4px solid #6366f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.project-overview p {
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.project-overview strong {
+    color: #a5b4fc;
+    font-weight: 600;
+}
+
+/* 업무 기간 섹션 */
+.work-period-section {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.work-period-section p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.work-period-section strong {
+    color: #a5b4fc;
+    font-weight: 600;
+}
+
+.period-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.15));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #c7d2fe;
+}
+
+.period-badge::before {
+    content: '📅';
+    margin-right: 0.5rem;
+}
+
+/* 앱 스크린샷 섹션 */
+.app-screenshots-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    padding-bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+    border: 2px dashed rgba(99, 102, 241, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.screenshots-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.screenshots-icon {
+    font-size: 1.5rem;
+}
+
+.screenshots-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a5b4fc;
+}
+
+.screenshots-content {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    width: calc(100% + 3rem);
+}
+
+.screenshots-content .screenshot-grid {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.screenshots-content .screenshot-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+}
+
+.screenshots-content .screenshot-img:hover {
+    opacity: 0.9;
+}
+
 /* 반응형 - Lab Info */
 @media (max-width: 768px) {
     .lab-info-grid {
@@ -4232,6 +4431,58 @@ body {
 
 .modal-section .sub-list li:hover {
     color: #cbd5e1;
+}
+
+/* 하위 서브 타이틀 */
+.sub-sub-title {
+    display: block;
+    color: #c7d2fe;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* 하위 서브 리스트 */
+.sub-sub-list {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 1.2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+}
+
+.sub-sub-list li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.3rem;
+    color: #7e8ba3;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    list-style: none !important;
+    list-style-type: none !important;
+    opacity: 0.85;
+}
+
+.sub-sub-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 4px;
+    height: 4px;
+    border: 1px solid #818cf8;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.sub-sub-list li:hover {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+.sub-sub-list li:hover::before {
+    background: #818cf8;
+    box-shadow: 0 0 6px rgba(129, 140, 248, 0.5);
 }
 
 /* 슬라이더 버튼 */

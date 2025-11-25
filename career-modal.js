@@ -83,6 +83,10 @@ const careerData = {
                     </ul>
 
                     <p><strong>GS fresh 차세대 프로젝트 구축 및 개발</strong></p>
+                    <ul>
+                        <li>산출물 : GS프레시몰, 달리살다, 마켓포 iOS Application</li>
+                        <li>PL 및 iOS 개발 담당</li>
+                    </ul>
                 `
             }
         ]
