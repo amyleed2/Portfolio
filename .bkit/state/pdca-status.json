@@ -1,0 +1,59 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-04-16T08:59:56.531Z",
+  "activeFeatures": [
+    "ios-career-lab"
+  ],
+  "primaryFeature": "ios-career-lab",
+  "features": {
+    "ios-career-lab": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-16T08:50:40.570Z",
+        "lastUpdated": "2026-04-16T08:59:56.531Z"
+      },
+      "lastFile": "/Users/ezyeun/Desktop/Workspace/02_Personal/ios-career-lab/career-modal.js"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-04-16T06:18:36.771Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-04-16T08:59:56.531Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-04-16T08:50:40.570Z",
+      "feature": "ios-career-lab",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-16T08:50:55.223Z",
+      "feature": "ios-career-lab",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-16T08:51:05.554Z",
+      "feature": "ios-career-lab",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-16T08:59:56.531Z",
+      "feature": "ios-career-lab",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
+}

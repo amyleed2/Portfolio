@@ -195,17 +195,17 @@ const careerData = {
         sections: [
             {
                 title: '💼 담당 업무',
-                content: '<p><strong>엔카닷컴 iOS Application 운영 및 개발</strong></p>'
+                content: '<p><strong>엔카닷컴 iOS 앱의 레거시 화면 현대화(UIKit → SwiftUI)와 광고 모듈 통합 구조 설계를 담당했습니다.</strong></p>'
             },
             {
                 title: '🏢 주요 업무',
                 content: `
                     <ul>
-                        <li>엔카 iOS 어플리케이션 운영 및 배포</li>
-                        <li>앱 안정성 개선 및 버그 수정</li>
-                        <li>신규 기능 개발 및 배포</li>
-                        <li>코드 리팩토링 및 개선</li>
-                        <li>UIKit 기반의 차량 검색 화면 일부 SwiftUI로 언어 전환 및 개발</li>
+                        <li>차량 옵션 필터 화면을 UIKit에서 SwiftUI + MVVM으로 전면 재개발 (단독 수행)<br>→ 신규 아키텍처 도입, Unit Test 작성, 디자인 시스템 통합</li>
+                        <li>광고 모듈(AppsFlyer, Braze) 연동 코드를 파일 분산 구조에서 단일 통합 구조로 재설계<br>→ 중복 제거, 향후 모듈 교체 용이한 구조 확보</li>
+                        <li>Crashlytics 크래시 로깅 로직을 단일 클래스로 중앙화, 장애 추적 효율 향상</li>
+                        <li>API 요청/응답 로깅 기능 추가로 운영 중 디버깅 환경 개선</li>
+                        <li>정기 배포 및 앱 안정성 운영</li>
                     </ul>
                 `
             }

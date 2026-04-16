@@ -6,7 +6,7 @@ const projectData = {
     'encar-1': {
         title: '엔카닷컴 iOS 앱 개발 및 운영',
         period: '2025.06 ~ 2025.08',
-        description: 'iOS 앱 개발 및 유지보수를 담당했습니다.',
+        description: '단기간에 레거시 UIKit 화면의 SwiftUI 전환과 광고 모듈 통합 구조 설계를 집중 수행했습니다.',
         tech: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'AppsFlyer', 'Braze', 'KakaoAd', 'Firebase', 'FaceBookSDK', 'Kingfisher', 'CryptoSwift', 'lottie-ios', 'Alamofire', 'KissXML', 'SnapKit', 'Cursor', 'Copilot', 'etc'],
         features: `
             <p><strong>정기 운영 업무</strong></p>
@@ -22,10 +22,7 @@ const projectData = {
                     <div class="sub-description">
                         <p class="description-label">📝 상세 설명</p>
                         <ul class="sub-list">
-                            <li>기존 UIKit으로 구현된 차량 검색을 위한 옵션 필터 화면을 SwiftUI로 Language 전환 및 개발</li>
-                            <li>MVVM 디자인 패턴 신규 개발 및 적용</li>
-                            <li>Unit Test 코드 작성 및 적용</li>
-                            <li>디자인 시스템 적용</li>
+                            <li>레거시 UIKit 기반의 차량 옵션 필터 화면을 SwiftUI + MVVM으로 전면 재개발<br>→ 신규 아키텍처 도입, Unit Test 작성, 디자인 시스템 통합까지 단독 수행</li>
                         </ul>
                     </div>
                     <div class="sub-screenshots">
@@ -40,10 +37,9 @@ const projectData = {
                     <div class="sub-description">
                         <p class="description-label">📝 상세 설명</p>
                         <ul class="sub-list">
-                            <li>광고 모듈(AppsFlyer, Braze) 적용을 위한 파편화된 소스 통합과 관리 구조 설계 및 개발 </li>
-                            <li>API 요청 및 응답 과정에 대한 로깅 기능 구현</li>
-                            <li>Crashlytics 크래시 로깅 로직을 중앙화하여 단일 클래스에서 관리하도록 구조 개선</li>
-                            <li>기타 운영 업무 효율을 증대시킬 수 있는 기능 개발 및 적용</li>
+                            <li>여러 파일에 분산된 광고 모듈(AppsFlyer, Braze) 연동 코드를 단일 구조로 통합 설계<br>→ 중복 코드 제거 및 향후 모듈 추가/교체가 용이한 구조로 개선</li>
+                            <li>Crashlytics 크래시 로깅 로직을 단일 클래스로 중앙화, 운영 시 장애 추적 효율 향상</li>
+                            <li>API 요청/응답 로깅 기능 추가로 운영 중 디버깅 환경 개선</li>
                         </ul>
                     </div>
                 </li>

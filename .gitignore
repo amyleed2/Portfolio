@@ -1,0 +1,16 @@
+# Claude Code local-only files
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Personal working outputs
+docs/analysis/**
+docs/rewrites/**
+
+# Keep folder structure if needed
+!docs/analysis/.gitkeep
+!docs/analysis/portfolio/.gitkeep
+!docs/analysis/jd-gap/.gitkeep
+!docs/rewrites/.gitkeep
+!docs/rewrites/index/.gitkeep
+!docs/rewrites/career/.gitkeep
+!docs/rewrites/projects/.gitkeep
