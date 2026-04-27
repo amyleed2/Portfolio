@@ -73,6 +73,14 @@ projectCards.forEach((card, index) => {
     observer.observe(card);
 });
 
+// Keyboard support for Featured Projects cards that use inline modal triggers.
+function handleFeaturedProjectKey(event, projectId) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openProjectModal(projectId);
+    }
+}
+
 // Observe contact section
 const contactSection = document.querySelector('.contact-wrapper');
 if (contactSection) {
@@ -362,4 +370,3 @@ function toggleDetail(button) {
 }
 
 console.log('Portfolio website loaded successfully! 🚀');
-

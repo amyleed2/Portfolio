@@ -147,8 +147,8 @@ const careerData = {
                 content: `
                     <p><strong>ONEstore iOS Application 개발</strong></p>
                     <ul>
-                        <li>원스토어 글로벌 마켓 프로토타입/Beta Application 개발PL</li>
-                        <li>디자인 시스템 개발 PM</li>
+                        <li>원스토어 글로벌 마켓 프로토타입/Beta iOS 앱 개발 PL</li>
+                        <li>디자인 시스템 iOS 개발 PM</li>
                     </ul>
                 `
             },
@@ -173,12 +173,12 @@ const careerData = {
                     </ul>
                     <p><strong>원스토어 디자인 시스템 구축</strong></p>
                     <ul>
-                        <li>디자인 시스템 구축 개발 총괄</li>
-                        <li>디자인 시스템 아키텍쳐 설계 및 구축</li>
-                        <li>iOS 디자인 컴포넌트 개발 파트 리더</li>
+                        <li>디자인 시스템 구축 iOS 개발 참여</li>
+                        <li>디자인 시스템 아키텍처 설계 및 구축 참여</li>
+                        <li>iOS 디자인 컴포넌트 개발 담당</li>
                         <li>Figma 연동 모듈 설계 및 구현</li>
-                        <li>디자인 시스템 자동화 시스템 설계</li>
-                        <li>전사 세미나 주최</li>
+                        <li>디자인 시스템 자동화 방식 검토 및 설계</li>
+                        <li>전사 세미나 진행</li>
                     </ul>
                 `
             }
@@ -299,4 +299,3 @@ document.getElementById('careerModal')?.addEventListener('click', (e) => {
         closeCareerModal();
     }
 });
-

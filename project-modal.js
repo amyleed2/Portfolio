@@ -6,903 +6,212 @@ const projectData = {
     'encar-1': {
         title: '엔카닷컴 iOS 앱 개발 및 운영',
         period: '2025.06 ~ 2025.08',
-        description: '단기간에 레거시 UIKit 화면의 SwiftUI 전환과 광고 모듈 통합 구조 설계를 집중 수행했습니다.',
-        tech: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'AppsFlyer', 'Braze', 'KakaoAd', 'Firebase', 'FaceBookSDK', 'Kingfisher', 'CryptoSwift', 'lottie-ios', 'Alamofire', 'KissXML', 'SnapKit', 'Cursor', 'Copilot', 'etc'],
+        description: '운영 중인 엔카 iOS 앱에서 UIKit 레거시 화면을 SwiftUI + MVVM 구조로 전환하고, 광고 모듈과 로깅 구조를 정리해 운영 안정성을 높이는 개선 작업을 수행했습니다.',
+        tech: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'UIKit', 'MVVM', 'AppsFlyer', 'Braze', 'Firebase', 'Crashlytics', 'Alamofire', 'SnapKit', 'Cursor', 'Copilot'],
         features: `
-            <p><strong>정기 운영 업무</strong></p>
+            <p><strong>Overview</strong></p>
             <ul>
-                <li>정기 배포 진행</li>
-                <li>앱 안정성 개선 및 버그 수정</li>
-                <li>신규 기능 개발 및 배포</li>
+                <li>엔카 iOS 앱의 운영 개발 과정에서 레거시 UIKit 화면 개선과 SwiftUI 전환, 운영 안정성 개선을 함께 수행한 프로젝트입니다.</li>
+                <li>단기간 안에 기존 구조를 파악하고, 신규 화면 전환과 운영 코드 정리를 병행해야 했습니다.</li>
             </ul>
-            <p><strong>개인 업무</strong></p>
+
+            <p><strong>Problem</strong></p>
             <ul>
-                <li>
-                    <strong class="sub-title">제네시스 옵션 필터 화면 리팩토링</strong>
-                    <div class="sub-description">
-                        <p class="description-label">📝 상세 설명</p>
-                        <ul class="sub-list">
-                            <li>레거시 UIKit 기반의 차량 옵션 필터 화면을 SwiftUI + MVVM으로 전면 재개발<br>→ 신규 아키텍처 도입, Unit Test 작성, 디자인 시스템 통합까지 단독 수행</li>
-                        </ul>
-                    </div>
-                    <div class="sub-screenshots">
-                        <p class="screenshot-label">📱 결과물</p>
-                        <div class="screenshot-grid">
-                            <img src="assets/images/encar_screenshot.jpg" alt="제네시스 옵션 필터 화면" class="screenshot-img">
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <strong class="sub-title">기존 소스 리팩토링</strong>
-                    <div class="sub-description">
-                        <p class="description-label">📝 상세 설명</p>
-                        <ul class="sub-list">
-                            <li>여러 파일에 분산된 광고 모듈(AppsFlyer, Braze) 연동 코드를 단일 구조로 통합 설계<br>→ 중복 코드 제거 및 향후 모듈 추가/교체가 용이한 구조로 개선</li>
-                            <li>Crashlytics 크래시 로깅 로직을 단일 클래스로 중앙화, 운영 시 장애 추적 효율 향상</li>
-                            <li>API 요청/응답 로깅 기능 추가로 운영 중 디버깅 환경 개선</li>
-                        </ul>
-                    </div>
-                </li>
+                <li>차량 옵션 필터 화면은 UIKit 기반 레거시 구조로 유지되고 있어 신규 UI 요구사항과 테스트 구조를 반영하기 어려웠습니다.</li>
+                <li>AppsFlyer, Braze 등 광고 모듈 연동 코드가 여러 파일에 분산되어 있어 변경 영향 범위 파악과 유지보수가 비효율적이었습니다.</li>
+                <li>운영 중 장애 원인을 빠르게 추적하기 위해 Crashlytics 로깅과 API 요청/응답 로그 구조를 정리할 필요가 있었습니다.</li>
+            </ul>
+
+            <p><strong>My Role</strong></p>
+            <ul>
+                <li>제네시스 옵션 필터 화면의 SwiftUI + MVVM 전환을 담당했습니다.</li>
+                <li>광고 모듈 통합 구조 설계, Crashlytics 로깅 중앙화, API 로깅 개선 작업을 수행했습니다.</li>
+                <li>정기 배포와 운영 이슈 대응 과정에서 안정성 개선 작업을 함께 진행했습니다.</li>
+            </ul>
+
+            <p><strong>Key Contributions</strong></p>
+            <ul>
+                <li>UIKit 기반 화면을 SwiftUI + MVVM 구조로 재구성하고, 주요 유스케이스 기준의 Unit Test를 작성했습니다.</li>
+                <li>AppsFlyer, Braze 연동 코드를 단일 구조로 정리해 중복 코드를 줄이고 모듈 추가/교체가 쉬운 형태로 개선했습니다.</li>
+                <li>Crashlytics 크래시 로깅 로직을 중앙화하고, API 요청/응답 로그를 추가해 운영 중 디버깅 흐름을 개선했습니다.</li>
+            </ul>
+
+            <p><strong>Technical Decisions</strong></p>
+            <ul>
+                <li>신규 화면은 SwiftUI를 적용하되, 기존 앱 구조와의 연결성을 고려해 MVVM 기반으로 상태와 화면 로직을 분리했습니다.</li>
+                <li>광고/분석 SDK 연동은 개별 화면에 흩어지지 않도록 공통 진입점을 두는 방향으로 정리했습니다.</li>
+                <li>운영 중 원인 추적이 필요한 지점을 기준으로 크래시와 네트워크 로그의 수집 위치를 조정했습니다.</li>
+            </ul>
+
+            <p><strong>Screenshots / Result</strong></p>
+            <ul>
+                <li>UIKit 레거시 화면을 SwiftUI 기반 화면으로 전환한 결과를 면접 중 시각적으로 설명할 수 있는 자료입니다.</li>
+            </ul>
+            <div class="sub-screenshots">
+                <p class="screenshot-label">SwiftUI 전환 결과 화면</p>
+                <div class="screenshot-grid">
+                    <img src="assets/images/encar_screenshot.jpg" alt="엔카 제네시스 옵션 필터 SwiftUI 전환 결과 화면" class="screenshot-img">
+                </div>
+            </div>
+
+            <p><strong>Result / Impact</strong></p>
+            <ul>
+                <li>레거시 화면을 신규 구조로 전환하며 이후 SwiftUI 기반 화면 확장의 기준을 마련했습니다.</li>
+                <li>광고 모듈과 로깅 구조를 정리해 운영 중 변경 대응과 장애 추적이 쉬운 구조로 개선했습니다.</li>
             </ul>
         `
     },
+
     'onestore-1': {
         title: 'ONEstore Global App Market Prototype 개발',
         period: '2024.01 ~ 2024.12',
-        description: '24년 2월 Apple의 DMA 정책에 의한 제 3자 앱 마켓에 대한 Open API 제공에 따라 ONEstore 글로벌 앱 마켓에 대한 기술 검토를 진행했습니다. 그리고 그를 기반으로 Prototype, Alpha, Beta 앱 개발 및 구축을 했습니다.',
-        tech: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'Figma', 'Cursor', 'Copilot', 'CryptoSwift'],
+        description: 'ONEstore 글로벌 앱 마켓 프로젝트에서 iOS PL로 참여해 Apple DMA 관련 제3자 마켓 기술 검토를 진행하고, Prototype부터 Alpha, Beta까지 단계별 iOS 앱 개발을 이끌었습니다.',
+        tech: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'MarketplaceKit', 'JavaScript Interface', 'Figma', 'CryptoSwift'],
         features: `
-            <p><strong>기술 검토</strong></p>
+            <p><strong>Overview</strong></p>
             <ul>
-                <li>
-                    EU에서 DMA(디지털 시장법)을 시행함에 따라, Apple은 24년도 2월 iOS 17.4 beta 이상에서 EU 국가에 한해 application 다운로드 및 결제하는 방식에 대한 신규 기능을 발표했습니다. 이는 독점으로 앱 마켓을 운영하고 있던 Apple이 제 3자 앱 마켓을 허용하게 된 것이며, 마켓플레이스를 운영하는 ‘원스토어’는 iOS 시장 점유율을 확보하고자 글로벌 마켓 출시를 위한 준비 과정을 시작하게 되었습니다.
-                    <br>
-                    그리고 저는 관련 문서를 리딩하며, 정책서를  확인하고 원스토어 iOS 글로벌 서비스 진행 시 weak point가 될 요소가 무엇이 있는지 등을 분석해 나가는 업무를 시작하였습니다.
-                    <div class="reference-image">
-                        <p class="reference-image-label">🍎 Installing app from an alternative marketplace (apple.com)</p>
-                        <img src="assets/images/apple_diagram.png" alt="디자인 시스템 아키텍쳐" class="reference-img">                        
-                    </div>
-                    <br>
-                </li>                
-            </ul>
+                <li>Apple DMA 정책 변화에 대응해 ONEstore 글로벌 대체 앱 마켓의 iOS 구현 가능성을 검토하고 Prototype, Alpha, Beta 단계로 앱을 확장한 프로젝트입니다.</li>
+                <li>단순 화면 구현보다 신규 정책과 플랫폼 제약을 해석하고, 실제 서비스 구조로 연결 가능한지 검증하는 것이 핵심이었습니다.</li>
             </ul>
 
-            <p><strong>오프라인 세션 참석</strong></p>
+            <p><strong>Problem</strong></p>
             <ul>
-                <li>
-                    Apple에서 Alternative marketplace (대체마켓 앱) 개발을 돕기 위해, Ireland, Cork 지사에서 5일간의 Lab을 개최했습니다. 
-                    <br>
-                    이에 저는 iOS Client 대표자 1명으로 선출되어, 총 2주간의 출장을 다녀왔으며, 세션을 참석해 기술 검토를 위한 MVP 시나리오를 개발했습니다. 세션 참석 후 C-레벨 보고에서 원스토어 iOS 글로벌 앱 마켓 출시에 대한 feasibility를 발표했으며 구축에 필요한 초기 작업을 다지는데 기여하였습니다.
-                    <div class="reference-image">
-                        <p class="reference-image-label">🍎 Installing app from an alternative marketplace (apple.com)</p>
-                        <img src="assets/images/apple_diagram.png" alt="Apple Alternative Marketplace" class="reference-img">                        
-                    </div>
-                    
-                    <div class="lab-info-section">
-                        <div class="lab-info-header">
-                            <span class="lab-info-icon">🏢</span>
-                            <span class="lab-info-title">Apple Lab 세션 정보</span>
-                        </div>
-                        
-                        <div class="lab-info-grid">
-                            <div class="lab-info-item">
-                                <div class="lab-label">Lab 소개</div>
-                                <div class="lab-content">
-                                    <a href="https://developer.apple.com/events/view/S2L63QD88Y/dashboard" target="_blank" class="lab-link">
-                                        Apple Developer Events
-                                        <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="lab-info-item">
-                                <div class="lab-label">출장 기간</div>
-                                <div class="lab-content">
-                                    <div class="date-info">
-                                        <span class="date-icon">📅</span>
-                                        <div class="date-details">
-                                            <p><strong>총 기간:</strong> 2024.04.08 ~ 2024.04.21</p>
-                                            <p><strong>세션:</strong> 2024.04.15 ~ 2024.04.19 (5일)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="lab-info-item">
-                                <div class="lab-label">장소</div>
-                                <div class="lab-content">
-                                    <span class="location-icon">📍</span>
-                                    <span>Ireland Cork</span>
-                                </div>
-                            </div>
-                            
-                            <div class="lab-info-item">
-                                <div class="lab-label">참가 인원</div>
-                                <div class="lab-content">
-                                    <div class="team-members">
-                                        <div class="member-badge">
-                                            <span class="member-icon">👨‍💼</span>
-                                            <span>개발 리더 1명</span>
-                                        </div>
-                                        <div class="member-badge">
-                                            <span class="member-icon">👨‍💻</span>
-                                            <span>iOS 1명 (본인)</span>
-                                        </div>
-                                        <div class="member-badge">
-                                            <span class="member-icon">💻</span>
-                                            <span>Backend 1명</span>
-                                        </div>
-                                        <div class="member-badge">
-                                            <span class="member-icon">🎨</span>
-                                            <span>기획 및 디자이너 1명</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="lab-info-item full-width">
-                                <div class="lab-label">참가 목표</div>
-                                <div class="lab-content">
-                                    <ul class="goal-list">
-                                        <li>MVP 기반의 prototype app 개발</li>
-                                        <li>MarketplaceKit API 관련 내용 질의</li>
-                                        <li>MarketplaceKit에서 제공하지 않지만, 원스토어에 필요한 기능에 대한 질의 및 기능 제공 가능성 확인</li>
-                                        <li>우림 이외 지역에서 개발 및 QA 가능 여부 확인</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="lab-info-item full-width">
-                                <div class="lab-label">세션 진행 내역</div>
-                                <div class="lab-content">
-                                    <div class="session-timeline">
-                                        <div class="timeline-item">
-                                            <div class="timeline-number">1</div>
-                                            <div class="timeline-content">제 3자 마켓 등록을 위한 절차 진행</div>
-                                        </div>
-                                        <div class="timeline-item">
-                                            <div class="timeline-number">2</div>
-                                            <div class="timeline-content">제 3자 마켓 출시를 위한 환경 구성 (Back-end)</div>
-                                        </div>
-                                        <div class="timeline-item">
-                                            <div class="timeline-number">3</div>
-                                            <div class="timeline-content">제 3자 마켓에서 App 다운로드를 위한 개발 진행</div>
-                                        </div>
-                                        <div class="timeline-item">
-                                            <div class="timeline-number">4</div>
-                                            <div class="timeline-content">제 3자 마켓에 등록될 Hosted App 개발 및 공증 절차 진행</div>
-                                        </div>
-                                        <div class="timeline-item">
-                                            <div class="timeline-number">5</div>
-                                            <div class="timeline-content">
-                                                제 3자 마켓에서 Hosted App 다운로드 시나리오 개발
-                                                <ul class="sub-features">
-                                                    <li>App Install, Update, Launch, Multiple Install, Multiple Update, Remove 기능 개발</li>
-                                                    <li>Download Progress State 개발</li>
-                                                    <li>Installing Phase, Resume 개발</li>
-                                                    <li>Installed Apps Filter 기능 개발</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="lab-info-item full-width">
-                                <div class="lab-label">담당 역할 및 업무</div>
-                                <div class="lab-content">
-                                    <div class="role-highlight">
-                                        <span class="role-badge">iOS Client 담당 업무</span>
-                                    </div>
-                                    <div class="work-sections">
-                                        <div class="work-section">
-                                            <div class="work-section-title">
-                                                <span class="work-number">1</span>
-                                                <span>App 등록 및 다운로드 등 테스트 시나리오를 위한 Prototype app 개발</span>
-                                            </div>
-                                            <ul class="work-details">
-                                                <li>Hosted App List 를 수신하기 위한 API 연동</li>
-                                                <li>전시 화면 개발</li>
-                                                <li>Hosted App의 Update State 확인을 위한 API 연동</li>
-                                                <li>기타 화면 UI 및 기능 개발</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="work-section">
-                                            <div class="work-section-title">
-                                                <span class="work-number">2</span>
-                                                <span>제 3자 마켓에 등록될 Hosted App 개발 및 간이 심사(공증) 완료</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="work-section">
-                                            <div class="work-section-title">
-                                                <span class="work-number">3</span>
-                                                <span>제 3자 마켓에 등록된 Hosted App 다운로드를 위한 기능 구현</span>
-                                            </div>
-                                            <ul class="work-details">
-                                                <li>MarketplaceKit를 활용해 당면에 다운로드, 업데이트, 열기, 삭제 등 Application을 설치하는데 필요한 기능 구현</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="work-section">
-                                            <div class="work-section-title">
-                                                <span class="work-number">4</span>
-                                                <span>기타 MarketplaceKit Error 로슈 로그 분석 및 리포팅</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="lab-info-item full-width">
-                                <div class="lab-label">최종 구현 화면</div>
-                                <div class="lab-content">
-                                    <div class="reference-image">
-                                        <img src="assets/images/session_result.png" alt="최종 구현 화면" class="reference-img">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </li>                
+                <li>Apple의 제3자 마켓 정책과 API 제약을 ONEstore 글로벌 서비스 관점에서 해석해야 했습니다.</li>
+                <li>Hosted App 다운로드, 설치, 업데이트, 실행 흐름이 기존 App Store 배포 모델과 달라 별도의 검증 구조가 필요했습니다.</li>
+                <li>정책 문서만으로 판단하기 어려운 이슈는 실제 구현 관점에서 리스크를 정리해야 했습니다.</li>
             </ul>
 
-            <p><strong>Prototype/Alpha/Beta 앱 개발</strong></p>
+            <p><strong>My Role</strong></p>
+            <div class="modal-role-callout">
+                <span class="modal-role-label">Leadership Role</span>
+                <p>iOS PL로서 정책/기술 검토, 앱 아키텍처 설계, Prototype에서 Alpha/Beta로 이어지는 개발 흐름을 리드했습니다.</p>
+            </div>
             <ul>
-                <li>
-                    DMA 정책 시행에 따라, 원스토어 iOS 글로벌 앱 마켓 구축 프로젝트를 착수하게 되었습니다. 앞서 설명드린 기술 검토와 동시에, Prototype app 제작이란 미션이 주어졌고, 이에 현재 상용 서비스로 운영되고 있는 Android 원스토어 글로벌 앱 마켓 형상을 그대로 본 따, Onestore iOS Global Prototype Application 개발을 시작했습니다.
-                    
-                    <div class="rnd-work-section">
-                        <!-- 팀 구성 -->
-                        <div class="team-composition">
-                            <div class="team-comp-header">
-                                <span class="team-comp-icon">👥</span>
-                                <span class="team-comp-title">팀 구성</span>
-                            </div>
-                            <div class="team-members-grid">
-                                <div class="team-member-item">
-                                    <span class="member-role-icon">👔</span>
-                                    <span class="member-role-text">팀장(PM)</span>
-                                    <span class="member-count">1명</span>
-                                </div>
-                                <div class="team-member-item highlight">
-                                    <span class="member-role-icon">🎯</span>
-                                    <span class="member-role-text">PL</span>
-                                    <span class="member-count">3명 (본인 포함)</span>
-                                </div>
-                                <div class="team-member-item">
-                                    <span class="member-role-icon">🌱</span>
-                                    <span class="member-role-text">신입사원</span>
-                                    <span class="member-count">2명</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- 나의 기여도 -->
-                        <div class="my-contribution">
-                            <div class="contribution-header">
-                                <span class="contribution-icon">📊</span>
-                                <span class="contribution-title">나의 역할</span>
-                            </div>
-                            <div class="contribution-items">
-                                <div class="contribution-item">
-                                    <div class="contribution-label">
-                                        <span class="label-text">기여도</span>
-                                        <span class="label-value">40%+</span>
-                                    </div>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill contribution" style="width: 40%">
-                                            <span class="progress-text">40%+</span>
-                                        </div>
-                                    </div>
-                                    <p class="contribution-note">* PL 3명 중 주도적 역할 수행</p>
-                                </div>
-                                <div class="contribution-item">
-                                    <div class="contribution-label">
-                                        <span class="label-text">참여도</span>
-                                        <span class="label-value">100%</span>
-                                    </div>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill participation" style="width: 100%">
-                                            <span class="progress-text">100%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="rnd-header">
-                            <span class="rnd-icon">🔬</span>
-                            <span class="rnd-title">담당 업무 (R&R)</span>
-                        </div>
-                        
-                        <div class="rnd-category">
-                            <div class="category-header">
-                                <span class="category-icon">🏗️</span>
-                                <span class="category-name">Foundation</span>
-                            </div>
-                            <div class="category-tasks">
-                                <div class="task-item">
-                                    <span class="task-number">1</span>
-                                    <span class="task-text">아키텍처 설계 및 신규 기술 검토(PL)</span>
-                                </div>
-                                <div class="task-item">
-                                    <span class="task-number">2</span>
-                                    <span class="task-text">네트워크 모듈 구조 설계 및 개발</span>
-                                </div>
-                                <div class="task-item">
-                                    <span class="task-number">3</span>
-                                    <span class="task-text">Javascript Interface 설계 및 구현</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="rnd-category">
-                            <div class="category-header">
-                                <span class="category-icon">🎨</span>
-                                <span class="category-name">UI 개발</span>
-                            </div>
-                            <div class="category-tasks">
-                                <div class="task-item">
-                                    <span class="task-number">1</span>
-                                    <span class="task-text">전시 일부 화면 구현</span>
-                                </div>
-                                <div class="task-item">
-                                    <span class="task-number">2</span>
-                                    <span class="task-text">공통 컴포넌트 개발</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="rnd-category">
-                            <div class="category-header">
-                                <span class="category-icon">⚙️</span>
-                                <span class="category-name">기타</span>
-                            </div>
-                            <div class="category-tasks">
-                                <div class="task-item">
-                                    <span class="task-number">1</span>
-                                    <span class="task-text">OS 대응</span>
-                                </div>
-                                <div class="task-item">
-                                    <span class="task-number">2</span>
-                                    <span class="task-text">코드 리뷰 주관</span>
-                                </div>
-                                <div class="task-item">
-                                    <span class="task-number">3</span>
-                                    <span class="task-text">네이밍 컨벤션 및 Ground Rule 정의</span>
-                                </div>
-                                <div class="task-item">
-                                    <span class="task-number">4</span>
-                                    <span class="task-text">기타</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <li>iOS PL로서 제3자 마켓 기술 검토와 단계별 앱 개발 흐름을 리드했습니다.</li>
+                <li>아키텍처, 네트워크 모듈, JavaScript Interface 구조를 설계하고 주요 구현 범위를 나누어 개발을 진행했습니다.</li>
+                <li>Apple Cork 기술 세션에 iOS Client 대표로 참석해 검토 중이던 이슈를 구현 관점에서 확인했습니다.</li>
+            </ul>
 
-                    <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">1. Clean Architecture와 MVVM 디자인 패턴을 적용하여 아키텍쳐 구조를 설계</span>
-                           </div>
-                           <div class="sub-section-content">
-                               <div class="reference-image">
-                                   <p class="reference-image-label">Product Architecture</p>
-                                   <img src="assets/images/clean_architecture.png" alt="clean_architecture" class="reference-img">                                   
-                                   <img src="assets/images/project_architecture.jpeg" alt="project_architecture" class="reference-img">
-                               </div>
-                           </div>
-                       </div>
-                    </div>
+            <p><strong>Key Contributions</strong></p>
+            <ul>
+                <li>Apple DMA 및 제3자 마켓 관련 문서를 검토하고, ONEstore 글로벌 서비스에 필요한 구현 조건과 리스크를 정리했습니다.</li>
+                <li>Clean Architecture와 MVVM 기반으로 앱 구조를 설계하고, 네트워크 모듈과 JavaScript Interface를 포함한 공통 기반을 구성했습니다.</li>
+                <li>Hosted App List 수신, 전시 화면 일부, 다운로드 상태 처리, 설치/업데이트/실행/삭제 시나리오 구현에 참여했습니다.</li>
+                <li>Prototype에서 Alpha, Beta 단계로 기능을 확장하며 MVP 흐름과 핵심 기능 구현 가능성을 검증했습니다.</li>
+            </ul>
 
-                     <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">2. 자체 네트워크 모듈 개발 및 구축</span>
-                           </div>
-                           <div class="sub-section-content">
-                               <div class="section-description">
-                                   <p>Alamofire, Moya라는 대표적인 iOS 네트워크 프레임워크 아키텍처를 참고하여 자체적으로 네트워크 프레임워크를 구현함으로써 외부 라이브러리에 대한 의존도를 낮추고자 함.</p>
-                               </div>
-                               <div class="reference-image">
-                                   <p class="reference-image-label">일부 Code 예시</p>
-                                   <img src="assets/images/network1.jpeg" alt="네트워크 모듈 코드 1" class="reference-img-vertical">
-                                   <img src="assets/images/network2.png" alt="네트워크 모듈 코드 2" class="reference-img">                                 
-                                   <img src="assets/images/network3.png" alt="네트워크 모듈 코드 3" class="reference-img">
-                               </div>
-                           </div>
-                       </div>
-                    </div>
+            <p><strong>Technical Decisions</strong></p>
+            <ul>
+                <li>신규 정책 대응 프로젝트였기 때문에 구현 전에 정책 제약, API 제공 범위, 서비스 요구사항의 충돌 지점을 먼저 정리했습니다.</li>
+                <li>Hosted App과 마켓 메타데이터 흐름을 분리해 관리할 수 있도록 네트워크와 저장소 계층을 나누는 방향으로 설계했습니다.</li>
+                <li>웹과 앱 간 이벤트 연동이 필요한 영역은 JavaScript Interface를 통해 명확한 경계를 두고 처리했습니다.</li>
+            </ul>
 
-                    <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">3. 제 3자 마켓 개발을 위한 MarketplaceKit API 출시 후, 부족한 기능이 추가되고 정책이 변경됨에 따라 변경 사항이 발생하여 이에 대한 지속적인 Follow-up 진행</span>
-                           </div>
-                       </div>
-                    </div>
+            <p><strong>Visual Evidence</strong></p>
+            <ul>
+                <li>Apple 정책 검토, 앱 구조, 핵심 구현 예시, 최종 화면을 함께 보여주기 위한 시각 자료입니다.</li>
+            </ul>
+            <div class="reference-image">
+                <p class="reference-image-label">Apple Alternative Marketplace 검토 자료</p>
+                <img src="assets/images/apple_diagram.png" alt="Apple 대체 앱 마켓 설치 흐름 검토 다이어그램" class="reference-img">
+            </div>
+            <div class="reference-image">
+                <p class="reference-image-label">Architecture / Module Structure</p>
+                <img src="assets/images/project_architecture.jpeg" alt="ONEstore Global App Market 프로젝트 모듈 아키텍처" class="reference-img">
+            </div>
+            <div class="reference-image">
+                <p class="reference-image-label">Network Module Code Example</p>
+                <img src="assets/images/network1.jpeg" alt="ONEstore Global 네트워크 모듈 코드 예시 1" class="reference-img-vertical">
+            </div>
+            <div class="reference-image">
+                <p class="reference-image-label">Prototype / Result Screens</p>
+                <img src="assets/images/session_result.png" alt="Apple Cork 세션에서 구현한 Prototype 결과 화면" class="reference-img">
+                <img src="assets/images/onestore_result.jpeg" alt="ONEstore Global App Market 최종 결과 화면" class="reference-img">
+            </div>
 
-                    <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">4. 공통 UI 컴포넌트 개발 및 전시, 상세 화면 UI 개발</span>
-                           </div>
-                       </div>
-                    </div>
-
-                    <div class="final-result-section">
-                           <div class="final-result-header">
-                               <span class="final-result-icon">🎯</span>
-                               <span class="final-result-title">최종 구현 화면</span>
-                           </div>
-                           <div class="final-result-content">
-                               <div class="reference-image">
-                                   <p class="reference-image-label">Application Screenshots</p>
-                                   <img src="assets/images/onestore_result.jpeg" alt="최종 자동화 Workflow" class="reference-img">
-                               </div>                               
-                           </div>
-                       </div>
-                </li>
-                
+            <p><strong>Result / Impact</strong></p>
+            <ul>
+                <li>제3자 마켓 서비스의 iOS 구현 가능성과 주요 리스크를 실제 앱 흐름으로 검증했습니다.</li>
+                <li>Prototype부터 Beta까지 이어지는 단계별 개발 기반을 만들며 글로벌 앱 마켓 출시 검토에 필요한 기술 판단 자료를 정리했습니다.</li>
             </ul>
         `
     },
+
     'onestore-2': {
         title: 'ONEstore Design System 구축 및 개발',
         period: '2024.06 ~ 2025.06',
-        description: '원스토어는 디자인 시스템이 기존에 구축되어 있지 않았습니다. 불필요하고 반복적인 UI 개발 작업으로 인한 업무 비효율이 있었습니다. 이에 UXD팀과 협업을 이뤄 사내 R&D 프로젝트로 진행하게 되었고, 원스토어 디자인 시스템 즉, Wheel Design System이란 프로젝트를 착수하였으며 저는 개발 파트 PM으로 참여했습니다.',
-        tech: ['iOS', 'Swift', 'SwiftUI', 'Tuist', 'Figma', 'Cursor', 'Copilot', 'Lottie'],
+        description: 'ONEstore 디자인 시스템 구축 프로젝트에서 iOS 개발 파트 PM으로 참여해 공통 UI 컴포넌트 구조, 디자인 토큰, Figma 연계 흐름을 정리하고 디자인-개발 협업 기준을 맞추는 작업을 진행했습니다.',
+        tech: ['iOS', 'Swift', 'SwiftUI', 'Tuist', 'Figma', 'Design Token', 'Style Dictionary', 'Code Connect', 'Lottie'],
         features: `
-            <p><strong>WDS Framework Architecture 설계</strong></p>
+            <p><strong>Overview</strong></p>
             <ul>
-                <li>
-                    원스토어만의 디자인 시스템 아키텍쳐를 설계 및 구축했습니다. 가장 기본적으로 활용되는 디자인 시스템 방법론 중 Atomic Design 방법론이 있지만, '원스토어'라는 Product에 적용하기에는 fit되지 않았으며, 이에 디자인팀과 개발팀의 협업 하에 원스토어 디자인 시스템 만의 아키텍쳐를 구축하게 되었습니다.
-                    <div class="reference-image">
-                        <p class="reference-image-label">📐 Architecture</p>
-                        <img src="assets/images/designsystem_architecture.png" alt="디자인 시스템 아키텍쳐" class="reference-img">
-                        <div class="architecture-description">
-                            <div class="arch-item">
-                                <span class="arch-number">1</span>
-                                <div class="arch-content">
-                                    <strong>Style</strong>
-                                    <p>Font, Spacing, Typhography, Shadow, Radius, Blur 등과 같이 컴포넌트의 스타일을 지정하는데 사용되는 것들을 정의함. Sementic naming으로 전환하며 일괄 관리할 수 있도록 시스템화 진행</p>
-                                </div>
-                            </div>
-                            <div class="arch-item">
-                                <span class="arch-number">2</span>
-                                <div class="arch-content">
-                                    <strong>Component</strong>
-                                    <p>Screen을 구성하는 공통 UI 구성 요소를 구축 및 개발</p>
-                                </div>
-                            </div>
-                            <div class="arch-item">
-                                <span class="arch-number">3</span>
-                                <div class="arch-content">
-                                    <strong>Screen</strong>
-                                    <p>Style + Component 를 조합하여 완성된 형태의 UI 화면을 구성</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </li>
-                <li>
-                    위 방법론에 따라 개발 Framework Architecture를 설계 및 구축했습니다.
-                    <div class="reference-image vertical">
-                        <p class="reference-image-label">📐 WDS Framework Tuist graph</p>
-                        <img src="assets/images/design_deveolp_archi.png" alt="디자인 시스템 개발 아키텍쳐" class="reference-img-vertical">
-                    </div>
-                    <div class="framework-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Framework</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>WDSstyle</td>
-                                    <td>- Font, Image, Color, Localization 등 Resource 형태의 파일들이 집합.</td>
-                                </tr>
-                                <tr>
-                                    <td>WDScore</td>
-                                    <td>
-                                        - View를 그리는데 필요한 Core Logic 포함.<br>
-                                        - View+Extension 또는 CustomView를 그리는 로직 포함.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>WDScomponent</td>
-                                    <td>
-                                        - Style과 Core의 조합으로 구현된 Component<br>
-                                        - Screen을 구성하는 요소들의 집합체
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Screen</td>
-                                    <td>- Component의 조합으로 구현된 하나의 화면</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </li>
+                <li>ONEstore 제품군에서 공통 UI 컴포넌트와 디자인 리소스를 일관되게 사용하기 위한 디자인 시스템 구축 프로젝트입니다.</li>
+                <li>단순 UI 공통화가 아니라, 디자인 기준과 iOS 구현 구조가 함께 맞물리도록 협업 흐름을 정리하는 데 초점을 맞췄습니다.</li>
             </ul>
-            </ul>
-            <br>
-            <br>
-            <p><strong>공통 UI Component 개발 및 구축</strong></p>
+
+            <p><strong>Problem</strong></p>
             <ul>
-            <li>
-                디자이너와 개발자, 심지어 각 개발자간에도 POC별로 Component를 칭하는 명칭, 레이아웃을 나누는 기준 등 하나부터 열까지 모두 다 다릅니다. 디자인 시스템을 구축함에 따라, 협의된 정의와 규칙성으로 Component를 정의하고 이에 커뮤니케이션 효율을 높이고자 했습니다.
-            </li>
-                    <br>
-                <li>
-                    <strong class="sub-title">Step1. 컴포넌트 구조 분석</strong>
-                    <div class="reference-image">
-                        <p class="reference-image-label">예시 시나리오</p>
-                        <img src="assets/images/component1.png" alt="디자인 시스템 아키텍쳐" class="reference-img">
-                        <img src="assets/images/component2.png" alt="디자인 시스템 아키텍쳐" class="reference-img">
-                    </div>
-                    <ul class="sub-list">
-                        <li>1. 원스토어 글로벌 앱에 적용되어 있는 Top Navigation Bar 형태를 갖춘 Component 들을 모두 리스트업 합니다.</li>
-                        <li>2. 디자이너의 관점에서와 개발자의 관점에서 Top Navigation의 카테고리로 묶을 수 있는 것들을 정리하고, 기능과 형태적 특성을 고려해 1번 과정에서 리스트업 된 컴포넌트들 중 최종 Top Navigation으로 선별된 아이템을 선정합니다.</li>
-                        <li>3.Top Navigation Component를 구성하는 Item은 어떠한 것들이 있는지, Item 내에서 Property 무엇이 있으며 그 Type은 어떻게 정의해야 하는지 등 디자이너와 전 POC 개발자가 협의된 내용으로 해당 컴포넌트를 정의합니다.</li>
-                    </ul>
-                    <br>
-
-                    <div class="reference-image">
-                        <p class="reference-image-label">실제 작업 산출물</p>
-                        <img src="assets/images/component3.png" alt="디자인 시스템 아키텍쳐" class="reference-img">
-                        <img src="assets/images/component4.png" alt="디자인 시스템 아키텍쳐" class="reference-img">
-                    </div>
-
-                    <br>
-                    <br>
-
-                <li>
-                    <strong class="sub-title">Step2. 디자인 가이드 작성</strong>
-                    <ul class="sub-list">
-                        <li>Step1 에서 정리된 내용을 바탕으로, 디자이너는 Figma내에 가이드를 작성합니다.</li>
-                        <li>Component를 구성하는 Item의 Type, Case, Property를 상세하게 정의하며 이는 개발자와 협의된 내용입니다.</li>
-                        <li>Top Navigation이란 Component가 Item의 어떠한 정렬과 조합으로 구성되는 것인지 가이드 하며, Property가 어떻게 세팅됌에 따라 Case가 나뉘어지게 되는 것인지 모든 경우의 수를 정의합니다. 이 또한, 개발자와 협의된 내용이여야 합니다.</li>
-                    </ul>
-                </li>
-                <br>
-                <li>
-                    <strong class="sub-title">Step3. 컴포넌트 개발</strong>
-                    <ul class="sub-list">
-                        <li>Step2에서 정해진 디자인 가이드 문서에 따라 개발자는 Component 구현을 시작합니다.</li>
-                    </ul>
-                    <div class="reference-image">
-                        <p class="reference-image-label">iOS Code Example</p>
-                        <img src="assets/images/component5.png" alt="디자인 시스템 아키텍쳐" class="reference-img">
-                        <ul class="sub-list code-explanation">
-                            <li>1. Top Navigation Left Item은 image Resource 변경에 따른 Buttom형 UI Component이기 때문에, 생성자 초기 Parameter은 삽입하고자 하는 image resource name과 Button Click Action이 존재할 것입니다. 이에 그 구조에 따라 Structure을 구현했습니다.</li>
-                            <li>2. 1번 방법에 따라 Top Navigation를 구성하는 모든 Item Component와 Top Navigation을 구현합니다.</li>
-                        </ul>
-                    </div>
-                </li>
+                <li>디자이너와 개발자, 각 플랫폼 개발자가 컴포넌트 단위와 속성을 다르게 해석할 수 있어 구현 기준을 맞추기 어려웠습니다.</li>
+                <li>디자인 토큰과 리소스 변경 사항이 수작업 전달에 의존하면 반복 비용과 누락 위험이 커질 수 있었습니다.</li>
+                <li>새로운 컴포넌트 체계를 도입하더라도 사용 방식이 명확하지 않으면 신규 참여자의 러닝커브가 커질 수 있었습니다.</li>
             </ul>
 
-            <br>
-            <br>
+            <p><strong>My Role</strong></p>
+            <div class="modal-role-callout">
+                <span class="modal-role-label">Leadership Role</span>
+                <p>iOS 개발 파트 PM으로서 UXD팀과 개발 조직 사이에서 컴포넌트 구조, 구현 기준, Figma 연계 흐름을 맞추는 역할을 맡았습니다.</p>
+            </div>
+            <ul>
+                <li>iOS 개발 파트 PM으로 참여해 UXD팀 및 개발 조직과 컴포넌트 구조와 구현 기준을 정리했습니다.</li>
+                <li>Style, Component, Screen으로 이어지는 개발 프레임워크 구조를 iOS 구현 관점에서 설계하고 정리했습니다.</li>
+                <li>Figma Plugin, Style Dictionary, Code Connect를 활용한 디자인 자산과 코드 연결 방식을 검토했습니다.</li>
+            </ul>
 
-            <p><strong>Figma Tool을 활용한 Communication 개선안 도출</strong></p>
-            <p>
-                Figma는 단순 디자인 가이드 Tool 이 아닌, DevMode를 제공하며 디자인 파일을 개발자 개념에 맞는 컨셉(Design Token, Variables)로 제공한다는 점과 Figma 자체 Plugin을 개발하여 적용할 수 있어, 디자이너와 개발자의 Communication 도구로 활용될 수 있는 Tool 입니다. 
-                <br><br>
-                이에, 개발팀은 디자인 시스템을 구축하며 Figma를 활용해 '협업과 커뮤니케이션 개선을 이룰 수 있는 수단'으로 Figma를 재정의하고자 했으며, 아래와 같이 2가지의 업무 방향성을 구축했습니다.
-            </p>
-            
-            <!-- 첫 번째: 자동화 구축 -->
-            <div class="major-section">
-                       <div class="major-section-header">
-                           <span class="major-number">1</span>
-                           <span class="major-title">자동화 구축</span>
-                       </div>
-                       <div class="major-section-content">
-                           <p>기존 업무 방식에 있어개선될만한 포인트가 무엇이 있는지, 그리고 Figma를 활용해 개선시킬 수 있는 점이 어떤것이 있는지 고민해 보았습니다.</p>
-                           <div class="reference-image">
-                            <p class="reference-image-label">기존 디자이너와 개발자의 협업 Workflow</p>
-                            <img src="assets/images/legacy_workflow.png" alt="legacy_workflow" class="reference-img">
-                        </div>
-                        <div class="workflow-analysis">
-                            <div class="workflow-analysis-row">
-                                <div class="analysis-card problem">
-                                    <div class="card-header">
-                                        <span class="card-icon">⚠️</span>
-                                        <span class="card-title">문제점</span>
-                                    </div>
-                                    <div class="card-content">
-                                        불필요하고 반복적인 작업이 반복되며, 수동으로 업무 변경 사항을 알려주는 업무 방식으로 인해 불필요한 업무 Cost가 발생하고 있던 기존 작업 방식이 있었습니다.
-                                    </div>
-                                </div>
-                                <div class="analysis-card improvement">
-                                    <div class="card-header">
-                                        <span class="card-icon">💡</span>
-                                        <span class="card-title">개선점</span>
-                                    </div>
-                                    <div class="card-content">
-                                        * 디자인 리소스를 각 POC에 맞는 형태로 변환해 자동으로 추출할 수 있는 방법은 없을까? 
-                                        <br>
-                                        * 디자인 리소스 변경 사항이 자동으로 각 POC 개발 Repository에 반영된다면, Communication Cost를 줄일 수 있는 방법은 없는지?
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="analysis-card goal">
-                                <div class="card-header">
-                                    <span class="card-icon">🎯</span>
-                                    <span class="card-title">목표 수립</span>
-                                </div>
-                                <div class="card-content">
-                                    Figma Custom Plugin을 활용한 디자인 리소스 자동화(CI/CD) 구축
-                                </div>
-                           </div>
-                       </div>
-                       
-                       <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">Step1. 자동화 초안 Workflow 설계</span>
-                           </div>
-                           <div class="sub-section-content">
-                               <div class="reference-image">
-                                   <p class="reference-image-label">자동화 초안 Workflow</p>
-                                   <img src="assets/images/pre_workflow.png" alt="legacy_workflow" class="reference-img">
-                                   <ul class="sub-list code-explanation">
-                                       <li>1. Style Component (Color, Typography, Spacing 등) 을 Figma의 Design Token으로 등록</li>
-                                       <li>2. 위 Style Component를 다양한 POC를 대응하기 위해 데이터 교환 표준 규격인 json 파일 형태로 추출하는 Figma Custom Plugin 개발 및 적용</li>
-                                       <li>3. 추출된 json파일은 <span class="term-highlight" data-term="style-dictionary">Style Dictionary</span> 를 통해 각 POC 개발 Tool에 바로 적용 가능한 파일 및 소스 형태로 변환하는 과정을 거침.</li>
-                                   </ul>
-                                   <div class="term-explanation">
-                                       <div class="term-explanation-header">
-                                           <span class="term-icon">📚</span>
-                                           <span class="term-name">Style Dictionary</span>
-                                       </div>
-                                       <div class="term-explanation-content">
-                                           Design Token이 정의되면 이를 명령어 하나로 모든 플랫폼, 스타일 문서 등 필요한 곳에 요구사항에 맞는 결과물로 만들어 내는 CLI 도구.
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       
-                       <!-- Step2. Figma Custom Plugin 제작 -->
-                       <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">Step2. Figma Custom Plugin 제작</span>
-                           </div>
-                           <div class="sub-section-content">
-                               <div class="requirements-box">
-                                   <div class="requirements-header">
-                                       <span class="requirements-icon">📋</span>
-                                       <span class="requirements-title">요구사항</span>
-                                   </div>
-                                   <ul class="requirements-list">
-                                       <li>Resource 변경 히스토리를 기입할 수 있는 Textfield 입력창을 가진다.</li>
-                                       <li>등록된 Design Token들을 json파일 형태로 추출하는 기능을 가진다.</li>
-                                       <li>추출된 json파일은 지정된 서버에 저장한다.</li>
-                                   </ul>
-                               </div>
-                               <div class="reference-image">
-                                   <p class="reference-image-label">📱 결과물</p>
-                                   <img src="assets/images/figma_custom_plugin.png" alt="Figma Custom Plugin" class="reference-img">
-                               </div>
-                           </div>
-                       </div>
-                       
-                       <!-- Step3. Style Dictionary를 활용한 Resource 변환 -->
-                       <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">Step3. Style Dictionary를 활용한 Resource 변환</span>
-                           </div>
-                           <div class="sub-section-content">
-                               <p class="section-description">
-                                   위 Step1에서 추출된 json파일이 Style Dictionary Repository에 git push하고, push되었을 시 젠킨스 서버로 웹훅을 발생시켜 파이프라인들 빌드하게 됩니다. 이 때, 각 POC에 맞는 형태로 Resource를 변환하는 로직이 Style Dictionary Repository에 포함되어 있습니다.
-                               </p>
-                               <div class="reference-image">
-                                   <p class="reference-image-label">🔄 변환 프로세스</p>
-                                   <img src="assets/images/diagram1.jpeg" alt="Style Dictionary 변환 다이어그램" class="reference-img">
-                               </div>
-                           </div>
-                       </div>
+            <p><strong>Key Contributions</strong></p>
+            <ul>
+                <li>Atomic Design을 그대로 적용하기보다 ONEstore 제품과 협업 방식에 맞는 Style-Component-Screen 구조를 정리했습니다.</li>
+                <li>Top Navigation 등 실제 화면 요소를 기준으로 컴포넌트 단위, Item, Property 기준을 협의하고 구현 규칙으로 연결했습니다.</li>
+                <li>리소스, 코어 로직, 컴포넌트 레이어를 분리한 WDS 프레임워크 구조를 구성했습니다.</li>
+                <li>디자인 토큰을 추출하고 Style Dictionary로 변환하는 자동화 방향과, Figma Code Connect 기반 코드 스니펫 확인 흐름을 검토했습니다.</li>
+            </ul>
 
+            <p><strong>Technical Decisions</strong></p>
+            <ul>
+                <li>디자인 시스템을 화면 단위가 아니라 Style, Component, Screen 계층으로 나누어 확장성과 유지보수성을 확보하는 방향을 선택했습니다.</li>
+                <li>컴포넌트 정의는 디자인 명칭이 아니라 실제 구현에 필요한 Property와 조합 기준까지 함께 맞추는 방식으로 정리했습니다.</li>
+                <li>Code Connect는 컴포넌트 사용법을 문서로만 전달하지 않고 Figma 안에서 코드 스니펫과 속성 조합을 확인하는 방식으로 검토했습니다.</li>
+            </ul>
 
-                       <!-- Step4. Develop Repository Git Add & Push -->
-                       <div class="sub-section">
-                           <div class="sub-section-header">
-                               <span class="sub-section-title">Step4. Develop Repository Git Add & Push</span>
-                           </div>
-                           <div class="sub-section-content">
-                               <p class="section-description">
-                                   Step2에서 추출된 Resource는 각 개발 Respoitory에 Git Add & Push 과정을 거쳐, 개발자가 일일히 리소스 변동 사항을 체크하지 않아도 최종적으로 자동 반영된 상태를 확인할 수 있습니다.
-                               </p>
-                               <div class="reference-image">
-                                   <p class="reference-image-label">🔄 전체 프로세스</p>
-                                   <img src="assets/images/diagram2.png" alt="Style Dictionary 변환 다이어그램" class="reference-img">
-                               </div>
-                           </div>
-                       </div>
-                       
-                       <!-- 최종 결과물 섹션 -->
-                       <div class="final-result-section">
-                           <div class="final-result-header">
-                               <span class="final-result-icon">🎯</span>
-                               <span class="final-result-title">최종 자동화(CI/CD) Workflow</span>
-                           </div>
-                           <div class="final-result-content">
-                               <div class="reference-image">
-                                   <p class="reference-image-label">📊 최종 자동화 Workflow</p>
-                                   <img src="assets/images/diagram3.png" alt="최종 자동화 Workflow" class="reference-img">
-                               </div>
-                               
-                               <div class="expected-effects">
-                                   <div class="expected-effects-header">
-                                       <span class="effects-icon">✨</span>
-                                       <span class="effects-title">기대효과</span>
-                                   </div>
-                                   <div class="effects-grid">
-                                       <div class="effect-card">
-                                           <div class="effect-number">1</div>
-                                           <div class="effect-content">
-                                               <div class="effect-icon">💬</div>
-                                               <p>디자이너와 개발자 간의 커뮤니케이션 효율을 증가할 수 있다.</p>
-                                           </div>
-                                       </div>
-                                       <div class="effect-card">
-                                           <div class="effect-number">2</div>
-                                           <div class="effect-content">
-                                               <div class="effect-icon">🎨</div>
-                                               <p>서로 다른 POC에 일관성 있는 리소스를 자동으로 제공할 수 있다.</p>
-                                           </div>
-                                       </div>
-                                       <div class="effect-card">
-                                           <div class="effect-number">3</div>
-                                           <div class="effect-content">
-                                               <div class="effect-icon">⚡</div>
-                                               <p>휴먼 에러 및 비효율성을 제거할 수 있다.</p>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <!-- 첫 번째 끝 -->
-               
-               <!-- 두 번째: Code Connect -->
-               <div class="major-section">
-                   <div class="major-section-header">
-                       <span class="major-number">2</span>
-                       <span class="major-title">Code Connect</span>
-                   </div>
-                   <div class="major-section-content">
-                       <p>디자인 시스템을 구축하는 원초적인 목표는 일관되고 효율적으로 협업하기 위함입니다. 새로운 시스템이 구축되는 것인 만큼, 기존과는 다른 방식과 구현 방법으로 설계됌에 따라 초기 인발브 비용이 발생할 수 밖에 없습니다. </p>
-                   </div>
-                   <div class="major-section-content">
-                       <p>기존 업무 방식에 있어개선될만한 포인트가 무엇이 있는지, 그리고 Figma를 활용해 개선시킬 수 있는 점이 어떤것이 있는지 고민해 보았습니다.</p>
-                       <div class="reference-image">
-                           <p class="reference-image-label">디자인 시스템 구축 및 배포 시, 예상되는 이슈</p>
-                           <img src="assets/images/expected_issue.png" alt="expected_issue" class="reference-img">
-                       </div>
-                       <div class="workflow-analysis">
-                           <div class="workflow-analysis-row">
-                               <div class="analysis-card problem">
-                                   <div class="card-header">
-                                       <span class="card-icon">⚠️</span>
-                                       <span class="card-title">문제점</span>
-                                   </div>
-                                   <div class="card-content">
-                                       신규 인력 및 디자인 시스템 구축 시 미 참여 개발자가 인발브 되었을 때, 디자인 시스템 아키텍처 구조를 이해하고 컴포넌트를 구현하는데 초기 인발브 비용이 클 것으로 예상.
-                                   </div>
-                               </div>
-                               <div class="analysis-card improvement">
-                                   <div class="card-header">
-                                       <span class="card-icon">💡</span>
-                                       <span class="card-title">개선점</span>
-                                   </div>
-                                   <div class="card-content">
-                                       디자인 시스템을 이해하고 실제 구현에 활용하는 방법을 제시해, 초기 러닝커브를 줄일 수 있는 방법은 없을까? 
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="analysis-card goal">
-                               <div class="card-header">
-                                   <span class="card-icon">🎯</span>
-                                   <span class="card-title">목표 수립</span>
-                               </div>
-                               <div class="card-content">
-                                   Figma <span class="term-highlight" data-term="code-connect">Code Connect</span>를 활용하여, 디자인 컴포넌트 구현 코드를 Preview로 보여줄 수 있는 기능을 제공함으로써 초기 비용을 줄임.
-                               </div>
-                               <div class="term-explanation">
-                                   <div class="term-explanation-header">
-                                       <span class="term-icon">📚</span>
-                                       <span class="term-name">Code Connect</span>
-                                   </div>
-                                   <div class="term-explanation-content">
-                                       디자인에서 만들어져 있는 컴포넌트의 코드를 실제 개발 코드에 연결하여 코드 시니펫을 피그마에 직관적으로 확인 가능하게 하는 기능.
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
+            <p><strong>Visual Evidence</strong></p>
+            <ul>
+                <li>디자인 시스템 구조, 컴포넌트 정의, 디자인 토큰 자동화, Figma Code Connect 흐름을 설명하기 위한 핵심 자료입니다.</li>
+            </ul>
+            <div class="reference-image">
+                <p class="reference-image-label">Design System Architecture</p>
+                <img src="assets/images/designsystem_architecture.png" alt="ONEstore 디자인 시스템 Style Component Screen 아키텍처" class="reference-img">
+                <img src="assets/images/design_deveolp_archi.png" alt="ONEstore 디자인 시스템 iOS 프레임워크 Tuist 그래프" class="reference-img-vertical">
+            </div>
+            <div class="reference-image">
+                <p class="reference-image-label">Component Definition Example</p>
+                <img src="assets/images/component5.png" alt="Top Navigation iOS 코드 구현 예시" class="reference-img">
+            </div>
+            <div class="reference-image">
+                <p class="reference-image-label">Design Token / Resource Automation</p>
+                <img src="assets/images/diagram3.png" alt="디자인 토큰 최종 자동화 워크플로우" class="reference-img">
+            </div>
+            <div class="reference-image">
+                <p class="reference-image-label">Figma Code Connect</p>
+                <img src="assets/images/codeconnect1.png" alt="Figma Code Connect Top Navigation 코드 스니펫 결과" class="reference-img">
+            </div>
 
-                   <div class="sub-section">
-                       <div class="sub-section-header">
-                           <span class="sub-section-title">Step1. 구현한 Component와 Figma Code Connect 연동</span>
-                       </div>
-                       <div class="sub-section-content">
-                           <div class="reference-image">
-                               <p class="reference-image-label">Code Connect 연동을 위한 예시 코드</p>
-                               <img src="assets/images/sample_code_connect.png" alt="Code Connect 연동 예시" class="reference-img">
-                           </div>
-                       </div>
-                   </div>
-                    
-                   <div class="sub-section">
-                       <div class="sub-section-header">
-                           <span class="sub-section-title">Step2. Figma에서 연동한 Code Snippet 확인</span>
-                       </div>
-                       <div class="sub-section-content">
-                           <div class="reference-image">
-                               <p class="reference-image-label">Top Navigation Component에 대한 Code Snippet</p>
-                               <img src="assets/images/codeconnect1.png" alt="Code Connect 결과 1" class="reference-img"> 
-                                <ul class="sub-list code-explanation">
-                                    <li>1. Figma Dev모드로 진입 후, Code Snippet을 확인하고자 하는 Component 선택</li>
-                                </ul>
-                                <br>
-                               <img src="assets/images/codeconnect2.png" alt="Code Connect 결과 2" class="reference-img"> 
-                                <ul class="sub-list code-explanation">
-                                    <li>2. 우측 Inspector에 ‘Open in Playground’ 버튼 클릭</li>
-                                 </ul>  
-                                <br>
-                               <img src="assets/images/codeconnect3.png" alt="Code Connect 결과 3" class="reference-img">
-                                <ul class="sub-list code-explanation">
-                                    <li>3. 해당 Component의 변수로 선언된 Property들을 변경해보면서, 해당 경우에 구현될 Code Preview를 확인해 볼 수 있음.</li>
-                                 </ul>
-                                <br>
-                           </div>
-
-                       </div>
-                   </div>
-
-                   <div class="final-result-section">
-                   <div class="final-result-header">
-                       <span class="final-result-icon">✨</span>
-                       <span class="final-result-title">기대효과</span>
-                   </div>
-                   <div class="final-result-content">
-                       <div class="effects-grid">
-                               <div class="effect-card">
-                                   <div class="effect-number">1</div>
-                                   <div class="effect-content">
-                                       <div class="effect-icon">👌🏻</div>
-                                       <p>주관적이고 무분별한 컴포넌트 개발을 막아 서비스 일관성을 유지할 수 있다.</p>
-                                   </div>
-                               </div>
-                               <div class="effect-card">
-                                   <div class="effect-number">2</div>
-                                   <div class="effect-content">
-                                       <div class="effect-icon">📈</div>
-                                       <p>코드 일관성을 이루어 개발 운영의 개선을 기대할 수 있다.</p>
-                                   </div>
-                               </div>
-                               <div class="effect-card">
-                                   <div class="effect-number">3</div>
-                                   <div class="effect-content">
-                                       <div class="effect-icon">💰</div>
-                                       <p>신규 인력 투입 및 컴포넌트 개발 시 초기 인발브 비용을 축소할 수 있다.</p>
-                                   </div>
-                               </div>
-                           </div>
-                   </div>
-               </div>
-               </div>
+            <p><strong>Result / Impact</strong></p>
+            <ul>
+                <li>디자인 시스템을 공통 UI 개발 작업이 아니라 플랫폼화와 협업 기준 정리 작업으로 연결했습니다.</li>
+                <li>디자이너와 개발자가 같은 컴포넌트 기준을 보고 논의할 수 있는 구조를 만들고, iOS 구현 체계와 Figma 자산을 연결하는 방향을 제시했습니다.</li>
+            </ul>
         `
     },
+
     'onestore-3': {
         title: 'ONEstory iOS Application 운영 및 개발',
         period: '2021.09 ~ 2023.12',
@@ -1002,86 +311,112 @@ const projectData = {
         `
     },
     'gsitm-1': {
-        title: 'GS Fresh 통합 커머스 앱 운영 및 개발',
+        title: 'GS Retail Mobile App Operation & GS Fresh Renewal',
         period: '2018.08 ~ 2021.09',
-        description: 'GS 리테일의 Commerce 사업부의 GS fresh Mall, 달리살다, 마켓포 총 3가지의 어플리케이션을 운영하는 업무를 담당했습니다. 그리고 GS 리테일 커머스 차세대 프로젝트의 모바일 파트 PL로 참여 및 개발을 담당했습니다.',
-        tech: ['iOS', 'Swift', 'Objective-C', 'KeyChainAccess', 'Firebase', 'Alamofire', 'Moya', 'ReachabilitySwift', 'AdbrixRemaster', 'KakaoSDK', 'FacebookSDK', 'naveridlogin-sdk-ios', 'Snapkit'],
+        description: 'GS ITM에서 GS Retail 전사 모바일 앱 운영을 담당했고, 별도 GS Fresh 차세대 커머스 프로젝트에서는 모바일 파트 PL로 참여했습니다.',
+        tech: ['iOS', 'Android', 'Swift', 'Objective-C', 'RxSwift', 'Firebase', 'Crashlytics', 'Alamofire', 'Moya', 'Jira', 'Confluence'],
         features:  `
-            <div class="project-overview">
-                <p>✅ 'GS 프레시'는 2014년부터 GS 리테일에서 운영되어온 이커머스 플랫폼입니다.</p>
-                <br>
-                <p>✅ 저는 2018년 GS 리테일 운영팀에 합류하며, GS 프레시를 포함한 GS 리테일의 전사 앱을 운영 및 개발하는 업무를 담당했습니다.</p>
-                <br>
-                <p>✅ 2020년 통합 커머스 시스템 전면 개편 프로젝트로 인해, 'GS 프레시'에서 'GS 프레시몰'로 브랜드명이 변경되며 사이트 업데이트를 이루었고 동시에 '달리살다' 어플리케이션이 출시되었습니다. 더 나아가, 2021년 3월 GS 리테일에만 국한되는 것이 아닌 GS 그룹의 Commerce 플랫폼을 모두 포함한 '마켓포' 어플리케이션을 출시하였습니다.</p>
-            </div>
-            
-            <div class="work-period-section">
-                <p><strong>정기 운영 업무</strong> <span class="period-badge">2018.08 ~ 2021.09</span></p>
-            </div>
+            <p><strong>Overview</strong></p>
             <ul>
-                <li>월 2회 정기 배포 진행, 긴급 배포 상시</li>
-                <li>VOC 대응 및 오류 대응</li>
-                <li>신규 OS Update 대응 및 Deprecated Function 대응</li>
-                <li>Crash Report 분석을 통한 앱 장애 요소 예방 및 대응</li>
-                <li>현업의 앱 개선 요청 사항 개발 대응</li>
-                <li>운영 시스템 관련 프로젝트에 대한 운영팀으로서의 개발 Inspection 리딩</li>
-                <li>성능 및 안정성 개선</li>
-                <li>신규 기능 개발 및 배포</li>
+                <li>GS ITM 재직 중 수행한 대표 경험을 운영 업무와 차세대 프로젝트 PL 경험으로 나누어 정리한 프로젝트입니다.</li>
+                <li>전사 모바일 앱 운영에서는 배포 안정성, 장애 대응, VOC 대응을 담당했고, GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 참여했습니다.</li>
             </ul>
-            
-            <div class="work-period-section">
-                <p><strong>GS 커머스 차세대 SI 프로젝트</strong> <span class="period-badge">2020.07 ~ 2020.08</span></p>
+
+            <div class="modal-track-section">
+                <div class="modal-track-header">
+                    <span class="modal-track-kicker">Track 1</span>
+                    <h4>GS Retail Mobile App Operation</h4>
+                    <span class="modal-track-badge">Operation</span>
+                </div>
+
+                <p><strong>Problem</strong></p>
+                <ul>
+                    <li>GS Retail의 여러 커머스 및 멤버십 앱을 동시에 운영하면서 정기 배포, 긴급 배포, 장애 대응, 신규 OS 대응을 안정적으로 처리해야 했습니다.</li>
+                    <li>VOC와 Crash Report를 기반으로 사용 중인 앱의 문제를 빠르게 파악하고 운영 리스크를 줄여야 했습니다.</li>
+                </ul>
+
+                <p><strong>My Role</strong></p>
+                <ul>
+                    <li>GS Retail 전사 앱 운영 조직에서 iOS와 Android 앱 운영 및 개발을 담당했습니다.</li>
+                    <li>커머스 앱과 멤버십 앱의 정기 배포, 긴급 배포, VOC 대응, OS 업데이트 대응, Crash 분석을 수행했습니다.</li>
+                </ul>
+
+                <p><strong>Key Contributions</strong></p>
+                <ul>
+                    <li>GS Fresh Mall, 달리살다, 마켓포 등 커머스 앱과 THE POP, GS수퍼마켓, GS25 나만의 냉장고 등 멤버십 앱 운영을 담당했습니다.</li>
+                    <li>월 2회 정기 배포와 긴급 배포 대응, 신규 OS 업데이트와 Deprecated API 대응을 수행했습니다.</li>
+                    <li>VOC, Crash Report, 현업 개선 요청을 기반으로 앱 안정성 개선과 버그 수정을 진행했습니다.</li>
+                </ul>
+
+                <p><strong>Screenshots / Result</strong></p>
+                <ul>
+                    <li>운영 대상이었던 커머스 및 멤버십 앱의 서비스 맥락을 빠르게 이해할 수 있는 대표 화면 자료입니다.</li>
+                </ul>
+                <div class="reference-image">
+                    <p class="reference-image-label">GS Retail 운영 앱 화면</p>
+                    <img src="assets/images/gsfresh_screenshot.png" alt="GS Fresh 커머스 앱 운영 화면" class="reference-img">
+                    <img src="assets/images/thepop_screenshot.png" alt="THE POP 멤버십 앱 운영 화면" class="reference-img">
+                </div>
+
+                <p><strong>Result / Impact</strong></p>
+                <ul>
+                    <li>여러 운영 앱의 정기/긴급 배포와 장애 대응을 경험하며 운영 중인 모바일 서비스의 안정성을 지키는 실무 역량을 쌓았습니다.</li>
+                    <li>Android와 iOS를 함께 다룬 경험을 통해 이후 iOS 개발에서도 플랫폼 차이와 운영 구조를 함께 고려하는 기반을 만들었습니다.</li>
+                </ul>
             </div>
-            <ul>
-                <li>
-                    <div class="sub-description">
-                        <p class="description-label">✔️ 프로젝트 배경 설명</p>
-                        <ul class="sub-list">
-                            <p>GS 프레시 운영자로서 차세대 프로젝트 현황을 Follow-up 하고 있던 중, 오픈 2개월 전, 갑작스럽게 모바일 개발자가 퇴사하며 기존 산출물과 작업하던 소스 코드가 무의미하게 된 상황이 발생했었습니다.</p>
-                            <p>이에 팀 내에서 SI 프로젝트 경험이 있으며, Android / iOS 두 POC에 대한 전반적인 개발 지식이 있었던 제가 모바일 파트 핵심 업무를 사실상 주도하게 되었습니다.</p>
-                            <p>해당 프로젝트의 주 핵심은 One-Source Multi Application을 만드는 것과 SSO 기능 구현입니다.</p>
-                        </ul>
-                    </div>
-                    <div class="sub-description">
-                        <p class="description-label">📝 상세 진행 내용</p>
-                        <ul class="sub-list">
-                            <li>GS 차세대 프로젝트 모바일 파트 PL</li>
-                            <li>Android, iOS 개발 총괄 리딩</li>
-                            <li>SSO(Single Sign-On) 기능 구현
-                                <ul class="sub-sub-list">
-                                    <li>SSO Flow 및 시나리오 설계</li>
-                                    <li>기능 개발을 위한 각 POC에 대한 기술 검토</li>
-                                </ul>
-                            </li>
-                            <li>프로젝트 개발 문서 작성
-                                <ul class="sub-sub-list">
-                                    <li>API 설계 및 문서 작성</li>
-                                    <li>개발 시나리오 및 flow chart 작성</li>
-                                    <li>Javascript Interface 설계 및 문서화 작업</li>
-                                    <li>통계 자료를 위한 SDK 연동시 필요한 개발 문서 작성</li>
-                                </ul>
-                            </li>
-                            <li>One Source Multi Application 구축을 위한 scheme 분리 및 환경 분리 작업 진행</li>
-                            <li>UI 개발</li>
-                            <li>API 연동</li>
-                            <li>WKWebView 연동</li>
-                            <li>소셜 로그인 SDK 연동 및 개발
-                                <ul class="sub-sub-list">
-                                    <li>카카오, 네이버, Apple 로그인 구현</li>
-                                </ul>
-                            </li>
-                            <li>Crashlytics 연동</li>
-                            <li>FCM을 활용한 푸시 기능 개발</li>
-                            <li>마케팅 지표 삽입을 위한 SDK 연동 및 개발</li>
-                            <li>외부연동기능(Deeplink)기능 구현</li>
-                        </ul>
-                    </div>
-                    <div class="reference-image">
-                        <p class="reference-image-label">📱 결과물</p>
-                        <img src="assets/images/gsfresh_screenshot.png" alt="gs fresh screenshot" class="reference-img">                        
-                    </div>
-                </li>
-            </ul>
+
+            <div class="modal-track-section modal-track-section-highlight">
+                <div class="modal-track-header">
+                    <span class="modal-track-kicker">Track 2</span>
+                    <h4>GS Fresh Next-generation Commerce App</h4>
+                    <span class="modal-track-badge">PL · SI</span>
+                </div>
+
+                <p><strong>Problem</strong></p>
+                <ul>
+                    <li>오픈을 앞둔 시점에 모바일 개발 산출물과 구현 방향을 다시 점검하고, Android/iOS 양쪽의 개발 범위를 정리해야 했습니다.</li>
+                    <li>SSO, One-Source Multi Application, 외부 SDK, API/WKWebView 연동처럼 여러 앱과 플랫폼에 영향을 주는 기능을 안정적으로 구현해야 했습니다.</li>
+                </ul>
+
+                <p><strong>My Role</strong></p>
+                <div class="modal-role-callout">
+                    <span class="modal-role-label">Leadership Role</span>
+                    <p>모바일 파트 PL로 참여해 Android/iOS 개발 범위와 개발 문서를 정리하고, 주요 기능 구현 방향을 조율했습니다.</p>
+                </div>
+                <ul>
+                    <li>GS 차세대 프로젝트 모바일 파트 PL 역할을 맡았습니다.</li>
+                    <li>Android와 iOS 개발 범위를 함께 확인하며 기능 구현과 문서 정리를 담당했습니다.</li>
+                    <li>SSO, One-Source Multi Application, SDK 연동, API/WKWebView 연동 등 주요 모바일 기능 구현에 참여했습니다.</li>
+                </ul>
+
+                <p><strong>Key Contributions</strong></p>
+                <ul>
+                    <li>SSO Flow와 시나리오를 정리하고, 각 플랫폼에서 필요한 구현 범위를 검토했습니다.</li>
+                    <li>여러 앱을 한 구조에서 관리하기 위한 scheme 분리와 환경 분리 작업을 진행했습니다.</li>
+                    <li>FCM, 외부 SDK, 소셜 로그인, API/WKWebView 연동 등 차세대 커머스 앱에 필요한 모바일 기능을 구현했습니다.</li>
+                </ul>
+
+                <p><strong>Technical Decisions</strong></p>
+                <ul>
+                    <li>One-Source Multi Application 구조를 고려해 앱별 scheme과 환경을 분리하는 방향으로 구성했습니다.</li>
+                    <li>SSO와 외부 SDK 연동은 운영 전환 이후의 안정성과 배포 리스크를 고려해 구현 범위를 점검했습니다.</li>
+                </ul>
+
+                <p><strong>Screenshots / Result</strong></p>
+                <ul>
+                    <li>차세대 커머스 앱 전환 결과를 설명할 수 있는 대표 화면 자료입니다.</li>
+                </ul>
+                <div class="reference-image">
+                    <p class="reference-image-label">GS Fresh 차세대 커머스 앱 화면</p>
+                    <img src="assets/images/gsfresh_screenshot.png" alt="GS Fresh 차세대 커머스 앱 결과 화면" class="reference-img">
+                </div>
+
+                <p><strong>Result / Impact</strong></p>
+                <ul>
+                    <li>운영 경험을 기반으로 차세대 커머스 프로젝트의 모바일 개발 범위와 구현 방향을 정리했습니다.</li>
+                    <li>Android와 iOS를 함께 고려하며 모바일 파트 PL 역할을 수행한 경험을 쌓았습니다.</li>
+                </ul>
+            </div>
         `
     },
     'gsitm-2': {
@@ -1395,6 +730,7 @@ function closeProjectModal() {
     document.body.style.overflow = '';
 }
 
+
 // 모달 외부 클릭 시 닫기
 document.addEventListener('click', function(e) {
     const modal = document.getElementById('projectModal');
@@ -1501,4 +837,3 @@ if (imageViewerModal) {
         }
     });
 }
-
