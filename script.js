@@ -116,6 +116,7 @@ if (contactSection) {
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
+if (contactForm && formMessage) {
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -214,6 +215,7 @@ formInputs.forEach(input => {
         }
     });
 });
+}
 
 function validateInput(input) {
     const value = input.value.trim();

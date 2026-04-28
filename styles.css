@@ -96,9 +96,13 @@ body {
 }
 
 .nav-menu {
-    display: flex;
+    display: grid;
     list-style: none;
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 1.45rem;
+    row-gap: 0.35rem;
+    align-items: center;
+    justify-content: end;
 }
 
 .nav-link {
@@ -108,7 +112,8 @@ body {
     position: relative;
     transition: var(--transition);
     font-family: 'Courier New', monospace;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
 }
 
 .nav-link::before {
@@ -405,7 +410,7 @@ body {
 
 /* About Me Section */
 .about {
-    padding: 8rem 0;
+    padding: 6rem 0;
     background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
     position: relative;
 }
@@ -413,11 +418,11 @@ body {
 /* About 배경 코드 제거 */
 
 .about-principles {
-    margin-top: 3rem;
+    margin-top: 2.4rem;
 }
 
 .principles-lead-card {
-    padding: 2.2rem;
+    padding: 1.85rem;
     background: rgba(15, 23, 42, 0.58);
     border: 1px solid rgba(148, 163, 184, 0.18);
     border-left: 4px solid #14b8a6;
@@ -449,7 +454,7 @@ body {
     margin: 0;
     color: var(--text-secondary);
     font-size: 1rem;
-    line-height: 1.85;
+    line-height: 1.65;
 }
 
 .principles-grid {
@@ -461,8 +466,8 @@ body {
 
 .principle-card {
     position: relative;
-    min-height: 230px;
-    padding: 1.5rem;
+    min-height: 190px;
+    padding: 1.25rem;
     background: rgba(30, 41, 59, 0.5);
     border: 1px solid rgba(148, 163, 184, 0.14);
     border-radius: 12px;
@@ -475,7 +480,7 @@ body {
 
 .principle-index {
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: #60a5fa;
     font-family: 'Courier New', monospace;
     font-size: 0.8rem;
@@ -492,7 +497,7 @@ body {
 
 .principle-subtitle {
     display: block;
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.65rem;
     color: #99f6e4;
     font-size: 0.86rem;
     font-weight: 700;
@@ -502,8 +507,8 @@ body {
 .principle-card p {
     margin: 0;
     color: var(--text-secondary);
-    font-size: 0.94rem;
-    line-height: 1.75;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 .about-story {
@@ -935,88 +940,57 @@ body {
 
 /* Tech Stack */
 .tech-stack {
-    margin-top: 4rem;
+    padding: 5.5rem 0;
+    background:
+        radial-gradient(circle at 12% 16%, rgba(99, 102, 241, 0.1), transparent 28%),
+        linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
 }
 
-.tech-stack-title {
-    font-size: 2rem;
-    color: var(--text-primary);
-    margin-bottom: 3rem;
+.tech-stack-header {
     text-align: center;
+    margin-bottom: 2.4rem;
+}
+
+.tech-stack-kicker {
+    display: inline-block;
+    margin-bottom: 0.85rem;
+    padding: 0.34rem 0.72rem;
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 999px;
     font-family: 'Courier New', monospace;
-    font-weight: 700;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-.tech-categories {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
 }
 
-.tech-category {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.4));
-    border-radius: 1.2rem;
-    padding: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
-    backdrop-filter: blur(10px);
+.tech-stack-card {
+    padding: 1.25rem;
+    background: rgba(30, 41, 59, 0.48);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 14px;
 }
 
-.tech-category:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
-    transform: translateY(-2px);
-}
-
-.category-header {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.2rem;
-    border-bottom: 2px solid rgba(99, 102, 241, 0.2);
-}
-
-.category-icon {
-    width: 32px;
-    height: 32px;
-    color: var(--primary-color);
-    stroke-width: 2.5;
-}
-
-.category-header h4 {
-    font-size: 1.4rem;
+.tech-stack-card h3 {
+    margin: 0 0 0.9rem;
     color: var(--text-primary);
-    font-weight: 700;
     font-family: 'Courier New', monospace;
-}
-
-.tech-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.tech-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
-.tech-label {
-    min-width: 100px;
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.05rem;
-    font-family: 'Courier New', monospace;
-    padding-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.35;
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    flex: 1;
+    gap: 0.45rem;
 }
 
 .tech-tags.full-width {
@@ -1024,168 +998,23 @@ body {
 }
 
 .tech-tag {
-    padding: 0.8rem 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.68rem;
     background: rgba(99, 102, 241, 0.1);
-    color: #a5b4fc;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: 2px solid rgba(99, 102, 241, 0.3);
+    color: #c7d2fe;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border: 1px solid rgba(99, 102, 241, 0.24);
     transition: var(--transition);
     font-family: 'Courier New', monospace;
-    position: relative;
-    overflow: hidden;
-}
-
-.tech-tag::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, #6366f1, #8b5cf6);
-    transition: var(--transition);
 }
 
 .tech-tag:hover {
-    background: rgba(99, 102, 241, 0.2);
-    border-color: #6366f1;
-    color: #c7d2fe;
-    transform: translateX(5px);
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-}
-
-.tech-tag:hover::before {
-    width: 100%;
-    opacity: 0.15;
-}
-
-/* 카테고리별 색상 차별화 */
-/* Development - 보라색 (기본) */
-.tech-category:nth-child(1) .tech-tag {
-    background: rgba(99, 102, 241, 0.1);
-    color: #a5b4fc;
-    border-color: rgba(99, 102, 241, 0.3);
-}
-
-.tech-category:nth-child(1) .tech-tag::before {
-    background: linear-gradient(180deg, #6366f1, #8b5cf6);
-}
-
-.tech-category:nth-child(1) .tech-tag:hover {
-    background: rgba(99, 102, 241, 0.2);
-    border-color: #6366f1;
-    color: #c7d2fe;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-}
-
-/* iOS Frameworks & Tools - 청록색 */
-.tech-category:nth-child(2) .tech-tag {
-    background: rgba(20, 184, 166, 0.1);
-    color: #5eead4;
-    border-color: rgba(20, 184, 166, 0.3);
-}
-
-.tech-category:nth-child(2) .tech-tag::before {
-    background: linear-gradient(180deg, #14b8a6, #0d9488);
-}
-
-.tech-category:nth-child(2) .tech-tag:hover {
-    background: rgba(20, 184, 166, 0.2);
-    border-color: #14b8a6;
-    color: #99f6e4;
-    box-shadow: 0 4px 20px rgba(20, 184, 166, 0.3);
-}
-
-/* AI Tools - 핑크색 */
-.tech-category:nth-child(3) .tech-tag {
-    background: rgba(236, 72, 153, 0.1);
-    color: #f9a8d4;
-    border-color: rgba(236, 72, 153, 0.3);
-}
-
-.tech-category:nth-child(3) .tech-tag::before {
-    background: linear-gradient(180deg, #ec4899, #db2777);
-}
-
-.tech-category:nth-child(3) .tech-tag:hover {
-    background: rgba(236, 72, 153, 0.2);
-    border-color: #ec4899;
-    color: #fbcfe8;
-    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);
-}
-
-/* Deploy Tools - 주황색 */
-.tech-category:nth-child(4) .tech-tag {
-    background: rgba(249, 115, 22, 0.1);
-    color: #fdba74;
-    border-color: rgba(249, 115, 22, 0.3);
-}
-
-.tech-category:nth-child(4) .tech-tag::before {
-    background: linear-gradient(180deg, #f97316, #ea580c);
-}
-
-.tech-category:nth-child(4) .tech-tag:hover {
-    background: rgba(249, 115, 22, 0.2);
-    border-color: #f97316;
-    color: #fed7aa;
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
-}
-
-/* Communication Tools - 파란색 */
-.tech-category:nth-child(5) .tech-tag {
-    background: rgba(59, 130, 246, 0.1);
-    color: #93c5fd;
-    border-color: rgba(59, 130, 246, 0.3);
-}
-
-.tech-category:nth-child(5) .tech-tag::before {
-    background: linear-gradient(180deg, #3b82f6, #2563eb);
-}
-
-.tech-category:nth-child(5) .tech-tag:hover {
-    background: rgba(59, 130, 246, 0.2);
-    border-color: #3b82f6;
-    color: #bfdbfe;
-    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
-}
-
-/* Config Management - 초록색 */
-.tech-category:nth-child(6) .tech-tag {
-    background: rgba(16, 185, 129, 0.1);
-    color: #6ee7b7;
-    border-color: rgba(16, 185, 129, 0.3);
-}
-
-.tech-category:nth-child(6) .tech-tag::before {
-    background: linear-gradient(180deg, #10b981, #059669);
-}
-
-.tech-category:nth-child(6) .tech-tag:hover {
-    background: rgba(16, 185, 129, 0.2);
-    border-color: #10b981;
-    color: #a7f3d0;
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
-}
-
-/* Design - 보라-핑크 */
-.tech-category:nth-child(7) .tech-tag {
-    background: rgba(139, 92, 246, 0.1);
-    color: #c4b5fd;
-    border-color: rgba(139, 92, 246, 0.3);
-}
-
-.tech-category:nth-child(7) .tech-tag::before {
-    background: linear-gradient(180deg, #8b5cf6, #7c3aed);
-}
-
-.tech-category:nth-child(7) .tech-tag:hover {
-    background: rgba(139, 92, 246, 0.2);
-    border-color: #8b5cf6;
-    color: #ddd6fe;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+    background: rgba(99, 102, 241, 0.18);
+    border-color: rgba(99, 102, 241, 0.42);
+    color: #e0e7ff;
 }
 
 /* 저란 사람은요 섹션 */
@@ -1685,6 +1514,35 @@ body {
     font-weight: 500;
 }
 
+.career-focus {
+    min-width: 220px;
+    text-align: left;
+}
+
+.career-focus p {
+    margin: 0 0 0.65rem;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.career-focus-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.career-focus-tags span {
+    padding: 0.25rem 0.45rem;
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 999px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
 /* Progress Bar for Career Duration */
 .duration-info {
     display: flex;
@@ -2143,6 +2001,579 @@ body {
     transform: translateY(-1px);
 }
 
+/* AI Workflow Section */
+.ai-workflow {
+    padding: 6rem 0;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(20, 184, 166, 0.12), transparent 30%),
+        radial-gradient(circle at 86% 12%, rgba(96, 165, 250, 0.1), transparent 28%),
+        linear-gradient(180deg, var(--dark-surface) 0%, var(--dark-bg) 100%);
+    position: relative;
+}
+
+.ai-workflow-header {
+    text-align: center;
+}
+
+.ai-workflow-kicker {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.38rem 0.75rem;
+    color: #99f6e4;
+    background: rgba(20, 184, 166, 0.08);
+    border: 1px solid rgba(45, 212, 191, 0.18);
+    border-radius: 999px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.ai-workflow-panel {
+    padding: 1.25rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(2, 6, 23, 0.24);
+}
+
+.ai-workflow-principle {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1.25rem 1.4rem;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(59, 130, 246, 0.06));
+    border: 1px solid rgba(45, 212, 191, 0.18);
+    border-radius: 12px;
+}
+
+.ai-workflow-principle-label {
+    color: #99f6e4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.ai-workflow-principle p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.ai-workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.ai-workflow-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 315px;
+    padding: 1.15rem;
+    background: rgba(30, 41, 59, 0.56);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.ai-workflow-card-secondary {
+    background: rgba(30, 41, 59, 0.42);
+    border-style: dashed;
+}
+
+.ai-workflow-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #14b8a6, #60a5fa);
+}
+
+.ai-workflow-index {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: rgba(226, 232, 240, 0.34);
+    font-family: 'Courier New', monospace;
+    font-size: 0.88rem;
+    font-weight: 900;
+}
+
+.ai-workflow-card h3 {
+    margin: 0 0 0.65rem;
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.08rem;
+    line-height: 1.35;
+}
+
+.ai-workflow-card p {
+    margin: 0 0 1.2rem;
+    color: var(--text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.7;
+}
+
+.ai-workflow-scenario {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.ai-workflow-step {
+    padding: 0.62rem 0.72rem;
+    background: rgba(15, 23, 42, 0.34);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 10px;
+}
+
+.ai-workflow-step span {
+    display: block;
+    margin-bottom: 0.32rem;
+    color: #99f6e4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.ai-workflow-step p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.48;
+}
+
+.ai-workflow-prompt {
+    border-color: rgba(96, 165, 250, 0.16);
+    background: rgba(30, 41, 59, 0.42);
+}
+
+.ai-workflow-prompt span {
+    color: #bfdbfe;
+}
+
+.ai-workflow-detail,
+.ai-workflow-judgement {
+    margin-bottom: 1rem;
+    padding: 0.9rem;
+    background: rgba(15, 23, 42, 0.36);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 10px;
+}
+
+.ai-workflow-detail span,
+.ai-workflow-judgement span {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #99f6e4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.ai-workflow-detail ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.ai-workflow-detail li {
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.58;
+}
+
+.ai-workflow-judgement {
+    border-color: rgba(96, 165, 250, 0.14);
+}
+
+.ai-workflow-judgement span {
+    color: #bfdbfe;
+}
+
+.ai-workflow-judgement p {
+    margin: 0;
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.ai-workflow-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: auto;
+}
+
+.ai-workflow-tools span {
+    padding: 0.24rem 0.48rem;
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 999px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+/* Side Projects Section */
+.side-projects {
+    padding: 7rem 0;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+    position: relative;
+}
+
+.side-projects-header {
+    text-align: center;
+}
+
+.side-projects-kicker {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.38rem 0.75rem;
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 999px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.side-project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 1rem;
+    padding: 1.4rem;
+    background: rgba(15, 23, 42, 0.56);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-left: 4px solid #60a5fa;
+    border-radius: 16px;
+    box-shadow: 0 22px 60px rgba(2, 6, 23, 0.22);
+}
+
+.side-project-card-ui {
+    position: relative;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 330px;
+    background: rgba(30, 41, 59, 0.72);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-left: 4px solid #60a5fa;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 22px 60px rgba(2, 6, 23, 0.2);
+}
+
+.side-project-card-ui:hover {
+    transform: translateY(-4px);
+    border-color: rgba(226, 232, 240, 0.28);
+    box-shadow: 0 18px 45px rgba(2, 6, 23, 0.32);
+}
+
+.side-project-card-ui:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+.side-project-card-media {
+    min-height: 100%;
+    background: rgba(15, 23, 42, 0.68);
+    overflow: hidden;
+}
+
+.side-project-card-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+    object-fit: cover;
+    object-position: top center;
+    filter: saturate(0.95) brightness(0.86);
+    transition: var(--transition);
+}
+
+.side-project-card-ui:hover .side-project-card-media img {
+    filter: saturate(1) brightness(0.95);
+    transform: scale(1.03);
+}
+
+.side-project-card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+}
+
+.side-project-card-content .featured-project-meta {
+    margin-bottom: 1.35rem;
+}
+
+.side-project-card-content h3 {
+    margin: 0 0 0.9rem;
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.45rem;
+    line-height: 1.35;
+}
+
+.side-project-card-content p {
+    margin: 0 0 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.side-project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.side-project-detail-btn {
+    position: static;
+    opacity: 1;
+}
+
+.side-project-actions .side-project-detail-btn,
+.side-project-actions .side-project-store-link {
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.84rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.side-project-actions .side-project-detail-btn {
+    color: #0f172a;
+    background: linear-gradient(135deg, #99f6e4, #5eead4);
+    box-shadow: 0 10px 24px rgba(20, 184, 166, 0.18);
+}
+
+.side-project-actions .side-project-store-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.24);
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.side-project-actions .side-project-cta {
+    margin-top: 0;
+}
+
+.side-project-release-card {
+    align-items: start;
+}
+
+.side-project-main {
+    padding: 1rem;
+}
+
+.side-project-status-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+}
+
+.side-project-status,
+.side-project-type {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    font-weight: 900;
+}
+
+.side-project-status {
+    color: #022c22;
+    background: linear-gradient(135deg, #5eead4, #14b8a6);
+}
+
+.side-project-type {
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.18);
+}
+
+.side-project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.side-project-meta span {
+    padding: 0.28rem 0.55rem;
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 999px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.side-project-main h3 {
+    margin: 0 0 1rem;
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.55rem;
+    line-height: 1.35;
+}
+
+.side-project-main p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.side-project-role {
+    margin-top: 1.2rem;
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.45);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+}
+
+.side-project-role span {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #99f6e4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.side-project-role ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 0.8rem;
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.side-project-role li {
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.side-project-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.2rem;
+    padding: 0.75rem 1rem;
+    color: #0f172a;
+    background: linear-gradient(135deg, #bfdbfe, #60a5fa);
+    border: 1px solid rgba(147, 197, 253, 0.28);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.86rem;
+    font-weight: 900;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.side-project-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(96, 165, 250, 0.2);
+}
+
+.modal-store-link {
+    width: auto;
+    margin-top: 0.5rem;
+}
+
+.side-project-screenshots {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.side-project-screenshots figure {
+    margin: 0;
+    padding: 0.75rem;
+    background: rgba(30, 41, 59, 0.42);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 14px;
+}
+
+.side-project-screenshots img {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(2, 6, 23, 0.5);
+}
+
+.side-project-screenshots figcaption {
+    margin-top: 0.55rem;
+    color: #bfdbfe;
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.side-project-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.side-project-detail {
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+}
+
+.side-project-detail span {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #99f6e4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.side-project-detail p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
 /* 회사별 프로젝트 3D 캐러셀 */
 .company-projects {
     margin-bottom: 8rem;
@@ -2449,6 +2880,23 @@ body {
 .view-project-btn:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.side-project-actions {
+    position: relative;
+    z-index: 20;
+}
+
+.side-project-actions .side-project-detail-btn {
+    position: static;
+    opacity: 1;
+    transform: none;
+}
+
+.side-project-actions .side-project-store-link {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
 }
 
 /* 회사별 버튼 컬러 */
@@ -4998,6 +5446,21 @@ body {
     border-color: rgba(99, 102, 241, 0.4);
 }
 
+.worksheet-screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    align-items: start;
+}
+
+.worksheet-screenshot-grid .reference-img-vertical {
+    width: 100%;
+    max-width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: rgba(2, 6, 23, 0.45);
+}
+
 /* Framework 설명 표 */
 .framework-table {
     margin-top: 2rem;
@@ -5070,6 +5533,15 @@ body {
     .reference-img-vertical {
         max-width: 100%;
         max-height: 600px;
+    }
+
+    .worksheet-screenshot-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.45rem;
+    }
+
+    .worksheet-screenshot-grid .reference-img-vertical {
+        max-height: 360px;
     }
     
     .framework-table {
@@ -5548,6 +6020,7 @@ body {
     }
 
     .nav-menu {
+        display: flex;
         position: fixed;
         top: 0;
         right: -100%;
@@ -5556,7 +6029,7 @@ body {
         background-color: var(--dark-surface);
         flex-direction: column;
         padding: 5rem 2rem;
-        gap: 2rem;
+        gap: 1.35rem;
         transition: var(--transition);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     }
@@ -5715,6 +6188,46 @@ body {
     .principle-card-wide {
         grid-column: auto;
     }
+    .principles-lead-card {
+        padding: 1.25rem;
+    }
+
+    .principles-lead-card p {
+        font-size: 0.94rem;
+        line-height: 1.62;
+    }
+
+    .principle-card {
+        min-height: auto;
+        padding: 1.05rem;
+    }
+
+    .principle-card h4 {
+        font-size: 1rem;
+    }
+
+    .principle-card p {
+        font-size: 0.86rem;
+        line-height: 1.52;
+    }
+
+    .tech-stack {
+        padding: 4rem 0;
+    }
+
+    .tech-stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+    }
+
+    .tech-stack-card {
+        padding: 1rem;
+    }
+
+    .tech-tag {
+        padding: 0.36rem 0.58rem;
+        font-size: 0.72rem;
+    }
 
     /* 상세 업무 토글 모바일 */
     .toggle-detail-btn {
@@ -5810,6 +6323,100 @@ body {
 
     .early-projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ai-workflow {
+        padding: 4rem 0;
+    }
+
+    .ai-workflow-panel {
+        padding: 1rem;
+    }
+
+    .ai-workflow-principle {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+        padding: 1rem;
+    }
+
+    .ai-workflow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-workflow-card {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .ai-workflow-card h3 {
+        font-size: 1rem;
+    }
+
+    .ai-workflow-scenario {
+        gap: 0.45rem;
+    }
+
+    .ai-workflow-step {
+        padding: 0.58rem 0.65rem;
+    }
+
+    .ai-workflow-step p {
+        font-size: 0.78rem;
+        line-height: 1.45;
+    }
+
+    .side-projects {
+        padding: 4rem 0;
+    }
+
+    .side-project-card {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .side-project-card-ui {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .side-project-card-media {
+        height: 260px;
+    }
+
+    .side-project-card-media img {
+        min-height: 260px;
+    }
+
+    .side-project-card-content {
+        padding: 1.25rem;
+    }
+
+    .side-project-main {
+        padding: 0.5rem;
+    }
+
+    .side-project-main h3 {
+        font-size: 1.25rem;
+    }
+
+    .side-project-role ul {
+        grid-template-columns: 1fr;
+    }
+
+    .side-project-cta {
+        width: 100%;
+    }
+
+    .side-project-actions {
+        flex-direction: column;
+    }
+
+    .side-project-screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .side-project-screenshots img {
+        max-height: 420px;
     }
 
     .modal-track-section {
@@ -6021,8 +6628,30 @@ body {
     .info-table tbody td {
         display: block;
         text-align: right;
-        padding: 0.75rem 1rem;
+        padding: 0.6rem 0.9rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .career-focus {
+        min-width: 0;
+        text-align: right;
+    }
+
+    .career-focus p {
+        margin-bottom: 0.45rem;
+        font-size: 0.84rem;
+        line-height: 1.42;
+    }
+
+    .career-focus-tags {
+        justify-content: flex-end;
+        gap: 0.25rem;
+    }
+
+    .career-focus-tags span {
+        padding: 0.18rem 0.38rem;
+        font-size: 0.6rem;
+        line-height: 1.2;
     }
 
     .info-table tbody td:last-child {
@@ -6138,6 +6767,10 @@ body {
 
     .story-title {
         font-size: 1.25rem;
+    }
+
+    .tech-stack-grid {
+        grid-template-columns: 1fr;
     }
 
     .contact-form {

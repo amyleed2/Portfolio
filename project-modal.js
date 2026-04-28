@@ -3,6 +3,79 @@ console.log('project-modal.js loaded');
 
 // 프로젝트 상세 정보 데이터
 const projectData = {
+    'side-note-cleaner': {
+        title: '학습지 지우개 - Note Cleaner',
+        period: '전체 2025.11 ~ 2026.03 · 개발 2026.01 ~ 2026.02',
+        description: '영어 학습지 이미지를 VisionKit으로 입력받고, OpenAI Responses API용 프롬프트와 응답 DTO를 직접 설계해 triage와 정리 결과로 연결한 App Store 출시 개인 사이드 프로젝트입니다.',
+        tech: ['iOS', 'Swift', 'SwiftUI', 'VisionKit', 'OpenAI API', 'Prompt Design', 'Structured Response', 'Clean Architecture', 'MVVM', 'RxSwift', 'Firebase Remote Config', 'Fastlane'],
+        features: `
+            <p><strong>Project Context</strong></p>
+            <ul>
+                <li>전체 진행 기간은 2025.11 ~ 2026.03, 실제 iOS 개발 집중 기간은 2026.01 ~ 2026.02입니다.</li>
+                <li>팀 구성은 Android 1명, iOS 1명, 기획 2명, 디자이너 1명이었고, iOS 앱 설계와 구현을 담당했습니다.</li>
+                <li>개인 프로젝트로 App Store에 출시했으며, 실제 앱 화면과 스토어 링크를 함께 공개했습니다.</li>
+            </ul>
+
+            <p><strong>Problem</strong></p>
+            <ul>
+                <li>모든 이미지를 바로 AI 처리로 넘기면 비용, 정확도, 실패 케이스 관리가 어려워질 수 있었습니다.</li>
+                <li>먼저 영어 학습지인지, 읽을 수 있는 품질인지, 후속 정리 처리가 필요한 입력인지 판별하는 triage 흐름이 필요했습니다.</li>
+            </ul>
+
+            <p><strong>My Role</strong></p>
+            <ul>
+                <li>문제 정의와 iOS 앱 플로우를 정리하고, VisionKit 기반 문서 이미지 입력 흐름을 구현했습니다.</li>
+                <li>필기 제거 목적에 맞는 OpenAI API 프롬프트와 결과 응답 DTO 구조를 직접 설계했습니다.</li>
+                <li>ACCEPT / REJECT 기반 triage 로직과 status, reason_code, truncated, truncation_reason 같은 응답 필드를 앱 로직에서 다시 검증하는 방어 흐름을 구성했습니다.</li>
+                <li>불필요한 출력과 토큰 사용량을 줄이기 위해 프롬프트와 응답 스키마를 다시 정리했습니다.</li>
+                <li>SwiftUI 화면 흐름, 상태 처리, 실패 케이스 메시지, App Store 배포를 담당했습니다.</li>
+            </ul>
+
+            <p><strong>Architecture</strong></p>
+            <ul>
+                <li>Presentation, Domain, Data 레이어로 나누는 Clean Architecture 기반 구조를 적용했습니다.</li>
+                <li>Presentation은 SwiftUI View와 @Observable @MainActor ViewModel로 구성하고, Domain에는 Entity, Repository Protocol, UseCase를 분리했습니다.</li>
+                <li>Data 레이어에는 OpenAI API 클라이언트, Repository 구현체, Firebase Remote Config 연동, FileManager/UserDefaults 기반 저장 흐름을 배치했습니다.</li>
+            </ul>
+
+            <p><strong>Key Implementation</strong></p>
+            <ul>
+                <li>VisionKit 문서 스캔 이후 선택 화면에서 네트워크 상태를 확인하고, ExtractWorksheetTextUseCase를 통해 OCR/정리 요청을 실행했습니다.</li>
+                <li>OpenAI Responses API는 SDK 없이 URLSession 기반 커스텀 클라이언트로 연동하고, 요청 전 이미지 리사이즈와 JPEG 압축을 적용했습니다.</li>
+                <li>필기 제거 결과를 앱에서 다루기 쉽도록 status, reason_code, confidence, extracted_markdown, truncated, truncation_reason 중심의 응답 DTO를 설계했습니다.</li>
+                <li>프롬프트는 처리 대상 판단, 필기 제거 기준, 출력 형식을 분리해 작성하고, 불필요한 설명 출력을 줄여 토큰 사용량을 낮추는 방향으로 재정리했습니다.</li>
+                <li>ACCEPT지만 결과가 비어 있는 경우, schema_version이 맞지 않는 경우, timeout/HTTP/parse/model refusal 케이스를 별도 오류 흐름으로 처리했습니다.</li>
+            </ul>
+
+            <p><strong>AI Integration</strong></p>
+            <ul>
+                <li>AI 응답을 그대로 신뢰하지 않고, ACCEPT / REJECT와 reason_code 조합을 앱에서 다시 검증하도록 설계했습니다.</li>
+                <li>프롬프트에는 처리 가능 여부, 필기 제거 기준, 응답 형식을 명확히 나누어 모델 출력이 앱 로직과 맞물리도록 구성했습니다.</li>
+                <li>출력 토큰 제한으로 결과가 잘릴 수 있는 경우를 고려해 truncated와 truncation_reason을 분리하고 후속 처리 가능성을 열어두었습니다.</li>
+                <li>잘못된 입력, 낮은 품질의 이미지, 영어 학습지가 아닌 이미지에 대해 사용자에게 설명 가능한 실패 상태로 연결했습니다.</li>
+            </ul>
+
+            <p><strong>Screenshots / Result</strong></p>
+            <div class="reference-image worksheet-screenshot-strip">
+                <p class="reference-image-label">App Store Release Screens</p>
+                <div class="worksheet-screenshot-grid">
+                    <img src="assets/images/worksheet-cleanup/main.jpg" alt="Worksheet Cleanup 앱 메인 화면" class="reference-img-vertical">
+                    <img src="assets/images/worksheet-cleanup/scan.jpg" alt="Worksheet Cleanup 문서 스캔 화면" class="reference-img-vertical">
+                    <img src="assets/images/worksheet-cleanup/cleanup-result.jpg" alt="Worksheet Cleanup 정리 결과 화면" class="reference-img-vertical">
+                </div>
+            </div>
+
+            <p><strong>Result</strong></p>
+            <ul>
+                <li>AI API를 iOS 앱 플로우 안에 방어적으로 연결하는 구조를 실험하고 App Store 출시까지 진행했습니다.</li>
+                <li>기획, 디자인, Android 개발자와 협업하며 iOS 단독 담당자로 앱 구조와 출시 흐름을 끝까지 정리했습니다.</li>
+            </ul>
+
+            <p><strong>App Store</strong></p>
+            <p><a class="side-project-cta modal-store-link" href="https://apps.apple.com/kr/app/%ED%95%99%EC%8A%B5%EC%A7%80-%EC%A7%80%EC%9A%B0%EA%B0%9C-note-cleaner/id6757840733" target="_blank" rel="noopener noreferrer">App Store에서 보기</a></p>
+        `
+    },
+
     'encar-1': {
         title: '엔카닷컴 iOS 앱 개발 및 운영',
         period: '2025.06 ~ 2025.08',
@@ -70,15 +143,13 @@ const projectData = {
         features: `
             <p><strong>Overview</strong></p>
             <ul>
-                <li>Apple DMA 정책 변화에 대응해 ONEstore 글로벌 대체 앱 마켓의 iOS 구현 가능성을 검토하고 Prototype, Alpha, Beta 단계로 앱을 확장한 프로젝트입니다.</li>
-                <li>단순 화면 구현보다 신규 정책과 플랫폼 제약을 해석하고, 실제 서비스 구조로 연결 가능한지 검증하는 것이 핵심이었습니다.</li>
+                <li>Apple DMA 정책 변화에 대응해 ONEstore 글로벌 대체 앱 마켓의 iOS 구현 가능성을 Prototype, Alpha, Beta 단계로 검증한 프로젝트입니다.</li>
             </ul>
 
             <p><strong>Problem</strong></p>
             <ul>
-                <li>Apple의 제3자 마켓 정책과 API 제약을 ONEstore 글로벌 서비스 관점에서 해석해야 했습니다.</li>
-                <li>Hosted App 다운로드, 설치, 업데이트, 실행 흐름이 기존 App Store 배포 모델과 달라 별도의 검증 구조가 필요했습니다.</li>
-                <li>정책 문서만으로 판단하기 어려운 이슈는 실제 구현 관점에서 리스크를 정리해야 했습니다.</li>
+                <li>Apple의 제3자 마켓 정책과 MarketplaceKit 제약을 ONEstore 글로벌 서비스 관점에서 해석해야 했습니다.</li>
+                <li>Hosted App 다운로드, 설치, 업데이트 흐름의 구현 리스크를 정리해야 했습니다.</li>
             </ul>
 
             <p><strong>My Role</strong></p>
@@ -87,29 +158,26 @@ const projectData = {
                 <p>iOS PL로서 정책/기술 검토, 앱 아키텍처 설계, Prototype에서 Alpha/Beta로 이어지는 개발 흐름을 리드했습니다.</p>
             </div>
             <ul>
-                <li>iOS PL로서 제3자 마켓 기술 검토와 단계별 앱 개발 흐름을 리드했습니다.</li>
-                <li>아키텍처, 네트워크 모듈, JavaScript Interface 구조를 설계하고 주요 구현 범위를 나누어 개발을 진행했습니다.</li>
-                <li>Apple Cork 기술 세션에 iOS Client 대표로 참석해 검토 중이던 이슈를 구현 관점에서 확인했습니다.</li>
+                <li>제3자 마켓 기술 검토, 앱 아키텍처, 네트워크 모듈, JavaScript Interface 구조를 담당했습니다.</li>
+                <li>Apple Cork 기술 세션에 iOS Client 대표로 참석해 주요 이슈를 구현 관점에서 확인했습니다.</li>
             </ul>
 
             <p><strong>Key Contributions</strong></p>
             <ul>
-                <li>Apple DMA 및 제3자 마켓 관련 문서를 검토하고, ONEstore 글로벌 서비스에 필요한 구현 조건과 리스크를 정리했습니다.</li>
-                <li>Clean Architecture와 MVVM 기반으로 앱 구조를 설계하고, 네트워크 모듈과 JavaScript Interface를 포함한 공통 기반을 구성했습니다.</li>
-                <li>Hosted App List 수신, 전시 화면 일부, 다운로드 상태 처리, 설치/업데이트/실행/삭제 시나리오 구현에 참여했습니다.</li>
-                <li>Prototype에서 Alpha, Beta 단계로 기능을 확장하며 MVP 흐름과 핵심 기능 구현 가능성을 검증했습니다.</li>
+                <li>Apple DMA 문서를 검토해 서비스 적용 조건과 리스크를 정리했습니다.</li>
+                <li>Clean Architecture와 MVVM 기반 앱 구조, 네트워크 모듈, JavaScript Interface 공통 기반을 구성했습니다.</li>
+                <li>Hosted App 목록, 다운로드 상태, 설치/업데이트/실행/삭제 시나리오를 Prototype에서 Alpha/Beta 단계로 확장했습니다.</li>
             </ul>
 
             <p><strong>Technical Decisions</strong></p>
             <ul>
-                <li>신규 정책 대응 프로젝트였기 때문에 구현 전에 정책 제약, API 제공 범위, 서비스 요구사항의 충돌 지점을 먼저 정리했습니다.</li>
-                <li>Hosted App과 마켓 메타데이터 흐름을 분리해 관리할 수 있도록 네트워크와 저장소 계층을 나누는 방향으로 설계했습니다.</li>
-                <li>웹과 앱 간 이벤트 연동이 필요한 영역은 JavaScript Interface를 통해 명확한 경계를 두고 처리했습니다.</li>
+                <li>구현 전에 정책 제약, API 제공 범위, 서비스 요구사항의 충돌 지점을 정리했습니다.</li>
+                <li>Hosted App/마켓 메타데이터 흐름과 웹-앱 이벤트 연동 경계를 분리해 설계했습니다.</li>
             </ul>
 
             <p><strong>Visual Evidence</strong></p>
             <ul>
-                <li>Apple 정책 검토, 앱 구조, 핵심 구현 예시, 최종 화면을 함께 보여주기 위한 시각 자료입니다.</li>
+                <li>정책 검토, 앱 구조, 코드 예시, 결과 화면 자료입니다.</li>
             </ul>
             <div class="reference-image">
                 <p class="reference-image-label">Apple Alternative Marketplace 검토 자료</p>
@@ -131,14 +199,13 @@ const projectData = {
 
             <p><strong>Result / Impact</strong></p>
             <ul>
-                <li>제3자 마켓 서비스의 iOS 구현 가능성과 주요 리스크를 실제 앱 흐름으로 검증했습니다.</li>
-                <li>Prototype부터 Beta까지 이어지는 단계별 개발 기반을 만들며 글로벌 앱 마켓 출시 검토에 필요한 기술 판단 자료를 정리했습니다.</li>
+                <li>제3자 마켓 서비스의 iOS 구현 가능성과 주요 리스크를 앱 흐름으로 검증했습니다.</li>
             </ul>
         `
     },
 
     'onestore-2': {
-        title: 'ONEstore Design System 구축 및 개발',
+        title: 'ONEstore Design System',
         period: '2024.06 ~ 2025.06',
         description: 'ONEstore 디자인 시스템 구축 프로젝트에서 iOS 개발 파트 PM으로 참여해 공통 UI 컴포넌트 구조, 디자인 토큰, Figma 연계 흐름을 정리하고 디자인-개발 협업 기준을 맞추는 작업을 진행했습니다.',
         tech: ['iOS', 'Swift', 'SwiftUI', 'Tuist', 'Figma', 'Design Token', 'Style Dictionary', 'Code Connect', 'Lottie'],
@@ -151,40 +218,36 @@ const projectData = {
 
             <p><strong>Problem</strong></p>
             <ul>
-                <li>디자이너와 개발자, 각 플랫폼 개발자가 컴포넌트 단위와 속성을 다르게 해석할 수 있어 구현 기준을 맞추기 어려웠습니다.</li>
-                <li>디자인 토큰과 리소스 변경 사항이 수작업 전달에 의존하면 반복 비용과 누락 위험이 커질 수 있었습니다.</li>
-                <li>새로운 컴포넌트 체계를 도입하더라도 사용 방식이 명확하지 않으면 신규 참여자의 러닝커브가 커질 수 있었습니다.</li>
+                <li>디자이너와 개발자가 컴포넌트 단위와 속성을 다르게 해석해 구현 기준을 맞추기 어려웠습니다.</li>
+                <li>디자인 토큰과 리소스 변경이 수작업 전달에 의존하면 반복 비용과 누락 위험이 커질 수 있었습니다.</li>
             </ul>
 
             <p><strong>My Role</strong></p>
             <div class="modal-role-callout">
                 <span class="modal-role-label">Leadership Role</span>
-                <p>iOS 개발 파트 PM으로서 UXD팀과 개발 조직 사이에서 컴포넌트 구조, 구현 기준, Figma 연계 흐름을 맞추는 역할을 맡았습니다.</p>
+                <p>iOS 개발 파트 PM으로서 UXD팀과 개발 조직 사이에서 컴포넌트 구조, 구현 기준, Figma 연계 흐름을 맞췄습니다.</p>
             </div>
             <ul>
-                <li>iOS 개발 파트 PM으로 참여해 UXD팀 및 개발 조직과 컴포넌트 구조와 구현 기준을 정리했습니다.</li>
-                <li>Style, Component, Screen으로 이어지는 개발 프레임워크 구조를 iOS 구현 관점에서 설계하고 정리했습니다.</li>
-                <li>Figma Plugin, Style Dictionary, Code Connect를 활용한 디자인 자산과 코드 연결 방식을 검토했습니다.</li>
+                <li>컴포넌트 구조, 구현 기준, Style-Component-Screen 프레임워크 구조를 iOS 관점에서 정리했습니다.</li>
+                <li>Figma Plugin, Style Dictionary, Code Connect 기반의 디자인 자산-코드 연결 방식을 검토했습니다.</li>
             </ul>
 
             <p><strong>Key Contributions</strong></p>
             <ul>
-                <li>Atomic Design을 그대로 적용하기보다 ONEstore 제품과 협업 방식에 맞는 Style-Component-Screen 구조를 정리했습니다.</li>
-                <li>Top Navigation 등 실제 화면 요소를 기준으로 컴포넌트 단위, Item, Property 기준을 협의하고 구현 규칙으로 연결했습니다.</li>
-                <li>리소스, 코어 로직, 컴포넌트 레이어를 분리한 WDS 프레임워크 구조를 구성했습니다.</li>
-                <li>디자인 토큰을 추출하고 Style Dictionary로 변환하는 자동화 방향과, Figma Code Connect 기반 코드 스니펫 확인 흐름을 검토했습니다.</li>
+                <li>ONEstore 제품과 협업 방식에 맞는 Style-Component-Screen 구조를 정리했습니다.</li>
+                <li>Top Navigation 등 실제 요소를 기준으로 컴포넌트 단위, Item, Property 기준을 구현 규칙으로 연결했습니다.</li>
+                <li>WDS 프레임워크 구조와 디자인 토큰/Code Connect 연계 흐름을 검토했습니다.</li>
             </ul>
 
             <p><strong>Technical Decisions</strong></p>
             <ul>
-                <li>디자인 시스템을 화면 단위가 아니라 Style, Component, Screen 계층으로 나누어 확장성과 유지보수성을 확보하는 방향을 선택했습니다.</li>
-                <li>컴포넌트 정의는 디자인 명칭이 아니라 실제 구현에 필요한 Property와 조합 기준까지 함께 맞추는 방식으로 정리했습니다.</li>
-                <li>Code Connect는 컴포넌트 사용법을 문서로만 전달하지 않고 Figma 안에서 코드 스니펫과 속성 조합을 확인하는 방식으로 검토했습니다.</li>
+                <li>디자인 시스템을 Style, Component, Screen 계층으로 나누어 확장성과 유지보수성을 확보하는 방향을 선택했습니다.</li>
+                <li>컴포넌트 정의는 실제 구현에 필요한 Property와 조합 기준까지 함께 맞추는 방식으로 정리했습니다.</li>
             </ul>
 
             <p><strong>Visual Evidence</strong></p>
             <ul>
-                <li>디자인 시스템 구조, 컴포넌트 정의, 디자인 토큰 자동화, Figma Code Connect 흐름을 설명하기 위한 핵심 자료입니다.</li>
+                <li>구조, 컴포넌트, 토큰 자동화, Code Connect 흐름을 설명하는 핵심 자료입니다.</li>
             </ul>
             <div class="reference-image">
                 <p class="reference-image-label">Design System Architecture</p>
@@ -206,8 +269,7 @@ const projectData = {
 
             <p><strong>Result / Impact</strong></p>
             <ul>
-                <li>디자인 시스템을 공통 UI 개발 작업이 아니라 플랫폼화와 협업 기준 정리 작업으로 연결했습니다.</li>
-                <li>디자이너와 개발자가 같은 컴포넌트 기준을 보고 논의할 수 있는 구조를 만들고, iOS 구현 체계와 Figma 자산을 연결하는 방향을 제시했습니다.</li>
+                <li>디자인 시스템을 공통 UI 개발이 아니라 플랫폼화와 협업 기준 정리 작업으로 연결했습니다.</li>
             </ul>
         `
     },
@@ -318,8 +380,7 @@ const projectData = {
         features:  `
             <p><strong>Overview</strong></p>
             <ul>
-                <li>GS ITM 재직 중 수행한 대표 경험을 운영 업무와 차세대 프로젝트 PL 경험으로 나누어 정리한 프로젝트입니다.</li>
-                <li>전사 모바일 앱 운영에서는 배포 안정성, 장애 대응, VOC 대응을 담당했고, GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 참여했습니다.</li>
+                <li>GS Retail 전사 앱 운영 경험과 GS Fresh 차세대 프로젝트 PL 경험을 함께 정리한 프로젝트입니다.</li>
             </ul>
 
             <div class="modal-track-section">
@@ -331,26 +392,23 @@ const projectData = {
 
                 <p><strong>Problem</strong></p>
                 <ul>
-                    <li>GS Retail의 여러 커머스 및 멤버십 앱을 동시에 운영하면서 정기 배포, 긴급 배포, 장애 대응, 신규 OS 대응을 안정적으로 처리해야 했습니다.</li>
-                    <li>VOC와 Crash Report를 기반으로 사용 중인 앱의 문제를 빠르게 파악하고 운영 리스크를 줄여야 했습니다.</li>
+                    <li>여러 커머스/멤버십 앱의 배포, 장애, OS 변경 대응을 안정적으로 처리해야 했습니다.</li>
                 </ul>
 
                 <p><strong>My Role</strong></p>
                 <ul>
-                    <li>GS Retail 전사 앱 운영 조직에서 iOS와 Android 앱 운영 및 개발을 담당했습니다.</li>
-                    <li>커머스 앱과 멤버십 앱의 정기 배포, 긴급 배포, VOC 대응, OS 업데이트 대응, Crash 분석을 수행했습니다.</li>
+                    <li>GS Retail 앱 운영 조직에서 iOS/Android 배포, VOC, OS 업데이트, Crash 분석을 수행했습니다.</li>
                 </ul>
 
                 <p><strong>Key Contributions</strong></p>
                 <ul>
-                    <li>GS Fresh Mall, 달리살다, 마켓포 등 커머스 앱과 THE POP, GS수퍼마켓, GS25 나만의 냉장고 등 멤버십 앱 운영을 담당했습니다.</li>
-                    <li>월 2회 정기 배포와 긴급 배포 대응, 신규 OS 업데이트와 Deprecated API 대응을 수행했습니다.</li>
-                    <li>VOC, Crash Report, 현업 개선 요청을 기반으로 앱 안정성 개선과 버그 수정을 진행했습니다.</li>
+                    <li>GS Fresh Mall, 달리살다, 마켓포, THE POP 등 커머스/멤버십 앱 운영을 담당했습니다.</li>
+                    <li>정기/긴급 배포, 신규 OS/Deprecated API 대응, VOC 기반 버그 수정을 진행했습니다.</li>
                 </ul>
 
                 <p><strong>Screenshots / Result</strong></p>
                 <ul>
-                    <li>운영 대상이었던 커머스 및 멤버십 앱의 서비스 맥락을 빠르게 이해할 수 있는 대표 화면 자료입니다.</li>
+                    <li>운영 대상 앱의 대표 화면입니다.</li>
                 </ul>
                 <div class="reference-image">
                     <p class="reference-image-label">GS Retail 운영 앱 화면</p>
@@ -360,8 +418,7 @@ const projectData = {
 
                 <p><strong>Result / Impact</strong></p>
                 <ul>
-                    <li>여러 운영 앱의 정기/긴급 배포와 장애 대응을 경험하며 운영 중인 모바일 서비스의 안정성을 지키는 실무 역량을 쌓았습니다.</li>
-                    <li>Android와 iOS를 함께 다룬 경험을 통해 이후 iOS 개발에서도 플랫폼 차이와 운영 구조를 함께 고려하는 기반을 만들었습니다.</li>
+                    <li>여러 운영 앱의 배포와 장애 대응을 통해 모바일 서비스 안정성 관리 경험을 쌓았습니다.</li>
                 </ul>
             </div>
 
@@ -374,37 +431,32 @@ const projectData = {
 
                 <p><strong>Problem</strong></p>
                 <ul>
-                    <li>오픈을 앞둔 시점에 모바일 개발 산출물과 구현 방향을 다시 점검하고, Android/iOS 양쪽의 개발 범위를 정리해야 했습니다.</li>
-                    <li>SSO, One-Source Multi Application, 외부 SDK, API/WKWebView 연동처럼 여러 앱과 플랫폼에 영향을 주는 기능을 안정적으로 구현해야 했습니다.</li>
+                    <li>오픈 전 모바일 산출물, SSO, One-Source Multi Application 등 주요 구현 범위를 정리해야 했습니다.</li>
                 </ul>
 
                 <p><strong>My Role</strong></p>
                 <div class="modal-role-callout">
                     <span class="modal-role-label">Leadership Role</span>
-                    <p>모바일 파트 PL로 참여해 Android/iOS 개발 범위와 개발 문서를 정리하고, 주요 기능 구현 방향을 조율했습니다.</p>
+                    <p>모바일 파트 PL로 Android/iOS 개발 범위, 개발 문서, 주요 기능 구현 방향을 조율했습니다.</p>
                 </div>
                 <ul>
-                    <li>GS 차세대 프로젝트 모바일 파트 PL 역할을 맡았습니다.</li>
-                    <li>Android와 iOS 개발 범위를 함께 확인하며 기능 구현과 문서 정리를 담당했습니다.</li>
-                    <li>SSO, One-Source Multi Application, SDK 연동, API/WKWebView 연동 등 주요 모바일 기능 구현에 참여했습니다.</li>
+                    <li>SSO, One-Source Multi Application, SDK/API/WKWebView 연동 등 주요 모바일 기능 구현에 참여했습니다.</li>
                 </ul>
 
                 <p><strong>Key Contributions</strong></p>
                 <ul>
-                    <li>SSO Flow와 시나리오를 정리하고, 각 플랫폼에서 필요한 구현 범위를 검토했습니다.</li>
-                    <li>여러 앱을 한 구조에서 관리하기 위한 scheme 분리와 환경 분리 작업을 진행했습니다.</li>
-                    <li>FCM, 외부 SDK, 소셜 로그인, API/WKWebView 연동 등 차세대 커머스 앱에 필요한 모바일 기능을 구현했습니다.</li>
+                    <li>SSO Flow, 플랫폼별 구현 범위, scheme/환경 분리 방향을 정리했습니다.</li>
+                    <li>FCM, 외부 SDK, 소셜 로그인, API/WKWebView 연동 기능을 구현했습니다.</li>
                 </ul>
 
                 <p><strong>Technical Decisions</strong></p>
                 <ul>
-                    <li>One-Source Multi Application 구조를 고려해 앱별 scheme과 환경을 분리하는 방향으로 구성했습니다.</li>
-                    <li>SSO와 외부 SDK 연동은 운영 전환 이후의 안정성과 배포 리스크를 고려해 구현 범위를 점검했습니다.</li>
+                    <li>One-Source Multi Application과 운영 전환 리스크를 고려해 scheme, 환경, SSO 연동 범위를 점검했습니다.</li>
                 </ul>
 
                 <p><strong>Screenshots / Result</strong></p>
                 <ul>
-                    <li>차세대 커머스 앱 전환 결과를 설명할 수 있는 대표 화면 자료입니다.</li>
+                    <li>차세대 커머스 앱 전환 결과 화면입니다.</li>
                 </ul>
                 <div class="reference-image">
                     <p class="reference-image-label">GS Fresh 차세대 커머스 앱 화면</p>
@@ -413,8 +465,7 @@ const projectData = {
 
                 <p><strong>Result / Impact</strong></p>
                 <ul>
-                    <li>운영 경험을 기반으로 차세대 커머스 프로젝트의 모바일 개발 범위와 구현 방향을 정리했습니다.</li>
-                    <li>Android와 iOS를 함께 고려하며 모바일 파트 PL 역할을 수행한 경험을 쌓았습니다.</li>
+                    <li>운영 경험을 기반으로 차세대 커머스 앱의 모바일 구현 방향을 정리했습니다.</li>
                 </ul>
             </div>
         `

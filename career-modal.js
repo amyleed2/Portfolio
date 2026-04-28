@@ -10,33 +10,46 @@ const careerData = {
         techStack: ['Android', 'Java', 'Eclipse', 'Git', 'SVN', 'Trello'],
         sections: [
             {
-                title: '💼 담당 업무',
+                title: 'Role Summary',
                 content: `
-                    <p><strong>Android Mobile Application Developer</strong></p>
+                    <p><strong>Android 기반 SI/SM 프로젝트를 수행하며 모바일 앱 개발의 기본기와 다양한 직군 협업 경험을 쌓았습니다.</strong></p>
+                    <p>웹에이전시 환경에서 기획, 디자인, 서버/웹 개발자와 요구사항을 맞추며 커머스, 브랜드, O2O, 위치 기반 서비스 앱을 개발했습니다.</p>
+                `
+            },
+            {
+                title: 'Main Responsibilities',
+                content: `
                     <ul>
-                        <li>SI 프로젝트 개발 및 진행</li>
-                        <li>SM 프로젝트 담당 및 개발</li>
+                        <li>Android 앱 화면 구현, API 연동, WebView/JavaScript Interface 연동을 담당했습니다.</li>
+                        <li>외부 SDK, 소셜 로그인, 결제, 위치 기반 기능을 프로젝트 요구사항에 맞게 연동했습니다.</li>
+                        <li>SI/SM 프로젝트에서 기획서와 디자인을 기준으로 구현 범위와 예외 케이스를 맞춰가며 개발했습니다.</li>
                     </ul>
                 `
             },
             {
-                title: '🏢 주요 프로젝트',
+                title: 'Key Projects',
                 content: `
-                    <p><strong>SI Projects</strong></p>
                     <ul>
-                        <li>POLY SCHOOL, 사교육 시스템 학부모/학생 앱 구축</li>
-                        <li>SK FashionMall Brochure Pad 용 어플리케이션 구축</li>
-                        <li>LuxeWater, 중국 워터 서플라이 플랫폼 어플리케이션 구축</li>
-                        <li>CafeUnion, 중국 커피 프리오더 서비스 어플리케이션 구축</li>
-                        <li>NatureRepublic 브랜드 어플리케이션 구축</li>
-                        <li>올가홀푸드 브랜드 어플리케이션 구축</li>
+                        <li><strong>CafeUnion</strong> : 중국 시장 대상 O2O 커머스 앱. 위치 기반 매장 탐색, 소셜 로그인, 결제 SDK 연동 경험.</li>
+                        <li><strong>LuxeWater</strong> : 중국 마켓 대상 브랜드/하이브리드 앱. WebView, JavaScript Interface, 현지 SDK 연동 경험.</li>
+                        <li><strong>올가홀푸드</strong> : 식품/커머스 브랜드 앱. 상품 탐색, 바코드/QR 인식, 푸시 SDK 연동 경험.</li>
+                        <li><strong>MyD2</strong> : 사내 커뮤니케이션 앱. 업무용 앱 화면 구현, API 연동, 푸시 기능 연동 경험.</li>
                     </ul>
-
-                    <p><strong>SM Projects</strong></p>
+                `
+            },
+            {
+                title: 'Technical Focus',
+                content: `
                     <ul>
-                        <li>Holly coffee 어플리케이션 운영 및 개발</li>
-                        <li>사내 인프라넷 앱, MyD2 어플리케이션 구축 및 개발</li>
+                        <li>Android Java, WebView, 외부 SDK, 위치 기반 기능, 푸시, 소셜 로그인/결제 연동</li>
+                        <li>여러 도메인의 요구사항을 모바일 앱 구조로 구현하는 경험</li>
                     </ul>
+                `
+            },
+            {
+                title: 'What This Experience Shows',
+                content: `
+                    <p>초기 Android/SI 경험은 이후 iOS 개발자로서 플랫폼 차이, 운영 구조, 협업 흐름을 이해하는 기반이 되었습니다.</p>
                 `
             }
         ]
@@ -48,45 +61,49 @@ const careerData = {
         duration: '4년 4개월',
         role: '대리',
         roleEmoji: '💼',
-        techStack: ['iOS', 'Android', 'Swift', 'Objective-C', 'RxSwift', 'Java', 'Kotlin', 'SVN', 'Bitbucket', 'Jira', 'Confluence', 'Teams', 'Outlook'],
+        techStack: ['iOS', 'Android', 'Swift', 'Objective-C', 'RxSwift', 'Java', 'Kotlin', 'Firebase', 'Crashlytics', 'Jira', 'Confluence'],
         sections: [
             {
-                title: '💼 담당 업무',
+                title: 'Role Summary',
                 content: `
-                    <p><strong>Cross Platform Management (iOS, Android)</strong></p>
+                    <p><strong>GS Retail 전사 모바일 앱 운영 조직에서 iOS/Android 앱 운영과 개발을 담당했습니다.</strong></p>
+                    <p>정기/긴급 배포, OS 업데이트 대응, VOC/Crash 대응을 수행했고, 별도 GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 참여했습니다.</p>
+                `
+            },
+            {
+                title: 'Main Responsibilities',
+                content: `
                     <ul>
-                        <li>SI 프로젝트 개발 및 진행 (Android)</li>
-                        <li>GS Retail 전사 어플리케이션 운영 및 개발 (iOS, Android)</li>
-                    </ul>
-                    <p><strong>정기 운영 업무</p>
-                    <ul>
-                        <li>각 어플리케이션 당 월 2회 정기 배포건 진행</li>
-                        <li>VOC 대응 및 오류 대응</li>
-                        <li>신규 OS Update 대응 및 Deprecated Function 대응</li>
-                        <li>Crash Report 분석을 통한 앱 장애 요소 예방 및 대응</li>
-                        <li>현업의 앱 개선 요청 사항 개발 대응</li>
-                        <li>운영 시스템 관련 프로젝트에 대한 운영팀으로서의 개발 Inspection 리딩</li>
-                        <li>성능 및 안정성 개선</li>
+                        <li>GS 그룹의 다양한 SI 프로젝트를 구축했습니다.</li>
+                        <li>GS Retail 커머스 및 멤버십 앱의 정기 배포와 긴급 배포를 대응했습니다.</li>
+                        <li>VOC, Crash Report, 신규 OS 업데이트, Deprecated API 대응을 수행했습니다.</li>
+                        <li>운영 앱 개선 요청과 성능/안정성 이슈를 확인하고 수정했습니다.</li>
+                        <li>GS Fresh 차세대 프로젝트에서 모바일 파트 PL로 개발 범위와 구현 방향을 정리했습니다.</li>
                     </ul>
                 `
             },
             {
-                title: '🏢 주요 프로젝트',
+                title: 'Key Projects',
                 content: `
-                    <p><strong>GS Retail 전사 어플리케이션 운영 및 개발</strong></p>
                     <ul>
-                        <li>통합 커머스 어플리케이션 : GS프레시몰, 달리살다, 마켓포</li>
-                        <li>통합 맴버십 어플리케이션 : THE POP, GS수퍼마켓, GS25-나만의 냉장고, 우리동네 딜리버리</li>
-                        <li>랄라블라 어플리케이션</li>
-                        <li>미식일상 어플리케이션</li>
-                        <li>GS리테일 배달 기사님 전용 사내 어플리케이션</li>
+                        <li><strong>GS Retail Mobile App Operation</strong> : GS Fresh Mall, 달리살다, 마켓포, THE POP 등 전사 모바일 앱 운영.</li>
+                        <li><strong>GS Fresh 차세대 프로젝트 구축p</strong> : 모바일 파트 PL로 SSO, One-Source Multi Application, SDK/API/WKWebView 연동 범위 담당.</li>
                     </ul>
-
-                    <p><strong>GS fresh 차세대 프로젝트 구축 및 개발</strong></p>
+                `
+            },
+            {
+                title: 'Technical Focus',
+                content: `
                     <ul>
-                        <li>산출물 : GS프레시몰, 달리살다, 마켓포 iOS Application</li>
-                        <li>PL 및 iOS 개발 담당</li>
+                        <li>iOS/Android 운영, 배포 대응, Crash 분석, OS 업데이트 대응</li>
+                        <li>One-Source Multi Application, Scheme / Environment 분리, SSO, 외부 SDK 연동</li>
                     </ul>
+                `
+            },
+            {
+                title: 'What This Experience Shows',
+                content: `
+                    <p>운영 중인 모바일 서비스의 안정성을 지키는 방식과 Android/iOS 양쪽을 고려한 모바일 개발 리딩 경험을 보여줍니다.</p>
                 `
             }
         ]
@@ -98,37 +115,47 @@ const careerData = {
         duration: '2년 4개월',
         role: '팀원',
         roleEmoji: '👨‍💻',
-        techStack: ['iOS', 'Swift', 'UIKit', 'Objective-C', 'SwiftUI','Bitbucket', 'Confluence', 'Jira', 'Teams', 'Zepline'],
+        techStack: ['iOS', 'Swift', 'UIKit', 'Objective-C', 'SwiftUI', 'Bitbucket', 'Confluence', 'Jira', 'Teams', 'Zeplin'],
         sections: [
             {
-                title: '💼 담당 업무',
-                content: '<p><strong>ONEstory iOS Application 운영 및 개발</strong></p>'
+                title: 'Role Summary',
+                content: `
+                    <p><strong>ONEstory iOS 앱 운영과 기능 개발을 담당하며 콘텐츠 앱의 운영 안정성과 사용자 기능 개선을 경험했습니다.</strong></p>
+                    <p>UIKit 기반 화면 개선, WebView 연동, iPad 대응, 위젯 등 콘텐츠 앱 운영에 필요한 기능을 개발했습니다.</p>
+                `
             },
             {
-                title: '🏢 주요 프로젝트',
+                title: 'Main Responsibilities',
                 content: `
-                    <p><strong>메인 담당 업무</strong></p>
                     <ul>
-                        <li>Webview 기반 구매목록 화면 Native(UIKit) 전환 개발 및 배포</li>
-                        <li>iPad 환경 UI 해상도 대응 및 개발</li>
-                        <li>내서재, 구매목록, 마이페이지 화면 담당 및 개발</li>
-                        <li>소셜 로그인 SDK 연동 및 개발, 관리</li>
-                        <li>고객문의 CS 카카오톡 문의하기 개발 및 운영</li>
-                        <li>Webview JavaScript 코드 리팩토링 및 개선</li>
-                        <li>iPhone/iPad 위젯 개발 및 운영</li>
-                        <li>Eye-tracking 기능 개발 및 운영</li>
-                        <li>QA 시 외부연동규격 테스트를 위한 Tracer Application 개발 및 운영</li>
+                        <li>ONEstory iOS 앱의 정기 배포, VOC 대응, OS 업데이트 대응을 수행했습니다.</li>
+                        <li>WebView로 구성되어 있던 화면을 UIKit Native 전환, 내서재/마이페이지/고객문의 등 주요 화면 개발을 담당했습니다.</li>
+                        <li>소셜 로그인 SDK, JavaScript 연동, 위젯, iPad UI 대응 등 콘텐츠 앱 기능을 개발했습니다.</li>
                     </ul>
-
-                    <p><strong>정기 운영 업무</strong></p>
+                `
+            },
+            {
+                title: 'Key Projects',
+                content: `
                     <ul>
-                        <li>월 2회 정기 배포 진행</li>
-                        <li>VOC 대응</li>
-                        <li>신규 OS Update 대응 및 Deprecated Function 대응</li>
-                        <li>Crash Report 분석을 통한 앱 장애 요소 예방 및 대응</li>
-                        <li>앱 개선 요청 사항 개발 대응</li>
-                        <li>성능 및 안정성 개선</li>
+                        <li><strong>ONEstory iOS App Operation</strong> : 콘텐츠 앱 운영, 화면 개선, SDK 연동, 위젯 및 iPad 대응.</li>
+                        <li><strong>WebView to Native</strong> : 구매목록 등 WebView 기반 화면의 Native 전환 경험.</li>
                     </ul>
+                `
+            },
+            {
+                title: 'Technical Focus',
+                content: `
+                    <ul>
+                        <li>UIKit, Swift, Objective-C, SwiftUI, WebView/JavaScript 연동</li>
+                        <li>정기 운영, VOC 대응, OS 업데이트 및 Deprecated API 대응</li>
+                    </ul>
+                `
+            },
+            {
+                title: 'What This Experience Shows',
+                content: `
+                    <p>콘텐츠 도메인 iOS 앱을 운영하며 레거시 화면 개선과 기능 확장을 병행한 경험을 보여줍니다.</p>
                 `
             }
         ]
@@ -140,46 +167,47 @@ const careerData = {
         duration: '1년 6개월',
         role: '팀원',
         roleEmoji: '🚀',
-        techStack: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'Figma', 'Cursor', 'Copilot'],
+        techStack: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'Figma', 'Design Token', 'Code Connect', 'Cursor', 'Copilot'],
         sections: [
             {
-                title: '💼 담당 업무',
+                title: 'Role Summary',
                 content: `
-                    <p><strong>ONEstore iOS Application 개발</strong></p>
+                    <p><strong>ONEstore iOS Platform팀에서 글로벌 앱 마켓 Prototype iOS PL과 디자인 시스템 iOS 개발 파트 PM 역할을 수행했습니다.</strong></p>
+                    <p>Apple DMA 관련 기술 검토, Prototype/Alpha/Beta 개발 흐름, 공통 UI 컴포넌트와 디자인 토큰 기반 협업 구조를 정리했습니다.</p>
+                `
+            },
+            {
+                title: 'Main Responsibilities',
+                content: `
                     <ul>
-                        <li>원스토어 글로벌 마켓 프로토타입/Beta iOS 앱 개발 PL</li>
-                        <li>디자인 시스템 iOS 개발 PM</li>
+                        <li>ONEstore Global App Market Prototype에서 iOS PL로 기술 검토와 단계별 개발 흐름을 리드했습니다.</li>
+                        <li>Clean Architecture/MVVM 기반 앱 구조, 네트워크 모듈, JavaScript Interface 구조를 설계했습니다.</li>
+                        <li>ONEstore Design System에서 iOS 개발 파트 PM으로 컴포넌트 구조, 디자인 토큰, Figma Code Connect 흐름을 정리했습니다.</li>
                     </ul>
                 `
             },
             {
-                title: '🏢 주요 프로젝트',
+                title: 'Key Projects',
                 content: `
-                    <p><strong>ONEstore Global iOS Market Application 제작</strong></p>
                     <ul>
-                        <li>제3자마켓 스토어 기술 검토 및 프로토타입 앱 제작 주도</li>
-                        <li>아키텍처 설계 및 네트워크 통신 모듈 설계</li>
-                        <li>JavaScript Interface 설계 및 구현</li>
-                        <li>상세 페이지 및 전시 화면 구현 담당</li>
-                        <li>공통 UI 컴포넌트 개발</li>
-                        <li>인증 & 인가 SDK 설계</li>
+                        <li><strong>ONEstore Design System</strong> : 공통 UI 컴포넌트, 디자인 토큰, Figma Code Connect 기반 디자인-개발 협업 구조.</li>
+                        <li><strong>ONEstore Global App Market Prototype</strong> : Apple DMA 관련 기술 검토, MarketplaceKit 제약 확인, Prototype → Alpha/Beta 개발.</li>
                     </ul>
-                    <p><strong>Apple Cork 지사 기술 세션 참석</strong> 🇮🇪</p>
+                `
+            },
+            {
+                title: 'Technical Focus',
+                content: `
                     <ul>
-                        <li>팀 대표로 선출되어 '제3자마켓 오픈 API' 관련 오프라인 세션 참석</li>
-                        <li>관련 기술력 검토 및 MVP 앱 제작</li>
-                        <li>제3 마켓 등록 및 출시를 위한 기술력 검토 및 질의</li>
-                        <li>전사 세미나 주최</li>
+                        <li>SwiftUI, Clean Architecture, MVVM, Tuist, MarketplaceKit 검토</li>
+                        <li>Design Token, Style Dictionary, Figma Code Connect, 공통 UI 컴포넌트 구조</li>
                     </ul>
-                    <p><strong>원스토어 디자인 시스템 구축</strong></p>
-                    <ul>
-                        <li>디자인 시스템 구축 iOS 개발 참여</li>
-                        <li>디자인 시스템 아키텍처 설계 및 구축 참여</li>
-                        <li>iOS 디자인 컴포넌트 개발 담당</li>
-                        <li>Figma 연동 모듈 설계 및 구현</li>
-                        <li>디자인 시스템 자동화 방식 검토 및 설계</li>
-                        <li>전사 세미나 진행</li>
-                    </ul>
+                `
+            },
+            {
+                title: 'What This Experience Shows',
+                content: `
+                    <p>신규 플랫폼 대응, iOS PL/PM 역할, 디자인 시스템 기반 플랫폼화 경험을 함께 보여줍니다.</p>
                 `
             }
         ]
@@ -191,22 +219,46 @@ const careerData = {
         duration: '3개월',
         role: '과장',
         roleEmoji: '⭐',
-        techStack: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'UIKit', 'BitBucket', 'Jira', 'Confluence', 'Figma', 'Swagger', 'Cursor', 'Copilot'],
+        techStack: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'UIKit', 'MVVM', 'Crashlytics', 'AppsFlyer', 'Braze', 'Alamofire', 'SnapKit', 'Cursor', 'Copilot'],
         sections: [
             {
-                title: '💼 담당 업무',
-                content: '<p><strong>엔카닷컴 iOS 앱의 레거시 화면 현대화(UIKit → SwiftUI)와 광고 모듈 통합 구조 설계를 담당했습니다.</strong></p>'
+                title: 'Role Summary',
+                content: `
+                    <p><strong>엔카 iOS 앱 운영 개발 과정에서 UIKit 레거시 화면의 SwiftUI 전환과 운영 안정성 개선을 담당했습니다.</strong></p>
+                    <p>재직 기간은 짧지만, 레거시 화면 개선, 광고 모듈 통합, Crashlytics/API 로깅 개선처럼 운영 중인 앱의 구조 개선에 집중했습니다.</p>
+                `
             },
             {
-                title: '🏢 주요 업무',
+                title: 'Main Responsibilities',
                 content: `
                     <ul>
-                        <li>차량 옵션 필터 화면을 UIKit에서 SwiftUI + MVVM으로 전면 재개발 (단독 수행)<br>→ 신규 아키텍처 도입, Unit Test 작성, 디자인 시스템 통합</li>
-                        <li>광고 모듈(AppsFlyer, Braze) 연동 코드를 파일 분산 구조에서 단일 통합 구조로 재설계<br>→ 중복 제거, 향후 모듈 교체 용이한 구조 확보</li>
-                        <li>Crashlytics 크래시 로깅 로직을 단일 클래스로 중앙화, 장애 추적 효율 향상</li>
-                        <li>API 요청/응답 로깅 기능 추가로 운영 중 디버깅 환경 개선</li>
-                        <li>정기 배포 및 앱 안정성 운영</li>
+                        <li>기존의 UIKit으로 구현된 제네시스 옵션 필터 화면을 SwiftUI + MVVM 구조로 전환했습니다.</li>
+                        <li>AppsFlyer, Braze 등 광고 모듈 연동 코드를 공통 구조로 정리했습니다.</li>
+                        <li>Crashlytics 로깅 중앙화와 API 요청/응답 로깅 개선을 수행했습니다.</li>
                     </ul>
+                `
+            },
+            {
+                title: 'Key Projects',
+                content: `
+                    <ul>
+                        <li><strong>Encar iOS App</strong> : UIKit 레거시 화면 개선, SwiftUI 전환, 광고 모듈 통합, 운영 로깅 개선.</li>
+                    </ul>
+                `
+            },
+            {
+                title: 'Technical Focus',
+                content: `
+                    <ul>
+                        <li>SwiftUI, UIKit, MVVM, Unit Test, SnapKit, Figma, Cursor</li>
+                        <li>Crashlytics, AppsFlyer, Braze, API logging, 운영 안정성 개선</li>
+                    </ul>
+                `
+            },
+            {
+                title: 'What This Experience Shows',
+                content: `
+                    <p>운영 중인 iOS 앱에서 레거시 구조를 파악하고, 필요한 범위를 정해 점진적으로 개선하는 역량을 보여줍니다.</p>
                 `
             }
         ]
