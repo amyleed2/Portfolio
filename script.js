@@ -73,6 +73,14 @@ projectCards.forEach((card, index) => {
     observer.observe(card);
 });
 
+// Keyboard support for Featured Projects cards that use inline modal triggers.
+function handleFeaturedProjectKey(event, projectId) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openProjectModal(projectId);
+    }
+}
+
 // Observe contact section
 const contactSection = document.querySelector('.contact-wrapper');
 if (contactSection) {
@@ -108,6 +116,7 @@ if (contactSection) {
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
+if (contactForm && formMessage) {
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -206,6 +215,7 @@ formInputs.forEach(input => {
         }
     });
 });
+}
 
 function validateInput(input) {
     const value = input.value.trim();
@@ -362,4 +372,3 @@ function toggleDetail(button) {
 }
 
 console.log('Portfolio website loaded successfully! 🚀');
-
