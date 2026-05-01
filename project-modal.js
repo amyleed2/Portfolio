@@ -11,48 +11,41 @@ const projectData = {
         features: `
             <p><strong>Project Context</strong></p>
             <ul>
-                <li>전체 진행 기간은 2025.11 ~ 2026.03, 실제 iOS 개발 집중 기간은 2026.01 ~ 2026.02입니다.</li>
-                <li>팀 구성은 Android 1명, iOS 1명, 기획 2명, 디자이너 1명이었고, iOS 앱 설계와 구현을 담당했습니다.</li>
-                <li>개인 프로젝트로 App Store에 출시했으며, 실제 앱 화면과 스토어 링크를 함께 공개했습니다.</li>
+                <li>전체 2025.11 ~ 2026.03, iOS 개발 집중 기간은 2026.01 ~ 2026.02입니다.</li>
+                <li>Android 1명, iOS 1명, 기획 2명, 디자이너 1명 구성에서 iOS 앱 설계, 구현, App Store 배포를 담당했습니다.</li>
             </ul>
 
             <p><strong>Problem</strong></p>
             <ul>
                 <li>모든 이미지를 바로 AI 처리로 넘기면 비용, 정확도, 실패 케이스 관리가 어려워질 수 있었습니다.</li>
-                <li>먼저 영어 학습지인지, 읽을 수 있는 품질인지, 후속 정리 처리가 필요한 입력인지 판별하는 triage 흐름이 필요했습니다.</li>
+                <li>영어 학습지 여부, 이미지 품질, 후속 정리 필요 여부를 먼저 판별하는 triage 흐름이 필요했습니다.</li>
             </ul>
 
             <p><strong>My Role</strong></p>
             <ul>
-                <li>문제 정의와 iOS 앱 플로우를 정리하고, VisionKit 기반 문서 이미지 입력 흐름을 구현했습니다.</li>
-                <li>필기 제거 목적에 맞는 OpenAI API 프롬프트와 결과 응답 DTO 구조를 직접 설계했습니다.</li>
-                <li>ACCEPT / REJECT 기반 triage 로직과 status, reason_code, truncated, truncation_reason 같은 응답 필드를 앱 로직에서 다시 검증하는 방어 흐름을 구성했습니다.</li>
-                <li>불필요한 출력과 토큰 사용량을 줄이기 위해 프롬프트와 응답 스키마를 다시 정리했습니다.</li>
-                <li>SwiftUI 화면 흐름, 상태 처리, 실패 케이스 메시지, App Store 배포를 담당했습니다.</li>
+                <li>문제 정의, iOS 앱 플로우, VisionKit 기반 문서 이미지 입력 흐름을 설계·구현했습니다.</li>
+                <li>필기 제거용 OpenAI 프롬프트와 응답 DTO를 설계하고, ACCEPT / REJECT 기반 triage와 reason_code 검증 흐름을 구성했습니다.</li>
+                <li>토큰 사용량을 줄이기 위해 출력 형식과 응답 스키마를 정리하고, SwiftUI 상태 처리와 App Store 배포까지 담당했습니다.</li>
             </ul>
 
             <p><strong>Architecture</strong></p>
             <ul>
-                <li>Presentation, Domain, Data 레이어로 나누는 Clean Architecture 기반 구조를 적용했습니다.</li>
-                <li>Presentation은 SwiftUI View와 @Observable @MainActor ViewModel로 구성하고, Domain에는 Entity, Repository Protocol, UseCase를 분리했습니다.</li>
-                <li>Data 레이어에는 OpenAI API 클라이언트, Repository 구현체, Firebase Remote Config 연동, FileManager/UserDefaults 기반 저장 흐름을 배치했습니다.</li>
+                <li>Presentation, Domain, Data 레이어로 나누고 SwiftUI View, @Observable @MainActor ViewModel, UseCase, Repository Protocol을 분리했습니다.</li>
+                <li>Data 레이어에는 OpenAI API 클라이언트, Repository 구현체, Firebase Remote Config, FileManager/UserDefaults 저장 흐름을 배치했습니다.</li>
             </ul>
 
             <p><strong>Key Implementation</strong></p>
             <ul>
-                <li>VisionKit 문서 스캔 이후 선택 화면에서 네트워크 상태를 확인하고, ExtractWorksheetTextUseCase를 통해 OCR/정리 요청을 실행했습니다.</li>
-                <li>OpenAI Responses API는 SDK 없이 URLSession 기반 커스텀 클라이언트로 연동하고, 요청 전 이미지 리사이즈와 JPEG 압축을 적용했습니다.</li>
-                <li>필기 제거 결과를 앱에서 다루기 쉽도록 status, reason_code, confidence, extracted_markdown, truncated, truncation_reason 중심의 응답 DTO를 설계했습니다.</li>
-                <li>프롬프트는 처리 대상 판단, 필기 제거 기준, 출력 형식을 분리해 작성하고, 불필요한 설명 출력을 줄여 토큰 사용량을 낮추는 방향으로 재정리했습니다.</li>
-                <li>ACCEPT지만 결과가 비어 있는 경우, schema_version이 맞지 않는 경우, timeout/HTTP/parse/model refusal 케이스를 별도 오류 흐름으로 처리했습니다.</li>
+                <li>VisionKit 스캔 후 네트워크 상태를 확인하고, ExtractWorksheetTextUseCase를 통해 OCR/정리 요청을 실행했습니다.</li>
+                <li>OpenAI Responses API는 URLSession 기반 커스텀 클라이언트로 연동하고, 요청 전 이미지 리사이즈와 JPEG 압축을 적용했습니다.</li>
+                <li>status, reason_code, confidence, extracted_markdown, truncated, truncation_reason 중심의 DTO와 timeout/HTTP/parse/model refusal 오류 흐름을 분리했습니다.</li>
+                <li>프롬프트는 처리 대상 판단, 필기 제거 기준, 출력 형식을 나누고 불필요한 설명 출력을 줄이는 방향으로 정리했습니다.</li>
             </ul>
 
             <p><strong>AI Integration</strong></p>
             <ul>
-                <li>AI 응답을 그대로 신뢰하지 않고, ACCEPT / REJECT와 reason_code 조합을 앱에서 다시 검증하도록 설계했습니다.</li>
-                <li>프롬프트에는 처리 가능 여부, 필기 제거 기준, 응답 형식을 명확히 나누어 모델 출력이 앱 로직과 맞물리도록 구성했습니다.</li>
-                <li>출력 토큰 제한으로 결과가 잘릴 수 있는 경우를 고려해 truncated와 truncation_reason을 분리하고 후속 처리 가능성을 열어두었습니다.</li>
-                <li>잘못된 입력, 낮은 품질의 이미지, 영어 학습지가 아닌 이미지에 대해 사용자에게 설명 가능한 실패 상태로 연결했습니다.</li>
+                <li>ACCEPT / REJECT와 reason_code 조합을 앱에서 다시 검증해 AI 응답을 그대로 신뢰하지 않도록 설계했습니다.</li>
+                <li>truncated와 truncation_reason을 분리해 출력 제한 상황을 다루고, 잘못된 입력은 설명 가능한 실패 상태로 연결했습니다.</li>
             </ul>
 
             <p><strong>Screenshots / Result</strong></p>
@@ -67,8 +60,8 @@ const projectData = {
 
             <p><strong>Result</strong></p>
             <ul>
-                <li>AI API를 iOS 앱 플로우 안에 방어적으로 연결하는 구조를 실험하고 App Store 출시까지 진행했습니다.</li>
-                <li>기획, 디자인, Android 개발자와 협업하며 iOS 단독 담당자로 앱 구조와 출시 흐름을 끝까지 정리했습니다.</li>
+                <li>AI API를 iOS 앱 플로우 안에 방어적으로 연결하고 App Store 출시까지 진행했습니다.</li>
+                <li>기획, 디자인, Android 개발자와 협업하며 iOS 구조와 출시 흐름을 정리했습니다.</li>
             </ul>
 
             <p><strong>App Store</strong></p>
@@ -85,7 +78,7 @@ const projectData = {
             <p><strong>Overview</strong></p>
             <ul>
                 <li>엔카 iOS 앱의 운영 개발 과정에서 레거시 UIKit 화면 개선과 SwiftUI 전환, 운영 안정성 개선을 함께 수행한 프로젝트입니다.</li>
-                <li>단기간 안에 기존 구조를 파악하고, 신규 화면 전환과 운영 코드 정리를 병행해야 했습니다.</li>
+                <li>기존 앱 구조를 파악한 뒤, 맡은 화면 전환 범위와 운영 코드 정리 범위를 분리해 진행해야 했습니다.</li>
             </ul>
 
             <p><strong>Problem</strong></p>
@@ -97,9 +90,9 @@ const projectData = {
 
             <p><strong>My Role</strong></p>
             <ul>
-                <li>제네시스 옵션 필터 화면의 SwiftUI + MVVM 전환을 담당했습니다.</li>
-                <li>광고 모듈 통합 구조 설계, Crashlytics 로깅 중앙화, API 로깅 개선 작업을 수행했습니다.</li>
-                <li>정기 배포와 운영 이슈 대응 과정에서 안정성 개선 작업을 함께 진행했습니다.</li>
+                <li>제네시스 옵션 필터 화면의 SwiftUI + MVVM 전환 범위를 담당했습니다.</li>
+                <li>광고 모듈 통합 구조, Crashlytics 로깅 중앙화, API 로깅 개선처럼 운영 추적에 필요한 산출물을 정리했습니다.</li>
+                <li>정기 배포와 운영 이슈 대응 과정에서 맡은 변경 범위의 안정성 확인을 함께 진행했습니다.</li>
             </ul>
 
             <p><strong>Key Contributions</strong></p>
@@ -111,9 +104,9 @@ const projectData = {
 
             <p><strong>Technical Decisions</strong></p>
             <ul>
-                <li>신규 화면은 SwiftUI를 적용하되, 기존 앱 구조와의 연결성을 고려해 MVVM 기반으로 상태와 화면 로직을 분리했습니다.</li>
-                <li>광고/분석 SDK 연동은 개별 화면에 흩어지지 않도록 공통 진입점을 두는 방향으로 정리했습니다.</li>
-                <li>운영 중 원인 추적이 필요한 지점을 기준으로 크래시와 네트워크 로그의 수집 위치를 조정했습니다.</li>
+                <li>신규 화면은 SwiftUI를 적용하되, 기존 UIKit 앱과의 연결 지점을 고려해 MVVM 기반으로 상태와 화면 로직을 분리했습니다.</li>
+                <li>광고/분석 SDK 연동은 화면별 분산 호출보다 공통 진입점에서 관리하는 편이 변경 영향 범위를 추적하기 쉽다고 판단했습니다.</li>
+                <li>Crashlytics와 API 로깅은 단순 로그 추가가 아니라 재현 조건, 요청/응답 흐름, 사용자 영향 범위를 파악하기 쉬운 지점을 기준으로 수집 위치를 조정했습니다.</li>
             </ul>
 
             <p><strong>Screenshots / Result</strong></p>
@@ -129,8 +122,8 @@ const projectData = {
 
             <p><strong>Result / Impact</strong></p>
             <ul>
-                <li>레거시 화면을 신규 구조로 전환하며 이후 SwiftUI 기반 화면 확장의 기준을 마련했습니다.</li>
-                <li>광고 모듈과 로깅 구조를 정리해 운영 중 변경 대응과 장애 추적이 쉬운 구조로 개선했습니다.</li>
+                <li>UIKit 레거시 화면을 SwiftUI + MVVM 구조로 전환한 산출물을 남겨, 유사 화면 전환 시 참고할 수 있는 구현 기준을 만들었습니다.</li>
+                <li>광고 모듈 진입점과 Crashlytics/API 로깅 위치를 정리해 운영 이슈의 재현 조건과 영향 범위를 파악하기 쉬운 구조로 개선했습니다.</li>
             </ul>
         `
     },
@@ -138,7 +131,7 @@ const projectData = {
     'onestore-1': {
         title: 'ONEstore Global App Market Prototype 개발',
         period: '2024.01 ~ 2024.12',
-        description: 'ONEstore 글로벌 앱 마켓 프로젝트에서 iOS PL로 참여해 Apple DMA 관련 제3자 마켓 기술 검토를 진행하고, Prototype부터 Alpha, Beta까지 단계별 iOS 앱 개발을 이끌었습니다.',
+        description: 'ONEstore 글로벌 앱 마켓 프로젝트에서 Apple DMA 관련 제3자 마켓 기술 검토를 진행하고, Prototype부터 Alpha, Beta까지 iOS 구현 범위와 리스크를 정리했습니다.',
         tech: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'MarketplaceKit', 'JavaScript Interface', 'Figma', 'CryptoSwift'],
         features: `
             <p><strong>Overview</strong></p>
@@ -148,31 +141,30 @@ const projectData = {
 
             <p><strong>Problem</strong></p>
             <ul>
-                <li>Apple의 제3자 마켓 정책과 MarketplaceKit 제약을 ONEstore 글로벌 서비스 관점에서 해석해야 했습니다.</li>
-                <li>Hosted App 다운로드, 설치, 업데이트 흐름의 구현 리스크를 정리해야 했습니다.</li>
+                <li>Apple의 제3자 마켓 정책, MarketplaceKit 제약, Hosted App 다운로드/설치/업데이트 흐름의 구현 리스크를 정리해야 했습니다.</li>
             </ul>
 
             <p><strong>My Role</strong></p>
             <div class="modal-role-callout">
-                <span class="modal-role-label">Leadership Role</span>
-                <p>iOS PL로서 정책/기술 검토, 앱 아키텍처 설계, Prototype에서 Alpha/Beta로 이어지는 개발 흐름을 리드했습니다.</p>
+                <span class="modal-role-label">Role Scope</span>
+                <p>정책/기술 검토, 앱 아키텍처 설계, Prototype에서 Alpha/Beta로 이어지는 iOS 구현 범위와 리스크 정리를 담당했습니다.</p>
             </div>
             <ul>
                 <li>제3자 마켓 기술 검토, 앱 아키텍처, 네트워크 모듈, JavaScript Interface 구조를 담당했습니다.</li>
-                <li>Apple Cork 기술 세션에 iOS Client 대표로 참석해 주요 이슈를 구현 관점에서 확인했습니다.</li>
+                <li>Prototype/Alpha/Beta 단계별 구현 범위와 리스크를 정리하고, Apple Cork 기술 세션에서 주요 이슈를 구현 관점으로 확인했습니다.</li>
             </ul>
 
             <p><strong>Key Contributions</strong></p>
             <ul>
                 <li>Apple DMA 문서를 검토해 서비스 적용 조건과 리스크를 정리했습니다.</li>
-                <li>Clean Architecture와 MVVM 기반 앱 구조, 네트워크 모듈, JavaScript Interface 공통 기반을 구성했습니다.</li>
-                <li>Hosted App 목록, 다운로드 상태, 설치/업데이트/실행/삭제 시나리오를 Prototype에서 Alpha/Beta 단계로 확장했습니다.</li>
+                <li>Clean Architecture/MVVM 기반 앱 구조, 네트워크 모듈, JavaScript Interface 공통 기반을 구성했습니다.</li>
+                <li>Hosted App 목록, 다운로드 상태, 설치/업데이트/실행/삭제 시나리오를 단계적으로 확장했습니다.</li>
             </ul>
 
             <p><strong>Technical Decisions</strong></p>
             <ul>
-                <li>구현 전에 정책 제약, API 제공 범위, 서비스 요구사항의 충돌 지점을 정리했습니다.</li>
-                <li>Hosted App/마켓 메타데이터 흐름과 웹-앱 이벤트 연동 경계를 분리해 설계했습니다.</li>
+                <li>구현 전에 Apple 정책 제약, MarketplaceKit/API 제공 범위, 서비스 요구사항의 충돌 지점을 먼저 분리했습니다.</li>
+                <li>마켓 메타데이터, 앱 상태, 웹-앱 이벤트 연동 경계를 나누어 정책 검토 영역과 앱 구현 영역이 섞이지 않도록 설계했습니다.</li>
             </ul>
 
             <p><strong>Visual Evidence</strong></p>
@@ -199,7 +191,8 @@ const projectData = {
 
             <p><strong>Result / Impact</strong></p>
             <ul>
-                <li>제3자 마켓 서비스의 iOS 구현 가능성과 주요 리스크를 앱 흐름으로 검증했습니다.</li>
+                <li>Apple DMA 대응 가능성과 MarketplaceKit 기반 iOS 구현 리스크를 Prototype → Alpha/Beta 단계에서 앱 흐름으로 검토했습니다.</li>
+                <li>정책 제약, 네트워크 모듈, 웹-앱 이벤트 경계를 분리해 후속 단계에서 확인할 기술 리스크를 정리했습니다.</li>
             </ul>
         `
     },
@@ -207,7 +200,7 @@ const projectData = {
     'onestore-2': {
         title: 'ONEstore Design System',
         period: '2024.06 ~ 2025.06',
-        description: 'ONEstore 디자인 시스템 구축 프로젝트에서 iOS 개발 파트 PM으로 참여해 공통 UI 컴포넌트 구조, 디자인 토큰, Figma 연계 흐름을 정리하고 디자인-개발 협업 기준을 맞추는 작업을 진행했습니다.',
+        description: 'ONEstore 디자인 시스템 구축 프로젝트에서 iOS 개발 파트 기준으로 공통 UI 컴포넌트 구조, 디자인 토큰, Figma 연계 흐름을 정리하고 디자인-개발 협업 기준을 맞추는 작업을 진행했습니다.',
         tech: ['iOS', 'Swift', 'SwiftUI', 'Tuist', 'Figma', 'Design Token', 'Style Dictionary', 'Code Connect', 'Lottie'],
         features: `
             <p><strong>Overview</strong></p>
@@ -224,8 +217,8 @@ const projectData = {
 
             <p><strong>My Role</strong></p>
             <div class="modal-role-callout">
-                <span class="modal-role-label">Leadership Role</span>
-                <p>iOS 개발 파트 PM으로서 UXD팀과 개발 조직 사이에서 컴포넌트 구조, 구현 기준, Figma 연계 흐름을 맞췄습니다.</p>
+                <span class="modal-role-label">Role Scope</span>
+                <p>iOS 개발 파트 기준으로 UXD팀과 개발 조직 사이에서 컴포넌트 구조, 구현 기준, Figma 연계 흐름을 맞추는 조율 역할을 수행했습니다.</p>
             </div>
             <ul>
                 <li>컴포넌트 구조, 구현 기준, Style-Component-Screen 프레임워크 구조를 iOS 관점에서 정리했습니다.</li>
@@ -241,8 +234,9 @@ const projectData = {
 
             <p><strong>Technical Decisions</strong></p>
             <ul>
-                <li>디자인 시스템을 Style, Component, Screen 계층으로 나누어 확장성과 유지보수성을 확보하는 방향을 선택했습니다.</li>
-                <li>컴포넌트 정의는 실제 구현에 필요한 Property와 조합 기준까지 함께 맞추는 방식으로 정리했습니다.</li>
+                <li>디자인 시스템을 Style, Component, Screen 계층으로 나누어 토큰, 컴포넌트, 화면 조합의 책임을 분리하는 방향을 선택했습니다.</li>
+                <li>컴포넌트 정의는 디자인 명세만 맞추는 것이 아니라 실제 SwiftUI 구현에 필요한 Property, Item, 상태 조합 기준까지 함께 정리했습니다.</li>
+                <li>디자인 토큰과 Code Connect는 디자이너와 개발자가 같은 컴포넌트 기준을 확인할 수 있도록 Figma 자산과 iOS 구현 예시를 연결하는 방향으로 검토했습니다.</li>
             </ul>
 
             <p><strong>Visual Evidence</strong></p>
@@ -269,7 +263,8 @@ const projectData = {
 
             <p><strong>Result / Impact</strong></p>
             <ul>
-                <li>디자인 시스템을 공통 UI 개발이 아니라 플랫폼화와 협업 기준 정리 작업으로 연결했습니다.</li>
+                <li>공통 컴포넌트, 디자인 토큰, Code Connect 기준을 통해 디자이너와 개발자가 같은 단위로 논의할 수 있는 기준을 정리했습니다.</li>
+                <li>디자인 시스템을 단순 UI 공통화가 아니라 iOS 구현 구조와 협업 커뮤니케이션을 연결하는 플랫폼화 작업으로 확장했습니다.</li>
             </ul>
         `
     },
@@ -375,12 +370,12 @@ const projectData = {
     'gsitm-1': {
         title: 'GS Retail Mobile App Operation & GS Fresh Renewal',
         period: '2018.08 ~ 2021.09',
-        description: 'GS ITM에서 GS Retail 전사 모바일 앱 운영을 담당했고, 별도 GS Fresh 차세대 커머스 프로젝트에서는 모바일 파트 PL로 참여했습니다.',
+        description: 'GS ITM에서 GS Retail 커머스/멤버십 모바일 앱 운영을 담당했고, 별도 GS Fresh 차세대 커머스 프로젝트에서는 모바일 파트 PL로 Android/iOS 개발 범위와 구현 방향을 정리했습니다.',
         tech: ['iOS', 'Android', 'Swift', 'Objective-C', 'RxSwift', 'Firebase', 'Crashlytics', 'Alamofire', 'Moya', 'Jira', 'Confluence'],
         features:  `
             <p><strong>Overview</strong></p>
             <ul>
-                <li>GS Retail 전사 앱 운영 경험과 GS Fresh 차세대 프로젝트 PL 경험을 함께 정리한 프로젝트입니다.</li>
+                <li>GS Retail 커머스/멤버십 앱 운영과 GS Fresh 차세대 프로젝트의 모바일 범위 정리 경험입니다.</li>
             </ul>
 
             <div class="modal-track-section">
@@ -402,8 +397,14 @@ const projectData = {
 
                 <p><strong>Key Contributions</strong></p>
                 <ul>
-                    <li>GS Fresh Mall, 달리살다, 마켓포, THE POP 등 커머스/멤버십 앱 운영을 담당했습니다.</li>
-                    <li>정기/긴급 배포, 신규 OS/Deprecated API 대응, VOC 기반 버그 수정을 진행했습니다.</li>
+                    <li>GS Fresh Mall, 달리살다, 마켓포, THE POP 등 커머스/멤버십 앱의 정기/긴급 배포와 VOC 기반 버그 수정을 담당했습니다.</li>
+                    <li>신규 OS와 Deprecated API 대응, Crash 분석을 운영 흐름 안에서 처리했습니다.</li>
+                </ul>
+
+                <p><strong>Technical Decisions</strong></p>
+                <ul>
+                    <li>정기/긴급 배포, VOC, Crash 대응은 사용자 영향도와 배포 리스크를 기준으로 우선순위를 나누었습니다.</li>
+                    <li>신규 OS와 Deprecated API 대응은 앱별 영향 범위를 먼저 확인한 뒤 배포 일정과 함께 조정했습니다.</li>
                 </ul>
 
                 <p><strong>Screenshots / Result</strong></p>
@@ -418,7 +419,7 @@ const projectData = {
 
                 <p><strong>Result / Impact</strong></p>
                 <ul>
-                    <li>여러 운영 앱의 배포와 장애 대응을 통해 모바일 서비스 안정성 관리 경험을 쌓았습니다.</li>
+                    <li>정기/긴급 배포, VOC, Crash, OS 대응을 반복하며 운영 중인 모바일 서비스의 안정성을 유지하는 기준을 쌓았습니다.</li>
                 </ul>
             </div>
 
@@ -436,8 +437,8 @@ const projectData = {
 
                 <p><strong>My Role</strong></p>
                 <div class="modal-role-callout">
-                    <span class="modal-role-label">Leadership Role</span>
-                    <p>모바일 파트 PL로 Android/iOS 개발 범위, 개발 문서, 주요 기능 구현 방향을 조율했습니다.</p>
+                    <span class="modal-role-label">Role Scope</span>
+                    <p>모바일 파트에서 Android/iOS 개발 범위, 구현 문서, 주요 기능의 협업 커뮤니케이션을 정리했습니다.</p>
                 </div>
                 <ul>
                     <li>SSO, One-Source Multi Application, SDK/API/WKWebView 연동 등 주요 모바일 기능 구현에 참여했습니다.</li>
@@ -452,6 +453,7 @@ const projectData = {
                 <p><strong>Technical Decisions</strong></p>
                 <ul>
                     <li>One-Source Multi Application과 운영 전환 리스크를 고려해 scheme, 환경, SSO 연동 범위를 점검했습니다.</li>
+                    <li>Android/iOS 공통 요구사항과 플랫폼별 차이를 분리해 개발 문서와 구현 범위를 맞췄습니다.</li>
                 </ul>
 
                 <p><strong>Screenshots / Result</strong></p>
@@ -465,7 +467,7 @@ const projectData = {
 
                 <p><strong>Result / Impact</strong></p>
                 <ul>
-                    <li>운영 경험을 기반으로 차세대 커머스 앱의 모바일 구현 방향을 정리했습니다.</li>
+                    <li>SSO, 환경 분리, 외부 SDK/API 연동 등 모바일 구현 범위와 오픈 전 확인 기준을 정리했습니다.</li>
                 </ul>
             </div>
         `
