@@ -980,11 +980,18 @@ body {
 }
 
 .tech-stack-card h3 {
-    margin: 0 0 0.9rem;
+    margin: 0 0 0.65rem;
     color: var(--text-primary);
     font-family: 'Courier New', monospace;
     font-size: 1rem;
     line-height: 1.35;
+}
+
+.tech-context {
+    margin: 0 0 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    line-height: 1.55;
 }
 
 .tech-tags {
@@ -6222,6 +6229,12 @@ body {
 
     .tech-stack-card {
         padding: 1rem;
+    }
+
+    .tech-context {
+        margin-bottom: 1rem;
+        font-size: 0.78rem;
+        line-height: 1.48;
     }
 
     .tech-tag {

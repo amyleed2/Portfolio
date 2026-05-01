@@ -66,19 +66,19 @@ const careerData = {
             {
                 title: 'Role Summary',
                 content: `
-                    <p><strong>GS Retail 전사 모바일 앱 운영 조직에서 iOS/Android 앱 운영과 개발을 담당했습니다.</strong></p>
-                    <p>정기/긴급 배포, OS 업데이트 대응, VOC/Crash 대응을 수행했고, 별도 GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 참여했습니다.</p>
+                    <p><strong>GS Retail 모바일 앱 운영 조직에서 iOS/Android 앱 운영과 개발을 담당했습니다.</strong></p>
+                    <p>정기/긴급 배포, OS 업데이트 대응, VOC/Crash 대응을 수행했고, 별도 GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 Android/iOS 개발 범위와 구현 방향 정리를 맡았습니다.</p>
                 `
             },
             {
                 title: 'Main Responsibilities',
                 content: `
                     <ul>
-                        <li>GS 그룹의 다양한 SI 프로젝트를 구축했습니다.</li>
+                        <li>GS Retail 커머스/멤버십 앱 운영과 GS 계열 모바일 SI 프로젝트를 수행했습니다.</li>
                         <li>GS Retail 커머스 및 멤버십 앱의 정기 배포와 긴급 배포를 대응했습니다.</li>
                         <li>VOC, Crash Report, 신규 OS 업데이트, Deprecated API 대응을 수행했습니다.</li>
                         <li>운영 앱 개선 요청과 성능/안정성 이슈를 확인하고 수정했습니다.</li>
-                        <li>GS Fresh 차세대 프로젝트에서 모바일 파트 PL로 개발 범위와 구현 방향을 정리했습니다.</li>
+                        <li>GS Fresh 차세대 프로젝트에서 모바일 파트 PL로 Android/iOS 개발 범위, 구현 문서, 협업 커뮤니케이션을 정리했습니다.</li>
                     </ul>
                 `
             },
@@ -86,8 +86,8 @@ const careerData = {
                 title: 'Key Projects',
                 content: `
                     <ul>
-                        <li><strong>GS Retail Mobile App Operation</strong> : GS Fresh Mall, 달리살다, 마켓포, THE POP 등 전사 모바일 앱 운영.</li>
-                        <li><strong>GS Fresh 차세대 프로젝트 구축p</strong> : 모바일 파트 PL로 SSO, One-Source Multi Application, SDK/API/WKWebView 연동 범위 담당.</li>
+                        <li><strong>GS Retail Mobile App Operation</strong> : GS Fresh Mall, 달리살다, 마켓포, THE POP 등 커머스/멤버십 앱 운영.</li>
+                        <li><strong>GS Fresh 차세대 프로젝트</strong> : 모바일 파트 PL로 SSO, One-Source Multi Application, SDK/API/WKWebView 연동 범위 담당.</li>
                     </ul>
                 `
             },
@@ -103,7 +103,7 @@ const careerData = {
             {
                 title: 'What This Experience Shows',
                 content: `
-                    <p>운영 중인 모바일 서비스의 안정성을 지키는 방식과 Android/iOS 양쪽을 고려한 모바일 개발 리딩 경험을 보여줍니다.</p>
+                    <p>운영 중인 모바일 서비스의 배포·장애 대응 기준을 익히고, Android/iOS 양쪽의 구현 범위를 조율한 경험을 보여줍니다.</p>
                 `
             }
         ]
@@ -172,17 +172,17 @@ const careerData = {
             {
                 title: 'Role Summary',
                 content: `
-                    <p><strong>ONEstore iOS Platform팀에서 글로벌 앱 마켓 Prototype iOS PL과 디자인 시스템 iOS 개발 파트 PM 역할을 수행했습니다.</strong></p>
-                    <p>Apple DMA 관련 기술 검토, Prototype/Alpha/Beta 개발 흐름, 공통 UI 컴포넌트와 디자인 토큰 기반 협업 구조를 정리했습니다.</p>
+                    <p><strong>ONEstore iOS Platform팀에서 글로벌 앱 마켓 Prototype의 iOS 구현 범위와 디자인 시스템의 iOS 개발 파트 조율 역할을 수행했습니다.</strong></p>
+                    <p>Apple DMA 관련 기술 검토, Prototype/Alpha/Beta 개발 흐름, 공통 UI 컴포넌트와 디자인 토큰 기반 협업 기준을 iOS 개발 범위 안에서 정리했습니다.</p>
                 `
             },
             {
                 title: 'Main Responsibilities',
                 content: `
                     <ul>
-                        <li>ONEstore Global App Market Prototype에서 iOS PL로 기술 검토와 단계별 개발 흐름을 리드했습니다.</li>
+                        <li>ONEstore Global App Market Prototype에서 정책/기술 검토, 구현 리스크 정리, 단계별 iOS 개발 범위 조율을 맡았습니다.</li>
                         <li>Clean Architecture/MVVM 기반 앱 구조, 네트워크 모듈, JavaScript Interface 구조를 설계했습니다.</li>
-                        <li>ONEstore Design System에서 iOS 개발 파트 PM으로 컴포넌트 구조, 디자인 토큰, Figma Code Connect 흐름을 정리했습니다.</li>
+                        <li>ONEstore Design System에서 iOS 개발 파트 기준으로 컴포넌트 구조, 디자인 토큰, Figma Code Connect 흐름을 정리하고 협업 커뮤니케이션을 지원했습니다.</li>
                     </ul>
                 `
             },
@@ -207,7 +207,7 @@ const careerData = {
             {
                 title: 'What This Experience Shows',
                 content: `
-                    <p>신규 플랫폼 대응, iOS PL/PM 역할, 디자인 시스템 기반 플랫폼화 경험을 함께 보여줍니다.</p>
+                    <p>신규 플랫폼 대응 과정에서 iOS 구현 리스크를 정리하고, 디자인 시스템 기반 플랫폼화 작업을 개발 범위 안에서 조율한 경험을 보여줍니다.</p>
                 `
             }
         ]
@@ -225,7 +225,7 @@ const careerData = {
                 title: 'Role Summary',
                 content: `
                     <p><strong>엔카 iOS 앱 운영 개발 과정에서 UIKit 레거시 화면의 SwiftUI 전환과 운영 안정성 개선을 담당했습니다.</strong></p>
-                    <p>재직 기간은 짧지만, 레거시 화면 개선, 광고 모듈 통합, Crashlytics/API 로깅 개선처럼 운영 중인 앱의 구조 개선에 집중했습니다.</p>
+                    <p>제네시스 옵션 필터 화면 전환, 광고 모듈 통합, Crashlytics/API 로깅 개선처럼 운영 중인 앱에서 맡은 개선 범위와 산출물을 중심으로 작업했습니다.</p>
                 `
             },
             {
