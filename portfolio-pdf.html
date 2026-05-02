@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이지은 | Senior iOS Developer Portfolio PDF</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="portfolio-pdf.css">
+</head>
+<body>
+    <div class="pdf-toolbar" aria-label="PDF export toolbar">
+        <a href="index.html">웹 포트폴리오로 돌아가기</a>
+        <button type="button" onclick="window.print()">PDF로 저장</button>
+    </div>
+
+    <main class="pdf-document">
+        <section class="pdf-cover page-break-after">
+            <div class="cover-copy">
+                <p class="eyebrow">Portfolio PDF</p>
+                <h1>이지은</h1>
+                <h2>Senior iOS Application Developer</h2>
+                <p class="cover-summary">커머스·콘텐츠·플랫폼 도메인에서 10년 이상 모바일 앱을 개발하고 운영했습니다. 운영 안정화, 레거시 개선, SwiftUI 전환, 디자인 시스템 구축, AI-assisted workflow를 실무 맥락에 맞게 활용합니다.</p>
+                <div class="cover-contact">
+                    <span>amy.lee.d2@gmail.com</span>
+                    <span>+82 10-6345-4342</span>
+                </div>
+            </div>
+            <img src="assets/images/profile.jpg" alt="이지은 프로필 사진" class="cover-profile">
+        </section>
+
+        <section class="pdf-section">
+            <h2>Senior Summary</h2>
+            <div class="summary-grid">
+                <article><strong>Domain</strong><span>커머스·콘텐츠·플랫폼 도메인에서 총 10년 이상의 모바일 앱 개발 경험을 쌓았습니다.</span></article>
+                <article><strong>Modernization</strong><span>운영 중인 iOS 앱의 구조 개선을 주도했으며, Objective-C 레거시 코드 분석부터 SwiftUI 전환까지 단계적으로 수행했습니다.</span></article>
+                <article><strong>Architecture</strong><span>Objective-C, UIKit, SwiftUI, RxSwift, Combine을 실무에서 사용했으며, Clean Architecture / MVI / MVVM 기반 설계 경험이 있습니다.</span></article>
+                <article><strong>Workflow</strong><span>ONEstore에서 iOS 디자인 시스템과 제3자 마켓 Prototype의 iOS 개발 범위를 조율하며, AI 도구를 코드 분석·설계 검토·테스트 작성에 활용했습니다.</span></article>
+                <article><strong>Recent</strong><span>최근에는 iOS 포트폴리오 재정비와 개인 프로젝트를 진행하며 SwiftUI, VisionKit, OpenAI API 기반 앱 구조 설계와 App Store 배포까지 이어갔습니다.</span></article>
+            </div>
+        </section>
+
+        <section class="pdf-section">
+            <h2>Core Strengths</h2>
+            <div class="strength-grid">
+                <article><span>01 Architecture</span><h3>iOS App Architecture</h3><p>Clean Architecture, MVVM, Coordinator, DI 기반 설계 경험. 화면 단위 구현이 아닌 유지보수 가능한 구조를 설계합니다.</p></article>
+                <article><span>02 Operation</span><h3>App Operation & Stability</h3><p>정기·긴급 배포, Crashlytics, API 로깅, OS 업데이트, deprecated API 관리 등 운영 중인 앱의 안정성을 지키는 경험이 있습니다.</p></article>
+                <article><span>03 Refactoring</span><h3>Legacy Modernization</h3><p>UIKit 기반 레거시 코드 분석 및 구조 개선. 리팩토링 범위 판단과 단계적 전환 설계를 수행했습니다.</p></article>
+                <article><span>04 Migration</span><h3>SwiftUI Migration</h3><p>UIKit → SwiftUI 전환 설계 및 구현. MVVM / MVI 기반으로 신규 화면을 구축하며 전환 방향을 정의했습니다.</p></article>
+                <article><span>05 Platform</span><h3>Design System & Platformization</h3><p>공통 UI 컴포넌트, 디자인 토큰, Figma Code Connect를 활용해 디자인-개발 협업 기준을 정리했습니다.</p></article>
+                <article><span>06 AI Workflow</span><h3>AI-assisted Development Workflow</h3><p>AI 도구를 레거시 분석, 설계 검토, 테스트 케이스 작성에 활용하되 설계 판단과 품질 검증은 직접 수행합니다.</p></article>
+            </div>
+        </section>
+
+        <section class="pdf-section page-break-before">
+            <h2>Career Details</h2>
+            <div id="pdfCareerRoot" class="pdf-stack"></div>
+        </section>
+
+        <section class="pdf-section page-break-before">
+            <h2>Featured Projects</h2>
+            <p class="section-note">웹 포트폴리오의 대표 프로젝트 모달 내용을 PDF 제출용으로 펼친 섹션입니다.</p>
+            <div id="pdfFeaturedProjectsRoot" class="pdf-stack"></div>
+        </section>
+
+        <section class="pdf-section page-break-before">
+            <h2>Early Career Experience</h2>
+            <p class="section-note">초기 Android/SI 프로젝트는 현재 iOS 시니어 포지셔닝을 흐리지 않도록 compact하게 정리했습니다.</p>
+            <div id="pdfEarlyProjectsRoot" class="pdf-stack compact-projects"></div>
+        </section>
+
+        <section class="pdf-section page-break-before">
+            <h2>AI-Assisted Project Workflow</h2>
+            <p class="section-note">AI는 구현을 대신하는 도구가 아니라, 판단해야 할 범위를 좁히고 초안을 빠르게 만드는 보조 도구로 사용합니다.</p>
+            <div class="workflow-grid">
+                <article><h3>Feature Development</h3><p>운영 앱에 새 기능을 추가할 때 요구사항, 화면 흐름, API 호출 지점, 상태 변화, 예외 케이스를 분리해 영향 범위를 정리합니다.</p></article>
+                <article><h3>Legacy Refactoring</h3><p>레거시 화면의 책임과 의존성을 나누고, ViewController / ViewModel / UseCase 기준의 안전한 분리 단위를 검토합니다.</p></article>
+                <article><h3>Operation Checklist</h3><p>변경 API, 화면 상태, OS 차이, 비식별화한 로그 요약을 바탕으로 배포 전 QA 항목과 운영 리스크를 정리합니다.</p></article>
+                <article><h3>Planning & Design Review</h3><p>기획 문서와 디자인 시안을 iOS 개발 관점에서 상태, API, 예외 케이스, 확인 질문으로 재정리합니다.</p></article>
+            </div>
+        </section>
+
+        <section class="pdf-section page-break-before">
+            <h2>Side Project</h2>
+            <div id="pdfSideProjectRoot" class="pdf-stack"></div>
+        </section>
+
+        <section class="pdf-section">
+            <h2>About Me</h2>
+            <div class="about-box">
+                <p>커머스, 콘텐츠, 플랫폼 도메인에서 모바일 앱을 개발·운영하며 안정성, 유지보수성, 협업 비용을 함께 봅니다. Android 개발자로 시작해 iOS로 전향하는 과정에서 두 플랫폼의 화면 구조, 배포/운영 방식, SDK/API 연동 차이를 직접 학습했고, 이 경험은 이후 iOS 앱 구조와 운영 흐름을 이해하는 기반이 되었습니다.</p>
+                <p>디자이너, 기획자, 서버/웹/모바일 개발자와 요구사항을 맞추는 협업을 꾸준히 해왔으며, Android/iOS 양쪽의 구현 흐름을 이해한 경험을 바탕으로 모바일 파트의 사용자 시나리오와 플랫폼별 기술 스펙을 맞추는 조율 역할을 수행했습니다.</p>
+            </div>
+            <div class="about-principles-print">
+                <article>
+                    <h3>Operation First</h3>
+                    <p>운영 이슈는 재현 조건, 영향 범위, 배포 리스크부터 분리합니다. Crashlytics, API 로깅, VOC를 원인 추적 단서로 보고 사용자 영향이 큰 문제부터 개선합니다.</p>
+                </article>
+                <article>
+                    <h3>Incremental Modernization</h3>
+                    <p>레거시는 유지되어 온 이유와 의존성을 먼저 확인합니다. 전체 교체보다 영향 범위를 나누고 SwiftUI, MVVM 등으로 옮길 수 있는 안전한 변경 단위를 찾습니다.</p>
+                </article>
+                <article>
+                    <h3>Context-aware Technology Choice</h3>
+                    <p>UIKit, SwiftUI, RxSwift, Combine은 상황에 맞는 선택지로 봅니다. 기존 코드, 팀 운영 방식, 테스트 가능성, 유지보수 비용을 기준으로 적용 범위를 정합니다.</p>
+                </article>
+                <article>
+                    <h3>Platform Collaboration</h3>
+                    <p>반복되는 구현과 논의는 디자인 시스템, 공통 컴포넌트, 사용 기준으로 구조화하는 방식을 선호합니다. 협업 과정에서는 구현 범위와 예외 케이스를 명확히 맞춥니다.</p>
+                </article>
+                <article>
+                    <h3>AI-assisted, Developer-owned</h3>
+                    <p>AI 도구는 레거시 분석, 설계 검토, 테스트 초안 작성의 속도를 높이는 데 활용합니다. 최종 판단과 품질 책임은 기존 코드와 운영 리스크를 이해한 개발자가 가져가야 한다고 봅니다.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="pdf-section">
+            <h2>Tech Stack</h2>
+            <div class="tech-grid">
+                <article><h3>Core iOS</h3><p>Swift, Objective-C, UIKit, SwiftUI, Combine, RxSwift</p></article>
+                <article><h3>Architecture</h3><p>Clean Architecture, MVVM, MVI, Reactor-style Flow, DI, Coordinator</p></article>
+                <article><h3>Networking / Persistence</h3><p>URLSession, Moya, Alamofire, RxMoya, RxAlamofire, Keychain, Core Data, SwiftData</p></article>
+                <article><h3>Operation / Quality</h3><p>Firebase, Crashlytics, API Logging, Fastlane, XCTest, Swift Testing</p></article>
+                <article><h3>Design System</h3><p>Figma, Design Token, Style Dictionary, Figma Code Connect</p></article>
+                <article><h3>AI Workflow</h3><p>Claude Code, Cursor, Codex, Copilot, ChatGPT, Figma Make, Pencil</p></article>
+            </div>
+        </section>
+
+        <section class="pdf-section pdf-contact">
+            <h2>Contact</h2>
+            <p><strong>Email</strong> amy.lee.d2@gmail.com</p>
+            <p><strong>Phone</strong> +82 10-6345-4342</p>
+        </section>
+    </main>
+
+    <div class="project-modal" id="projectModal" hidden></div>
+    <div id="imageViewerModal" hidden></div>
+    <div class="career-modal" id="careerModal" hidden></div>
+
+    <script src="project-modal.js?v=p0-hiring-risk-20260429"></script>
+    <script src="career-modal.js?v=p0-hiring-risk-20260429"></script>
+    <script src="portfolio-pdf.js"></script>
+</body>
+</html>

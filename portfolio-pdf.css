@@ -1,0 +1,444 @@
+:root {
+    --ink: #172033;
+    --muted: #59657a;
+    --line: #dbe3ef;
+    --soft: #f3f6fb;
+    --accent: #605bff;
+    --accent-soft: #edf0ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: #e7ecf5;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    line-height: 1.62;
+}
+
+.pdf-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.8rem;
+    background: rgba(16, 24, 39, 0.92);
+    backdrop-filter: blur(12px);
+}
+
+.pdf-toolbar a,
+.pdf-toolbar button {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    padding: 0.58rem 1rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pdf-document {
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 24px;
+    background: #fff;
+}
+
+.pdf-cover {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 2rem;
+    align-items: center;
+    min-height: 520px;
+    padding: 3rem;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: linear-gradient(135deg, #f9fbff 0%, #edf0ff 100%);
+}
+
+.eyebrow,
+.section-note {
+    margin: 0 0 0.8rem;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.pdf-cover h1 {
+    margin: 0;
+    font-size: 3.6rem;
+    line-height: 1.05;
+}
+
+.pdf-cover h2 {
+    margin: 0.7rem 0 1rem;
+    color: var(--accent);
+    font-size: 1.55rem;
+}
+
+.cover-summary {
+    margin: 0;
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 1.04rem;
+}
+
+.cover-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+}
+
+.cover-contact span,
+.tech-badge,
+.pdf-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 0.28rem 0.62rem;
+    background: var(--accent-soft);
+    color: #3632b7;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.cover-profile {
+    width: 180px;
+    height: 180px;
+    border-radius: 36px;
+    object-fit: cover;
+    border: 6px solid #fff;
+    box-shadow: 0 18px 42px rgba(38, 48, 84, 0.16);
+}
+
+.pdf-section {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 2px solid var(--line);
+}
+
+.pdf-section h2 {
+    margin: 0 0 1rem;
+    color: #111827;
+    font-size: 1.65rem;
+    line-height: 1.25;
+}
+
+.summary-grid,
+.strength-grid,
+.workflow-grid,
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.summary-grid article,
+.strength-grid article,
+.workflow-grid article,
+.tech-grid article,
+.pdf-card,
+.about-box {
+    break-inside: avoid;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.summary-grid strong,
+.strength-grid span,
+.pdf-meta strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--accent);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.summary-grid span,
+.pdf-card p,
+.pdf-card li,
+.workflow-grid p,
+.tech-grid p,
+.about-box p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.strength-grid h3,
+.workflow-grid h3,
+.tech-grid h3,
+.pdf-card h3 {
+    margin: 0 0 0.45rem;
+    color: #111827;
+    font-size: 1.02rem;
+}
+
+.strength-grid p,
+.workflow-grid p,
+.tech-grid p,
+.about-box p {
+    margin: 0;
+}
+
+.about-principles-print {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin-top: 0.9rem;
+}
+
+.about-principles-print article {
+    break-inside: avoid;
+    padding: 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--soft);
+}
+
+.about-principles-print article:last-child {
+    grid-column: 1 / -1;
+}
+
+.about-principles-print h3 {
+    margin: 0 0 0.4rem;
+    color: #111827;
+    font-size: 0.95rem;
+}
+
+.about-principles-print p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+.pdf-stack {
+    display: grid;
+    gap: 1rem;
+}
+
+.pdf-card {
+    page-break-inside: avoid;
+}
+
+.pdf-card-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 0.8rem;
+}
+
+.pdf-card h3 {
+    font-size: 1.2rem;
+}
+
+.pdf-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.5rem 0 0;
+}
+
+.pdf-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.7rem;
+}
+
+.company-logo-print {
+    width: 58px;
+    max-height: 58px;
+    object-fit: contain;
+    justify-self: end;
+}
+
+.pdf-body h4,
+.pdf-body strong {
+    color: #1f2937;
+}
+
+.pdf-body p {
+    margin: 0.55rem 0;
+}
+
+.pdf-body ul {
+    margin: 0.5rem 0 0.8rem;
+    padding-left: 1.1rem;
+}
+
+.pdf-body li {
+    margin: 0.22rem 0;
+}
+
+.reference-image,
+.screenshot-section {
+    break-inside: avoid;
+    margin: 0.9rem 0;
+    padding: 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--soft);
+}
+
+.reference-image-label,
+.screenshot-label {
+    margin: 0 0 0.55rem;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.reference-img,
+.reference-img-vertical,
+.screenshot-img {
+    display: block;
+    max-width: 100%;
+    max-height: 360px;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+}
+
+.reference-img-vertical {
+    max-height: 430px;
+}
+
+.app-store-section {
+    break-inside: avoid;
+    margin: 0.85rem 0;
+    padding: 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--soft);
+}
+
+.app-store-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.55rem;
+    color: var(--accent);
+    font-size: 0.86rem;
+    font-weight: 900;
+}
+
+.app-store-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.app-store-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+    padding: 0.48rem 0.68rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    background: #fff;
+    color: #111827;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.app-store-logo,
+.external-link-icon {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    max-width: 18px;
+    max-height: 18px;
+}
+
+.app-store-text {
+    display: inline-flex;
+    gap: 0.24rem;
+    align-items: baseline;
+    white-space: nowrap;
+}
+
+.worksheet-screenshot-grid,
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    align-items: start;
+}
+
+.worksheet-screenshot-grid img,
+.screenshot-grid img {
+    width: 100%;
+}
+
+.compact-projects .pdf-card {
+    padding: 0.85rem;
+}
+
+.pdf-contact {
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 760px) {
+    .pdf-document { padding: 14px; }
+    .pdf-cover { grid-template-columns: 1fr; padding: 1.5rem; }
+    .summary-grid,
+    .strength-grid,
+    .workflow-grid,
+    .tech-grid,
+    .about-principles-print { grid-template-columns: 1fr; }
+    .about-principles-print article:last-child { grid-column: auto; }
+    .pdf-card-header { grid-template-columns: 1fr; }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .pdf-toolbar { display: none; }
+
+    .pdf-document {
+        width: 100%;
+        padding: 0;
+    }
+
+    .pdf-cover,
+    .pdf-section,
+    .pdf-card,
+    .summary-grid article,
+    .strength-grid article,
+    .workflow-grid article,
+    .tech-grid article,
+    .about-box {
+        box-shadow: none;
+    }
+
+    .page-break-before { break-before: page; }
+    .page-break-after { break-after: page; }
+
+    a { color: inherit; text-decoration: none; }
+}
