@@ -30,8 +30,6 @@
 10. Tech Stack
 11. Contact
 
-Education 섹션은 현재 채용 전략에 맞지 않아 제거되어 있습니다.
-
 ## 주요 콘텐츠
 
 ### Senior Summary
