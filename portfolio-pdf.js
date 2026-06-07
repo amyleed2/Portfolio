@@ -2,7 +2,7 @@
     const careerOrder = ['digitaldime', 'gsitm', 'onestore1', 'onestore2', 'encar'];
     const featuredOrder = ['onestore-2', 'onestore-1', 'encar-1', 'gsitm-1'];
     const earlyOrder = ['digitaldime-1', 'digitaldime-2', 'digitaldime-3', 'digitaldime-4', 'onestore-3', 'gsitm-2'];
-    const sideOrder = ['side-note-cleaner'];
+    const sideOrder = ['side-note-cleaner', 'side-mindly', 'side-focusboard'];
 
     function createTechBadges(items) {
         if (!items || items.length === 0) return '';

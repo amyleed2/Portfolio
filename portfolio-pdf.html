@@ -70,12 +70,12 @@
 
         <section class="pdf-section page-break-before">
             <h2>AI-Assisted Project Workflow</h2>
-            <p class="section-note">AI는 구현을 대신하는 도구가 아니라, 판단해야 할 범위를 좁히고 초안을 빠르게 만드는 보조 도구로 사용합니다.</p>
+            <p class="section-note">AI를 코드 생성 도구로만 사용하지 않고, 컨텍스트 설계·단계별 구현·검증 루프를 갖춘 개발 워크플로우로 활용합니다.</p>
             <div class="workflow-grid">
-                <article><h3>Feature Development</h3><p>운영 앱에 새 기능을 추가할 때 요구사항, 화면 흐름, API 호출 지점, 상태 변화, 예외 케이스를 분리해 영향 범위를 정리합니다.</p></article>
-                <article><h3>Legacy Refactoring</h3><p>레거시 화면의 책임과 의존성을 나누고, ViewController / ViewModel / UseCase 기준의 안전한 분리 단위를 검토합니다.</p></article>
-                <article><h3>Operation Checklist</h3><p>변경 API, 화면 상태, OS 차이, 비식별화한 로그 요약을 바탕으로 배포 전 QA 항목과 운영 리스크를 정리합니다.</p></article>
-                <article><h3>Planning & Design Review</h3><p>기획 문서와 디자인 시안을 iOS 개발 관점에서 상태, API, 예외 케이스, 확인 질문으로 재정리합니다.</p></article>
+                <article><h3>Context Engineering</h3><p>요구사항, API 계약, 디자인 기준, 아키텍처 규칙을 먼저 정리해 AI가 같은 기준을 참조하도록 만듭니다.</p></article>
+                <article><h3>Token-efficient Prompting</h3><p>큰 기능은 책임 단위로 나누고, 현재 단계의 변경 목표와 금지 조건만 전달해 불필요한 컨텍스트와 diff를 줄입니다.</p></article>
+                <article><h3>Guardrailed Implementation</h3><p>수정 대상 파일, 금지 파일, 보안 기준, 레이어 경계를 지정해 AI 결과가 전체 구조 개편으로 번지지 않도록 제어합니다.</p></article>
+                <article><h3>Developer-owned Verification</h3><p>AI 결과는 초안으로 보고, Xcode build/test, git diff/status, 실제 앱 실행, 수동 QA로 직접 검증합니다.</p></article>
             </div>
         </section>
 

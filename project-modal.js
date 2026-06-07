@@ -69,6 +69,145 @@ const projectData = {
         `
     },
 
+    'side-mindly': {
+        title: 'Mindly-iOS',
+        period: '2026.05 ~ 진행 중 · iOS 1 / Android 1 / Planner 1',
+        description: '저장한 링크와 메모를 AI 태그와 로컬 검색 인덱스로 정리해, 나중에 키워드·태그·자연어로 다시 찾을 수 있게 만든 iOS 키워드 메모 앱입니다.',
+        tech: ['iOS', 'Swift', 'SwiftUI', 'GRDB', 'Apple Intelligence', 'Firebase Functions', 'OpenGraph', 'Share Extension', 'Codex', 'AGENTS.md', 'Skills'],
+        features: `
+            <p><strong>Overview</strong></p>
+            <ul>
+                <li>웹서핑이나 일상 중 발견한 링크와 짧은 메모를 저장하고, AI가 자동으로 태그와 검색용 메타데이터를 생성해주는 iOS 앱입니다.</li>
+                <li>노트는 GRDB 기반 로컬 DB에 먼저 저장되며, AI 태그 생성은 비동기로 실행되어 사용자의 저장 흐름을 막지 않도록 설계했습니다.</li>
+                <li>기본 검색은 로컬 키워드/태그 검색으로 동작하고, AI 검색은 자연어를 검색 조건으로 변환한 뒤 로컬 DB에서 결과를 조회합니다.</li>
+                <li>Share Extension을 통해 Safari나 외부 앱에서 링크/텍스트를 바로 Mindly 저장 흐름으로 연결할 수 있도록 구현했습니다.</li>
+            </ul>
+
+            <p><strong>Problem</strong></p>
+            <ul>
+                <li>좋은 링크나 짧은 아이디어를 저장해도 시간이 지나면 어떤 키워드로 다시 찾아야 할지 기억하기 어렵습니다.</li>
+                <li>저장 시점의 링크 정보, 메모, 태그, 검색 인덱스를 함께 정리해 재탐색 가능한 구조가 필요했습니다.</li>
+            </ul>
+
+            <p><strong>My Role</strong></p>
+            <ul>
+                <li>iOS 개발자로 제품 기획 정리, iOS 앱 구조 설계, SwiftUI 화면 구현, GRDB 로컬 저장소, AI 태그/검색 흐름, Share Extension, 실기기 QA를 담당했습니다.</li>
+                <li>총 3명 규모(iOS 1명, Android 1명, 기획 1명)에서 iOS 저장-태그 생성-검색-상세 관리 흐름을 구현했습니다.</li>
+                <li>Apple Intelligence와 Firebase Functions를 활용해 AI 태그 생성 및 AI 검색 fallback 구조를 설계했습니다.</li>
+            </ul>
+
+            <p><strong>Codex Development Workflow</strong></p>
+            <div class="side-project-detail-grid">
+                <div class="side-project-detail">
+                    <span>Context Design</span>
+                    <p>AGENTS.md에는 MVVM + UseCase + Repository, GRDB/FTS5 local search, AI provider, 민감 정보 로그 금지처럼 반복 규칙만 두고, PRD/Firebase/design 상세는 docs로 분리했습니다.</p>
+                </div>
+                <div class="side-project-detail">
+                    <span>Skills</span>
+                    <p>feature-plan, ios-implementation, firebase-functions, grdb-search, swiftui-screen-scaffold, security-review skill로 계획·구현·Firebase·검색·화면·보안 검토를 분리했습니다.</p>
+                </div>
+                <div class="side-project-detail">
+                    <span>Prompt & Token Strategy</span>
+                    <p>“계획만 보고”, “문서만 수정”, “이 파일 외 수정 금지”, “fallback 추가 금지”처럼 범위를 좁혔고, 필요한 문서와 이전 QA 결과만 제공해 컨텍스트를 줄였습니다.</p>
+                </div>
+                <div class="side-project-detail">
+                    <span>Guardrails</span>
+                    <p>View의 GRDB/Firebase/FoundationModels 직접 호출을 막고, OpenAI API Key는 iOS 앱에 넣지 않도록 Firebase Functions를 fallback 경계로 고정했습니다. default search는 local-only로 유지했습니다.</p>
+                </div>
+            </div>
+
+            <p><strong>Verification</strong></p>
+            <ul>
+                <li>Codex 결과는 git diff/status, Xcode build/test, Preview, iPhone 15 실기기 QA, Firebase Console 로그, 디자인 시안 비교로 검증했습니다.</li>
+                <li>UI 이슈는 스크린샷 기반으로 확인했고, 잘못된 변경은 즉시 원복했습니다.</li>
+            </ul>
+
+            <p><strong>Screenshots / Result</strong></p>
+            <div class="reference-image worksheet-screenshot-strip">
+                <p class="reference-image-label">Mindly iOS Screens</p>
+                <div class="worksheet-screenshot-grid">
+                    <img src="assets/images/side-projects/mindly/main.png" alt="Mindly 메인 노트 리스트 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/ai-search-loading.png" alt="Mindly AI 검색 로딩 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/note-links.png" alt="Mindly 링크 노트 상세 화면" class="reference-img-vertical">
+                </div>
+                <p class="code-explanation">노트 리스트, 자연어 기반 AI 검색, 링크 상세 화면을 통해 저장-탐색-상세 관리 흐름을 확인할 수 있습니다.</p>
+            </div>
+
+            <p><strong>Result / Status</strong></p>
+            <ul>
+                <li>문서 체계, DesignSystem, SwiftUI 화면, GRDB 저장/검색 구조, AI 태그 생성/검색 흐름, Share Extension까지 iOS 앱 구조를 단계적으로 구성했습니다.</li>
+                <li>AI 도구를 활용하되 최종 설계 판단과 품질 검증은 직접 수행하는 개발 워크플로우 사례로 정리할 수 있습니다.</li>
+            </ul>
+        `
+    },
+
+    'side-focusboard': {
+        title: 'FocusBoard',
+        period: 'Side Project · SwiftUI macOS App · App Store Released',
+        description: '출석, 집중 타이머, Todo, 통계, 메뉴바, 위젯을 포함한 macOS 생산성 앱을 Codex 기반 작업 규칙과 단계별 검증 흐름으로 설계·구현하고 App Store에 출시한 프로젝트입니다.',
+        tech: ['Swift', 'SwiftUI', 'macOS', 'MenuBarExtra', 'Widget', 'App Group', 'JSON Persistence', 'Firebase Remote Config', 'String Catalog', 'Codex', 'AGENTS.md', 'Codex Agents', 'Skills'],
+        features: `
+            <p><strong>Overview</strong></p>
+            <ul>
+                <li>출석 체크, 집중 타이머, Todo, 반복 일정, 리마인더, 통계, 메뉴바, 위젯, 원형 시간표를 제공하는 macOS 생산성 앱 프로젝트입니다.</li>
+                <li>Codex를 단순 코드 생성 도구가 아니라 기능 기획, 단계별 구현, 리뷰, 버그 수정, 테스트 보강, 배포 준비 문서 작성까지 이어지는 개발 보조 시스템으로 활용했습니다.</li>
+                <li>개인 사이드 프로젝트로 App Store에 출시했습니다.</li>
+            </ul>
+
+            <p><strong>My Role</strong></p>
+            <ul>
+                <li>기능별 kickoff 문서를 통해 goal, policy, file boundaries, risks, out-of-scope를 먼저 정리했습니다.</li>
+                <li>Attendance, Focus Timer, Todo, Statistics, MenuBarExtra, Widget, Schedule 기능을 작은 단계로 나누어 구현했습니다.</li>
+            </ul>
+
+            <p><strong>Codex Development Workflow</strong></p>
+            <div class="side-project-detail-grid">
+                <div class="side-project-detail">
+                    <span>Context Design</span>
+                    <p>AGENTS.md에는 macOS-only, local-first, JSON persistence, 레이어 경계처럼 장기 규칙만 두고, 긴 PRD·디자인 수치·Firebase JSON·임시 의사결정은 단계별 프롬프트와 kickoff 문서로 분리했습니다.</p>
+                </div>
+                <div class="side-project-detail">
+                    <span>Codex Agents</span>
+                    <p>implementation_reviewer, apple_surface_specialist, persistence_and_stats agent를 구성해 구현 리뷰, quick surface 경계, 저장소·통계 리스크를 분리해 검토할 수 있게 했습니다.</p>
+                </div>
+                <div class="side-project-detail">
+                    <span>Skills</span>
+                    <p>feature-kickoff, implement-quick-surface, ship-check skill로 기능 시작, MenuBarExtra/Widget 같은 quick surface 구현, 릴리즈 전 점검을 반복 가능한 흐름으로 분리했습니다.</p>
+                </div>
+                <div class="side-project-detail">
+                    <span>Prompt & Token Strategy</span>
+                    <p>“kickoff부터”, “이번 단계는 Domain만”, “UI 제외”, “이 파일 외 수정 금지”, “다음 단계 선행 구현 금지”처럼 단계와 파일 범위를 좁혀 컨텍스트와 diff를 작게 유지했습니다.</p>
+                </div>
+                <div class="side-project-detail">
+                    <span>Guardrails</span>
+                    <p>Domain import 제한, SwiftData 도입 금지, Firebase 사용 범위 제한, 원치 않는 리팩토링 금지, quick surface business logic 금지를 반복해 기능 추가가 전체 구조 개편으로 번지지 않게 했습니다.</p>
+                </div>
+            </div>
+
+            <p><strong>Verification</strong></p>
+            <ul>
+                <li>Codex 결과는 git diff/status, Xcode build/test, 실제 macOS 앱 실행, SwiftUI Preview, Firebase Console 로그, 수동 QA 체크리스트로 검증했습니다.</li>
+                <li>Preview, String Catalog, Firebase, Widget 이슈는 핵심 에러와 증상만 다시 제공해 최소 수정하도록 유도했습니다.</li>
+            </ul>
+
+            <p><strong>Screenshots / Result</strong></p>
+            <div class="reference-image">
+                <p class="reference-image-label">FocusBoard App Store Screenshot</p>
+                <img src="assets/images/side-projects/focusboard-main.png" alt="FocusBoard 메인 화면 스크린샷" class="reference-img">
+                <p class="code-explanation">출석 캘린더, 집중 타이머, 오늘 요약, Todo 입력 흐름이 한 화면 안에서 연결되는 macOS 앱 구조를 보여주는 스크린샷입니다.</p>
+            </div>
+
+            <p><strong>Result / Status</strong></p>
+            <ul>
+                <li>macOS 앱 구조, MenuBarExtra, Today Summary Widget, JSON 공유 저장소, Firebase Remote Config 버전 체크, 다국어 대응, App Store 제출 자료를 정리하고 출시까지 진행했습니다.</li>
+                <li>AI를 기획 보조와 구현 보조에 활용하되, 단계 분리와 직접 검증을 통해 변경 리스크를 관리한 사례입니다.</li>
+            </ul>
+
+            <p><strong>App Store</strong></p>
+            <p><a class="side-project-cta modal-store-link" href="https://apps.apple.com/kr/app/focusboard/id6765804921" target="_blank" rel="noopener noreferrer">App Store에서 보기</a></p>
+        `
+    },
+
     'encar-1': {
         title: '엔카닷컴 iOS 앱 개발 및 운영',
         period: '2025.06 ~ 2025.08',

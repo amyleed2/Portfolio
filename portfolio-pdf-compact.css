@@ -217,6 +217,18 @@ body {
     justify-content: start;
 }
 
+.side-project-compact-card {
+    margin-top: 0.75rem;
+}
+
+.compact-evidence.mindly-images {
+    grid-template-columns: repeat(3, minmax(0, 110px));
+}
+
+.compact-evidence.focusboard-image {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 .compact-evidence img {
     width: 100%;
     max-height: 170px;
@@ -228,6 +240,14 @@ body {
 
 .compact-evidence.side-images img {
     max-height: 210px;
+}
+
+.compact-evidence.mindly-images img {
+    max-height: 230px;
+}
+
+.compact-evidence.focusboard-image img {
+    max-height: 260px;
 }
 
 .compact-evidence figcaption {
@@ -260,7 +280,8 @@ body {
     .mini-grid,
     .tech-grid,
     .compact-evidence,
-    .compact-evidence.side-images { grid-template-columns: 1fr; }
+    .compact-evidence.side-images,
+    .compact-evidence.mindly-images { grid-template-columns: 1fr; }
 }
 
 @media print {
