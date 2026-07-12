@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이지은 | iOS Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=nav-grid-20260428">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=swap">
+    <link rel="stylesheet" href="styles.css?v=home-about-v2-20260712">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -14,21 +19,20 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="#home">Portfolio.</a>
+                    <a href="#home" aria-label="이지은 포트폴리오 홈">JIEUN LEE</a>
                 </div>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="메뉴 열기" aria-controls="navMenu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#summary" class="nav-link">Summary</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#career" class="nav-link">Career</a></li>
+                    <li><a href="#tech-stack" class="nav-link">Tech Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#ai-workflow" class="nav-link">AI Workflow</a></li>
-                    <li><a href="#side-projects" class="nav-link">Side Project</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -36,338 +40,482 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content-wrapper">
-            <div class="hero-text">
-                <h1 class="hero-title animate-fade-in">
-                    안녕하세요,<br>
-                    <span class="hero-role">Senior iOS<br>Application Developer</span><br>
-                    이지은입니다.
+    <section class="hero hero-v2" id="home">
+        <div class="hero-v2-orb hero-v2-orb-coral" aria-hidden="true"></div>
+        <div class="hero-v2-orb hero-v2-orb-blue" aria-hidden="true"></div>
+        <div class="container hero-v2-container">
+            <div class="hero-v2-copy">
+                <p class="hero-v2-eyebrow">10+ YEARS · SENIOR iOS APPLICATION DEVELOPER</p>
+                <h1 class="hero-v2-title">
+                    운영의 복잡성을<br>
+                    <span>구조와 기준으로 바꾸는</span><br>
+                    iOS 개발자, 이지은입니다.
                 </h1>
-                <div class="hero-divider"></div>
-                <p class="hero-subtitle animate-fade-in-delay">커머스·콘텐츠·플랫폼 도메인에서 10년 이상 모바일 앱을 개발하고 운영했습니다.<br>앱 운영 안정화, 레거시 개선, SwiftUI 전환, 디자인 시스템 구축을 주도해왔습니다.</p>
-                <a href="#summary" class="hero-btn animate-fade-in-delay-2">더 알아보기</a>
+                <p class="hero-v2-description">Android와 iOS, SI 구축과 SM 운영, 고객사 프로젝트와 인하우스 서비스를 모두 경험했습니다. 다양한 직군과 제품의 전 과정을 함께하며 구현뿐 아니라 운영, 구조 개선, 협업 기준까지 다뤄왔습니다.</p>
+                <div class="hero-v2-actions" aria-label="주요 섹션 바로가기">
+                    <a href="#career" class="hero-v2-cta hero-v2-cta-primary">경력 흐름 보기</a>
+                    <a href="#projects" class="hero-v2-cta hero-v2-cta-secondary">대표 프로젝트 보기</a>
+                </div>
             </div>
-            <div class="hero-image animate-fade-in-delay">
-                <img src="assets/images/profile.jpg" alt="이지은 프로필 사진">
+            <div class="hero-v2-portrait">
+                <div class="hero-v2-portrait-frame">
+                    <img src="assets/images/profile.jpg" alt="Senior iOS 개발자 이지은 프로필">
+                </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Senior Summary Section -->
-    <section class="senior-summary" id="summary">
-        <div class="container">
-            <h2 class="section-title">Summary</h2>
-            <div class="senior-summary-panel">
-                <div class="summary-kicker">10+ Years iOS Developer</div>
-                <ul class="senior-summary-list">
-                    <li>
-                        <span class="summary-point-label">Domain</span>
-                        <span>커머스·콘텐츠·플랫폼 도메인에서 총 10년 이상의 모바일 앱 개발 경험을 쌓았습니다.</span>
-                    </li>
-                    <li>
-                        <span class="summary-point-label">Modernization</span>
-                        <span>운영 중인 iOS 앱의 구조 개선을 주도했으며, Objective-C 레거시 코드 분석부터 SwiftUI 전환까지 단계적으로 수행했습니다.</span>
-                    </li>
-                    <li>
-                        <span class="summary-point-label">Architecture</span>
-                        <span>Objective-C, UIKit, SwiftUI, RxSwift, Combine을 실무에서 사용했으며, Clean Architecture / MVI / MVVM 기반 설계 경험이 있습니다.</span>
-                    </li>
-                    <li>
-                        <span class="summary-point-label">Workflow</span>
-                        <span>ONEstore에서 iOS 디자인 시스템과 제3자 마켓 Prototype의 iOS 개발 범위를 조율하며, Cursor·Claude Code·Copilot 등 AI 도구를 코드 분석·설계 검토·테스트 작성에 활용했습니다.</span>
-                    </li>
-                    <li>
-                        <span class="summary-point-label">Recent</span>
-                        <span>최근에는 iOS 포트폴리오 재정비와 개인 프로젝트를 진행하며 SwiftUI, VisionKit, OpenAI API 기반 앱 구조 설계와 App Store 배포까지 이어갔습니다.</span>
-                    </li>
-                </ul>
-            </div>
+            <dl class="hero-v2-evidence" aria-label="경력 핵심 범위">
+                <div>
+                    <dt>10+ Years</dt>
+                    <dd>Mobile Application Development</dd>
+                </div>
+                <div>
+                    <dt>Android → iOS</dt>
+                    <dd>Cross-platform Experience</dd>
+                </div>
+                <div>
+                    <dt>SI · SM · In-house</dt>
+                    <dd>End-to-end Product Experience</dd>
+                </div>
+                <div>
+                    <dt>4 Domains</dt>
+                    <dd>Commerce · Content · Platform · Mobility</dd>
+                </div>
+            </dl>
         </div>
     </section>
 
-    <!-- Core Strengths Section -->
-    <section class="core-strengths" id="strengths">
+    <!-- About Section: Summary + Core Strengths + Working Principles -->
+    <section class="about about-v2" id="about">
         <div class="container">
-            <h2 class="section-title">Core Strengths</h2>
-            <div class="strengths-grid">
-                <div class="strength-card">
-                    <span class="strength-index">01</span>
-                    <span class="strength-label">Architecture</span>
-                    <h4 class="strength-title">iOS App Architecture</h4>
-                    <p class="strength-desc">Clean Architecture, MVVM, Coordinator, DI 기반 설계 경험.<br>화면 단위 구현이 아닌 유지보수 가능한 구조를 설계합니다.</p>
-                </div>
-                <div class="strength-card">
-                    <span class="strength-index">02</span>
-                    <span class="strength-label">Operation</span>
-                    <h4 class="strength-title">App Operation & Stability</h4>
-                    <p class="strength-desc">정기·긴급 배포 대응, Crashlytics 중앙화, API 로깅 개선, OS 업데이트 대응, deprecated api 관리.<br>운영 중인 앱의 안정성을 지키는 경험이 있습니다.</p>
-                </div>
-                <div class="strength-card">
-                    <span class="strength-index">03</span>
-                    <span class="strength-label">Refactoring</span>
-                    <h4 class="strength-title">Legacy Modernization</h4>
-                    <p class="strength-desc">UIKit 기반 레거시 코드 분석 및 구조 개선.<br>리팩토링 범위 판단과 단계적 전환 설계를 직접 수행했습니다.</p>
-                </div>
-                <div class="strength-card">
-                    <span class="strength-index">04</span>
-                    <span class="strength-label">Migration</span>
-                    <h4 class="strength-title">SwiftUI Migration</h4>
-                    <p class="strength-desc">UIKit → SwiftUI 전환 설계 및 구현.<br>MVVM / MVI 아키텍처 기반으로 신규 화면을 구축하며 전환 방향을 정의했습니다.</p>
-                </div>
-                <div class="strength-card">
-                    <span class="strength-index">05</span>
-                    <span class="strength-label">Platform</span>
-                    <h4 class="strength-title">Design System & Platformization</h4>
-                    <p class="strength-desc">공통 UI 컴포넌트 설계, 디자인 토큰 관리, Figma Code Connect 활용.<br>디자인-개발 협업 비용을 줄이는 체계를 구축했습니다.</p>
-                </div>
-                <div class="strength-card">
-                    <span class="strength-index">06</span>
-                    <span class="strength-label">AI Workflow</span>
-                    <h4 class="strength-title">AI-assisted Development Workflow</h4>
-                    <p class="strength-desc">Cursor, Claude Code 등 AI 도구를 레거시 분석·설계 검토·테스트 케이스 작성에 활용.<br>설계 판단과 코드 품질 검증은 개발자가 수행합니다.</p>
+            <header class="section-heading-v2">
+                <p class="section-heading-v2-label">02 / ABOUT</p>
+                <h2>플랫폼을 넘나든 경험으로<br>모바일 제품의 전체 흐름을 봅니다.</h2>
+            </header>
+
+            <div class="about-v2-story">
+                <p class="about-v2-lead">저를 만든 네 가지 경험입니다.</p>
+                <div class="about-v2-narrative">
+                    <p>여러 직군이 이해할 수 있는 언어로 기술적 제약과 대안을 설명하고, 구현 결과가 개인의 지식으로 남지 않도록 가독성 있는 코드와 문서, 공통 기준으로 정리하는 것을 중요하게 생각합니다.</p>
+                    <p>레거시를 그대로 유지하거나 한 번에 교체하기보다 현재 동작을 분석해 SwiftUI 전환, 공통 처리 중앙화, 디자인 패턴 도입처럼 검증 가능한 개선으로 연결해왔습니다.</p>
                 </div>
             </div>
+
+            <div class="about-v2-keywords">
+                <article class="about-v2-keyword">
+                    <span class="about-v2-index">01</span>
+                    <p class="about-v2-tag">Cross-platform Perspective</p>
+                    <h3>Android에서 iOS까지</h3>
+                    <p>Android 개발자 시절부터 iOS를 스스로 학습했고, GS Retail 앱을 Android와 iOS로 병행 개발하며 실무 경험을 쌓았습니다. 이후 iOS 개발에 집중하기로 선택해 ONEstore에 iOS 개발자로 이직했습니다.</p>
+                    <span class="about-v2-proof">Self-directed Learning · Android/iOS Operation · iOS Career Transition</span>
+                </article>
+                <article class="about-v2-keyword">
+                    <span class="about-v2-index">02</span>
+                    <p class="about-v2-tag">Communication & Documentation</p>
+                    <h3>설명하고 기록하며 협업을 연결합니다</h3>
+                    <p>기획자와 디자이너에게 기술적 제약과 대안을 이해하기 쉬운 표현으로 설명하고, 합의한 기준은 코드와 문서로 남깁니다. 컴포넌트 정의서와 레이어·토큰 기준표를 만들고 반복 작업은 SPM, Style Dictionary, Code Connect 흐름으로 정리했습니다.</p>
+                    <span class="about-v2-proof">Design System PM · Documentation · Template & Automation</span>
+                </article>
+                <article class="about-v2-keyword">
+                    <span class="about-v2-index">03</span>
+                    <p class="about-v2-tag">Legacy Modernization</p>
+                    <h3>레거시의 흐름을 다시 정리합니다</h3>
+                    <p>UIKit 화면을 SwiftUI로 전환하고 파편화된 로깅과 공통 처리를 중앙화했습니다. MVVM과 MVI를 적용해 사용자 입력부터 화면 출력까지의 상태 흐름을 명확히 하고 주요 UseCase에는 Unit Test를 작성했습니다.</p>
+                    <span class="about-v2-proof">UIKit → SwiftUI · MVVM / MVI · Centralized Logging</span>
+                </article>
+                <article class="about-v2-keyword">
+                    <span class="about-v2-index">04</span>
+                    <p class="about-v2-tag">Multiple Domains & Environments</p>
+                    <h3>구축과 운영, 여러 도메인을 경험했습니다</h3>
+                    <p>웹에이전시 SI, 고객사 시스템 SM, 인하우스 서비스를 거치며 B2B·B2C·사내 앱과 네이티브·하이브리드 앱을 개발했습니다. 커머스, 콘텐츠, 플랫폼, 모빌리티 도메인에서 구축부터 배포와 운영까지 경험했습니다.</p>
+                    <span class="about-v2-proof">SI · SM · In-house · Commerce · Content · Platform · Mobility</span>
+                </article>
+            </div>
+
+            <aside class="about-v2-update" aria-label="최근 개발 활동">
+                <span>RECENT UPDATE</span>
+                <p>최근에는 Cursor, Claude Code, Codex 등 다양한 AI 도구를 활용해 개발 속도와 검토 범위를 넓히고 있습니다. 작업 방향과 제한 조건을 직접 설계하고, AI가 그 범위 안에서 구현하도록 감독한 뒤 코드·빌드·테스트와 수동 QA로 결과를 검수하며 활용 역량을 높이고 있습니다.</p>
+            </aside>
         </div>
     </section>
 
     <!-- Career Section -->
-    <section class="career" id="career">
+    <section class="career career-v2" id="career">
         <div class="container">
-            <h2 class="section-title">Career</h2>
-            
-            <!-- 총 경력 요약 -->
-            <div class="career-summary">
-                <div class="summary-card">
-                    <div class="summary-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
-                    </div>
-                    <div class="summary-content">
-                        <h3>총 경력</h3>
-                        <p class="summary-value">10년 8개월</p>
-                    </div>
+            <header class="section-heading-v2 career-v2-heading">
+                <p class="section-heading-v2-label">03 / CAREER</p>
+                <div>
+                    <h2>구축부터 운영과 플랫폼화까지,<br>10년의 경험을 연결했습니다.</h2>
+                    <p class="career-v2-lead">Android 개발자로 시작해 iOS로 전환한 뒤, SI·SM·인하우스 환경에서 모바일 서비스를 구축하고 운영하며 구조 개선과 기술 범위 조율까지 담당했습니다.</p>
                 </div>
-                <div class="summary-card">
-                    <div class="summary-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
+            </header>
+
+            <div class="career-v2-list">
+                <article class="career-v2-company">
+                    <div class="career-v2-brand">
+                        <div class="career-v2-logo career-v2-logo-encar">
+                            <img src="assets/images/company-logos/encar.png" alt="엔카닷컴 로고">
+                        </div>
+                        <span class="career-v2-order">04</span>
                     </div>
-                    <div class="summary-content">
-                        <h3>경력 회사</h3>
-                        <p class="summary-value">4개</p>
+                    <div class="career-v2-content">
+                        <header class="career-v2-company-header">
+                            <div>
+                                <p class="career-v2-company-label">MANAGEMENT</p>
+                                <h3>엔카닷컴</h3>
+                                <p class="career-v2-period">2025.06 — 2025.08 · 모바일팀 / 과장</p>
+                            </div>
+                            <button type="button" class="career-v2-detail-btn" onclick="openCareerModal('encar')">Career Details <span aria-hidden="true">↗</span></button>
+                        </header>
+                        <p class="career-v2-responsibility"><strong>담당 업무</strong> 운영 중인 엔카 iOS 앱의 UIKit·Objective-C 레거시를 분석하고, SwiftUI 기반 화면 전환과 테스트 가능한 상태 구조, 광고·운영 로깅 개선을 담당했습니다.</p>
+                        <div class="career-v2-projects">
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 01</span><h4>UIKit 레거시 화면의 SwiftUI 전환</h4></div>
+                                <time>2025.06 — 2025.08</time>
+                                <p>아키텍처와 디자인 패턴 없이 구성된 UIKit·Objective-C 화면에서 전환 범위를 정리했습니다. Leaf 화면인 제네시스 옵션 필터부터 SwiftUI로 재구성하고, MVVM·MVI 두 가지 상태 흐름을 적용해 테스트 가능한 구조와 점진적 전환의 시작점을 만들었습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 02</span><h4>운영 코드 중앙화 및 레거시 클리닝</h4></div>
+                                <time>2025.06 — 2025.08</time>
+                                <p>화면과 모듈마다 파편화되어 있던 Crashlytics 및 API 요청·응답 로깅 코드를 공통 흐름으로 중앙화했습니다. 중복된 레거시 코드를 정리하고 오류 추적 기준과 운영 관리 지점을 통일해 장애 발생 시 확인해야 할 흐름을 명확하게 만들었습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 03</span><h4>iOS 디자인 시스템 초기 설계</h4></div>
+                                <time>2025.06 — 2025.08</time>
+                                <p>공통 디자인 컴포넌트 적용을 위한 초기 구조를 검토하고 Font, Color, Radius를 토큰으로 정의했습니다. 화면의 목적과 상태가 드러나는 Semantic Color Naming을 도입해 원시 색상값 대신 일관된 의미 기준으로 UI를 구성할 수 있는 기반을 정리했습니다.</p>
+                            </article>
+                        </div>
                     </div>
+                </article>
+
+                <article class="career-v2-company career-v2-company-featured">
+                    <div class="career-v2-brand">
+                        <div class="career-v2-logo career-v2-logo-onestore">
+                            <img src="assets/images/company-logos/onestore.png" alt="원스토어 로고">
+                        </div>
+                        <span class="career-v2-order">03</span>
+                    </div>
+                    <div class="career-v2-content">
+                        <header class="career-v2-company-header">
+                            <div>
+                                <p class="career-v2-company-label">PLATFORM & CONTENT</p>
+                                <h3>원스토어</h3>
+                                <p class="career-v2-period">2021.09 — 2025.06 · 스토리 앱 개발팀 / iOS Platform팀 · iOS Developer</p>
+                            </div>
+                            <button type="button" class="career-v2-detail-btn" onclick="openCareerModal('onestore')">Career Details <span aria-hidden="true">↗</span></button>
+                        </header>
+                        <p class="career-v2-responsibility"><strong>담당 업무</strong> ONEstory 콘텐츠 서비스 운영에서 시작해 Apple DMA 대응 글로벌 앱 마켓과 전사 디자인 시스템으로 업무를 확장했습니다. iOS 구현 가능성 검토, 아키텍처 설계, 개발 범위 조율과 디자인·개발 협업 기준 수립을 담당했습니다.</p>
+                        <div class="career-v2-projects">
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 01</span><h4>ONEstore Global App Market Prototype</h4></div>
+                                <div class="career-v2-project-meta"><time>2024.01 — 2024.12</time><span class="career-v2-role-badge">PL</span></div>
+                                <p>Apple DMA 정책에 따른 제3자 앱 마켓의 국내 구현 가능성을 검토했습니다. iOS 개발 범위 조율 역할로 MarketplaceKit, 앱 아키텍처, 네트워크 모듈과 JavaScript Interface를 설계하고 Prototype에서 Alpha·Beta로 이어지는 구현 범위와 리스크를 정리했습니다. Apple Cork에서 약 2주간 기술 세션에 참여해 정책과 제약을 직접 확인했습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 02</span><h4>ONEstore Design System</h4></div>
+                                <div class="career-v2-project-meta"><time>2024.06 — 2025.06</time><span class="career-v2-role-badge">PM</span></div>
+                                <p>기술 파트 PM으로 공통 UI 컴포넌트, 디자인 토큰, Style Dictionary와 Figma Code Connect 기반의 협업 구조를 설계했습니다. Android·iOS·Web·디자인·기획의 기준을 조율하고 컴포넌트 문서와 레이어·토큰 기준표를 정리했으며, C레벨 보고와 전사 세미나를 포함해 총 3회의 도입 세션을 진행했습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 03</span><h4>ONEstory iOS Application 운영 및 개발</h4></div>
+                                <time>2021.09 — 2023.12</time>
+                                <p>e-book 콘텐츠 앱의 정기 배포, VOC와 OS 업데이트 대응, 주요 화면 개선을 담당했습니다. WebView 화면을 UIKit Native로 전환하고 내서재·마이페이지·고객문의, 소셜 로그인, 위젯과 iPad UI를 개발하며 인하우스 콘텐츠 서비스의 운영 흐름을 경험했습니다.</p>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="career-v2-company">
+                    <div class="career-v2-brand">
+                        <div class="career-v2-logo career-v2-logo-gsitm">
+                            <img src="assets/images/company-logos/gsitm.png" alt="GS ITM 로고">
+                        </div>
+                        <span class="career-v2-order">02</span>
+                    </div>
+                    <div class="career-v2-content">
+                        <header class="career-v2-company-header">
+                            <div>
+                                <p class="career-v2-company-label">MOBILE OPERATION</p>
+                                <h3>GS ITM</h3>
+                                <p class="career-v2-period">2017.06 — 2021.09 · e-Commerce팀 / 대리 · Android & iOS Developer</p>
+                            </div>
+                            <button type="button" class="career-v2-detail-btn" onclick="openCareerModal('gsitm')">Career Details <span aria-hidden="true">↗</span></button>
+                        </header>
+                        <p class="career-v2-responsibility"><strong>담당 업무</strong> GS Retail 전사 모바일 앱 10종 이상을 Android와 iOS로 운영하고, 정기·긴급 배포와 OS·Deprecated API·VOC·Crash 대응을 수행했습니다. GS 계열사 SI 프로젝트와 외부 투입 개발자 인수인계·인스펙션도 담당했습니다.</p>
+                        <div class="career-v2-projects">
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 01</span><h4>GS Retail 전사 모바일 앱 운영</h4></div>
+                                <time>2017.06 — 2021.09</time>
+                                <p>GS Fresh, GS 수퍼마켓, 달리살다, 나만의 냉장고, 배송기사 전용 앱 등 10종 이상의 앱을 운영했습니다. 각 사업부 현업자와 기능 범위와 배포 일정을 조율하고, 대규모 B2C 커머스와 실시간 QR 결제 서비스의 장애·VOC·SDK 이슈를 대응하며 운영 기준을 축적했습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 02</span><h4>GS Fresh 차세대 프로젝트</h4></div>
+                                <div class="career-v2-project-meta"><time>2020.07 — 2020.09</time><span class="career-v2-role-badge">PL</span></div>
+                                <p>Android와 iOS를 모두 이해한 경험을 바탕으로 모바일 파트 PL 역할을 맡았습니다. 양 플랫폼의 사용자 시나리오와 기술 스펙, SSO·WKWebView·API·외부 SDK 연동 범위를 맞추고 구현 문서와 협업 커뮤니케이션의 중심 역할을 수행했습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>PROJECT 03</span><h4>GS 계열사 모바일 SI 프로젝트</h4></div>
+                                <time>2017.06 — 2018.06</time>
+                                <p>GS 계열사의 신규 모바일 서비스 구축을 담당하는 SI팀에서 Android·iOS 앱 개발을 수행했습니다. 기획서와 디자인 시안을 모바일 기능으로 구체화하고 API, WebView, 인증과 외부 SDK 연동 범위를 협업 부서와 조율하며 구축부터 검수와 이관까지 진행했습니다.</p>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="career-v2-company">
+                    <div class="career-v2-brand">
+                        <div class="career-v2-logo career-v2-logo-digitaldime">
+                            <img src="assets/images/company-logos/digitaldime.png" alt="디지털다임 로고">
+                        </div>
+                        <span class="career-v2-order">01</span>
+                    </div>
+                    <div class="career-v2-content">
+                        <header class="career-v2-company-header">
+                            <div>
+                                <p class="career-v2-company-label">EARLY CAREER · SI / SM</p>
+                                <h3>디지털다임</h3>
+                                <p class="career-v2-period">2014.12 — 2017.05 · 모바일팀 / 사원 · Android Developer</p>
+                            </div>
+                            <button type="button" class="career-v2-detail-btn" onclick="openCareerModal('digitaldime')">Career Details <span aria-hidden="true">↗</span></button>
+                        </header>
+                        <p class="career-v2-responsibility"><strong>담당 업무</strong> 웹에이전시 모바일팀에서 B2B·B2C·사내 인트라넷, Native·Hybrid 앱을 개발했습니다. 제안과 요구사항 정리부터 디자인·서버 협업, 외부 SDK 연동, 출시와 운영까지 여러 SI/SM 프로젝트의 전 과정을 경험했습니다.</p>
+                        <div class="career-v2-projects">
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>GLOBAL · SI</span><h4>중국 시장 브랜드·O2O 앱 구축</h4></div>
+                                <time>2015.11 — 2017.01</time>
+                                <p><strong>CafeUnion, LuxeWater</strong> 등 중국 시장 대상 앱을 개발했습니다. 위치 기반 매장 탐색, 소셜 로그인과 결제, WebView·JavaScript Interface, 중국 현지 SDK를 연동하고 기획·디자인·서버 개발자와 플랫폼별 예외 조건을 조율했습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>INTRANET · SI/SM</span><h4>사내 인트라넷 모바일 앱 구축·운영</h4></div>
+                                <time>2015.07 — 2015.09</time>
+                                <p><strong>MyD2</strong>의 메인 Android 개발자로 기존 웹 인트라넷을 모바일 앱으로 구현했습니다. 회의실 예약, 휴가 결재, 사내 커뮤니케이션 기능과 API·푸시 연동을 담당하고 출시 이후 운영까지 이어갔습니다.</p>
+                            </article>
+                            <article class="career-v2-project">
+                                <div class="career-v2-project-title"><span>DOMESTIC · SI</span><h4>국내 커머스·교육·브랜드 앱 구축</h4></div>
+                                <time>2014.12 — 2017.05 내 다수 수행</time>
+                                <p><strong>올가홀푸드, 폴리스쿨, SK FashionMall Brochure</strong> 등 Native·Hybrid 앱과 iPad 전용 앱을 개발했습니다. 상품 탐색, 바코드·QR, 푸시, 콘텐츠 노출과 외부 SDK를 서비스 성격에 맞게 연동했습니다.</p>
+                            </article>
+                            <article class="career-v2-project career-v2-project-compact">
+                                <div class="career-v2-project-title"><span>BRAND · SM</span><h4>브랜드 모바일 앱 운영</h4></div>
+                                <time>2014.12 — 2017.05 내 운영</time>
+                                <p><strong>할리스커피</strong> 등 출시된 브랜드 앱의 기능 개선, OS 및 SDK 변경 대응, 오류 확인과 배포 업무를 수행하며 SI 구축 경험을 운영·유지보수 영역으로 확장했습니다.</p>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Skills Section -->
+    <section class="tech-skills-v2" id="tech-stack">
+        <div class="container">
+            <header class="section-heading-v2 tech-skills-v2-heading">
+                <p class="section-heading-v2-label">04 / TECH SKILLS</p>
+                <div>
+                    <h2>기술 이름보다<br>사용한 프로젝트로 설명합니다.</h2>
+                    <p class="tech-skills-v2-lead">카드의 숫자는 현재 포트폴리오에서 해당 기술을 실제로 사용한 프로젝트 수입니다. 기술을 선택하면 적용 프로젝트와 사용 맥락을 확인할 수 있습니다.</p>
                 </div>
+            </header>
+
+            <div class="tech-skills-v2-tabs" role="tablist" aria-label="기술 카테고리">
+                <button type="button" class="tech-skills-v2-tab is-active" role="tab" aria-selected="true" data-tech-category="ios-development">iOS Development</button>
+                <button type="button" class="tech-skills-v2-tab" role="tab" aria-selected="false" data-tech-category="architecture-testing">Architecture & Testing</button>
+                <button type="button" class="tech-skills-v2-tab" role="tab" aria-selected="false" data-tech-category="build-cicd">Build & CI/CD</button>
+                <button type="button" class="tech-skills-v2-tab" role="tab" aria-selected="false" data-tech-category="collaboration-tools">Collaboration & Tools</button>
+                <button type="button" class="tech-skills-v2-tab" role="tab" aria-selected="false" data-tech-category="ai-assisted">AI-assisted Development</button>
+                <button type="button" class="tech-skills-v2-tab" role="tab" aria-selected="false" data-tech-category="android">Android</button>
             </div>
 
-            <div class="career-table-wrapper">
-                <table class="info-table career-table">
-                    <thead>
-                        <tr>
-                            <th>회사</th>
-                            <th>재직 기간</th>
-                            <th>소속 팀</th>
-                            <th>직급</th>
-                            <th>핵심 역할</th>
-                            <th>재직일수</th>
-                            <th>상세보기</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="career-row">
-                            <td data-label="회사">디지털다임</td>
-                            <td data-label="재직 기간">2014.12 ~ 2017.05</td>
-                            <td data-label="소속 팀">모바일팀</td>
-                            <td data-label="직급">사원<br><span class="job-role">(Android Developer)</span></td>
-                            <td data-label="핵심 역할">
-                                <div class="career-focus">
-                                    <p>Android SI/SM · 커머스/O2O · 위치 기반 · 외부 SDK 연동</p>
-                                    <div class="career-focus-tags">
-                                        <span>Android</span>
-                                        <span>SI/SM</span>
-                                        <span>SDK</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="재직일수">
-                                <div class="duration-info">
-                                    <span class="duration-text">2년 6개월</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 23.36%;" data-duration="30개월"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="상세보기">
-                                <button class="career-detail-btn" onclick="openCareerModal('digitaldime')" title="상세보기">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="career-row">
-                            <td data-label="회사">GS ITM</td>
-                            <td data-label="재직 기간">2017.06 ~ 2021.09</td>
-                            <td data-label="소속 팀">e-Commerce팀</td>
-                            <td data-label="직급">대리<br><span class="job-role">(Android, iOS Developer)</span></td>
-                            <td data-label="핵심 역할">
-                                <div class="career-focus">
-                                    <p>커머스/멤버십 앱 운영 · 정기/긴급 배포 · OS/VOC/Crash 대응</p>
-                                    <div class="career-focus-tags">
-                                        <span>Operation</span>
-                                        <span>iOS/Android</span>
-                                        <span>Mobile Scope</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="재직일수">
-                                <div class="duration-info">
-                                    <span class="duration-text">4년 4개월</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 40.62%;" data-duration="52개월"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="상세보기">
-                                <button class="career-detail-btn" onclick="openCareerModal('gsitm')" title="상세보기">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="career-row">
-                            <td data-label="회사">원스토어</td>
-                            <td data-label="재직 기간">2021.09 ~ 2023.12</td>
-                            <td data-label="소속 팀">스토리 앱 개발팀</td>
-                            <td data-label="직급">팀원<br><span class="job-role">(iOS Developer)</span></td>
-                            <td data-label="핵심 역할">
-                                <div class="career-focus">
-                                    <p>ONEstory iOS 운영 · UIKit 화면 전환 · 콘텐츠 앱 기능 개발</p>
-                                    <div class="career-focus-tags">
-                                        <span>iOS</span>
-                                        <span>UIKit</span>
-                                        <span>Operation</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="재직일수">
-                                <div class="duration-info">
-                                    <span class="duration-text">2년 4개월</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 21.87%;" data-duration="28개월"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="상세보기">
-                                <button class="career-detail-btn" onclick="openCareerModal('onestore1')" title="상세보기">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="career-row">
-                            <td data-label="회사">원스토어</td>
-                            <td data-label="재직 기간">2024.01 ~ 2025.06</td>
-                            <td data-label="소속 팀">iOS Platform팀</td>
-                            <td data-label="직급">팀원<br><span class="job-role">(iOS Developer)</span></td>
-                            <td data-label="핵심 역할">
-                                <div class="career-focus">
-                                    <p>디자인 시스템 · 글로벌 앱 마켓 기술 검토 · iOS 개발 범위 조율</p>
-                                    <div class="career-focus-tags">
-                                        <span>Design System</span>
-                                        <span>iOS Scope</span>
-                                        <span>Platform</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="재직일수">
-                                <div class="duration-info">
-                                    <span class="duration-text">1년 6개월</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 14.06%;" data-duration="18개월"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="상세보기">
-                                <button class="career-detail-btn" onclick="openCareerModal('onestore2')" title="상세보기">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="career-row">
-                            <td data-label="회사">엔카닷컴</td>
-                            <td data-label="재직 기간">2025.06 ~ 2025.08</td>
-                            <td data-label="소속 팀">모바일 팀</td>
-                            <td data-label="직급">과장<br><span class="job-role">(iOS Developer)</span></td>
-                            <td data-label="핵심 역할">
-                                <div class="career-focus">
-                                    <p>iOS 앱 운영 · SwiftUI 전환 · 레거시 개선 · Crash/API 로깅</p>
-                                    <div class="career-focus-tags">
-                                        <span>SwiftUI</span>
-                                        <span>Legacy</span>
-                                        <span>Stability</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="재직일수">
-                                <div class="duration-info">
-                                    <span class="duration-text">3개월</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 2.34%;" data-duration="3개월"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-label="상세보기">
-                                <button class="career-detail-btn" onclick="openCareerModal('encar')" title="상세보기">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="tech-skills-v2-layout">
+                <div class="tech-skills-v2-grid" id="techSkillsGrid">
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ios-development" data-name="Swift" data-projects="Note Cleaner|Mindly-iOS|FocusBoard|Encar iOS App|ONEstore Global App Market|ONEstore Design System|ONEstory|GS Retail / GS Fresh" data-context="회사 프로젝트와 개인 제품 전반에서 iOS/macOS 기능 개발과 구조 개선에 사용했습니다.">
+                        <span class="tech-skill-count" aria-label="8개 프로젝트">08</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/swift.svg" alt="" aria-hidden="true"></span>
+                        <strong>Swift</strong>
+                        <small>iOS · macOS Application</small>
+                    </button>
+                    <button type="button" class="tech-skill-card is-active" data-tech-card data-category="ios-development" data-name="SwiftUI" data-projects="ONEstore Global App Market|ONEstore Design System|ONEstory|Encar iOS App|Note Cleaner|Mindly-iOS|FocusBoard" data-context="UIKit 병행 운영, 신규 화면 구현, 개인 제품 개발에서 점진적 전환과 상태 기반 UI를 구성했습니다.">
+                        <span class="tech-skill-count" aria-label="7개 프로젝트">07</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/swift.svg" alt="" aria-hidden="true"></span>
+                        <strong>SwiftUI</strong>
+                        <small>UIKit 병행 · 점진적 전환</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ios-development" data-name="Objective-C" data-projects="ONEstory|Encar iOS App|GS Retail / GS Fresh" data-context="운영 중인 Objective-C 코드의 동작과 의존성을 파악하고 Swift·SwiftUI 개선 범위를 정리했습니다.">
+                        <span class="tech-skill-count" aria-label="3개 프로젝트">03</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/objective-c.svg" alt="" aria-hidden="true"></span>
+                        <strong>Objective-C</strong>
+                        <small>Legacy Analysis</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ios-development" data-name="Combine" data-projects="프로젝트 연결 범위 확인 중" data-context="Apple 플랫폼의 Publisher 기반 비동기 이벤트와 상태 흐름을 구성하는 선택지로 사용했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/combine.png" alt="" aria-hidden="true"></span>
+                        <strong>Combine</strong>
+                        <small>Reactive Framework</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ios-development" data-name="RxSwift" data-projects="Note Cleaner|GS Retail / GS Fresh" data-context="운영 앱의 비동기 이벤트와 화면 상태 흐름을 구성하고 프로젝트 구조에 맞게 적용했습니다.">
+                        <span class="tech-skill-count" aria-label="2개 프로젝트">02</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/rxswift.svg" alt="" aria-hidden="true"></span>
+                        <strong>RxSwift</strong>
+                        <small>Reactive Flow</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="architecture-testing" data-name="MVVM" data-projects="ONEstore Global App Market|Encar iOS App|Note Cleaner" data-context="화면 상태와 비즈니스 로직을 분리하고 ViewModel 및 UseCase 단위의 테스트 가능성을 확보했습니다.">
+                        <span class="tech-skill-count" aria-label="3개 프로젝트">03</span>
+                        <span class="tech-skill-icon tech-skill-icon-mono">VM</span>
+                        <strong>MVVM</strong>
+                        <small>View State Separation</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="architecture-testing" data-name="Clean Architecture" data-projects="ONEstore Global App Market|Note Cleaner" data-context="UI, Domain, Data 계층의 책임과 의존성 방향을 분리해 기능 확장과 테스트 범위를 정리했습니다.">
+                        <span class="tech-skill-count" aria-label="2개 프로젝트">02</span>
+                        <span class="tech-skill-icon tech-skill-icon-mono">CA</span>
+                        <strong>Clean Architecture</strong>
+                        <small>Layered Dependencies</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="architecture-testing" data-name="MVI" data-projects="Encar iOS App" data-context="SwiftUI 화면에서 사용자 입력과 상태 변화, 화면 출력이 한 방향으로 흐르도록 구조를 비교·적용했습니다.">
+                        <span class="tech-skill-count" aria-label="1개 프로젝트">01</span>
+                        <span class="tech-skill-icon tech-skill-icon-mono">MVI</span>
+                        <strong>MVI</strong>
+                        <small>Unidirectional State</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="architecture-testing" data-name="Dependency Injection" data-projects="프로젝트 연결 범위 확인 중" data-context="객체 생성과 의존성 연결을 구현부에서 분리해 테스트 대역과 기능 교체가 가능한 구조를 구성했습니다.">
+                        <span class="tech-skill-icon tech-skill-icon-mono">DI</span>
+                        <strong>Dependency Injection</strong>
+                        <small>Dependency Boundary</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="build-cicd" data-name="Tuist" data-projects="ONEstore Global App Market|ONEstore Design System" data-context="프로젝트 모듈과 공통 UI 패키지의 구성·배포 범위를 관리하는 데 사용했습니다.">
+                        <span class="tech-skill-count" aria-label="2개 프로젝트">02</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/tuist.jpeg" alt="" aria-hidden="true"></span>
+                        <strong>Tuist</strong>
+                        <small>Project Modularization</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="build-cicd" data-name="Jenkins" data-projects="TripSign" data-context="iOS 앱의 빌드·서명·TestFlight 배포 과정과 후처리 스크립트의 실패 지점을 로그 기반으로 점검했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/jenkins.svg" alt="" aria-hidden="true"></span>
+                        <strong>Jenkins</strong>
+                        <small>Build & Deployment Pipeline</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="build-cicd" data-name="GitHub Actions" data-projects="사용 경험" data-context="저장소 이벤트를 기준으로 빌드와 테스트, 반복 검증 작업을 실행하는 CI 워크플로우에 활용했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/githubactions.svg" alt="" aria-hidden="true"></span>
+                        <strong>GitHub Actions</strong>
+                        <small>Repository Automation</small>
+                    </button>
+
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="build-cicd" data-name="Fastlane" data-projects="Note Cleaner|TripSign" data-context="반복 가능한 TestFlight·App Store 배포 흐름과 릴리스 준비 작업에 사용했습니다.">
+                        <span class="tech-skill-count" aria-label="1개 프로젝트">01</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/fastlane.png" alt="" aria-hidden="true"></span>
+                        <strong>Fastlane</strong>
+                        <small>Release Workflow</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="architecture-testing" data-name="XCTest" data-projects="Encar iOS App" data-context="SwiftUI 전환 과정에서 주요 UseCase의 입력·출력과 예외 조건을 검증했습니다.">
+                        <span class="tech-skill-count" aria-label="1개 프로젝트">01</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/xcode.png" alt="" aria-hidden="true"></span>
+                        <strong>XCTest</strong>
+                        <small>UseCase Verification</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="architecture-testing" data-name="Swift Testing" data-projects="프로젝트 연결 범위 확인 중" data-context="Swift의 최신 테스트 표현과 명확한 실패 조건을 활용해 테스트 가독성을 높이는 방식으로 사용했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/xcode.png" alt="" aria-hidden="true"></span>
+                        <strong>Swift Testing</strong>
+                        <small>Modern Test Syntax</small>
+                    </button>
+
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="collaboration-tools" data-name="Git" data-projects="회사 프로젝트|개인 프로젝트" data-context="브랜치와 변경 이력을 기준으로 협업 범위를 관리하고 코드 리뷰와 배포 변경사항을 추적했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/git.svg" alt="" aria-hidden="true"></span>
+                        <strong>Git</strong>
+                        <small>Version Control</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="collaboration-tools" data-name="Figma" data-projects="ONEstore Global App Market|ONEstore Design System|Encar iOS App" data-context="디자인 시안과 컴포넌트 상태를 검토하고 플랫폼별 구현 기준과 예외 케이스를 협의했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/figma.svg" alt="" aria-hidden="true"></span>
+                        <strong>Figma</strong>
+                        <small>Design Collaboration</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="collaboration-tools" data-name="Jira" data-projects="ONEstore|GS ITM|Encar" data-context="요구사항, 결함, 배포 단위를 이슈로 관리하고 기획·디자인·개발 직군 간 진행 상태를 공유했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/jira.svg" alt="" aria-hidden="true"></span>
+                        <strong>Jira</strong>
+                        <small>Issue Tracking</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="collaboration-tools" data-name="Postman" data-projects="API 연동 프로젝트" data-context="서버 API 요청·응답과 예외 조건을 확인하고 모바일 구현 전 계약과 테스트 데이터를 검토했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/postman.svg" alt="" aria-hidden="true"></span>
+                        <strong>Postman</strong>
+                        <small>API Collaboration</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ai-assisted" data-name="OpenAI Codex" data-projects="Mindly-iOS|FocusBoard" data-context="Agent, Skill, AGENTS.md를 구성하고 기능 계획부터 단계별 구현, 코드 리뷰, 테스트와 QA까지 이어지는 개발 환경으로 활용했습니다.">
+                        <span class="tech-skill-count" aria-label="2개 프로젝트">02</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/codex.svg" alt="" aria-hidden="true"></span>
+                        <strong>OpenAI Codex</strong>
+                        <small>Agentic Development</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ai-assisted" data-name="Claude Code" data-projects="AI-assisted 개발 환경" data-context="프로젝트 규칙과 역할별 Agent, 메모리와 검증 절차를 구성해 분석·구현·문서화 작업에 활용했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/claude-code.svg" alt="" aria-hidden="true"></span>
+                        <strong>Claude Code</strong>
+                        <small>Rules & Agent Workflow</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ai-assisted" data-name="Cursor" data-projects="레거시 분석|운영 기능 개발" data-context="프로젝트 규칙과 현재 코드 맥락을 제공해 레거시 탐색, 영향 범위 확인, 구현 초안과 리뷰에 활용했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/cursor.svg" alt="" aria-hidden="true"></span>
+                        <strong>Cursor</strong>
+                        <small>Context-aware Coding</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="ai-assisted" data-name="ChatGPT" data-projects="기술 조사|문서 초안|아이디어 검토" data-context="기술 조사와 요구사항 정리, 문서 초안, 제품 아이디어의 선택지를 넓히는 보조 도구로 활용했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/chatgpt.png" alt="" aria-hidden="true"></span>
+                        <strong>ChatGPT</strong>
+                        <small>Research & Drafting</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="android" data-name="Kotlin" data-projects="Android 개발 경험" data-context="Android 앱 기능 개발과 플랫폼별 구현 차이를 이해하는 기반 기술로 사용했습니다.">
+                        <span class="tech-skill-icon"><img src="assets/images/tech/kotlin.svg" alt="" aria-hidden="true"></span>
+                        <strong>Kotlin</strong>
+                        <small>Android Development</small>
+                    </button>
+                    <button type="button" class="tech-skill-card" data-tech-card data-category="android" data-name="Java" data-projects="CafeUnion|LuxeWater|올가홀푸드|사내 인트라넷" data-context="웹에이전시 SI 프로젝트와 사내 인트라넷 앱의 Android 기능·SDK 연동·운영 개발에 사용했습니다.">
+                        <span class="tech-skill-count" aria-label="4개 프로젝트">04</span>
+                        <span class="tech-skill-icon"><img src="assets/images/tech/java.svg" alt="" aria-hidden="true"></span>
+                        <strong>Java</strong>
+                        <small>Android SI / SM</small>
+                    </button>
+                </div>
+
+                <aside class="tech-skill-detail" id="techSkillDetail" aria-live="polite">
+                    <p class="tech-skill-detail-label">SELECTED SKILL</p>
+                    <h3 id="techSkillDetailName">SwiftUI</h3>
+                    <p id="techSkillDetailContext">UIKit 병행 운영, 신규 화면 구현, 개인 제품 개발에서 점진적 전환과 상태 기반 UI를 구성했습니다.</p>
+                    <div class="tech-skill-detail-projects">
+                        <span>USED IN</span>
+                        <div id="techSkillDetailProjects">
+                            <span>ONEstore Global App Market</span>
+                            <span>ONEstore Design System</span>
+                            <span>ONEstory</span>
+                            <span>Encar iOS App</span>
+                            <span>Note Cleaner</span>
+                            <span>Mindly-iOS</span>
+                            <span>FocusBoard</span>
+                        </div>
+                    </div>
+                </aside>
             </div>
 
-            <!-- 총 재직 기간 Progress Bar -->
-            <div class="total-career-progress">
-                <h3>전체 경력 타임라인</h3>
-                <div class="timeline-wrapper">
-                    <div class="timeline-bar">
-                        <div class="timeline-segment" style="width: 23.36%;" data-company="디지털다임">
-                            <span class="timeline-label">디지털다임<br>2.5년</span>
-                        </div>
-                        <div class="timeline-segment" style="width: 40.62%;" data-company="GS ITM">
-                            <span class="timeline-label">GS ITM<br>4.3년</span>
-                        </div>
-                        <div class="timeline-segment" style="width: 21.87%;" data-company="원스토어(1)">
-                            <span class="timeline-label">원스토어<br>2.3년</span>
-                        </div>
-                        <div class="timeline-segment" style="width: 14.06%;" data-company="원스토어(2)">
-                            <span class="timeline-label">원스토어<br>1.5년</span>
-                        </div>
-                        <div class="timeline-segment" style="width: 2.34%;" data-company="엔카닷컴">
-                            <span class="timeline-label">엔카닷컴<br>0.3년</span>
-                        </div>
-                    </div>
-                    <div class="timeline-info">
-                        <span>2014.12</span>
-                        <span>2025.08 (총 10년 8개월)</span>
-                    </div>
+            <div class="tech-skills-v2-additional">
+                <div>
+                    <span>ADDITIONAL SKILLS</span>
+                    <p>협업과 업무 과정에서 사용했지만 핵심 역량 카드보다 간결하게 보여주는 도구입니다.</p>
+                </div>
+                <div class="tech-skills-v2-additional-groups">
+                    <section>
+                        <h3>Collaboration & Tools</h3>
+                        <ul aria-label="추가 협업 도구">
+                            <li><img src="assets/images/tech/bitbucket.svg" alt="" aria-hidden="true">Bitbucket</li>
+                            <li>SVN</li>
+                            <li>Fork</li>
+                            <li>Wiki</li>
+                            <li><img src="assets/images/tech/trello.svg" alt="" aria-hidden="true">Trello</li>
+                            <li><img src="assets/images/tech/slack.svg" alt="" aria-hidden="true">Slack</li>
+                            <li>Microsoft Teams</li>
+                            <li><img src="assets/images/tech/outlook.svg" alt="" aria-hidden="true">Outlook</li>
+                            <li>Zeplin</li>
+                            <li><img src="assets/images/tech/swagger.svg" alt="" aria-hidden="true">Swagger</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>AI-assisted Development</h3>
+                        <ul aria-label="추가 AI 도구">
+                            <li>Pencil</li>
+                            <li>Figma Make</li>
+                            <li>Manifast</li>
+                        </ul>
+                    </section>
                 </div>
             </div>
         </div>
@@ -538,117 +686,78 @@
     </section>
 
     <!-- AI-Augmented Development Workflow Section -->
-    <section class="ai-workflow" id="ai-workflow">
+    <section class="ai-workflow ai-workflow-v2" id="ai-workflow">
         <div class="container">
-            <div class="ai-workflow-header">
-                <span class="ai-workflow-kicker">Developer-owned AI Workflow</span>
-                <h2 class="section-title">AI-Assisted Project Workflow</h2>
-                <p class="section-lead">AI를 코드 생성 도구로만 사용하지 않고, 컨텍스트 설계·단계별 구현·검증 루프를 갖춘 개발 워크플로우로 활용합니다. 작업 규칙과 검증 기준을 먼저 정리한 뒤, 필요한 범위만 AI와 함께 구현하고 직접 검수합니다.</p>
-            </div>
+            <header class="section-heading-v2 ai-workflow-v2-heading">
+                <p class="section-heading-v2-label">06 / AI WORKFLOW</p>
+                <div>
+                    <h2>AI와 협업하는 기준을 설계하고<br>직접 검증합니다.</h2>
+                    <p class="ai-workflow-v2-lead">요구사항을 사용자 시나리오로 설명하고, 구현 계획을 먼저 검토한 뒤 승인한 단계만 진행합니다. 화면은 와이어프레임으로 구체화하고, 하네스와 검증 절차로 AI의 작업 범위를 통제합니다.</p>
+                </div>
+            </header>
 
-            <div class="ai-workflow-panel">
-                <div class="ai-workflow-principle">
-                    <span class="ai-workflow-principle-label">Principle</span>
-                    <p>AI가 좋은 결과를 내도록 목표, 수정 범위, 금지 조건, 검증 기준을 먼저 설계합니다. AI가 제안한 결과는 기존 아키텍처, 상태 흐름, 테스트 가능성, 배포 리스크를 기준으로 직접 검토한 뒤 필요한 범위만 반영합니다.</p>
+            <div class="ai-workflow-v2-panel">
+                <div class="ai-workflow-v2-principle">
+                    <span>Developer-owned Principle</span>
+                    <p>AI에게 구현 결정을 넘기지 않습니다. 사용자의 흐름과 개발 기준은 직접 정의하고, AI는 승인된 계획과 검증 가능한 범위 안에서 작업하도록 운영합니다.</p>
                 </div>
 
-                <div class="ai-workflow-grid">
-                    <article class="ai-workflow-card">
-                        <span class="ai-workflow-index">01</span>
-                        <h3>Context Engineering</h3>
-                        <div class="ai-workflow-scenario">
-                            <div class="ai-workflow-step">
-                                <span>Context</span>
-                                <p>기능 구현 전 요구사항, API 계약, 디자인 기준, 아키텍처 규칙을 문서화해 AI가 같은 기준을 참조하도록 만듭니다.</p>
-                            </div>
-                            <div class="ai-workflow-step ai-workflow-prompt">
-                                <span>How I used AI</span>
-                                <p>“AGENTS.md와 PRD를 먼저 읽고, 이번 단계의 영향 파일과 제외 범위를 정리해줘”처럼 기준 문서와 작업 범위를 함께 제공합니다.</p>
-                            </div>
-                            <div class="ai-workflow-step">
-                                <span>My Decision</span>
-                                <p>AI가 정리한 영향 범위는 실제 코드 의존성, 보안 정책, Firebase/DB 접근 규칙을 기준으로 다시 검토합니다.</p>
-                            </div>
-                        </div>
-                        <div class="ai-workflow-tools">
-                            <span>Codex</span>
-                            <span>Claude Code</span>
-                            <span>Skills</span>
-                        </div>
-                    </article>
+                <div class="ai-workflow-v2-layout">
+                    <div class="ai-workflow-v2-steps" role="tablist" aria-label="AI 개발 워크플로우 단계">
+                        <button type="button" class="ai-workflow-v2-step is-active" data-ai-step-button="context" role="tab" aria-selected="true" aria-controls="ai-step-context">
+                            <span>01</span><strong>Scenario Briefing</strong><small>사용자 흐름부터 설명</small>
+                        </button>
+                        <button type="button" class="ai-workflow-v2-step" data-ai-step-button="routing" role="tab" aria-selected="false" aria-controls="ai-step-routing">
+                            <span>02</span><strong>Plan Before Code</strong><small>구현 전 분석과 보고</small>
+                        </button>
+                        <button type="button" class="ai-workflow-v2-step" data-ai-step-button="guardrails" role="tab" aria-selected="false" aria-controls="ai-step-guardrails">
+                            <span>03</span><strong>Approval Gate</strong><small>승인한 단계만 구현</small>
+                        </button>
+                        <button type="button" class="ai-workflow-v2-step" data-ai-step-button="iteration" role="tab" aria-selected="false" aria-controls="ai-step-iteration">
+                            <span>04</span><strong>Visual Specification</strong><small>와이어프레임으로 구체화</small>
+                        </button>
+                        <button type="button" class="ai-workflow-v2-step" data-ai-step-button="verification" role="tab" aria-selected="false" aria-controls="ai-step-verification">
+                            <span>05</span><strong>Harness &amp; Verification</strong><small>규칙으로 통제하고 검증</small>
+                        </button>
+                    </div>
 
-                    <article class="ai-workflow-card">
-                        <span class="ai-workflow-index">02</span>
-                        <h3>Token-efficient Prompting</h3>
-                        <div class="ai-workflow-scenario">
-                            <div class="ai-workflow-step">
-                                <span>Context</span>
-                                <p>큰 기능은 한 번에 구현하지 않고 Domain, ViewModel, UI, App 배선처럼 책임 단위로 나누어 진행합니다.</p>
-                            </div>
-                            <div class="ai-workflow-step ai-workflow-prompt">
-                                <span>How I used AI</span>
-                                <p>“이번 단계는 UI 제외”, “이 파일만 수정”, “기존 JSON 저장소 정책은 유지”처럼 현재 단계에 필요한 차이만 전달합니다.</p>
-                            </div>
-                            <div class="ai-workflow-step">
-                                <span>My Decision</span>
-                                <p>반복 설명은 문서로 고정하고, 프롬프트는 변경 목표와 금지 조건 중심으로 줄여 토큰 낭비와 불필요한 변경을 줄입니다.</p>
-                            </div>
-                        </div>
-                        <div class="ai-workflow-tools">
-                            <span>Codex</span>
-                            <span>Cursor</span>
-                        </div>
-                    </article>
-
-                    <article class="ai-workflow-card">
-                        <span class="ai-workflow-index">03</span>
-                        <h3>Guardrailed Implementation</h3>
-                        <div class="ai-workflow-scenario">
-                            <div class="ai-workflow-step">
-                                <span>Context</span>
-                                <p>AI가 기능을 과하게 확장하지 않도록 수정 대상 파일, 금지 파일, 아키텍처 규칙, 보안 기준을 함께 지정합니다.</p>
-                            </div>
-                            <div class="ai-workflow-step ai-workflow-prompt">
-                                <span>How I used AI</span>
-                                <p>View가 저장소나 외부 서비스를 직접 호출하지 않도록 제한하고, 프로젝트별 persistence·플랫폼·보안 규칙을 유지하도록 지시합니다.</p>
-                            </div>
-                            <div class="ai-workflow-step">
-                                <span>My Decision</span>
-                                <p>AI 수정 결과는 요구 범위 밖 리팩토링, 불필요한 fallback, 민감 정보 노출 가능성이 없는지 확인한 뒤 반영합니다.</p>
-                            </div>
-                        </div>
-                        <div class="ai-workflow-tools">
-                            <span>Claude Code</span>
-                            <span>Codex</span>
-                            <span>AGENTS.md</span>
-                        </div>
-                    </article>
-
-                    <article class="ai-workflow-card">
-                        <span class="ai-workflow-index">04</span>
-                        <h3>Developer-owned Verification</h3>
-                        <div class="ai-workflow-scenario">
-                            <div class="ai-workflow-step">
-                                <span>Context</span>
-                                <p>AI 결과는 초안으로만 보고, 실제 동작과 품질은 빌드·테스트·실기기 확인·수동 QA로 직접 검증합니다.</p>
-                            </div>
-                            <div class="ai-workflow-step ai-workflow-prompt">
-                                <span>How I used AI</span>
-                                <p>“변경 파일을 요약하고, 회귀 가능성이 있는 화면과 수동 확인 체크리스트를 정리해줘”처럼 검증 항목 초안을 만듭니다.</p>
-                            </div>
-                            <div class="ai-workflow-step">
-                                <span>My Decision</span>
-                                <p>Xcode 빌드/테스트, git diff/status, 실제 앱 실행, Firebase 로그, 디자인 시안 비교로 결과를 직접 확인합니다.</p>
-                            </div>
-                        </div>
-                        <div class="ai-workflow-tools">
-                            <span>Xcode</span>
-                            <span>Firebase</span>
-                            <span>Git</span>
-                            <span>QA</span>
-                        </div>
-                    </article>
-
+                    <div class="ai-workflow-v2-details">
+                        <article class="ai-workflow-v2-detail is-active" id="ai-step-context" data-ai-step-panel="context" role="tabpanel">
+                            <span class="ai-workflow-v2-detail-index">STEP 01</span>
+                            <h3>기능이 아니라 사용자의 시나리오부터 설명합니다.</h3>
+                            <p>바로 “구현해”라고 요청하지 않습니다. 해결하려는 문제, 사용자의 진입 경로, 입력과 상태 변화, 성공·실패 조건을 기획서 수준으로 정리해 AI가 기능의 목적과 전체 흐름을 먼저 이해하도록 합니다.</p>
+                            <div class="ai-workflow-v2-example"><span>Prompt</span><p>“사용자가 목록에서 항목을 선택하고 편집을 완료하거나 취소하기까지의 화면 상태와 예외 흐름을 먼저 정리해줘. 아직 코드는 수정하지 마.”</p></div>
+                            <div class="ai-workflow-v2-tags"><span>User Scenario</span><span>State Flow</span><span>Edge Cases</span></div>
+                        </article>
+                        <article class="ai-workflow-v2-detail" id="ai-step-routing" data-ai-step-panel="routing" role="tabpanel" hidden>
+                            <span class="ai-workflow-v2-detail-index">STEP 02</span>
+                            <h3>코드를 작성하기 전에 분석과 구현 계획을 보고받습니다.</h3>
+                            <p>AI가 기존 구조, 영향 파일, 의존성, 위험 요소와 구현 순서를 먼저 조사하도록 합니다. Feature Planner와 iOS Architecture Agent 등 역할별 Agent·Skill을 사용해 분석과 구현을 분리하고, 계획이 현재 구조에 맞는지 직접 판단합니다.</p>
+                            <div class="ai-workflow-v2-example"><span>Report</span><p>“관련 코드를 분석하고 변경 대상, 유지할 구조, 단계별 구현 순서, 예상 리스크를 보고해줘. 승인 전에는 파일을 수정하지 마.”</p></div>
+                            <div class="ai-workflow-v2-tags"><span>Feature Planner</span><span>iOS Agent</span><span>Impact Analysis</span></div>
+                        </article>
+                        <article class="ai-workflow-v2-detail" id="ai-step-guardrails" data-ai-step-panel="guardrails" role="tabpanel" hidden>
+                            <span class="ai-workflow-v2-detail-index">STEP 03</span>
+                            <h3>검토하고 승인한 단계만 순서대로 진행합니다.</h3>
+                            <p>AI의 계획을 그대로 채택하지 않고 구현 범위와 트레이드오프를 조정합니다. 이후 Domain, ViewModel, UI, 테스트처럼 단계를 나누고, 각 단계의 결과를 확인한 뒤 다음 작업을 승인해 AI가 임의로 범위를 확장하지 못하게 합니다.</p>
+                            <div class="ai-workflow-v2-example"><span>Approval</span><p>“1단계 Domain 변경만 승인해. UI와 저장소는 수정하지 말고, 완료 후 변경 파일과 판단 근거를 먼저 보고해줘.”</p></div>
+                            <div class="ai-workflow-v2-tags"><span>Human Review</span><span>Step-by-step</span><span>Scope Control</span></div>
+                        </article>
+                        <article class="ai-workflow-v2-detail" id="ai-step-iteration" data-ai-step-panel="iteration" role="tabpanel" hidden>
+                            <span class="ai-workflow-v2-detail-index">STEP 04</span>
+                            <h3>문장만으로 부족한 화면은 와이어프레임으로 전달합니다.</h3>
+                            <p>레이아웃, 정보 우선순위, 상태별 차이를 프롬프트만으로 설명하기 어려울 때 직접 와이어프레임을 제작합니다. AI가 화면 구조를 추측하지 않고 시각적 기준과 기존 디자인 시스템 안에서 구현하도록 합니다.</p>
+                            <div class="ai-workflow-v2-example"><span>Visual</span><p>“첨부한 와이어프레임의 정보 순서와 상태별 UI를 유지해. 기존 컴포넌트를 먼저 확인하고, 새 스타일을 만들기 전에 재사용 가능성을 보고해줘.”</p></div>
+                            <div class="ai-workflow-v2-tags"><span>Wireframe</span><span>UI States</span><span>Design System</span></div>
+                        </article>
+                        <article class="ai-workflow-v2-detail" id="ai-step-verification" data-ai-step-panel="verification" role="tabpanel" hidden>
+                            <span class="ai-workflow-v2-detail-index">STEP 05</span>
+                            <h3>하네스 엔지니어링으로 작업 범위와 완료 조건을 고정합니다.</h3>
+                            <p><strong>AGENTS.md</strong>에는 지속적으로 지켜야 할 아키텍처·보안·수정 규칙만 두고, Agent·Skill·테스트·빌드 명령을 연결합니다. AI의 완료 보고가 아니라 diff, Xcode 빌드·테스트, Preview·Simulator와 수동 QA 결과로 완료를 판단합니다.</p>
+                            <div class="ai-workflow-v2-example"><span>Harness</span><p>규칙 로드 → 허용 범위 확인 → 최소 변경 → diff 검토 → build/test → 화면·로그 확인을 반복 가능한 검증 루프로 구성합니다.</p></div>
+                            <div class="ai-workflow-v2-tags"><span>AGENTS.md</span><span>Custom Skills</span><span>Build &amp; Test</span></div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </div>
@@ -747,151 +856,6 @@
                             <button type="button" class="view-project-btn side-project-detail-btn" onclick="event.stopPropagation(); openProjectModal('side-focusboard')">View Details</button>
                             <a class="side-project-cta side-project-store-link" href="https://apps.apple.com/kr/app/focusboard/id6765804921" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">App Store에서 보기</a>
                         </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            
-            <!-- Working Principles -->
-            <div class="about-principles">
-                <div class="principles-lead-card">
-                    <span class="principles-kicker">How I Work</span>
-                    <h3>운영 중인 앱을 안정적으로 유지하고, 필요한 변화는 점진적으로 구조에 녹여내는 iOS 개발자입니다.</h3>
-                    <p>커머스, 콘텐츠, 플랫폼 도메인에서 모바일 앱을 개발·운영하며 안정성, 유지보수성, 협업 비용을 함께 봅니다. Android 개발자로 시작해 iOS로 전향하는 과정에서 두 플랫폼의 화면 구조, 배포/운영 방식, SDK/API 연동 차이를 직접 학습했고, 이 경험은 이후 iOS 앱 구조와 운영 흐름을 이해하는 기반이 되었습니다.</p>
-                </div>
-
-                <div class="principles-grid">
-                    <article class="principle-card">
-                        <span class="principle-index">01</span>
-                        <h4>문제를 재현 가능한 단위로 좁힙니다</h4>
-                        <span class="principle-subtitle">운영 안정성을 판단하는 방식</span>
-                        <p>운영 이슈는 재현 조건, 영향 범위, 배포 리스크부터 분리합니다. Crashlytics, API 로깅, VOC를 원인 추적 단서로 보고 사용자 영향이 큰 문제부터 개선합니다.</p>
-                    </article>
-
-                    <article class="principle-card">
-                        <span class="principle-index">02</span>
-                        <h4>한 번에 갈아엎기보다 안전한 변경 단위를 찾습니다</h4>
-                        <span class="principle-subtitle">레거시를 다루는 방식</span>
-                        <p>레거시는 유지되어 온 이유와 의존성을 먼저 확인합니다. 전체 교체보다 영향 범위를 나누고 SwiftUI, MVVM 등으로 옮길 수 있는 안전한 변경 단위를 찾습니다.</p>
-                    </article>
-
-                    <article class="principle-card">
-                        <span class="principle-index">03</span>
-                        <h4>기술보다 먼저 적용 맥락을 봅니다</h4>
-                        <span class="principle-subtitle">기술을 선택하는 기준</span>
-                        <p>UIKit, SwiftUI, RxSwift, Combine은 상황에 맞는 선택지로 봅니다. 기존 코드, 팀 운영 방식, 테스트 가능성, 유지보수 비용을 기준으로 적용 범위를 정합니다.</p>
-                    </article>
-
-                    <article class="principle-card">
-                        <span class="principle-index">04</span>
-                        <h4>반복되는 논의를 구조로 줄입니다</h4>
-                        <span class="principle-subtitle">협업과 공통화를 설계하는 방식</span>
-                        <p>디자이너, 기획자, 서버/웹/모바일 개발자와 요구사항을 맞추는 협업을 꾸준히 해왔습니다. Android/iOS 양쪽의 구현 흐름을 이해한 경험을 바탕으로 GS Fresh 차세대 프로젝트에서 모바일 파트의 사용자 시나리오와 플랫폼별 기술 스펙을 맞추는 조율 역할을 수행했습니다.</p>
-                    </article>
-
-                    <article class="principle-card principle-card-wide">
-                        <span class="principle-index">05</span>
-                        <h4>도구는 활용하되 판단은 직접 검증합니다</h4>
-                        <span class="principle-subtitle">AI를 사용하는 기준</span>
-                        <p>AI 도구는 레거시 분석, 설계 검토, 테스트 초안 작성의 속도를 높이는 데 활용합니다. 다만 기존 코드와 운영 리스크에 맞는지 검증하고 최종 판단과 품질 책임은 개발자가 가져가야 한다고 봅니다.</p>
-                    </article>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section class="tech-stack" id="tech-stack">
-        <div class="container">
-            <div class="tech-stack-header">
-                <span class="tech-stack-kicker">Practical Toolset</span>
-                <h2 class="section-title">Tech Stack</h2>
-                <p class="section-lead">실무에서 자주 사용한 iOS 개발, 구조 설계, 운영 품질, 디자인 시스템, AI 워크플로우 도구를 compact하게 정리했습니다.</p>
-            </div>
-
-            <div class="tech-stack-grid">
-                <article class="tech-stack-card">
-                    <h3>Core iOS</h3>
-                    <p class="tech-context">Encar SwiftUI 전환, ONEstore 프로토타입, GS Retail 운영 앱처럼 프로젝트 성격에 따라 UIKit, SwiftUI, RxSwift, Combine을 선택했습니다.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">Objective-C</span>
-                        <span class="tech-tag">UIKit</span>
-                        <span class="tech-tag">SwiftUI</span>
-                        <span class="tech-tag">Combine</span>
-                        <span class="tech-tag">RxSwift</span>
-                    </div>
-                </article>
-
-                <article class="tech-stack-card">
-                    <h3>Architecture</h3>
-                    <p class="tech-context">ONEstore 프로토타입과 Worksheet Cleanup에서는 Clean Architecture/MVVM/DI로 레이어를 나누고, 화면 흐름은 Coordinator 관점으로 경계를 정리했습니다.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Clean Architecture</span>
-                        <span class="tech-tag">MVVM</span>
-                        <span class="tech-tag">MVI</span>
-                        <span class="tech-tag">Reactor-style Flow</span>
-                        <span class="tech-tag">DI</span>
-                        <span class="tech-tag">Coordinator</span>
-                    </div>
-                </article>
-
-                <article class="tech-stack-card">
-                    <h3>Networking / Persistence</h3>
-                    <p class="tech-context">GS Retail 운영 앱의 Moya/Alamofire 기반 연동, Encar API logging, 개인 프로젝트의 OpenAI API 응답 저장 흐름에서 사용했습니다.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">URLSession</span>
-                        <span class="tech-tag">Moya</span>
-                        <span class="tech-tag">Alamofire</span>
-                        <span class="tech-tag">RxMoya</span>
-                        <span class="tech-tag">RxAlamofire</span>
-                        <span class="tech-tag">Keychain</span>
-                        <span class="tech-tag">Core Data</span>
-                        <span class="tech-tag">SwiftData</span>
-                    </div>
-                </article>
-
-                <article class="tech-stack-card">
-                    <h3>Operation / Quality</h3>
-                    <p class="tech-context">GS Retail 운영과 Encar 개선 작업에서 Crash/VOC/API 로그를 추적하고, 배포 전 확인 항목과 테스트 범위를 정리했습니다.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">API Logging</span>
-                        <span class="tech-tag">Fastlane</span>
-                        <span class="tech-tag">XCTest</span>
-                        <span class="tech-tag">Swift Testing</span>
-                    </div>
-                </article>
-
-                <article class="tech-stack-card">
-                    <h3>Design System</h3>
-                    <p class="tech-context">ONEstore Design System에서 공통 컴포넌트, 디자인 토큰, Code Connect 기반의 디자인-개발 연결 흐름을 검토했습니다.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Design Token</span>
-                        <span class="tech-tag">Style Dictionary</span>
-                        <span class="tech-tag">Code Connect</span>
-                    </div>
-                </article>
-
-                <article class="tech-stack-card">
-                    <h3>AI Workflow</h3>
-                    <p class="tech-context">운영 기능 개발, 레거시 분석, QA 체크리스트, 사이드 프로젝트의 프롬프트/응답 DTO 설계 보조에 활용했습니다.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Claude Code</span>
-                        <span class="tech-tag">Cursor</span>
-                        <span class="tech-tag">Codex</span>
-                        <span class="tech-tag">Copilot</span>
-                        <span class="tech-tag">ChatGPT</span>
-                        <span class="tech-tag">Figma Make</span>
-                        <span class="tech-tag">Pencil</span>
                     </div>
                 </article>
             </div>

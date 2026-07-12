@@ -1,353 +1,328 @@
-// 경력 상세 정보 데이터
+// Career detail data. Company-level context stays concise; project modals hold technical evidence.
 const careerData = {
-    digitaldime: {
-        company: '디지털다임',
-        logo: 'assets/images/logos/digitaldigm_logo.png',
-        period: '2014.12 ~ 2017.05',
-        duration: '2년 6개월',
-        role: '사원',
-        roleEmoji: '🌱',
-        techStack: ['Android', 'Java', 'Eclipse', 'Git', 'SVN', 'Trello'],
-        sections: [
+    encar: {
+        company: '엔카닷컴',
+        label: 'MANAGEMENT',
+        logo: 'assets/images/company-logos/encar.png',
+        period: '2025.06 ~ 2025.08',
+        duration: '3개월',
+        team: '모바일팀',
+        position: '과장 · iOS Developer',
+        overview: '운영 중인 엔카 iOS 앱에서 UIKit·Objective-C 레거시를 분석하고, 작은 화면부터 SwiftUI와 테스트 가능한 상태 구조를 도입했습니다. 기능 전환뿐 아니라 운영 코드와 디자인 기준을 함께 정리했습니다.',
+        responsibilities: [
+            { label: 'MODERNIZATION', title: '점진적 SwiftUI 전환', description: '기존 화면의 의존성과 사용자 흐름을 분석해 전환 단위를 선정했습니다.' },
+            { label: 'ARCHITECTURE', title: '테스트 가능한 상태 구조', description: 'MVVM·MVI를 비교 적용하고 주요 UseCase의 테스트 코드를 작성했습니다.' },
+            { label: 'OPERATION', title: '운영 코드 중앙화', description: '광고 모듈과 Crashlytics·API 로깅을 공통 흐름으로 정리했습니다.' },
+            { label: 'DESIGN SYSTEM', title: '초기 디자인 기준 설계', description: 'Font·Color·Radius 토큰과 Semantic Color Naming을 정의했습니다.' }
+        ],
+        projects: [
             {
-                title: 'Role Summary',
-                content: `
-                    <p><strong>Android 기반 SI/SM 프로젝트를 수행하며 모바일 앱 개발의 기본기와 다양한 직군 협업 경험을 쌓았습니다.</strong></p>
-                    <p>웹에이전시 환경에서 기획, 디자인, 서버/웹 개발자와 요구사항을 맞추며 커머스, 브랜드, O2O, 위치 기반 서비스 앱을 개발했습니다.</p>
-                `
+                title: 'UIKit 레거시 화면의 SwiftUI 전환',
+                period: '2025.06 ~ 2025.08',
+                scope: '제네시스 옵션 필터 화면의 구조 분석, SwiftUI 전환과 테스트 코드 작성',
+                decision: '전체 교체 대신 의존성이 낮은 Leaf 화면부터 MVVM·MVI 구조를 비교 적용했습니다.',
+                evidence: 'SwiftUI 화면 · MVVM/MVI 구현안 · UseCase Unit Test',
+                projectId: 'encar-1'
             },
             {
-                title: 'Main Responsibilities',
-                content: `
-                    <ul>
-                        <li>Android 앱 화면 구현, API 연동, WebView/JavaScript Interface 연동을 담당했습니다.</li>
-                        <li>외부 SDK, 소셜 로그인, 결제, 위치 기반 기능을 프로젝트 요구사항에 맞게 연동했습니다.</li>
-                        <li>SI/SM 프로젝트에서 기획서와 디자인을 기준으로 구현 범위와 예외 케이스를 맞춰가며 개발했습니다.</li>
-                    </ul>
-                `
+                title: '운영 코드 중앙화 및 레거시 클리닝',
+                period: '2025.06 ~ 2025.08',
+                scope: 'Crashlytics와 API 요청·응답 로깅의 공통 인터페이스 및 호출 흐름 정리',
+                decision: '화면별 로그 구현을 유지하지 않고 공통 처리 지점에서 오류 맥락을 구성하도록 중앙화했습니다.',
+                evidence: '공통 로깅 인터페이스 · 중복 코드 제거 · 통일된 오류 추적 기준'
             },
             {
-                title: 'Key Projects',
-                content: `
-                    <ul>
-                        <li><strong>CafeUnion</strong> : 중국 시장 대상 O2O 커머스 앱. 위치 기반 매장 탐색, 소셜 로그인, 결제 SDK 연동 경험.</li>
-                        <li><strong>LuxeWater</strong> : 중국 마켓 대상 브랜드/하이브리드 앱. WebView, JavaScript Interface, 현지 SDK 연동 경험.</li>
-                        <li><strong>올가홀푸드</strong> : 식품/커머스 브랜드 앱. 상품 탐색, 바코드/QR 인식, 푸시 SDK 연동 경험.</li>
-                        <li><strong>MyD2</strong> : 사내 커뮤니케이션 앱. 업무용 앱 화면 구현, API 연동, 푸시 기능 연동 경험.</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'Technical Focus',
-                content: `
-                    <ul>
-                        <li>Android Java, WebView, 외부 SDK, 위치 기반 기능, 푸시, 소셜 로그인/결제 연동</li>
-                        <li>여러 도메인의 요구사항을 모바일 앱 구조로 구현하는 경험</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'What This Experience Shows',
-                content: `
-                    <p>초기 Android/SI 경험은 이후 iOS 개발자로서 플랫폼 차이, 운영 구조, 협업 흐름을 이해하는 기반이 되었습니다.</p>
-                `
+                title: 'iOS 디자인 시스템 초기 설계',
+                period: '2025.06 ~ 2025.08',
+                scope: '공통 컴포넌트 적용을 위한 Foundation Token과 Semantic Naming 초기 설계',
+                decision: '원시 값 직접 사용 대신 Font·Color·Radius 토큰과 의미 기반 색상 이름을 분리했습니다.',
+                evidence: 'Foundation Token · Semantic Color · 공통 컴포넌트 확장 기준'
             }
-        ]
+        ],
+        technicalScope: ['Swift', 'UIKit', 'Objective-C', 'SwiftUI', 'MVVM', 'MVI', 'XCTest', 'Crashlytics', 'API Logging', 'Design Token']
+    },
+    onestore: {
+        company: '원스토어',
+        label: 'PLATFORM & CONTENT',
+        logo: 'assets/images/company-logos/onestore.png',
+        period: '2021.09 ~ 2025.06',
+        duration: '3년 10개월',
+        team: '스토리 앱 개발팀 → iOS Platform팀',
+        position: 'iOS Developer',
+        overview: 'ONEstory 콘텐츠 앱 운영으로 인하우스 서비스 경험을 쌓은 뒤 iOS Platform팀으로 이동했습니다. Apple DMA 대응 글로벌 앱 마켓과 전사 디자인 시스템에서 구현 가능성 검토, 개발 범위 조율과 협업 기준 설계까지 역할을 확장했습니다.',
+        progression: [
+            { period: '2021.09 ~ 2023.12', title: 'ONEstory iOS 운영', description: '콘텐츠 앱의 기능 개발, 정기 배포, VOC·OS 대응을 담당했습니다.' },
+            { period: '2024.01 ~ 2025.06', title: 'iOS Platform', description: '글로벌 앱 마켓 기술 검토와 디자인 시스템의 iOS 개발 범위를 조율했습니다.' }
+        ],
+        responsibilities: [
+            { label: 'CONTENT OPERATION', title: 'ONEstory 서비스 운영', description: '기능 개발, 정기 배포, VOC와 OS 업데이트 대응을 수행했습니다.' },
+            { label: 'FEASIBILITY', title: '신규 플랫폼 기술 검토', description: 'Apple DMA와 MarketplaceKit 문서를 검토해 구현 가능성과 제약을 정리했습니다.' },
+            { label: 'ARCHITECTURE', title: '글로벌 앱 마켓 구조 설계', description: '앱 아키텍처, 네트워크 모듈과 JavaScript Interface를 설계했습니다.' },
+            { label: 'PLATFORMIZATION', title: '디자인 시스템 협업 기준', description: '공통 컴포넌트·토큰·Code Connect와 기술 파트 협업 흐름을 정리했습니다.' }
+        ],
+        projects: [
+            {
+                title: 'ONEstore Global App Market Prototype',
+                period: '2024.01 ~ 2024.12',
+                role: 'PL',
+                scope: 'iOS 구현 범위 조율, 아키텍처·네트워크·JavaScript Interface 설계',
+                decision: '불확실한 정책과 API 제약을 한 번에 제품화하지 않고 Prototype → Alpha → Beta 단계로 검증했습니다.',
+                evidence: 'Apple Cork 기술 세션 · MarketplaceKit 검토 · 단계별 동작 Prototype',
+                projectId: 'onestore-1'
+            },
+            {
+                title: 'ONEstore Design System',
+                period: '2024.06 ~ 2025.06',
+                role: 'PM',
+                scope: '기술 파트 PM, 컴포넌트 레이어·토큰 기준과 디자인-코드 연결 흐름 설계',
+                decision: '플랫폼별 구현을 단순 통일하지 않고 공통 개념과 플랫폼별 예외를 함께 문서화했습니다.',
+                evidence: 'SPM · Design Token · Style Dictionary · Code Connect · 전사 세미나 3회',
+                projectId: 'onestore-2'
+            },
+            {
+                title: 'ONEstory iOS Application 운영 및 개발',
+                period: '2021.09 ~ 2023.12',
+                scope: '콘텐츠 앱 기능 개발, WebView의 Native 전환, 정기 배포와 운영 대응',
+                decision: '사용 빈도와 앱 연동 범위를 기준으로 WebView 화면을 UIKit Native로 순차 전환했습니다.',
+                evidence: '내서재·마이페이지·고객문의 · 위젯 · iPad UI · 운영 배포',
+                projectId: 'onestore-3'
+            }
+        ],
+        technicalScope: ['Swift', 'UIKit', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'MarketplaceKit', 'Design Token', 'Style Dictionary', 'Code Connect']
     },
     gsitm: {
         company: 'GS ITM',
-        logo: 'assets/images/logos/gsitm_logo.png',
+        label: 'SI → MOBILE OPERATION',
+        logo: 'assets/images/company-logos/gsitm.png',
         period: '2017.06 ~ 2021.09',
         duration: '4년 4개월',
-        role: '대리',
-        roleEmoji: '💼',
-        techStack: ['iOS', 'Android', 'Swift', 'Objective-C', 'RxSwift', 'Java', 'Kotlin', 'Firebase', 'Crashlytics', 'Jira', 'Confluence'],
-        sections: [
+        team: '모바일 SI팀 → GS Retail 운영팀',
+        position: '대리 · Android & iOS Developer',
+        overview: 'GS 계열사의 모바일 SI 프로젝트를 구축한 뒤 GS Retail 운영팀으로 이동해 전사 모바일 앱 10종 이상을 운영했습니다. Android와 iOS를 함께 담당한 경험을 기반으로 GS Fresh 차세대 프로젝트에서는 모바일 범위 조율 역할을 맡았습니다.',
+        progression: [
+            { period: '2017.06 ~ 2018.06', title: 'GS 계열사 모바일 SI', description: '신규 모바일 서비스의 구축, 검수와 운영 조직 이관을 수행했습니다.' },
+            { period: '2018.06 ~ 2021.09', title: 'GS Retail 모바일 운영', description: '전사 모바일 앱의 기능 개발, 배포와 장애 대응을 담당했습니다.' }
+        ],
+        responsibilities: [
+            { label: 'APPLICATION OPERATION', title: '전사 앱 10종 이상 운영', description: 'GS Fresh, GS 수퍼마켓, 달리살다, 나만의 냉장고 등을 운영했습니다.' },
+            { label: 'COORDINATION', title: '사업부별 요구사항 조율', description: '현업자와 기능 범위, 정기·긴급 배포 일정과 장애 영향을 조율했습니다.' },
+            { label: 'STABILITY', title: '플랫폼·운영 이슈 대응', description: 'OS, Deprecated API, VOC, Crash와 외부 SDK 이슈를 대응했습니다.' },
+            { label: 'HANDOVER', title: '외부 개발 결과 인스펙션', description: '프로젝트 투입 개발자의 인수인계와 구현 결과 검수를 수행했습니다.' }
+        ],
+        projects: [
             {
-                title: 'Role Summary',
-                content: `
-                    <p><strong>GS Retail 모바일 앱 운영 조직에서 iOS/Android 앱 운영과 개발을 담당했습니다.</strong></p>
-                    <p>정기/긴급 배포, OS 업데이트 대응, VOC/Crash 대응을 수행했고, 별도 GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 Android/iOS 개발 범위와 구현 방향 정리를 맡았습니다.</p>
-                `
+                title: 'GS Retail 전사 모바일 앱 운영',
+                period: '2018.06 ~ 2021.09',
+                scope: 'GS Retail 전사 모바일 앱 10종 이상의 기능 개발, 배포와 장애 대응',
+                decision: '사업부별 요구사항과 장애 영향도를 기준으로 정기·긴급 배포 범위를 구분했습니다.',
+                evidence: 'B2C 커머스 · 실시간 QR 결제 · OS/VOC/Crash 대응',
+                projectId: 'gsitm-1'
             },
             {
-                title: 'Main Responsibilities',
-                content: `
-                    <ul>
-                        <li>GS Retail 커머스/멤버십 앱 운영과 GS 계열 모바일 SI 프로젝트를 수행했습니다.</li>
-                        <li>GS Retail 커머스 및 멤버십 앱의 정기 배포와 긴급 배포를 대응했습니다.</li>
-                        <li>VOC, Crash Report, 신규 OS 업데이트, Deprecated API 대응을 수행했습니다.</li>
-                        <li>운영 앱 개선 요청과 성능/안정성 이슈를 확인하고 수정했습니다.</li>
-                        <li>GS Fresh 차세대 프로젝트에서 모바일 파트 PL로 Android/iOS 개발 범위, 구현 문서, 협업 커뮤니케이션을 정리했습니다.</li>
-                    </ul>
-                `
+                title: 'GS Fresh 차세대 프로젝트',
+                period: '2020.07 ~ 2020.09',
+                role: 'PL',
+                scope: '모바일 파트 PL, Android·iOS 구현 범위와 사용자 시나리오 조율',
+                decision: '플랫폼별 구현 차이를 유지하면서 SSO·WKWebView·API 계약의 공통 기준을 먼저 맞췄습니다.',
+                evidence: '플랫폼별 기술 스펙 · 구현 문서 · 협업 커뮤니케이션',
+                projectId: 'gsitm-1'
             },
             {
-                title: 'Key Projects',
-                content: `
-                    <ul>
-                        <li><strong>GS Retail Mobile App Operation</strong> : GS Fresh Mall, 달리살다, 마켓포, THE POP 등 커머스/멤버십 앱 운영.</li>
-                        <li><strong>GS Fresh 차세대 프로젝트</strong> : 모바일 파트 PL로 SSO, One-Source Multi Application, SDK/API/WKWebView 연동 범위 담당.</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'Technical Focus',
-                content: `
-                    <ul>
-                        <li>iOS/Android 운영, 배포 대응, Crash 분석, OS 업데이트 대응</li>
-                        <li>One-Source Multi Application, Scheme / Environment 분리, SSO, 외부 SDK 연동</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'What This Experience Shows',
-                content: `
-                    <p>운영 중인 모바일 서비스의 배포·장애 대응 기준을 익히고, Android/iOS 양쪽의 구현 범위를 조율한 경험을 보여줍니다.</p>
-                `
+                title: 'GS 계열사 모바일 SI 프로젝트',
+                period: '2017.06 ~ 2018.06',
+                scope: 'GS 계열사 신규 모바일 서비스의 Android·iOS 구축과 운영 조직 이관',
+                decision: '기획·디자인 요구사항을 플랫폼별 기능과 연동 범위로 분리해 구현했습니다.',
+                evidence: 'API · WebView · 인증/SDK 연동 · 검수 및 운영 이관'
             }
-        ]
+        ],
+        technicalScope: ['Swift', 'Objective-C', 'RxSwift', 'Android', 'Java', 'Kotlin', 'Firebase', 'Crashlytics', 'Moya', 'Alamofire', 'WKWebView']
     },
-    onestore1: {
-        company: '원스토어',
-        logo: 'assets/images/logos/onestore_logo.png',
-        period: '2021.09 ~ 2023.12',
-        duration: '2년 4개월',
-        role: '팀원',
-        roleEmoji: '👨‍💻',
-        techStack: ['iOS', 'Swift', 'UIKit', 'Objective-C', 'SwiftUI', 'Bitbucket', 'Confluence', 'Jira', 'Teams', 'Zeplin'],
-        sections: [
+    digitaldime: {
+        company: '디지털다임',
+        label: 'EARLY CAREER · SI / SM',
+        logo: 'assets/images/company-logos/digitaldime.png',
+        period: '2014.12 ~ 2017.05',
+        duration: '2년 6개월',
+        team: '모바일팀',
+        position: '사원 · Android Developer',
+        overview: '웹에이전시 모바일팀에서 국내외 B2B·B2C·인트라넷 앱을 개발했습니다. Native·Hybrid·iPad 앱의 제안과 요구사항 정리부터 디자인·서버 협업, 출시와 운영까지 다양한 SI/SM 프로젝트의 전 과정을 경험했습니다.',
+        responsibilities: [
+            { label: 'APPLICATION DEVELOPMENT', title: 'Native·Hybrid 앱 구축', description: 'Android 화면, API, WebView·JavaScript Interface와 외부 SDK를 구현했습니다.' },
+            { label: 'COLLABORATION', title: '직군 간 구현 범위 조율', description: '기획·디자인·서버 개발자와 기능 범위와 플랫폼별 예외 조건을 맞췄습니다.' },
+            { label: 'SERVICE INTEGRATION', title: '서비스별 외부 기능 연동', description: '로그인, 결제, 위치, 바코드·QR과 푸시 기능을 요구사항에 맞게 연동했습니다.' },
+            { label: 'MAINTENANCE', title: '출시 이후 운영과 개선', description: '기능 개선, OS·SDK 변경 대응과 배포 업무를 이어갔습니다.' }
+        ],
+        projects: [
             {
-                title: 'Role Summary',
-                content: `
-                    <p><strong>ONEstory iOS 앱 운영과 기능 개발을 담당하며 콘텐츠 앱의 운영 안정성과 사용자 기능 개선을 경험했습니다.</strong></p>
-                    <p>UIKit 기반 화면 개선, WebView 연동, iPad 대응, 위젯 등 콘텐츠 앱 운영에 필요한 기능을 개발했습니다.</p>
-                `
+                title: '중국 시장 브랜드·O2O 앱 구축',
+                period: '2015.11 ~ 2017.01',
+                category: 'GLOBAL · SI',
+                scope: 'CafeUnion·LuxeWater의 Android 및 Hybrid 앱 기능 개발',
+                decision: '중국 현지 SDK와 WebView 연동을 플랫폼 기능별로 분리해 구현했습니다.',
+                evidence: '위치 기반 탐색 · 소셜 로그인/결제 · 중국 현지 SDK'
             },
             {
-                title: 'Main Responsibilities',
-                content: `
-                    <ul>
-                        <li>ONEstory iOS 앱의 정기 배포, VOC 대응, OS 업데이트 대응을 수행했습니다.</li>
-                        <li>WebView로 구성되어 있던 화면을 UIKit Native 전환, 내서재/마이페이지/고객문의 등 주요 화면 개발을 담당했습니다.</li>
-                        <li>소셜 로그인 SDK, JavaScript 연동, 위젯, iPad UI 대응 등 콘텐츠 앱 기능을 개발했습니다.</li>
-                    </ul>
-                `
+                title: '사내 인트라넷 모바일 앱 구축·운영',
+                period: '2015.07 ~ 2015.09',
+                category: 'INTRANET · SI/SM',
+                scope: 'MyD2 Android 앱의 전체 화면, API·푸시 연동과 출시 이후 운영',
+                decision: '기존 웹 인트라넷의 핵심 사용자 흐름을 모바일 업무 시나리오로 재구성했습니다.',
+                evidence: '회의실 예약 · 휴가 결재 · 사내 커뮤니케이션',
+                projectId: 'digitaldime-4'
             },
             {
-                title: 'Key Projects',
-                content: `
-                    <ul>
-                        <li><strong>ONEstory iOS App Operation</strong> : 콘텐츠 앱 운영, 화면 개선, SDK 연동, 위젯 및 iPad 대응.</li>
-                        <li><strong>WebView to Native</strong> : 구매목록 등 WebView 기반 화면의 Native 전환 경험.</li>
-                    </ul>
-                `
+                title: '국내 커머스·교육·브랜드 앱 구축',
+                period: '재직 기간 내 다수 수행',
+                category: 'DOMESTIC · SI',
+                scope: '커머스·교육·브랜드 도메인의 Native·Hybrid·iPad 앱 구축',
+                decision: '서비스 목적에 따라 Native 화면과 WebView, 외부 기능의 적용 범위를 구분했습니다.',
+                evidence: '올가홀푸드 · 폴리스쿨 · SK FashionMall Brochure'
             },
             {
-                title: 'Technical Focus',
-                content: `
-                    <ul>
-                        <li>UIKit, Swift, Objective-C, SwiftUI, WebView/JavaScript 연동</li>
-                        <li>정기 운영, VOC 대응, OS 업데이트 및 Deprecated API 대응</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'What This Experience Shows',
-                content: `
-                    <p>콘텐츠 도메인 iOS 앱을 운영하며 레거시 화면 개선과 기능 확장을 병행한 경험을 보여줍니다.</p>
-                `
+                title: '브랜드 모바일 앱 운영',
+                period: '재직 기간 내 운영',
+                category: 'BRAND · SM',
+                scope: '할리스커피 등 출시된 브랜드 앱의 유지보수와 배포',
+                decision: '기존 사용자 흐름을 유지하면서 OS·SDK 변경과 오류 수정 범위를 최소화했습니다.',
+                evidence: '기능 개선 · OS/SDK 대응 · 오류 확인 · 배포'
             }
-        ]
-    },
-    onestore2: {
-        company: '원스토어',
-        logo: 'assets/images/logos/onestore_logo.png',
-        period: '2024.01 ~ 2025.06',
-        duration: '1년 6개월',
-        role: '팀원',
-        roleEmoji: '🚀',
-        techStack: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'Figma', 'Design Token', 'Code Connect', 'Cursor', 'Copilot'],
-        sections: [
-            {
-                title: 'Role Summary',
-                content: `
-                    <p><strong>ONEstore iOS Platform팀에서 글로벌 앱 마켓 Prototype의 iOS 구현 범위와 디자인 시스템의 iOS 개발 파트 조율 역할을 수행했습니다.</strong></p>
-                    <p>Apple DMA 관련 기술 검토, Prototype/Alpha/Beta 개발 흐름, 공통 UI 컴포넌트와 디자인 토큰 기반 협업 기준을 iOS 개발 범위 안에서 정리했습니다.</p>
-                `
-            },
-            {
-                title: 'Main Responsibilities',
-                content: `
-                    <ul>
-                        <li>ONEstore Global App Market Prototype에서 정책/기술 검토, 구현 리스크 정리, 단계별 iOS 개발 범위 조율을 맡았습니다.</li>
-                        <li>Clean Architecture/MVVM 기반 앱 구조, 네트워크 모듈, JavaScript Interface 구조를 설계했습니다.</li>
-                        <li>ONEstore Design System에서 iOS 개발 파트 기준으로 컴포넌트 구조, 디자인 토큰, Figma Code Connect 흐름을 정리하고 협업 커뮤니케이션을 지원했습니다.</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'Key Projects',
-                content: `
-                    <ul>
-                        <li><strong>ONEstore Design System</strong> : 공통 UI 컴포넌트, 디자인 토큰, Figma Code Connect 기반 디자인-개발 협업 구조.</li>
-                        <li><strong>ONEstore Global App Market Prototype</strong> : Apple DMA 관련 기술 검토, MarketplaceKit 제약 확인, Prototype → Alpha/Beta 개발.</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'Technical Focus',
-                content: `
-                    <ul>
-                        <li>SwiftUI, Clean Architecture, MVVM, Tuist, MarketplaceKit 검토</li>
-                        <li>Design Token, Style Dictionary, Figma Code Connect, 공통 UI 컴포넌트 구조</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'What This Experience Shows',
-                content: `
-                    <p>신규 플랫폼 대응 과정에서 iOS 구현 리스크를 정리하고, 디자인 시스템 기반 플랫폼화 작업을 개발 범위 안에서 조율한 경험을 보여줍니다.</p>
-                `
-            }
-        ]
-    },
-    encar: {
-        company: '엔카닷컴',
-        logo: 'assets/images/logos/encar_logo.png',
-        period: '2025.06 ~ 2025.08',
-        duration: '3개월',
-        role: '과장',
-        roleEmoji: '⭐',
-        techStack: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'UIKit', 'MVVM', 'Crashlytics', 'AppsFlyer', 'Braze', 'Alamofire', 'SnapKit', 'Cursor', 'Copilot'],
-        sections: [
-            {
-                title: 'Role Summary',
-                content: `
-                    <p><strong>엔카 iOS 앱 운영 개발 과정에서 UIKit 레거시 화면의 SwiftUI 전환과 운영 안정성 개선을 담당했습니다.</strong></p>
-                    <p>제네시스 옵션 필터 화면 전환, 광고 모듈 통합, Crashlytics/API 로깅 개선처럼 운영 중인 앱에서 맡은 개선 범위와 산출물을 중심으로 작업했습니다.</p>
-                `
-            },
-            {
-                title: 'Main Responsibilities',
-                content: `
-                    <ul>
-                        <li>기존의 UIKit으로 구현된 제네시스 옵션 필터 화면을 SwiftUI + MVVM 구조로 전환했습니다.</li>
-                        <li>AppsFlyer, Braze 등 광고 모듈 연동 코드를 공통 구조로 정리했습니다.</li>
-                        <li>Crashlytics 로깅 중앙화와 API 요청/응답 로깅 개선을 수행했습니다.</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'Key Projects',
-                content: `
-                    <ul>
-                        <li><strong>Encar iOS App</strong> : UIKit 레거시 화면 개선, SwiftUI 전환, 광고 모듈 통합, 운영 로깅 개선.</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'Technical Focus',
-                content: `
-                    <ul>
-                        <li>SwiftUI, UIKit, MVVM, Unit Test, SnapKit, Figma, Cursor</li>
-                        <li>Crashlytics, AppsFlyer, Braze, API logging, 운영 안정성 개선</li>
-                    </ul>
-                `
-            },
-            {
-                title: 'What This Experience Shows',
-                content: `
-                    <p>운영 중인 iOS 앱에서 레거시 구조를 파악하고, 필요한 범위를 정해 점진적으로 개선하는 역량을 보여줍니다.</p>
-                `
-            }
-        ]
+        ],
+        technicalScope: ['Android', 'Java', 'Native App', 'Hybrid App', 'WebView', 'JavaScript Interface', 'Location', 'Push', 'Payment SDK', 'iPad']
     }
 };
 
-// 경력 모달 열기
+const technicalScopeCategories = {
+    ios: new Set(['Swift', 'Objective-C', 'UIKit', 'SwiftUI', 'Combine', 'RxSwift']),
+    architecture: new Set(['Clean Architecture', 'MVVM', 'MVI', 'XCTest', 'Swift Testing']),
+    cicd: new Set(['Tuist', 'Fastlane', 'Jenkins', 'GitHub Actions']),
+    collaboration: new Set(['Figma', 'Design Token', 'Style Dictionary', 'Code Connect']),
+    ai: new Set(['Codex', 'Claude Code', 'Cursor', 'ChatGPT']),
+    android: new Set(['Android', 'Java', 'Kotlin'])
+};
+
+function getTechnicalScopeCategory(tech) {
+    return Object.entries(technicalScopeCategories).find(([, skills]) => skills.has(tech))?.[0] || 'integration';
+}
+
+function renderCareerProject(project) {
+    const labels = [project.category, project.role].filter(Boolean)
+        .map(label => `<span class="career-modal-role-badge">${label}</span>`)
+        .join('');
+    const detailButton = project.projectId
+        ? `<button type="button" class="career-modal-project-link" onclick="openProjectFromCareer('${project.projectId}')">Project Details <span aria-hidden="true">↗</span></button>`
+        : '';
+
+    return `
+        <article class="career-modal-project">
+            <div class="career-modal-project-heading">
+                <div>
+                    <h4>${project.title}</h4>
+                    <div class="career-modal-project-meta">
+                        <time>${project.period}</time>
+                        ${labels}
+                    </div>
+                </div>
+                ${detailButton}
+            </div>
+            <div class="career-modal-evidence-grid">
+                <div><span>SCOPE</span><p>${project.scope}</p></div>
+                <div><span>DECISION</span><p>${project.decision}</p></div>
+                <div><span>EVIDENCE</span><p>${project.evidence}</p></div>
+            </div>
+        </article>
+    `;
+}
+
 function openCareerModal(companyId) {
     const modal = document.getElementById('careerModal');
     const data = careerData[companyId];
-    
-    if (!data) return;
-    
-    // 모달 헤더 설정 (로고 + 회사명)
-    const modalTitle = document.getElementById('careerModalTitle');
-    if (data.logo) {
-        modalTitle.innerHTML = `
-            <div class="career-modal-header-content">
-                <img src="${data.logo}" alt="${data.company} 로고" class="company-logo">
-                <span>${data.company}</span>
-            </div>
-        `;
-    } else {
-        modalTitle.textContent = data.company;
-    }
-    
-    // 근무 기간 설정 (더 명확하게)
+    if (!modal || !data) return;
+
+    document.getElementById('careerModalTitle').innerHTML = `
+        <span class="career-modal-eyebrow">${data.label}</span>
+        <span class="career-modal-header-content">
+            <span class="career-modal-logo"><img src="${data.logo}" alt="${data.company} 로고"></span>
+            <span class="career-modal-company-name">${data.company}</span>
+        </span>
+    `;
+
     document.getElementById('careerModalPeriod').innerHTML = `
-        <span class="period-dates">${data.period}</span>
-        <span class="period-duration">${data.duration}</span>
+        <span>${data.period}</span>
+        <span>${data.duration}</span>
+        <span>${data.team}</span>
+        <span>${data.position}</span>
     `;
-    
-    // 모달 본문 내용 생성
-    const modalBody = document.getElementById('careerModalBody');
-    
-    // 직급 뱃지 (이모지 + 텍스트)
-    let bodyHTML = `
-        <div class="career-role-card">
-            <span class="role-emoji">${data.roleEmoji}</span>
-            <span class="role-text">${data.role}</span>
-        </div>
-    `;
-    
-    // 섹션 추가
-    data.sections.forEach(section => {
-        bodyHTML += `
-            <div class="modal-section">
-                <h3>${section.title}</h3>
-                ${section.content}
+
+    const progression = data.progression?.length ? `
+        <section class="career-modal-section career-modal-progression-section">
+            <div class="career-modal-section-label">ROLE PROGRESSION</div>
+            <div class="career-modal-progression">
+                ${data.progression.map(item => `
+                    <article>
+                        <time>${item.period}</time>
+                        <h4>${item.title}</h4>
+                        <p>${item.description}</p>
+                    </article>
+                `).join('')}
             </div>
-        `;
-    });
-    
-    // 기술 스택 섹션 추가
-    if (data.techStack && data.techStack.length > 0) {
-        bodyHTML += `
-            <div class="modal-section tech-stack-section">
-                <h3>🛠️ 기술 스택</h3>
-                <div class="tech-stack-badges">
-                    ${data.techStack.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+        </section>
+    ` : '';
+
+    document.getElementById('careerModalBody').innerHTML = `
+        <section class="career-modal-overview">
+            <span>CAREER OVERVIEW</span>
+            <p>${data.overview}</p>
+        </section>
+        ${progression}
+        <section class="career-modal-section career-modal-responsibilities">
+            <div class="career-modal-section-label">KEY RESPONSIBILITIES</div>
+            <div class="career-modal-responsibility-grid">
+                ${data.responsibilities.map((item, index) => `
+                    <article>
+                        <div><span>${String(index + 1).padStart(2, '0')}</span><small>${item.label}</small></div>
+                        <h4>${item.title}</h4>
+                        <p>${item.description}</p>
+                    </article>
+                `).join('')}
+            </div>
+        </section>
+        <section class="career-modal-section career-modal-project-section">
+            <div class="career-modal-section-heading">
+                <div>
+                    <div class="career-modal-section-label">PROJECT EVIDENCE</div>
+                    <p>Career에서는 책임 범위와 판단 근거를 요약하고, 기술 구현과 시각 자료는 Project Details에서 확인할 수 있습니다.</p>
                 </div>
             </div>
-        `;
-    }
-    
-    modalBody.innerHTML = bodyHTML;
-    
-    // 모달 표시
+            <div class="career-modal-projects">${data.projects.map(renderCareerProject).join('')}</div>
+        </section>
+        <section class="career-modal-section career-modal-scope">
+            <div class="career-modal-section-label">TECHNICAL SCOPE</div>
+            <div class="career-modal-scope-skills">
+                ${data.technicalScope.map(tech => `<span data-skill-category="${getTechnicalScopeCategory(tech)}">${tech}</span>`).join('')}
+            </div>
+        </section>
+    `;
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-// 경력 모달 닫기
+function openProjectFromCareer(projectId) {
+    closeCareerModal();
+    requestAnimationFrame(() => openProjectModal(projectId));
+}
+
 function closeCareerModal() {
     const modal = document.getElementById('careerModal');
+    if (!modal) return;
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
-// ESC 키로 모달 닫기
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeCareerModal();
-    }
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeCareerModal();
 });
 
-// 모달 외부 클릭 시 닫기
-document.getElementById('careerModal')?.addEventListener('click', (e) => {
-    if (e.target.id === 'careerModal') {
-        closeCareerModal();
-    }
+document.getElementById('careerModal')?.addEventListener('click', event => {
+    if (event.target.id === 'careerModal') closeCareerModal();
 });

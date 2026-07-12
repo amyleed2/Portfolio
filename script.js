@@ -19,8 +19,10 @@ const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
 
 mobileMenuToggle.addEventListener('click', () => {
-    mobileMenuToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    const isOpen = mobileMenuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active', isOpen);
+    mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileMenuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
 });
 
 // Close mobile menu when clicking on a link
@@ -30,6 +32,8 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         mobileMenuToggle.classList.remove('active');
         navMenu.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', '메뉴 열기');
     });
 });
 
@@ -275,60 +279,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add cursor follower effect (optional, modern touch)
-const createCursorFollower = () => {
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor-follower';
-    cursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 2px solid #6366f1;
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        transform: translate(-50%, -50%);
-    `;
-    document.body.appendChild(cursor);
-    
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursor.style.opacity = '0.5';
-    });
-    
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-    });
-    
-    function animateCursor() {
-        const dx = mouseX - cursorX;
-        const dy = mouseY - cursorY;
-        
-        cursorX += dx * 0.1;
-        cursorY += dy * 0.1;
-        
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        
-        requestAnimationFrame(animateCursor);
-    }
-    
-    animateCursor();
-};
-
-// Only add cursor follower on desktop devices
-if (window.innerWidth > 768) {
-    createCursorFollower();
-}
-
 // Add active state to navigation based on scroll position
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
@@ -341,11 +291,7 @@ window.addEventListener('scroll', () => {
         const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
         
         if (navLink) {
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLink.style.color = 'var(--text-primary)';
-            } else {
-                navLink.style.color = 'var(--text-secondary)';
-            }
+            navLink.classList.toggle('active', scrollY > sectionTop && scrollY <= sectionTop + sectionHeight);
         }
     });
 });
@@ -370,5 +316,85 @@ function toggleDetail(button) {
         button.innerHTML = '<span class="toggle-icon">▼</span> 상세 업무 닫기';
     }
 }
+
+// Tech Skills category filtering and evidence detail.
+const techSkillTabs = document.querySelectorAll('[data-tech-category]');
+const techSkillCards = document.querySelectorAll('[data-tech-card]');
+const techSkillDetailName = document.getElementById('techSkillDetailName');
+const techSkillDetailContext = document.getElementById('techSkillDetailContext');
+const techSkillDetailProjects = document.getElementById('techSkillDetailProjects');
+
+function selectTechSkill(card) {
+    if (!card || !techSkillDetailName || !techSkillDetailContext || !techSkillDetailProjects) return;
+
+    techSkillCards.forEach(item => {
+        const isSelected = item === card;
+        item.classList.toggle('is-active', isSelected);
+        item.setAttribute('aria-pressed', String(isSelected));
+    });
+
+    techSkillDetailName.textContent = card.dataset.name;
+    techSkillDetailContext.textContent = card.dataset.context;
+    techSkillDetailProjects.replaceChildren();
+
+    card.dataset.projects.split('|').forEach(project => {
+        const projectTag = document.createElement('span');
+        projectTag.textContent = project;
+        techSkillDetailProjects.appendChild(projectTag);
+    });
+}
+
+function selectTechCategory(category) {
+    techSkillTabs.forEach(tab => {
+        const isSelected = tab.dataset.techCategory === category;
+        tab.classList.toggle('is-active', isSelected);
+        tab.setAttribute('aria-selected', String(isSelected));
+    });
+
+    let firstVisibleCard = null;
+    techSkillCards.forEach(card => {
+        const isVisible = card.dataset.category === category;
+        card.hidden = !isVisible;
+        if (isVisible && !firstVisibleCard) firstVisibleCard = card;
+    });
+
+    selectTechSkill(firstVisibleCard);
+}
+
+if (techSkillTabs.length && techSkillCards.length) {
+    techSkillTabs.forEach(tab => {
+        tab.addEventListener('click', () => selectTechCategory(tab.dataset.techCategory));
+    });
+
+    techSkillCards.forEach(card => {
+        card.addEventListener('click', () => selectTechSkill(card));
+    });
+
+    selectTechCategory('ios-development');
+    const initialSwiftUICard = document.querySelector('[data-tech-card][data-name="SwiftUI"]');
+    selectTechSkill(initialSwiftUICard);
+}
+
+// AI workflow step navigation.
+const aiWorkflowButtons = document.querySelectorAll('[data-ai-step-button]');
+const aiWorkflowPanels = document.querySelectorAll('[data-ai-step-panel]');
+
+function selectAIWorkflowStep(stepId) {
+    aiWorkflowButtons.forEach(button => {
+        const isSelected = button.dataset.aiStepButton === stepId;
+        button.classList.toggle('is-active', isSelected);
+        button.setAttribute('aria-selected', String(isSelected));
+    });
+
+    aiWorkflowPanels.forEach(panel => {
+        const isSelected = panel.dataset.aiStepPanel === stepId;
+        panel.classList.toggle('is-active', isSelected);
+        panel.hidden = !isSelected;
+    });
+}
+
+aiWorkflowButtons.forEach(button => {
+    button.addEventListener('click', () => selectAIWorkflowStep(button.dataset.aiStepButton));
+});
 
 console.log('Portfolio website loaded successfully! 🚀');
