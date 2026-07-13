@@ -9,9 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=swap">
-    <link rel="stylesheet" href="styles.css?v=home-about-v2-20260712">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=final-qa-polish-20260713">
 </head>
 <body>
     <!-- Navigation -->
@@ -111,15 +109,15 @@
                     <span class="about-v2-index">02</span>
                     <p class="about-v2-tag">Communication & Documentation</p>
                     <h3>설명하고 기록하며 협업을 연결합니다</h3>
-                    <p>기획자와 디자이너에게 기술적 제약과 대안을 이해하기 쉬운 표현으로 설명하고, 합의한 기준은 코드와 문서로 남깁니다. 컴포넌트 정의서와 레이어·토큰 기준표를 만들고 반복 작업은 SPM, Style Dictionary, Code Connect 흐름으로 정리했습니다.</p>
-                    <span class="about-v2-proof">Design System PM · Documentation · Template & Automation</span>
+                    <p>기획자와 디자이너에게 기술적 제약과 대안을 이해하기 쉬운 표현으로 설명하고, 직군별 의견과 합의한 기준을 문서로 남깁니다. 이러한 협업 경험을 바탕으로 ONEstore Design System의 기술 파트 PM을 맡아 여러 직군의 기준을 조율하고 프로젝트를 배포 가능한 산출물로 연결했습니다.</p>
+                    <span class="about-v2-proof">Cross-functional Communication · Design System PM · Documentation</span>
                 </article>
                 <article class="about-v2-keyword">
                     <span class="about-v2-index">03</span>
                     <p class="about-v2-tag">Legacy Modernization</p>
                     <h3>레거시의 흐름을 다시 정리합니다</h3>
-                    <p>UIKit 화면을 SwiftUI로 전환하고 파편화된 로깅과 공통 처리를 중앙화했습니다. MVVM과 MVI를 적용해 사용자 입력부터 화면 출력까지의 상태 흐름을 명확히 하고 주요 UseCase에는 Unit Test를 작성했습니다.</p>
-                    <span class="about-v2-proof">UIKit → SwiftUI · MVVM / MVI · Centralized Logging</span>
+                    <p>UIKit 화면을 SwiftUI로 전환하고, WebView로 구성된 구매 목록을 UIKit Native 화면으로 교체했습니다. MVVM·MVI로 사용자 입력과 화면 상태의 흐름을 분리하고 Swift Testing 기반 테스트 코드를 작성하는 등 운영 중인 앱의 레거시를 실무에서 점진적으로 개선했습니다.</p>
+                    <span class="about-v2-proof">UIKit → SwiftUI · WebView → Native · MVVM / MVI · Swift Testing</span>
                 </article>
                 <article class="about-v2-keyword">
                     <span class="about-v2-index">04</span>
@@ -132,7 +130,10 @@
 
             <aside class="about-v2-update" aria-label="최근 개발 활동">
                 <span>RECENT UPDATE</span>
-                <p>최근에는 Cursor, Claude Code, Codex 등 다양한 AI 도구를 활용해 개발 속도와 검토 범위를 넓히고 있습니다. 작업 방향과 제한 조건을 직접 설계하고, AI가 그 범위 안에서 구현하도록 감독한 뒤 코드·빌드·테스트와 수동 QA로 결과를 검수하며 활용 역량을 높이고 있습니다.</p>
+                <div>
+                    <p>최근에는 Cursor, Claude Code, Codex 등 다양한 AI 도구를 활용해 개발 속도와 검토 범위를 넓히고 있습니다. 작업 방향과 제한 조건을 직접 설계하고, AI가 그 범위 안에서 구현하도록 감독한 뒤 코드·빌드·테스트와 수동 QA로 결과를 검수하며 활용 역량을 높이고 있습니다.</p>
+                    <a class="about-v2-update-link" href="#ai-workflow">AI Workflow 확인하기 <span aria-hidden="true">↓</span></a>
+                </div>
             </aside>
         </div>
     </section>
@@ -143,7 +144,7 @@
             <header class="section-heading-v2 career-v2-heading">
                 <p class="section-heading-v2-label">03 / CAREER</p>
                 <div>
-                    <h2>구축부터 운영과 플랫폼화까지,<br>10년의 경험을 연결했습니다.</h2>
+                    <h2>구축부터 운영과 플랫폼화까지,<br>10년 이상의 경험을 연결했습니다.</h2>
                     <p class="career-v2-lead">Android 개발자로 시작해 iOS로 전환한 뒤, SI·SM·인하우스 환경에서 모바일 서비스를 구축하고 운영하며 구조 개선과 기술 범위 조율까지 담당했습니다.</p>
                 </div>
             </header>
@@ -169,18 +170,18 @@
                         <div class="career-v2-projects">
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 01</span><h4>UIKit 레거시 화면의 SwiftUI 전환</h4></div>
-                                <time>2025.06 — 2025.08</time>
-                                <p>아키텍처와 디자인 패턴 없이 구성된 UIKit·Objective-C 화면에서 전환 범위를 정리했습니다. Leaf 화면인 제네시스 옵션 필터부터 SwiftUI로 재구성하고, MVVM·MVI 두 가지 상태 흐름을 적용해 테스트 가능한 구조와 점진적 전환의 시작점을 만들었습니다.</p>
+                                <div class="career-v2-project-meta"><time>2025.06 — 2025.08</time><span class="career-v2-platform-badge is-ios">iOS</span></div>
+                                <p>아키텍처와 디자인 패턴 없이 구성된 UIKit·Objective-C 화면에서 전환 범위를 정리했습니다. Leaf 화면인 제네시스 옵션 필터부터 SwiftUI로 재구성하고 MVVM·MVI 두 가지 상태 흐름을 적용했으며, Swift Testing으로 테스트 코드까지 작성했습니다.</p>
                             </article>
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 02</span><h4>운영 코드 중앙화 및 레거시 클리닝</h4></div>
-                                <time>2025.06 — 2025.08</time>
+                                <div class="career-v2-project-meta"><time>2025.06 — 2025.08</time><span class="career-v2-platform-badge is-ios">iOS</span></div>
                                 <p>화면과 모듈마다 파편화되어 있던 Crashlytics 및 API 요청·응답 로깅 코드를 공통 흐름으로 중앙화했습니다. 중복된 레거시 코드를 정리하고 오류 추적 기준과 운영 관리 지점을 통일해 장애 발생 시 확인해야 할 흐름을 명확하게 만들었습니다.</p>
                             </article>
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 03</span><h4>iOS 디자인 시스템 초기 설계</h4></div>
-                                <time>2025.06 — 2025.08</time>
-                                <p>공통 디자인 컴포넌트 적용을 위한 초기 구조를 검토하고 Font, Color, Radius를 토큰으로 정의했습니다. 화면의 목적과 상태가 드러나는 Semantic Color Naming을 도입해 원시 색상값 대신 일관된 의미 기준으로 UI를 구성할 수 있는 기반을 정리했습니다.</p>
+                                <div class="career-v2-project-meta"><time>2025.06 — 2025.08</time><span class="career-v2-platform-badge is-ios">iOS</span></div>
+                                <p>Font, Color, Radius를 토큰화하고 Semantic Color Naming으로 중복 Resource를 정리했습니다. 토큰과 공통 컴포넌트를 코드·모듈로 구현해 신규 SwiftUI 화면에 적용하고 실제 배포 버전에 반영했습니다.</p>
                             </article>
                         </div>
                     </div>
@@ -206,17 +207,17 @@
                         <div class="career-v2-projects">
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 01</span><h4>ONEstore Global App Market Prototype</h4></div>
-                                <div class="career-v2-project-meta"><time>2024.01 — 2024.12</time><span class="career-v2-role-badge">PL</span></div>
+                                <div class="career-v2-project-meta"><time>2024.01 — 2024.12</time><span class="career-v2-role-badge">PL</span><span class="career-v2-platform-badge is-ios">iOS</span></div>
                                 <p>Apple DMA 정책에 따른 제3자 앱 마켓의 국내 구현 가능성을 검토했습니다. iOS 개발 범위 조율 역할로 MarketplaceKit, 앱 아키텍처, 네트워크 모듈과 JavaScript Interface를 설계하고 Prototype에서 Alpha·Beta로 이어지는 구현 범위와 리스크를 정리했습니다. Apple Cork에서 약 2주간 기술 세션에 참여해 정책과 제약을 직접 확인했습니다.</p>
                             </article>
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 02</span><h4>ONEstore Design System</h4></div>
-                                <div class="career-v2-project-meta"><time>2024.06 — 2025.06</time><span class="career-v2-role-badge">PM</span></div>
+                                <div class="career-v2-project-meta"><time>2024.06 — 2025.06</time><span class="career-v2-role-badge">PM</span><span class="career-v2-platform-badge is-ios">iOS</span></div>
                                 <p>기술 파트 PM으로 공통 UI 컴포넌트, 디자인 토큰, Style Dictionary와 Figma Code Connect 기반의 협업 구조를 설계했습니다. Android·iOS·Web·디자인·기획의 기준을 조율하고 컴포넌트 문서와 레이어·토큰 기준표를 정리했으며, C레벨 보고와 전사 세미나를 포함해 총 3회의 도입 세션을 진행했습니다.</p>
                             </article>
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 03</span><h4>ONEstory iOS Application 운영 및 개발</h4></div>
-                                <time>2021.09 — 2023.12</time>
+                                <div class="career-v2-project-meta"><time>2021.09 — 2023.12</time><span class="career-v2-platform-badge is-ios">iOS</span></div>
                                 <p>e-book 콘텐츠 앱의 정기 배포, VOC와 OS 업데이트 대응, 주요 화면 개선을 담당했습니다. WebView 화면을 UIKit Native로 전환하고 내서재·마이페이지·고객문의, 소셜 로그인, 위젯과 iPad UI를 개발하며 인하우스 콘텐츠 서비스의 운영 흐름을 경험했습니다.</p>
                             </article>
                         </div>
@@ -243,18 +244,18 @@
                         <div class="career-v2-projects">
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 01</span><h4>GS Retail 전사 모바일 앱 운영</h4></div>
-                                <time>2017.06 — 2021.09</time>
+                                <div class="career-v2-project-meta"><time>2017.06 — 2021.09</time><span class="career-v2-platform-badge is-ios">iOS</span><span class="career-v2-platform-badge is-android">Android</span></div>
                                 <p>GS Fresh, GS 수퍼마켓, 달리살다, 나만의 냉장고, 배송기사 전용 앱 등 10종 이상의 앱을 운영했습니다. 각 사업부 현업자와 기능 범위와 배포 일정을 조율하고, 대규모 B2C 커머스와 실시간 QR 결제 서비스의 장애·VOC·SDK 이슈를 대응하며 운영 기준을 축적했습니다.</p>
                             </article>
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 02</span><h4>GS Fresh 차세대 프로젝트</h4></div>
-                                <div class="career-v2-project-meta"><time>2020.07 — 2020.09</time><span class="career-v2-role-badge">PL</span></div>
+                                <div class="career-v2-project-meta"><time>2020.07 — 2020.09</time><span class="career-v2-role-badge">PL</span><span class="career-v2-platform-badge is-ios">iOS</span><span class="career-v2-platform-badge is-android">Android</span></div>
                                 <p>Android와 iOS를 모두 이해한 경험을 바탕으로 모바일 파트 PL 역할을 맡았습니다. 양 플랫폼의 사용자 시나리오와 기술 스펙, SSO·WKWebView·API·외부 SDK 연동 범위를 맞추고 구현 문서와 협업 커뮤니케이션의 중심 역할을 수행했습니다.</p>
                             </article>
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>PROJECT 03</span><h4>GS 계열사 모바일 SI 프로젝트</h4></div>
-                                <time>2017.06 — 2018.06</time>
-                                <p>GS 계열사의 신규 모바일 서비스 구축을 담당하는 SI팀에서 Android·iOS 앱 개발을 수행했습니다. 기획서와 디자인 시안을 모바일 기능으로 구체화하고 API, WebView, 인증과 외부 SDK 연동 범위를 협업 부서와 조율하며 구축부터 검수와 이관까지 진행했습니다.</p>
+                                <div class="career-v2-project-meta"><time>2017.06 — 2018.06</time><span class="career-v2-platform-badge is-android">Android</span></div>
+                                <p>GS 계열사의 신규 모바일 서비스 구축을 담당하는 SI팀에서 Android 앱 개발을 수행했습니다. 기획서와 디자인 시안을 모바일 기능으로 구체화하고 API, WebView, 인증과 외부 SDK 연동 범위를 협업 부서와 조율하며 구축부터 검수와 이관까지 진행했습니다.</p>
                             </article>
                         </div>
                     </div>
@@ -280,22 +281,22 @@
                         <div class="career-v2-projects">
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>GLOBAL · SI</span><h4>중국 시장 브랜드·O2O 앱 구축</h4></div>
-                                <time>2015.11 — 2017.01</time>
+                                <div class="career-v2-project-meta"><time>2015.11 — 2017.01</time><span class="career-v2-platform-badge is-android">Android</span></div>
                                 <p><strong>CafeUnion, LuxeWater</strong> 등 중국 시장 대상 앱을 개발했습니다. 위치 기반 매장 탐색, 소셜 로그인과 결제, WebView·JavaScript Interface, 중국 현지 SDK를 연동하고 기획·디자인·서버 개발자와 플랫폼별 예외 조건을 조율했습니다.</p>
                             </article>
                             <article class="career-v2-project">
-                                <div class="career-v2-project-title"><span>INTRANET · SI/SM</span><h4>사내 인트라넷 모바일 앱 구축·운영</h4></div>
-                                <time>2015.07 — 2015.09</time>
+                                <div class="career-v2-project-title"><span>INTRANET · SI/SM</span><h4>사내 인트라넷 모바일 MyD2 앱 구축·운영</h4></div>
+                                <div class="career-v2-project-meta"><time>2015.07 — 2015.09</time><span class="career-v2-platform-badge is-android">Android</span></div>
                                 <p><strong>MyD2</strong>의 메인 Android 개발자로 기존 웹 인트라넷을 모바일 앱으로 구현했습니다. 회의실 예약, 휴가 결재, 사내 커뮤니케이션 기능과 API·푸시 연동을 담당하고 출시 이후 운영까지 이어갔습니다.</p>
                             </article>
                             <article class="career-v2-project">
                                 <div class="career-v2-project-title"><span>DOMESTIC · SI</span><h4>국내 커머스·교육·브랜드 앱 구축</h4></div>
-                                <time>2014.12 — 2017.05 내 다수 수행</time>
+                                <div class="career-v2-project-meta"><time>2014.12 — 2017.05 내 다수 수행</time><span class="career-v2-platform-badge is-android">Android</span></div>
                                 <p><strong>올가홀푸드, 폴리스쿨, SK FashionMall Brochure</strong> 등 Native·Hybrid 앱과 iPad 전용 앱을 개발했습니다. 상품 탐색, 바코드·QR, 푸시, 콘텐츠 노출과 외부 SDK를 서비스 성격에 맞게 연동했습니다.</p>
                             </article>
                             <article class="career-v2-project career-v2-project-compact">
                                 <div class="career-v2-project-title"><span>BRAND · SM</span><h4>브랜드 모바일 앱 운영</h4></div>
-                                <time>2014.12 — 2017.05 내 운영</time>
+                                <div class="career-v2-project-meta"><time>2014.12 — 2017.05 내 운영</time><span class="career-v2-platform-badge is-android">Android</span></div>
                                 <p><strong>할리스커피</strong> 등 출시된 브랜드 앱의 기능 개선, OS 및 SDK 변경 대응, 오류 확인과 배포 업무를 수행하며 SI 구축 경험을 운영·유지보수 영역으로 확장했습니다.</p>
                             </article>
                         </div>
@@ -559,7 +560,7 @@
                             <span class="project-card-v2-tech-icon" title="Tuist"><img src="assets/images/tech/tuist.jpeg" alt="Tuist"></span>
                             <span class="project-card-v2-tech-icon" title="Figma"><img src="assets/images/tech/figma.svg" alt="Figma"></span>
                             <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Clean Architecture">CA</span>
-                            <span class="project-card-v2-tech-more" title="MarketplaceKit · JavaScript Interface · CryptoSwift">+3</span>
+                            <span class="project-card-v2-tech-more" title="UIKit · MarketplaceKit · JavaScript Interface · CryptoSwift">+4</span>
                         </div>
                         <div class="project-card-v2-footer">
                             <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('onestore-1')">View Project <span aria-hidden="true">↗</span></button>
@@ -868,6 +869,12 @@
                     </div>
                 </article>
             </div>
+            <div class="projects-v2-more-wrap">
+                <button type="button" class="projects-v2-more" id="projectsMoreButton" aria-controls="projectsGrid" aria-expanded="false" hidden>
+                    <span>프로젝트 더 보기</span>
+                    <span aria-hidden="true">＋</span>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -952,7 +959,7 @@
     <!-- 프로젝트 상세 모달 -->
     <div class="project-modal" id="projectModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeProjectModal()">
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="프로젝트 상세 닫기">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -988,7 +995,7 @@
     <!-- 경력 상세 모달 -->
     <div class="career-modal" id="careerModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeCareerModal()">
+            <button class="modal-close" onclick="closeCareerModal()" aria-label="경력 상세 닫기">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1100,9 +1107,9 @@
         </div>
     </div>
 
-    <script src="script.js?v=featured-projects-modal-20260427"></script>
+    <script src="script.js?v=mobile-projects-more-20260713"></script>
     <script src="slider.js"></script>
-    <script src="project-modal.js?v=p0-hiring-risk-20260429"></script>
-    <script src="career-modal.js?v=p0-hiring-risk-20260429"></script>
+    <script src="project-modal.js?v=global-market-detail-20260713"></script>
+    <script src="career-modal.js?v=career-content-polish-20260713"></script>
 </body>
 </html>

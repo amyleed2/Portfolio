@@ -86,189 +86,6 @@ function handleFeaturedProjectKey(event, projectId) {
     }
 }
 
-// Observe contact section
-const contactSection = document.querySelector('.contact-wrapper');
-if (contactSection) {
-    contactSection.style.opacity = '0';
-    contactSection.style.transform = 'translateY(30px)';
-    contactSection.style.transition = 'all 0.8s ease-out';
-    observer.observe(contactSection);
-}
-
-// EmailJS 초기화
-// EmailJS에서 발급받은 Public Key를 입력하세요
-// 1. https://www.emailjs.com/ 에서 회원가입
-// 2. Email Services에서 이메일 서비스 추가 (Gmail 추천)
-// 3. Email Templates에서 템플릿 생성
-// 4. Account > General에서 Public Key 확인
-(function() {
-    // EmailJS Public Key (사용자가 직접 입력해야 함)
-    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // 여기에 EmailJS Public Key 입력
-    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // 여기에 Service ID 입력
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // 여기에 Template ID 입력
-    
-    if (typeof emailjs !== 'undefined') {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-    }
-    
-    window.emailConfig = {
-        serviceId: EMAILJS_SERVICE_ID,
-        templateId: EMAILJS_TEMPLATE_ID
-    };
-})();
-
-// Form submission with EmailJS
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-if (contactForm && formMessage) {
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        from_name: document.getElementById('name').value,
-        from_email: document.getElementById('email').value,
-        message: document.getElementById('message').value,
-        to_email: 'amy.lee.d2@gmail.com' // 받는 이메일 주소
-    };
-    
-    // Show loading state
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    const originalBtnText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span class="btn-text">전송 중...</span>';
-    submitBtn.disabled = true;
-    
-    // EmailJS를 사용한 실제 이메일 전송
-    if (typeof emailjs !== 'undefined' && window.emailConfig.serviceId !== 'YOUR_SERVICE_ID') {
-        emailjs.send(
-            window.emailConfig.serviceId,
-            window.emailConfig.templateId,
-            formData
-        ).then(
-            function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                // Show success message
-                formMessage.textContent = '메시지가 성공적으로 전송되었습니다!';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Reset button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            },
-            function(error) {
-                console.error('FAILED...', error);
-                // Show error message
-                formMessage.textContent = '메시지 전송에 실패했습니다. 다시 시도해주세요.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-                
-                // Reset button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }
-        );
-    } else {
-        // EmailJS가 설정되지 않은 경우 시뮬레이션
-        console.warn('EmailJS가 설정되지 않았습니다. 시뮬레이션 모드로 실행됩니다.');
-        setTimeout(() => {
-            // Show success message
-            formMessage.textContent = '메시지가 성공적으로 전송되었습니다! (시뮬레이션 모드)';
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Reset button
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        }, 1500);
-    }
-});
-
-// Form validation
-const formInputs = contactForm.querySelectorAll('input, textarea');
-
-formInputs.forEach(input => {
-    input.addEventListener('blur', () => {
-        validateInput(input);
-    });
-    
-    input.addEventListener('input', () => {
-        if (input.classList.contains('invalid')) {
-            validateInput(input);
-        }
-    });
-});
-}
-
-function validateInput(input) {
-    const value = input.value.trim();
-    
-    if (input.hasAttribute('required') && value === '') {
-        setInvalid(input, '이 필드는 필수입니다.');
-        return false;
-    }
-    
-    if (input.type === 'email' && value !== '') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            setInvalid(input, '유효한 이메일 주소를 입력해주세요.');
-            return false;
-        }
-    }
-    
-    setValid(input);
-    return true;
-}
-
-function setInvalid(input, message) {
-    input.classList.add('invalid');
-    input.classList.remove('valid');
-    
-    let errorElement = input.parentElement.querySelector('.error-message');
-    if (!errorElement) {
-        errorElement = document.createElement('span');
-        errorElement.className = 'error-message';
-        errorElement.style.color = '#ef4444';
-        errorElement.style.fontSize = '0.875rem';
-        errorElement.style.marginTop = '0.25rem';
-        errorElement.style.display = 'block';
-        input.parentElement.appendChild(errorElement);
-    }
-    errorElement.textContent = message;
-}
-
-function setValid(input) {
-    input.classList.remove('invalid');
-    input.classList.add('valid');
-    
-    const errorElement = input.parentElement.querySelector('.error-message');
-    if (errorElement) {
-        errorElement.remove();
-    }
-}
-
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -380,6 +197,11 @@ if (techSkillTabs.length && techSkillCards.length) {
 const projectFilterButtons = document.querySelectorAll('[data-project-filter]');
 const projectCardsV2 = document.querySelectorAll('.project-card-v2[data-project-type]');
 const projectFilterCounts = document.querySelectorAll('[data-filter-count]');
+const projectsMoreButton = document.getElementById('projectsMoreButton');
+const projectMobileQuery = window.matchMedia('(max-width: 768px)');
+const mobileProjectLimit = 5;
+let selectedProjectFilter = 'all';
+let areMobileProjectsExpanded = false;
 
 function updateProjectFilterCounts() {
     const counts = { all: projectCardsV2.length, work: 0, personal: 0 };
@@ -392,16 +214,41 @@ function updateProjectFilterCounts() {
 }
 
 function selectProjectFilter(filter) {
+    selectedProjectFilter = filter;
+    areMobileProjectsExpanded = false;
+
     projectFilterButtons.forEach(button => {
         const isSelected = button.dataset.projectFilter === filter;
         button.classList.toggle('is-active', isSelected);
         button.setAttribute('aria-pressed', String(isSelected));
     });
 
+    updateProjectCardVisibility();
+}
+
+function updateProjectCardVisibility() {
+    const matchingCards = Array.from(projectCardsV2).filter(card => (
+        selectedProjectFilter === 'all' || card.dataset.projectType === selectedProjectFilter
+    ));
+    const shouldLimit = projectMobileQuery.matches && !areMobileProjectsExpanded;
+
     projectCardsV2.forEach(card => {
-        const isVisible = filter === 'all' || card.dataset.projectType === filter;
-        card.hidden = !isVisible;
+        const matchingIndex = matchingCards.indexOf(card);
+        const matchesFilter = matchingIndex !== -1;
+        const isWithinLimit = !shouldLimit || matchingIndex < mobileProjectLimit;
+        card.hidden = !matchesFilter || !isWithinLimit;
     });
+
+    if (!projectsMoreButton) return;
+
+    const remainingCount = Math.max(matchingCards.length - mobileProjectLimit, 0);
+    const shouldShowButton = projectMobileQuery.matches && remainingCount > 0;
+    projectsMoreButton.hidden = !shouldShowButton;
+    projectsMoreButton.setAttribute('aria-expanded', String(areMobileProjectsExpanded));
+    projectsMoreButton.querySelector('span:first-child').textContent = areMobileProjectsExpanded
+        ? '프로젝트 접기'
+        : `프로젝트 ${remainingCount}개 더 보기`;
+    projectsMoreButton.querySelector('span:last-child').textContent = areMobileProjectsExpanded ? '−' : '＋';
 }
 
 if (projectFilterButtons.length && projectCardsV2.length) {
@@ -409,6 +256,14 @@ if (projectFilterButtons.length && projectCardsV2.length) {
     projectFilterButtons.forEach(button => {
         button.addEventListener('click', () => selectProjectFilter(button.dataset.projectFilter));
     });
+
+    projectsMoreButton?.addEventListener('click', () => {
+        areMobileProjectsExpanded = !areMobileProjectsExpanded;
+        updateProjectCardVisibility();
+    });
+
+    projectMobileQuery.addEventListener('change', updateProjectCardVisibility);
+    updateProjectCardVisibility();
 }
 
 // AI workflow step navigation.

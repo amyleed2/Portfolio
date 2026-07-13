@@ -273,8 +273,8 @@ const projectData = {
     'onestore-1': {
         title: 'ONEstore Global App Market Prototype 개발',
         period: '2024.01 ~ 2024.12',
-        description: 'ONEstore 글로벌 앱 마켓 프로젝트에서 Apple DMA 관련 제3자 마켓 기술 검토를 진행하고, Prototype부터 Alpha, Beta까지 iOS 구현 범위와 리스크를 정리했습니다.',
-        tech: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'MarketplaceKit', 'JavaScript Interface', 'Figma', 'CryptoSwift'],
+        description: 'Apple DMA 정책으로 공개된 MarketplaceKit을 기반으로 제3자 앱 마켓의 기술적 feasibility를 검증하고, Prototype부터 Alpha·Beta까지 iOS 앱 구조와 구현 범위를 확장한 프로젝트입니다.',
+        tech: ['iOS', 'Swift', 'UIKit', 'SwiftUI', 'Clean Architecture', 'MVVM', 'Tuist', 'MarketplaceKit', 'JavaScript Interface', 'Figma', 'CryptoSwift'],
         features: `
             <p><strong>Overview</strong></p>
             <ul>
@@ -315,15 +315,18 @@ const projectData = {
             </ul>
             <div class="reference-image">
                 <p class="reference-image-label">Apple Alternative Marketplace 검토 자료</p>
-                <img src="assets/images/apple_diagram.png" alt="Apple 대체 앱 마켓 설치 흐름 검토 다이어그램" class="reference-img">
+                <img src="assets/images/apple_diagram.png" alt="Apple Cork 출장 이후 정리한 대체 앱 마켓 설치 흐름 다이어그램" class="reference-img">
+                <p class="reference-image-caption">Apple Cork Technical Lab에서 확인한 내용을 바탕으로 귀국 후 정리한 앱 설치 워크플로우입니다.</p>
             </div>
             <div class="reference-image">
                 <p class="reference-image-label">Architecture / Module Structure</p>
-                <img src="assets/images/project_architecture.jpeg" alt="ONEstore Global App Market 프로젝트 모듈 아키텍처" class="reference-img">
+                <img src="assets/images/project_architecture.jpeg" alt="ONEstore Global App Market iOS 초기 아키텍처 설계도" class="reference-img">
+                <p class="reference-image-caption">국가별 서비스 확장과 Presentation 교체 가능성을 고려해 작성한 iOS 앱 초기 아키텍처 설계도입니다.</p>
             </div>
             <div class="reference-image">
-                <p class="reference-image-label">Network Module Code Example</p>
-                <img src="assets/images/network1.jpeg" alt="ONEstore Global 네트워크 모듈 코드 예시 1" class="reference-img-vertical">
+                <p class="reference-image-label">Network Module Hierarchy / Class Structure</p>
+                <img src="assets/images/network1.jpeg" alt="ONEstore Global 네트워크 모듈 하이어라키와 클래스 구성도" class="reference-img-vertical">
+                <p class="reference-image-caption">자체 네트워크 모듈의 레이어 관계와 주요 클래스 책임을 정리한 구성도입니다.</p>
             </div>
             <div class="reference-image">
                 <p class="reference-image-label">Prototype / Result Screens</p>
@@ -363,20 +366,20 @@ const projectData = {
                 <p>iOS 개발 파트 기준으로 UXD팀과 개발 조직 사이에서 컴포넌트 구조, 구현 기준, Figma 연계 흐름을 맞추는 조율 역할을 수행했습니다.</p>
             </div>
             <ul>
-                <li>컴포넌트 구조, 구현 기준, Style-Component-Screen 프레임워크 구조를 iOS 관점에서 정리했습니다.</li>
+                <li>컴포넌트 구조, 구현 기준, Core-Style-Component-Screen 프레임워크 구조를 iOS 관점에서 정리했습니다.</li>
                 <li>Figma Plugin, Style Dictionary, Code Connect 기반의 디자인 자산-코드 연결 방식을 검토했습니다.</li>
             </ul>
 
             <p><strong>Key Contributions</strong></p>
             <ul>
-                <li>ONEstore 제품과 협업 방식에 맞는 Style-Component-Screen 구조를 정리했습니다.</li>
+                <li>ONEstore 제품과 협업 방식에 맞는 Core-Style-Component-Screen 구조를 정리했습니다.</li>
                 <li>Top Navigation 등 실제 요소를 기준으로 컴포넌트 단위, Item, Property 기준을 구현 규칙으로 연결했습니다.</li>
                 <li>WDS 프레임워크 구조와 디자인 토큰/Code Connect 연계 흐름을 검토했습니다.</li>
             </ul>
 
             <p><strong>Technical Decisions</strong></p>
             <ul>
-                <li>디자인 시스템을 Style, Component, Screen 계층으로 나누어 토큰, 컴포넌트, 화면 조합의 책임을 분리하는 방향을 선택했습니다.</li>
+                <li>디자인 시스템을 Core, Style, Component, Screen 계층으로 나누어 기반 코드, 토큰, 공통 컴포넌트와 화면 조합의 책임을 분리했습니다.</li>
                 <li>컴포넌트 정의는 디자인 명세만 맞추는 것이 아니라 실제 SwiftUI 구현에 필요한 Property, Item, 상태 조합 기준까지 함께 정리했습니다.</li>
                 <li>디자인 토큰과 Code Connect는 디자이너와 개발자가 같은 컴포넌트 기준을 확인할 수 있도록 Figma 자산과 iOS 구현 예시를 연결하는 방향으로 검토했습니다.</li>
             </ul>
@@ -387,7 +390,7 @@ const projectData = {
             </ul>
             <div class="reference-image">
                 <p class="reference-image-label">Design System Architecture</p>
-                <img src="assets/images/designsystem_architecture.png" alt="ONEstore 디자인 시스템 Style Component Screen 아키텍처" class="reference-img">
+                <img src="assets/images/designsystem_architecture.png" alt="ONEstore 디자인 시스템 Core Style Component Screen 아키텍처" class="reference-img">
                 <img src="assets/images/design_deveolp_archi.png" alt="ONEstore 디자인 시스템 iOS 프레임워크 Tuist 그래프" class="reference-img-vertical">
             </div>
             <div class="reference-image">
@@ -833,20 +836,20 @@ const projectData = {
 // 수치는 기존 경력 자료에서 확인할 수 있는 기간, 인원, 앱·단계·산출물 수만 사용한다.
 const projectPaarData = {
     'onestore-1': {
-        overview: 'Apple DMA 정책 변화에 대응해 ONEstore 글로벌 대체 앱 마켓의 iOS 구현 가능성을 검증한 프로젝트입니다.',
-        problem: ['국내에서 직접 개발·출시하기 어려운 제3자 앱 마켓을 Apple 문서와 제한된 개발 환경만으로 검토해야 했습니다.', 'MarketplaceKit 정책, entitlement, Hosted App 설치·업데이트 흐름이 사업 검토와 투자 판단에 연결되는 과제였습니다.'],
-        analyze: ['Apple Developer Documentation과 Apple Cork 기술 세션 내용을 기준으로 정책 제약과 구현 가능 범위를 분리했습니다.', '처음부터 제품화하지 않고 Prototype → Alpha → Beta 3단계로 검증해 불확실한 API와 사업 요구가 구조 전체로 번지는 위험을 관리했습니다.'],
-        action: ['iOS 파트 PL로 앱 아키텍처, 네트워크 모듈, JavaScript Interface와 MarketplaceKit 연결 범위를 설계했습니다.', '약 2주간 Apple Cork 기술 세션에 iOS 대표로 참석해 구현 제약을 확인하고 단계별 기능·리스크 문서에 반영했습니다.'],
-        result: ['Prototype·Alpha·Beta 3단계의 동작 앱과 iOS 구현 범위 문서를 산출했습니다.', '정책 문서, Apple 기술 세션, 단계별 실행 결과를 근거로 제3자 앱 마켓의 가능 범위와 남은 위험을 구분했습니다.'],
+        overview: '2024년 Apple DMA 정책으로 공개된 MarketplaceKit을 기반으로, 제3자 앱 마켓 사업자인 ONEstore의 iOS 마켓 구축 가능성을 기술·사업 관점에서 검증하고 단계별 앱으로 구현한 프로젝트입니다.',
+        problem: ['EU 정책에 따라 제공된 API라 국내에서는 개발과 디버깅이 제한됐고, 초기 Apple Developer Documentation에도 실제 구현에 필요한 정보가 충분하지 않았습니다.', 'MarketplaceKit 정책, entitlement, Hosted App 설치·업데이트 흐름의 불확실성이 사업 검토와 투자 판단에 직접 연결돼 문서 검토만으로 결론을 내릴 수 없었습니다.'],
+        analyze: ['누락되거나 해석이 필요한 내용은 Apple과 이메일·화상 미팅으로 직접 확인하고, 정책 조건·클라이언트 구현 제약·추가 검증 항목으로 구분했습니다.', '국가별 마켓 확장과 Presentation 교체 가능성을 고려해 Clean Architecture를 선택하고, UI 구현 속도와 단계별 검증 효율을 위해 SwiftUI를 적용했습니다.', '처음부터 제품화하지 않고 Prototype → Alpha → Beta 3단계로 나누어 API 불확실성과 투자 판단에 필요한 기능을 순차 검증했습니다.'],
+        action: ['iOS 파트 PL로 앱 아키텍처, 자체 네트워크 모듈, JavaScript Interface와 MarketplaceKit 연결 범위를 설계하고 공통 디자인 컴포넌트와 상세 화면을 구현했습니다.', '약 2주간 Apple Cork Technical Lab에 iOS 대표로 참석해 Apple 개발자와 제3자 마켓 전체 워크플로우를 구현하고, 문서에서 확인하기 어려웠던 설치·업데이트 흐름과 ONEstore 정책의 기술적 한계를 Prototype으로 검증했습니다.', '귀국 후 출장 결과와 실행 데이터를 구현 범위·리스크 문서로 정리하고 C레벨 보고를 통해 기술 feasibility를 설명했습니다.'],
+        result: ['Prototype·Alpha·Beta 3단계의 동작 앱과 iOS 구현 범위·리스크 문서를 산출하고 투자 검토·유치 과정의 기술 근거로 활용했습니다.', 'Clean Architecture 기반 확장 구조, 자체 네트워크 모듈, JavaScript Interface, 공통 디자인 컴포넌트와 상세 화면 구현 결과를 남겼습니다.', 'Apple 문서, 직접 커뮤니케이션, Cork Lab 실행 결과를 근거로 구현 가능한 범위와 정책·기술 한계를 구분했습니다.'],
         metrics: ['3단계 검증', 'Apple Cork 약 2주', 'iOS PL'],
         additionalSections: [{
             eyebrow: 'SPECIAL EXPERIENCE',
             title: 'Apple Cork Technical Lab',
-            summary: '국내에서 재현하기 어려운 제3자 앱 마켓 환경과 MarketplaceKit 제약을 Apple 엔지니어와 직접 확인하기 위해 아일랜드 Cork 지사로 기술 출장을 다녀왔습니다.',
+            summary: '국내에서 개발·디버깅하기 어려운 MarketplaceKit 환경을 Apple 개발자와 직접 구현하고 검증하기 위해 아일랜드 Cork 지사에서 약 2주간 진행된 오프라인 Technical Lab에 참석했습니다.',
             items: [
-                '2024.04.08~04.20 동안 기획 PM, 개발 PM, iOS, Backend 각 1명으로 구성된 4명의 기술 세션 참가자 중 iOS 대표로 참석했습니다.',
-                'Developer Documentation만으로 확정하기 어려웠던 entitlement, 설치·업데이트 흐름과 API 제약을 실제 Prototype으로 검증했습니다.',
-                '세션에서 확인한 정책·기술 답변을 귀국 후 iOS 구현 범위, 리스크 목록과 Prototype → Alpha → Beta 계획에 반영했습니다.'
+                '2024.04.08~04.20 동안 기획 1명, 서버 1명, 개발 PM 1명, iOS 1명으로 구성된 4명의 참가자 중 팀의 iOS 개발자 대표로 참석했습니다.',
+                'Apple 개발자와 제3자 앱 마켓의 전체 워크플로우를 구현하며 entitlement, Hosted App 설치·업데이트 흐름과 API 제약을 실제 Prototype으로 검증해 제출했습니다.',
+                '세션에서 확인한 실행 결과를 귀국 후 설치 Flow 도식, iOS 구현 범위와 리스크 목록으로 정리하고 C레벨 기술 feasibility 보고와 Prototype → Alpha → Beta 계획에 반영했습니다.'
             ],
             metrics: ['출장 2024.04.08~20', '참가 4명', 'iOS 대표']
         }]
@@ -854,10 +857,10 @@ const projectPaarData = {
     'onestore-2': {
         overview: 'ONEstore 최초의 디자인 시스템을 공통 UI 코드, 디자인 토큰, Figma 자산과 배포 흐름으로 연결한 프로젝트입니다.',
         problem: ['iOS·Android·Web과 디자인 조직이 같은 컴포넌트를 서로 다른 레이어와 명칭으로 정의해 반복 구현과 협업 비용이 발생했습니다.', 'Top Navigation Bar처럼 플랫폼별 동작이 다른 컴포넌트도 하나의 공통 개념과 예외 기준으로 설명할 방법이 필요했습니다.'],
-        analyze: ['모든 플랫폼 구현을 억지로 같게 만드는 대신 공통 개념, 플랫폼별 예외, 토큰과 컴포넌트 레이어를 분리했습니다.', '바이위클리 회의에서 회의록, 컴포넌트 정의서, 레이어·토큰 기준표를 검토 자료로 사용했습니다.'],
-        action: ['기술 파트 PM으로 iOS·Android·Web·디자인·기획 의견을 조율하고 비개발자도 판단할 수 있는 문서로 기술 제약을 설명했습니다.', 'SPM, Style Dictionary, Figma Code Connect를 연결하고 C레벨 보고 2회와 전사 공유 1회를 준비했습니다.'],
-        result: ['공통 컴포넌트, 디자인 토큰, SPM 배포, Code Connect와 자동화 흐름을 산출물로 정리했습니다.', '총 3회의 세미나를 통해 도입 이유, 사용 방법, 기존 업무 대비 변경점을 조직에 공유했습니다.'],
-        metrics: ['세미나 3회', 'SPM 배포', 'Code Connect']
+        analyze: ['초기 4~5개월 동안 디자인 시스템 팀원들과 바이위클리 회의를 진행하며 회의록, 컴포넌트 정의서, 레이어 기준표와 토큰 기준표를 검토했습니다.', '모든 플랫폼 구현을 억지로 같게 만드는 대신 기반 코드, Style, 공통 Component와 Screen 조합의 책임을 분리한 Core → Style → Component → Screen 4계층 구조를 설계했습니다.', 'Top Navigation Bar를 기준 사례로 삼아 공통 개념, 플랫폼별 예외, Property·Item·상태 조합이 디자인과 코드에서 같은 의미를 갖는지 검증했습니다.'],
+        action: ['기술 파트 PM으로 iOS·Android·Web·디자인·기획 의견을 조율하고, 약 1년에 걸쳐 ONEstore 디자인 시스템의 아키텍처와 컴포넌트 설계 방법론을 문서화했습니다.', 'Color·Font·Radius 등 Style을 토큰화하고, 여러 제품에서 공통으로 사용하는 UI를 리스트업해 컴포넌트 레이어, Property·Item·상태 기준을 정의한 뒤 공통 컴포넌트로 구현했습니다.', 'Style Dictionary 기반 토큰 변환·배포 CI/CD와 Figma Code Connect 코드 스니펫을 연결해 디자인 변경이 개발 리소스와 구현 예시로 이어지는 워크플로우를 구축했습니다.', 'C레벨 보고 2회와 전사 세미나 1회, 총 3회의 세미나를 준비·진행하며 도입 이유, 적용 방법과 기존 업무 대비 기대효과를 설명했습니다.'],
+        result: ['초기 설계 4~5개월을 거쳐 Core → Style → Component → Screen의 4계층 아키텍처와 공통 컴포넌트 설계 기준을 산출했습니다.', '컴포넌트 정의서와 레이어·토큰 기준표를 공통 기준으로 사용해 직군과 플랫폼마다 반복하던 설명·해석·확인 과정을 줄이고 디자인–개발 간 커뮤니케이션 비용을 낮췄습니다.', '수작업으로 전달·변환하던 디자인 Style을 토큰과 Style Dictionary 기반 자동화 흐름으로 연결하고, Code Connect에서 컴포넌트 코드 스니펫과 사용 방식을 바로 확인할 수 있게 해 신규 개발자의 초기 인볼브 비용을 줄였습니다.', '공통 컴포넌트, 디자인 토큰, SPM 배포 단위와 제품 적용 기준을 마련하고 총 3회의 세미나를 통해 조직 내 도입·활용 방법을 전파했습니다.'],
+        metrics: ['초기 설계 4~5개월', '아키텍처 4계층', '세미나 3회']
     },
     'onestore-3': {
         overview: '웹툰·웹소설·전자책·오디오북을 제공하는 ONEstory iOS 앱의 기능 개발과 운영을 담당한 프로젝트입니다.',
@@ -950,7 +953,7 @@ const projectPaarData = {
 };
 
 const projectRoleData = {
-    'onestore-1': 'iOS 파트 PL · 기술 검토, 아키텍처와 네트워크 모듈 설계, 단계별 구현 범위와 리스크 정리',
+    'onestore-1': 'iOS 파트 PL · 기술 검토, 아키텍처와 네트워크 모듈 설계, 단계별 구현 범위와 리스크 정리, 공통 디자인 컴포넌트 구축 및 상세 화면 구현',
     'onestore-2': '기술 파트 PM · 플랫폼 간 기준 조율, iOS 컴포넌트 구조와 디자인-코드 연결 흐름 설계',
     'onestore-3': 'iOS 운영 개발 · 기능 개발, 정기 배포, VOC·OS 대응, Native 전환과 iPad·Widget 구현',
     'encar-1': 'iOS 개발 · UIKit 레거시 분석, SwiftUI 전환, MVVM·MVI 비교 적용, 테스트와 로깅 중앙화',

@@ -5552,156 +5552,6 @@ body {
     background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
 }
 
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-    margin-top: 3rem;
-}
-
-.contact-info h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-.contact-info p {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.8;
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var(--text-secondary);
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    color: var(--primary-color);
-}
-
-/* Contact Form */
-.contact-form {
-    background-color: rgba(30, 41, 59, 0.5);
-    padding: 2.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--dark-surface);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
-    color: var(--text-primary);
-    font-size: 1rem;
-    transition: var(--transition);
-    font-family: inherit;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-family: 'Courier New', monospace;
-    position: relative;
-    overflow: hidden;
-}
-
-.submit-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.submit-btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-}
-
-.btn-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-.form-message {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    display: none;
-}
-
-.form-message.success {
-    background-color: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    border: 1px solid #10b981;
-}
-
-.form-message.error {
-    background-color: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    border: 1px solid #ef4444;
-}
-
 /* Footer */
 .footer {
     background-color: var(--dark-surface);
@@ -6342,11 +6192,6 @@ body {
         padding: 4rem 0;
     }
 
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
     .footer .container {
         flex-direction: column;
         gap: 1.5rem;
@@ -6526,10 +6371,6 @@ body {
 
     .tech-stack-grid {
         grid-template-columns: 1fr;
-    }
-
-    .contact-form {
-        padding: 1.5rem;
     }
 
     .nav-menu {
@@ -7037,6 +6878,32 @@ body {
     word-break: keep-all;
 }
 
+.about-v2-update-link {
+    display: inline-flex;
+    gap: 0.55rem;
+    align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 0.25rem;
+    color: var(--v2-lime);
+    border-bottom: 1px solid rgba(199, 243, 107, 0.55);
+    font-family: var(--v2-font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+}
+
+.about-v2-update-link:hover,
+.about-v2-update-link:focus-visible {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+.about-v2-update-link:focus-visible {
+    outline: 2px solid var(--v2-lime);
+    outline-offset: 4px;
+}
+
 .cursor-follower {
     display: none !important;
 }
@@ -7314,6 +7181,10 @@ body {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
+}
+
+.projects-v2-more-wrap {
+    display: none;
 }
 
 .project-card-v2 {
@@ -7906,6 +7777,30 @@ body {
     font-size: 0.62rem;
     font-weight: 700;
     letter-spacing: 0.06em;
+}
+
+.career-v2-platform-badge {
+    display: inline-flex;
+    min-height: 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.22rem 0.52rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-family: var(--v2-font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.career-v2-platform-badge.is-ios {
+    color: #b64f35;
+    background: #fff0e9;
+}
+
+.career-v2-platform-badge.is-android {
+    color: #397044;
+    background: #edf7e9;
 }
 
 .career-v2-project > p {
@@ -10233,5 +10128,255 @@ body {
 
     .contact-v2-action strong {
         overflow-wrap: anywhere;
+    }
+}
+
+/* =====================================================
+   Final QA polish - responsive density and visual parity
+   ===================================================== */
+
+/* 시각 자료는 이전 보라색 테마 대신 현재 프로젝트 모달의 중립 팔레트를 사용한다. */
+.project-modal:not(.career-modal) .reference-img,
+.project-modal:not(.career-modal) .reference-img-vertical,
+.project-modal:not(.career-modal) .screenshot-img {
+    border-color: #c5ceca;
+    box-shadow: 0 5px 18px rgba(24, 39, 34, 0.1);
+}
+
+.project-modal:not(.career-modal) .reference-image-label::before {
+    background: var(--v2-blue);
+}
+
+.project-modal:not(.career-modal) .reference-image-caption {
+    margin: 0.85rem 0 0;
+    color: #52615c !important;
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.project-modal:not(.career-modal) .project-story-snapshot .project-story-section-heading p {
+    color: #d7dfdb !important;
+}
+
+/* 어두운 썸네일에서도 회사 북마크의 실루엣을 식별할 수 있게 한다. */
+.project-card-v2-company {
+    filter:
+        drop-shadow(0 0 0.5px rgba(255, 255, 255, 0.95))
+        drop-shadow(0 7px 10px rgba(23, 33, 43, 0.28));
+}
+
+@media (max-width: 768px) {
+    /* 단계는 한 줄 스크롤 내비게이션으로 유지하되 각 제목이 온전히 읽히게 한다. */
+    .ai-workflow-v2-steps {
+        display: grid;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(154px, 64vw);
+        gap: 0.5rem;
+        padding: 0.1rem 0 0.55rem;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: inline mandatory;
+    }
+
+    .ai-workflow-v2-step {
+        min-width: 0;
+        min-height: 72px;
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 0.35rem 0.55rem;
+        align-content: center;
+        padding: 0.8rem;
+        scroll-snap-align: start;
+    }
+
+    .ai-workflow-v2-step > span {
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .ai-workflow-v2-step strong {
+        align-self: center;
+        font-size: 0.78rem;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    /* 가로 이미지에는 과도한 세로 고정 영역을 만들지 않는다. */
+    .image-viewer-shell {
+        height: auto;
+        max-height: 94dvh;
+    }
+
+    .image-viewer-stage {
+        min-height: 0;
+        max-height: calc(94dvh - 126px);
+    }
+
+    .image-viewer-content {
+        grid-template-rows: minmax(0, auto) auto;
+        align-self: center;
+        height: auto;
+        max-height: calc(94dvh - 144px);
+    }
+
+    .image-viewer-content img {
+        width: 100%;
+        height: auto;
+        max-height: calc(94dvh - 210px);
+        object-fit: contain;
+    }
+
+    /* Career는 로고와 여백을 줄이고 내용의 계층은 그대로 유지한다. */
+    .career-v2 {
+        padding: 4.75rem 0;
+    }
+
+    .career-v2-list {
+        margin-top: 2.25rem;
+    }
+
+    .career-v2-company {
+        gap: 1.35rem;
+        padding: 2.5rem 0;
+    }
+
+    .career-v2-brand {
+        width: 126px;
+    }
+
+    .career-v2-logo {
+        padding: 1rem;
+    }
+
+    .career-v2-order {
+        width: 42px;
+        height: 42px;
+        border-width: 4px;
+    }
+
+    .career-v2-company-header {
+        gap: 0.85rem;
+    }
+
+    .career-v2-company h3 {
+        font-size: clamp(1.75rem, 9vw, 2.35rem);
+    }
+
+    .career-v2-responsibility {
+        margin-top: 1.35rem;
+        font-size: 0.88rem;
+        line-height: 1.62;
+    }
+
+    .career-v2-projects {
+        margin-top: 1.4rem;
+    }
+
+    .career-v2-project {
+        padding: 1.25rem 0;
+    }
+
+    .career-v2-project > p {
+        margin-top: 0.6rem;
+        font-size: 0.84rem;
+        line-height: 1.62;
+    }
+
+    /* 12개 프로젝트의 핵심 정보는 유지하면서 이미지와 내부 여백을 압축한다. */
+    .projects-v2 {
+        padding: 4.75rem 0;
+    }
+
+    .projects-v2-filter {
+        margin: 2rem 0 1.5rem;
+    }
+
+    .projects-v2-grid {
+        gap: 1rem;
+    }
+
+    .project-card-v2-media,
+    .project-card-v2-featured .project-card-v2-media {
+        aspect-ratio: 16 / 7;
+    }
+
+    .project-card-v2-early .project-card-v2-media {
+        aspect-ratio: 16 / 5;
+    }
+
+    .project-card-v2-body,
+    .project-card-v2-featured .project-card-v2-body,
+    .project-card-v2-early .project-card-v2-body {
+        gap: 0.45rem;
+        padding: 1rem 1.05rem 1.1rem;
+    }
+
+    .project-card-v2-featured .project-card-v2-title,
+    .project-card-v2-title {
+        font-size: 1.05rem;
+    }
+
+    .project-card-v2-summary {
+        display: -webkit-box;
+        margin-top: 0.1rem;
+        overflow: hidden;
+        font-size: 0.82rem;
+        line-height: 1.55;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .project-card-v2-tech-icon,
+    .project-card-v2-featured .project-card-v2-tech-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .project-card-v2-footer {
+        padding-top: 0.45rem;
+    }
+
+    .projects-v2-more-wrap {
+        display: flex;
+        justify-content: center;
+        padding-top: 1.5rem;
+    }
+
+    .projects-v2-more-wrap:has(.projects-v2-more[hidden]) {
+        display: none;
+    }
+
+    .projects-v2-more {
+        display: inline-flex;
+        min-width: min(100%, 260px);
+        min-height: 52px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.8rem 1rem 0.8rem 1.2rem;
+        color: var(--v2-ink);
+        background: var(--v2-surface);
+        border: 1px solid var(--v2-ink);
+        border-radius: 999px;
+        font-family: var(--v2-font-mono);
+        font-size: 0.76rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .projects-v2-more > span:last-child {
+        display: inline-grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        color: var(--v2-surface);
+        background: var(--v2-ink);
+        border-radius: 50%;
+        font-size: 1rem;
+    }
+
+    .projects-v2-more:focus-visible {
+        outline: 3px solid var(--v2-blue);
+        outline-offset: 3px;
     }
 }

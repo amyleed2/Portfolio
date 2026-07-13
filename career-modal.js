@@ -21,25 +21,25 @@ const careerData = {
                 period: '2025.06 ~ 2025.08',
                 scope: '제네시스 옵션 필터 화면의 구조 분석, SwiftUI 전환과 테스트 코드 작성',
                 decision: '전체 교체 대신 의존성이 낮은 Leaf 화면부터 MVVM·MVI 구조를 비교 적용했습니다.',
-                evidence: 'SwiftUI 화면 · MVVM/MVI 구현안 · UseCase Unit Test',
+                evidence: 'SwiftUI 화면 · MVVM/MVI 구현안 · Swift Testing 기반 테스트 코드',
                 projectId: 'encar-1'
             },
             {
                 title: '운영 코드 중앙화 및 레거시 클리닝',
                 period: '2025.06 ~ 2025.08',
-                scope: 'Crashlytics와 API 요청·응답 로깅의 공통 인터페이스 및 호출 흐름 정리',
-                decision: '화면별 로그 구현을 유지하지 않고 공통 처리 지점에서 오류 맥락을 구성하도록 중앙화했습니다.',
-                evidence: '공통 로깅 인터페이스 · 중복 코드 제거 · 통일된 오류 추적 기준'
+                scope: 'Crashlytics와 API 요청·응답 로깅의 공통 인터페이스, 수집 데이터 규격과 호출 흐름 정리',
+                decision: '개발자와 화면마다 달랐던 로그 파라미터를 공통 규격으로 정의하고, 공통 처리 지점에서 요청·응답과 오류 맥락을 구성하도록 중앙화했습니다.',
+                evidence: '규격화된 로그 파라미터 · 공통 콘솔 출력 · 분석·오류 추적용 데이터 수집 구조'
             },
             {
                 title: 'iOS 디자인 시스템 초기 설계',
                 period: '2025.06 ~ 2025.08',
-                scope: '공통 컴포넌트 적용을 위한 Foundation Token과 Semantic Naming 초기 설계',
-                decision: '원시 값 직접 사용 대신 Font·Color·Radius 토큰과 의미 기반 색상 이름을 분리했습니다.',
-                evidence: 'Foundation Token · Semantic Color · 공통 컴포넌트 확장 기준'
+                scope: '중복 Color·Asset 선언 정리, Foundation Token과 Semantic Naming 및 공통 컴포넌트 구조 설계',
+                decision: '동일한 색상이 화면별 이름과 값으로 중복 선언되지 않도록 Font·Color·Radius를 토큰화하고, 목적과 상태가 드러나는 Semantic Color 규칙을 적용했습니다.',
+                evidence: '토큰 Resource 코드화 · 공통 컴포넌트 확장 구조 · 신규 SwiftUI 화면 모듈 적용 및 배포 반영'
             }
         ],
-        technicalScope: ['Swift', 'UIKit', 'Objective-C', 'SwiftUI', 'MVVM', 'MVI', 'XCTest', 'Crashlytics', 'API Logging', 'Design Token']
+        technicalScope: ['Swift', 'UIKit', 'Objective-C', 'SwiftUI', 'MVVM', 'MVI', 'Swift Testing', 'Crashlytics', 'API Logging', 'Design Token']
     },
     onestore: {
         company: '원스토어',
@@ -56,27 +56,27 @@ const careerData = {
         ],
         responsibilities: [
             { label: 'CONTENT OPERATION', title: 'ONEstory 서비스 운영', description: '기능 개발, 정기 배포, VOC와 OS 업데이트 대응을 수행했습니다.' },
-            { label: 'FEASIBILITY', title: '신규 플랫폼 기술 검토', description: 'Apple DMA와 MarketplaceKit 문서를 검토해 구현 가능성과 제약을 정리했습니다.' },
-            { label: 'ARCHITECTURE', title: '글로벌 앱 마켓 구조 설계', description: '앱 아키텍처, 네트워크 모듈과 JavaScript Interface를 설계했습니다.' },
-            { label: 'PLATFORMIZATION', title: '디자인 시스템 협업 기준', description: '공통 컴포넌트·토큰·Code Connect와 기술 파트 협업 흐름을 정리했습니다.' }
+            { label: 'FEASIBILITY', title: '제3자 앱 마켓 구현 가능성 분석', description: 'Apple DMA·MarketplaceKit 문서를 검토하고 Apple Cork 기술 세션에 참여해 iOS 구현 제약과 기술적 feasibility를 분석했습니다.' },
+            { label: 'ARCHITECTURE', title: '단계별 구현 범위와 구조 결정', description: '분석 결과를 바탕으로 Prototype → Alpha → Beta 검증 순서와 앱 아키텍처, 네트워크, JavaScript Interface 범위를 결정했습니다.' },
+            { label: 'PLATFORMIZATION', title: '디자인 시스템 제품 적용과 전파', description: '공통 Style·컴포넌트를 제품 적용 수준으로 구현하고 토큰 CI/CD와 Code Connect를 연결한 뒤 전사 세미나 3회로 도입 기준을 공유했습니다.' }
         ],
         projects: [
             {
                 title: 'ONEstore Global App Market Prototype',
                 period: '2024.01 ~ 2024.12',
                 role: 'PL',
-                scope: 'iOS 구현 범위 조율, 아키텍처·네트워크·JavaScript Interface 설계',
-                decision: '불확실한 정책과 API 제약을 한 번에 제품화하지 않고 Prototype → Alpha → Beta 단계로 검증했습니다.',
-                evidence: 'Apple Cork 기술 세션 · MarketplaceKit 검토 · 단계별 동작 Prototype',
+                scope: 'iOS 파트 PL로 Apple DMA·MarketplaceKit 기술 feasibility 분석, Apple Cork 기술 세션 참여, 아키텍처·네트워크·JavaScript Interface 설계',
+                decision: '국내에서 직접 개발·출시 검증이 어려운 조건을 고려해 문서와 기술 세션에서 확인한 제약을 리스크로 정리하고, Prototype → Alpha → Beta 단계별 검증 범위와 구현 우선순위를 결정했습니다.',
+                evidence: 'Apple Cork 기술 세션 참여 · MarketplaceKit 기반 feasibility 분석 · 단계별 동작 Prototype과 구현 리스크 문서',
                 projectId: 'onestore-1'
             },
             {
                 title: 'ONEstore Design System',
                 period: '2024.06 ~ 2025.06',
                 role: 'PM',
-                scope: '기술 파트 PM, 컴포넌트 레이어·토큰 기준과 디자인-코드 연결 흐름 설계',
-                decision: '플랫폼별 구현을 단순 통일하지 않고 공통 개념과 플랫폼별 예외를 함께 문서화했습니다.',
-                evidence: 'SPM · Design Token · Style Dictionary · Code Connect · 전사 세미나 3회',
+                scope: '기술 파트 PM으로 공통 Style 규격, 디자인 컴포넌트, 토큰 자동화 CI/CD와 Code Connect 연결 흐름 설계',
+                decision: '플랫폼별 구현을 억지로 통일하지 않고 공통 규격과 예외를 문서화한 뒤, 토큰→코드→컴포넌트→제품 적용이 이어지는 배포 워크플로우를 구축했습니다.',
+                evidence: '제품 적용 가능한 공통 컴포넌트 · 토큰 자동화 CI/CD · Code Connect 코드 스니펫 · 전사 세미나 3회',
                 projectId: 'onestore-2'
             },
             {
@@ -104,38 +104,38 @@ const careerData = {
             { period: '2018.06 ~ 2021.09', title: 'GS Retail 모바일 운영', description: '전사 모바일 앱의 기능 개발, 배포와 장애 대응을 담당했습니다.' }
         ],
         responsibilities: [
-            { label: 'APPLICATION OPERATION', title: '전사 앱 10종 이상 운영', description: 'GS Fresh, GS 수퍼마켓, 달리살다, 나만의 냉장고 등을 운영했습니다.' },
-            { label: 'COORDINATION', title: '사업부별 요구사항 조율', description: '현업자와 기능 범위, 정기·긴급 배포 일정과 장애 영향을 조율했습니다.' },
-            { label: 'STABILITY', title: '플랫폼·운영 이슈 대응', description: 'OS, Deprecated API, VOC, Crash와 외부 SDK 이슈를 대응했습니다.' },
-            { label: 'HANDOVER', title: '외부 개발 결과 인스펙션', description: '프로젝트 투입 개발자의 인수인계와 구현 결과 검수를 수행했습니다.' }
+            { label: 'APPLICATION OPERATION', title: '전사 앱 10종 이상 운영', description: 'GS Fresh, GS 수퍼마켓, 달리살다, 나만의 냉장고 등 GS Retail의 전사 모바일 애플리케이션 총 10종 이상을 운영했습니다.' },
+            { label: 'RELEASE STRATEGY', title: '채널별 배포 전략과 자동화', description: '각 사업부와 채널별 배포 주기·범위를 결정하고 Fastlane 배포 자동화를 구성해 여러 앱의 반복 운영 절차를 관리했습니다.' },
+            { label: 'OPERATION CONTROL', title: 'OS·SDK·VOC·장애 영향 관리', description: 'OS와 Deprecated API 변경, VOC, Crash, 외부 SDK 이슈를 앱별 영향 범위로 분류하고 정기·긴급 배포 계획에 반영했습니다.' },
+            { label: 'DELIVERY INSPECTION', title: '외부 개발 온보딩과 오픈 인스펙션', description: '외부 개발자가 빠르게 참여하도록 시스템 가이드라인을 제공하고, 변경 코드의 운영 사이드 이펙을 검수한 뒤 인스펙션과 프로젝트 오픈까지 확인했습니다.' }
         ],
         projects: [
             {
                 title: 'GS Retail 전사 모바일 앱 운영',
                 period: '2018.06 ~ 2021.09',
-                scope: 'GS Retail 전사 모바일 앱 10종 이상의 기능 개발, 배포와 장애 대응',
-                decision: '사업부별 요구사항과 장애 영향도를 기준으로 정기·긴급 배포 범위를 구분했습니다.',
-                evidence: 'B2C 커머스 · 실시간 QR 결제 · OS/VOC/Crash 대응',
+                scope: 'GS Retail 전사 모바일 앱 10종 이상의 기능 개발, 채널별 배포 운영, 외부 개발 온보딩·인스펙션과 장애 대응',
+                decision: '사업부별 요구사항과 장애 영향도를 기준으로 채널별 배포 주기·범위를 결정하고, Fastlane 자동화와 외부 변경 코드의 사이드 이펙 검수 절차를 운영했습니다.',
+                evidence: '전사 앱 10종 이상 · Fastlane 배포 자동화 · 외부 개발 가이드·인스펙션 · OS/VOC/Crash 대응',
                 projectId: 'gsitm-1'
             },
             {
                 title: 'GS Fresh 차세대 프로젝트',
                 period: '2020.07 ~ 2020.09',
                 role: 'PL',
-                scope: '모바일 파트 PL, Android·iOS 구현 범위와 사용자 시나리오 조율',
-                decision: '플랫폼별 구현 차이를 유지하면서 SSO·WKWebView·API 계약의 공통 기준을 먼저 맞췄습니다.',
-                evidence: '플랫폼별 기술 스펙 · 구현 문서 · 협업 커뮤니케이션',
+                scope: '2개월 내 Android·iOS 총 4종 앱 구축을 위한 모바일 파트 PL, 공통 개발 시나리오와 양 플랫폼 feasibility 검토',
+                decision: '같은 기획서가 플랫폼별로 다르게 구현되지 않도록 사용자·연동 시나리오를 먼저 정의하고, Android·iOS feasibility를 검토해 공통 기술 기준과 JavaScript Interface 규격서를 서버팀에 선제적으로 전달했습니다.',
+                evidence: '2개월 내 Android·iOS 총 4종 앱 오픈 · 공통 개발 시나리오 · 양 플랫폼 feasibility 검토 · JavaScript Interface 규격서',
                 projectId: 'gsitm-1'
             },
             {
                 title: 'GS 계열사 모바일 SI 프로젝트',
                 period: '2017.06 ~ 2018.06',
-                scope: 'GS 계열사 신규 모바일 서비스의 Android·iOS 구축과 운영 조직 이관',
+                scope: 'GS 계열사 신규 모바일 서비스의 Android 앱 구축과 운영 조직 이관',
                 decision: '기획·디자인 요구사항을 플랫폼별 기능과 연동 범위로 분리해 구현했습니다.',
                 evidence: 'API · WebView · 인증/SDK 연동 · 검수 및 운영 이관'
             }
         ],
-        technicalScope: ['Swift', 'Objective-C', 'RxSwift', 'Android', 'Java', 'Kotlin', 'Firebase', 'Crashlytics', 'Moya', 'Alamofire', 'WKWebView']
+        technicalScope: ['Swift', 'Objective-C', 'RxSwift', 'Android', 'Java', 'Kotlin', 'Firebase', 'Crashlytics', 'Moya', 'Alamofire', 'WKWebView', 'Fastlane']
     },
     digitaldime: {
         company: '디지털다임',
@@ -162,7 +162,7 @@ const careerData = {
                 evidence: '위치 기반 탐색 · 소셜 로그인/결제 · 중국 현지 SDK'
             },
             {
-                title: '사내 인트라넷 모바일 앱 구축·운영',
+                title: '사내 인트라넷 모바일 MyD2 앱 구축·운영',
                 period: '2015.07 ~ 2015.09',
                 category: 'INTRANET · SI/SM',
                 scope: 'MyD2 Android 앱의 전체 화면, API·푸시 연동과 출시 이후 운영',
@@ -305,6 +305,14 @@ function openCareerModal(companyId) {
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    const modalContent = modal.querySelector('.modal-content');
+    modal.scrollTop = 0;
+    if (modalContent) modalContent.scrollTop = 0;
+    requestAnimationFrame(() => {
+        modal.scrollTop = 0;
+        if (modalContent) modalContent.scrollTop = 0;
+    });
 }
 
 function openProjectFromCareer(projectId) {
