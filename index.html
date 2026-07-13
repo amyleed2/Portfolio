@@ -522,165 +522,351 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <section class="projects projects-v2" id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-lead">아키텍처 설계, 운영 안정화, 플랫폼화 경험을 중심으로 선별한 대표 프로젝트입니다.</p>
+            <header class="section-heading-v2 projects-v2-heading">
+                <p class="section-heading-v2-label">05 / PROJECTS</p>
+                <div>
+                    <h2>프로젝트 단위로 남긴<br>설계 판단과 실행 결과</h2>
+                    <p class="projects-v2-lead">회사 프로젝트와 개인 프로젝트를 함께 정리했습니다. 각 프로젝트에서 맡은 역할, 해결한 문제, 선택한 기술적 결정을 확인할 수 있습니다.</p>
+                </div>
+            </header>
 
-            <div class="featured-projects-grid">
-                <article class="featured-project-card featured-primary" data-company="onestore" data-project-id="onestore-2" role="button" tabindex="0" onclick="openProjectModal('onestore-2')" onkeydown="handleFeaturedProjectKey(event, 'onestore-2')">
-                    <div class="featured-project-rank">01</div>
-                    <div class="featured-project-bookmarks" aria-label="Project badges">
-                        <span class="featured-project-bookmark">iOS Scope</span>
-                        <span class="featured-project-bookmark">Platform</span>
-                    </div>
-                    <div class="featured-project-media">
-                        <img src="assets/images/designsystem_logo.jpeg" alt="ONEstore Design System">
-                    </div>
-                    <div class="featured-project-content">
-                        <div class="featured-project-meta">
-                            <span>ONEstore</span>
-                            <span>2024.06 ~ 2025.06</span>
-                        </div>
-                        <h3>ONEstore Design System</h3>
-                        <p>iOS 개발 파트 기준으로 디자인 시스템의 구조, 컴포넌트 기준, Figma 연계 흐름을 정리했습니다.</p>
-                        <div class="project-tech">
-                            <span class="tech-badge" data-tech="ios">iOS</span>
-                            <span class="tech-badge" data-tech="swift">iOS Scope</span>
-                            <span class="tech-badge" data-tech="swiftui">SwiftUI</span>
-                            <span class="tech-badge" data-tech="javascript">Code Connect</span>
-                        </div>
-                        <button type="button" class="view-project-btn featured-project-btn" onclick="event.stopPropagation(); openProjectModal('onestore-2')">View Project</button>
-                    </div>
-                </article>
-
-                <article class="featured-project-card" data-company="onestore" data-project-id="onestore-1" role="button" tabindex="0" onclick="openProjectModal('onestore-1')" onkeydown="handleFeaturedProjectKey(event, 'onestore-1')">
-                    <div class="featured-project-rank">02</div>
-                    <div class="featured-project-bookmarks" aria-label="Project badges">
-                        <span class="featured-project-bookmark">iOS Scope</span>
-                        <span class="featured-project-bookmark">Prototype</span>
-                    </div>
-                    <div class="featured-project-media">
-                        <img src="assets/images/onestore_applogo.png" alt="ONEstore Global App Market">
-                    </div>
-                    <div class="featured-project-content">
-                        <div class="featured-project-meta">
-                            <span>ONEstore</span>
-                            <span>2024.01 ~ 2024.12</span>
-                        </div>
-                        <h3>ONEstore Global App Market Prototype</h3>
-                        <p>Apple DMA 대응 기술 검토를 바탕으로 Prototype, Alpha, Beta 단계의 iOS 구현 범위와 리스크를 정리했습니다.</p>
-                        <div class="project-tech">
-                            <span class="tech-badge" data-tech="ios">iOS</span>
-                            <span class="tech-badge" data-tech="swift">iOS Scope</span>
-                            <span class="tech-badge" data-tech="swiftui">SwiftUI</span>
-                            <span class="tech-badge" data-tech="tuist">Architecture</span>
-                        </div>
-                        <button type="button" class="view-project-btn featured-project-btn" onclick="event.stopPropagation(); openProjectModal('onestore-1')">View Project</button>
-                    </div>
-                </article>
-
-                <article class="featured-project-card" data-company="encar" data-project-id="encar-1" role="button" tabindex="0" onclick="openProjectModal('encar-1')" onkeydown="handleFeaturedProjectKey(event, 'encar-1')">
-                    <div class="featured-project-rank">03</div>
-                    <div class="featured-project-bookmarks" aria-label="Project badges">
-                        <span class="featured-project-bookmark bookmark-type">Operation</span>
-                    </div>
-                    <div class="featured-project-media">
-                        <img src="assets/images/encar_applogo.png" alt="Encar iOS App">
-                    </div>
-                    <div class="featured-project-content">
-                        <div class="featured-project-meta">
-                            <span>Encar</span>
-                            <span>2025.06 ~ 2025.08</span>
-                        </div>
-                        <h3>Encar iOS App</h3>
-                        <p>운영 중인 앱에서 UIKit 레거시 화면의 SwiftUI 전환, 광고 모듈 통합, 크래시 로깅 구조 개선을 수행했습니다.</p>
-                        <div class="project-tech">
-                            <span class="tech-badge" data-tech="ios">iOS</span>
-                            <span class="tech-badge" data-tech="swift">Swift</span>
-                            <span class="tech-badge" data-tech="swiftui">SwiftUI</span>
-                            <span class="tech-badge" data-tech="tuist">Stability</span>
-                        </div>
-                        <button type="button" class="view-project-btn featured-project-btn" onclick="event.stopPropagation(); openProjectModal('encar-1')">View Project</button>
-                    </div>
-                </article>
-
-                <article class="featured-project-card" data-company="gsitm" data-project-id="gsitm-1" role="button" tabindex="0" onclick="openProjectModal('gsitm-1')" onkeydown="handleFeaturedProjectKey(event, 'gsitm-1')">
-                    <div class="featured-project-rank">04</div>
-                    <div class="featured-project-bookmarks" aria-label="Project badges">
-                        <span class="featured-project-bookmark">Mobile Scope</span>
-                        <span class="featured-project-bookmark bookmark-type">Operation</span>
-                    </div>
-                    <div class="featured-project-media">
-                        <img src="assets/images/gsfresh.jpeg" alt="GS Retail Mobile App Operation">
-                    </div>
-                    <div class="featured-project-content">
-                        <div class="featured-project-meta">
-                            <span>GS ITM</span>
-                            <span>2018.08 ~ 2021.09</span>
-                        </div>
-                        <h3>GS Retail Mobile App Operation & GS Fresh Renewal</h3>
-                        <p>GS Retail 커머스/멤버십 앱 운영을 담당했고, GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 개발 범위와 구현 방향을 정리했습니다.</p>
-                        <div class="project-tech">
-                            <span class="tech-badge" data-tech="ios">iOS</span>
-                            <span class="tech-badge" data-tech="tuist">Android</span>
-                            <span class="tech-badge" data-tech="swift">Mobile Scope</span>
-                            <span class="tech-badge" data-tech="swift">Operation</span>
-                            <span class="tech-badge" data-tech="swiftui">Stability</span>
-                        </div>
-                        <button type="button" class="view-project-btn featured-project-btn" onclick="event.stopPropagation(); openProjectModal('gsitm-1')">View Project</button>
-                    </div>
-                </article>
+            <div class="projects-v2-filter" role="group" aria-label="프로젝트 유형 필터">
+                <button type="button" class="projects-v2-filter-btn is-active" data-project-filter="all" aria-pressed="true">ALL <span class="projects-v2-filter-count" data-filter-count="all">0</span></button>
+                <button type="button" class="projects-v2-filter-btn" data-project-filter="work" aria-pressed="false">WORK <span class="projects-v2-filter-count" data-filter-count="work">0</span></button>
+                <button type="button" class="projects-v2-filter-btn" data-project-filter="personal" aria-pressed="false">PERSONAL <span class="projects-v2-filter-count" data-filter-count="personal">0</span></button>
             </div>
 
-            <div class="early-career-note">
-                <strong>Early Career Experience</strong>
-                <p>초기 경력에서는 Android 기반 SI/SM 프로젝트를 수행하며 커머스, 브랜드, O2O, 위치 기반 서비스, 외부 SDK 연동 경험을 쌓았습니다. 이 경험은 이후 iOS 앱 개발과 운영 구조를 이해하는 기반이 되었습니다.</p>
-                <div class="early-projects-grid">
-                    <article class="early-project-card">
-                        <div class="early-project-meta">
-                            <span>Android</span>
-                            <span>Overseas</span>
-                            <span>O2O</span>
+            <div class="projects-v2-grid" id="projectsGrid">
+                <article class="project-card-v2 project-card-v2-featured" data-project-type="work" data-project-id="onestore-1" role="button" tabindex="0" onclick="openProjectModal('onestore-1')" onkeydown="handleFeaturedProjectKey(event, 'onestore-1')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/onestore_applogo.png" alt="ONEstore Global App Market">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2024.01 — 2024.12</time>
                         </div>
-                        <h4>CafeUnion</h4>
-                        <p>중국 시장 대상 O2O 커머스 앱입니다. 위치 기반 매장 탐색, 외부 SDK, 소셜 로그인, 결제 연동 경험을 쌓았습니다.</p>
-                        <button type="button" class="early-project-link" onclick="openProjectModal('digitaldime-1')">View Details</button>
-                    </article>
+                        <h3 class="project-card-v2-title">ONEstore Global App Market Prototype</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">PL</span>
+                        </div>
+                        <p class="project-card-v2-summary">Apple DMA 정책에 따른 제3자 앱 마켓의 iOS 구현 가능성과 기술 리스크를 단계별로 검증했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Swift"><img src="assets/images/tech/swift.svg" alt="Swift"></span>
+                            <span class="project-card-v2-tech-icon" title="SwiftUI"><img src="assets/images/tech/swift.svg" alt="SwiftUI"></span>
+                            <span class="project-card-v2-tech-icon" title="Tuist"><img src="assets/images/tech/tuist.jpeg" alt="Tuist"></span>
+                            <span class="project-card-v2-tech-icon" title="Figma"><img src="assets/images/tech/figma.svg" alt="Figma"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Clean Architecture">CA</span>
+                            <span class="project-card-v2-tech-more" title="MarketplaceKit · JavaScript Interface · CryptoSwift">+3</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('onestore-1')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
 
-                    <article class="early-project-card">
-                        <div class="early-project-meta">
-                            <span>Android</span>
-                            <span>Overseas</span>
-                            <span>Hybrid App</span>
+                <article class="project-card-v2 project-card-v2-featured" data-project-type="work" data-project-id="onestore-2" role="button" tabindex="0" onclick="openProjectModal('onestore-2')" onkeydown="handleFeaturedProjectKey(event, 'onestore-2')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/designsystem_logo.jpeg" alt="ONEstore Design System">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2024.06 — 2025.06</time>
                         </div>
-                        <h4>LuxeWater</h4>
-                        <p>중국 마켓 대상 브랜드 앱입니다. WebView 연동, JavaScript Interface, 중국 현지 SDK 연동을 경험했습니다.</p>
-                        <button type="button" class="early-project-link" onclick="openProjectModal('digitaldime-2')">View Details</button>
-                    </article>
+                        <h3 class="project-card-v2-title">ONEstore Design System</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">PM</span>
+                        </div>
+                        <p class="project-card-v2-summary">공통 컴포넌트와 디자인 토큰을 기반으로 디자인-개발 협업 구조와 배포 흐름을 구축했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Swift"><img src="assets/images/tech/swift.svg" alt="Swift"></span>
+                            <span class="project-card-v2-tech-icon" title="SwiftUI"><img src="assets/images/tech/swift.svg" alt="SwiftUI"></span>
+                            <span class="project-card-v2-tech-icon" title="Tuist"><img src="assets/images/tech/tuist.jpeg" alt="Tuist"></span>
+                            <span class="project-card-v2-tech-icon" title="Figma"><img src="assets/images/tech/figma.svg" alt="Figma"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Design Token">DT</span>
+                            <span class="project-card-v2-tech-more" title="Style Dictionary · Lottie">+2</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('onestore-2')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
 
-                    <article class="early-project-card">
-                        <div class="early-project-meta">
-                            <span>Android</span>
-                            <span>Domestic</span>
-                            <span>Commerce</span>
+                <article class="project-card-v2" data-project-type="work" data-project-id="onestore-3" role="button" tabindex="0" onclick="openProjectModal('onestore-3')" onkeydown="handleFeaturedProjectKey(event, 'onestore-3')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/onestory_screenshot.png" alt="ONEstory 콘텐츠 서비스 화면">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2021.09 — 2023.12</time>
                         </div>
-                        <h4>올가홀푸드</h4>
-                        <p>식품/커머스 브랜드 앱입니다. 상품 탐색, WebView 연동, 바코드/QR 인식, 푸시 SDK 연동을 담당했습니다.</p>
-                        <button type="button" class="early-project-link" onclick="openProjectModal('digitaldime-3')">View Details</button>
-                    </article>
+                        <h3 class="project-card-v2-title">ONEstory iOS Application</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">iOS Developer</span>
+                        </div>
+                        <p class="project-card-v2-summary">e-book 콘텐츠 앱을 운영하며 WebView 화면의 Native 전환, 위젯과 iPad UI를 개발했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Swift"><img src="assets/images/tech/swift.svg" alt="Swift"></span>
+                            <span class="project-card-v2-tech-icon" title="SwiftUI"><img src="assets/images/tech/swift.svg" alt="SwiftUI"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="UIKit">UK</span>
+                            <span class="project-card-v2-tech-more" title="Objective-C · WebView · Widget · iPad">+4</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('onestore-3')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
 
-                    <article class="early-project-card">
-                        <div class="early-project-meta">
-                            <span>Android</span>
-                            <span>Domestic</span>
-                            <span>Intranet</span>
+                <article class="project-card-v2" data-project-type="work" data-project-id="encar-1" role="button" tabindex="0" onclick="openProjectModal('encar-1')" onkeydown="handleFeaturedProjectKey(event, 'encar-1')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/encar_applogo.png" alt="Encar iOS App">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2025.06 — 2025.08</time>
                         </div>
-                        <h4>MyD2</h4>
-                        <p>사내 커뮤니케이션 앱입니다. 업무용 앱 화면 구현, API 연동, 푸시 기능 연동 경험을 쌓았습니다.</p>
-                        <button type="button" class="early-project-link" onclick="openProjectModal('digitaldime-4')">View Details</button>
-                    </article>
-                </div>
+                        <h3 class="project-card-v2-title">Encar iOS App</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">iOS Developer</span>
+                        </div>
+                        <p class="project-card-v2-summary">UIKit·Objective-C 레거시 화면을 SwiftUI와 테스트 가능한 상태 구조로 점진적으로 전환했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Objective-C"><img src="assets/images/tech/objective-c.svg" alt="Objective-C"></span>
+                            <span class="project-card-v2-tech-icon" title="Swift"><img src="assets/images/tech/swift.svg" alt="Swift"></span>
+                            <span class="project-card-v2-tech-icon" title="SwiftUI"><img src="assets/images/tech/swift.svg" alt="SwiftUI"></span>
+                            <span class="project-card-v2-tech-icon" title="Cursor"><img src="assets/images/tech/cursor.svg" alt="Cursor"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="MVVM">VM</span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="UIKit">UK</span>
+                            <span class="project-card-v2-tech-more" title="AppsFlyer · Braze · Firebase · Crashlytics · Alamofire · SnapKit · Copilot">+7</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('encar-1')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2" data-project-type="work" data-project-id="gsitm-1" role="button" tabindex="0" onclick="openProjectModal('gsitm-1')" onkeydown="handleFeaturedProjectKey(event, 'gsitm-1')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/gsfresh.jpeg" alt="GS Retail Mobile App Operation">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2018.06 — 2021.09</time>
+                        </div>
+                        <h3 class="project-card-v2-title">GS Retail Operation & GS Fresh Renewal</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">PL</span>
+                        </div>
+                        <p class="project-card-v2-summary">GS Retail 전사 앱 운영과 GS Fresh 차세대 구축에서 안정성 대응과 모바일 범위 조율을 담당했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Swift"><img src="assets/images/tech/swift.svg" alt="Swift"></span>
+                            <span class="project-card-v2-tech-icon" title="Objective-C"><img src="assets/images/tech/objective-c.svg" alt="Objective-C"></span>
+                            <span class="project-card-v2-tech-icon" title="RxSwift"><img src="assets/images/tech/rxswift.svg" alt="RxSwift"></span>
+                            <span class="project-card-v2-tech-icon" title="Jira"><img src="assets/images/tech/jira.svg" alt="Jira"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Android">AND</span>
+                            <span class="project-card-v2-tech-more" title="Firebase · Crashlytics · Alamofire · Moya · Confluence">+5</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('gsitm-1')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2 project-card-v2-early" data-project-type="work" data-project-id="digitaldime-1" role="button" tabindex="0" onclick="openProjectModal('digitaldime-1')" onkeydown="handleFeaturedProjectKey(event, 'digitaldime-1')">
+                    <div class="project-card-v2-early-banner">Early Career · 초기 경력 프로젝트</div>
+                    <div class="project-card-v2-media project-card-v2-media-icon">
+                        <img src="assets/images/cafeunion_applogo.png" alt="CafeUnion 앱 아이콘">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2016.08 — 2017.01</time>
+                        </div>
+                        <h3 class="project-card-v2-title">CafeUnion Android Application</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">Android Developer</span>
+                            <span class="project-card-v2-role">SI</span>
+                        </div>
+                        <p class="project-card-v2-summary">중국 시장 O2O 커머스 앱에서 위치 기반 기능과 현지 로그인·결제 SDK를 연동했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Java"><img src="assets/images/tech/java.svg" alt="Java"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Android">AND</span>
+                            <span class="project-card-v2-tech-more" title="WeChat SDK · QQ SDK · Baidu SDK · Alipay SDK · Picasso · Glide · gson">+7</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('digitaldime-1')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2 project-card-v2-early" data-project-type="work" data-project-id="digitaldime-2" role="button" tabindex="0" onclick="openProjectModal('digitaldime-2')" onkeydown="handleFeaturedProjectKey(event, 'digitaldime-2')">
+                    <div class="project-card-v2-early-banner">Early Career · 초기 경력 프로젝트</div>
+                    <div class="project-card-v2-media project-card-v2-media-icon">
+                        <img src="assets/images/luxewater_applogo.png" alt="LuxeWater 앱 아이콘">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2015.11 — 2015.12</time>
+                        </div>
+                        <h3 class="project-card-v2-title">LuxeWater Android Application</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">Android Developer</span>
+                            <span class="project-card-v2-role">SI</span>
+                        </div>
+                        <p class="project-card-v2-summary">중국 브랜드 하이브리드 앱의 WebView 인터페이스와 현지 외부 SDK 연동을 구현했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Java"><img src="assets/images/tech/java.svg" alt="Java"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Android">AND</span>
+                            <span class="project-card-v2-tech-more" title="Baidu SDK · QQ · Alipay SDK · WeChat SDK">+4</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('digitaldime-2')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2 project-card-v2-early" data-project-type="work" data-project-id="digitaldime-3" role="button" tabindex="0" onclick="openProjectModal('digitaldime-3')" onkeydown="handleFeaturedProjectKey(event, 'digitaldime-3')">
+                    <div class="project-card-v2-early-banner">Early Career · 초기 경력 프로젝트</div>
+                    <div class="project-card-v2-media project-card-v2-media-icon">
+                        <img src="assets/images/orga_applogo.png" alt="올가홀푸드 앱 아이콘">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2016.04 — 2016.05</time>
+                        </div>
+                        <h3 class="project-card-v2-title">올가홀푸드 Android Application</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">Android Developer</span>
+                            <span class="project-card-v2-role">SI</span>
+                        </div>
+                        <p class="project-card-v2-summary">식품 커머스 앱에서 상품 탐색, 바코드·QR과 푸시 기능을 구현했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="Java"><img src="assets/images/tech/java.svg" alt="Java"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Android">AND</span>
+                            <span class="project-card-v2-tech-more" title="FingerPush · ZXing · gson · universal image loader · viewpagerindicator · gms · crashlytics">+7</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('digitaldime-3')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2 project-card-v2-early" data-project-type="work" data-project-id="digitaldime-4" role="button" tabindex="0" onclick="openProjectModal('digitaldime-4')" onkeydown="handleFeaturedProjectKey(event, 'digitaldime-4')">
+                    <div class="project-card-v2-early-banner">Early Career · 초기 경력 프로젝트</div>
+                    <div class="project-card-v2-media project-card-v2-media-icon">
+                        <img src="assets/images/myd2_applogo.png" alt="MyD2 앱 아이콘">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-work">WORK</span>
+                            <time>2015.07 — 2015.09</time>
+                        </div>
+                        <h3 class="project-card-v2-title">사내 인트라넷 Android Application</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">Main Android Developer</span>
+                            <span class="project-card-v2-role">SI/SM</span>
+                        </div>
+                        <p class="project-card-v2-summary">기존 웹 인트라넷을 회의실 예약과 휴가 결재가 가능한 Android 앱으로 구축하고 운영했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Android">AND</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('digitaldime-4')">View Project <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2" data-project-type="personal" data-project-id="side-mindly" role="button" tabindex="0" onclick="openProjectModal('side-mindly')" onkeydown="handleFeaturedProjectKey(event, 'side-mindly')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/side-projects/mindly/main.png" alt="Mindly 메모 목록 화면">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-personal">PERSONAL</span>
+                            <time>2026.05 — 진행 중</time>
+                        </div>
+                        <h3 class="project-card-v2-title">Mindly-iOS</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">기술PL</span>
+                            <span class="project-card-v2-role">iOS Developer</span>
+                        </div>
+                        <p class="project-card-v2-summary">메모·링크 저장과 AI 검색 흐름을 설계하고 Codex 기반 하네스와 검증 절차로 구현했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="SwiftUI"><img src="assets/images/tech/swift.svg" alt="SwiftUI"></span>
+                            <span class="project-card-v2-tech-icon" title="Codex"><img src="assets/images/tech/codex.svg" alt="Codex"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="GRDB">DB</span>
+                            <span class="project-card-v2-tech-more" title="Share Extension">+1</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('side-mindly')">View Project <span aria-hidden="true">↗</span></button>
+                            <a class="project-card-v2-store-link" href="https://apps.apple.com/us/app/mindly-%EB%A7%88%EC%9D%B8%EB%93%A4%EB%A6%AC/id6778290115" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 25.9 4.7 52.6 14.1 80.2 12.6 36.7 58 126.7 105.3 125.2 24.8-.6 42.3-17.6 74.6-17.6 31.4 0 47.6 17.6 75.3 17.6 47.8-.7 88.7-82.5 100.7-119.3-64.1-30.2-59.3-88.5-59.3-90.9zM260.9 88.3c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.3 16.4-67 34.9-17.3 19.8-27.5 44.4-25.3 71.9 25.9 2 49.6-11.4 68.6-35.1z"/></svg><span>App Store</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2" data-project-type="personal" data-project-id="side-note-cleaner" role="button" tabindex="0" onclick="openProjectModal('side-note-cleaner')" onkeydown="handleFeaturedProjectKey(event, 'side-note-cleaner')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/worksheet-cleanup/main.jpg" alt="NoteCleaner 앱 메인 화면">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-personal">PERSONAL</span>
+                            <time>2025.11 — 2026.03</time>
+                        </div>
+                        <h3 class="project-card-v2-title">NoteCleaner</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">iOS Developer</span>
+                        </div>
+                        <p class="project-card-v2-summary">VisionKit과 OpenAI API를 연결해 학습지 판별, 정리와 실패 케이스 방어 흐름을 구현했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="SwiftUI"><img src="assets/images/tech/swift.svg" alt="SwiftUI"></span>
+                            <span class="project-card-v2-tech-icon" title="OpenAI API"><img src="assets/images/tech/chatgpt.png" alt="OpenAI API"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="VisionKit">VK</span>
+                            <span class="project-card-v2-tech-more" title="Structured Response">+1</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('side-note-cleaner')">View Project <span aria-hidden="true">↗</span></button>
+                            <a class="project-card-v2-store-link" href="https://apps.apple.com/kr/app/%ED%95%99%EC%8A%B5%EC%A7%80-%EC%A7%80%EC%9A%B0%EA%B0%9C-note-cleaner/id6757840733" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 25.9 4.7 52.6 14.1 80.2 12.6 36.7 58 126.7 105.3 125.2 24.8-.6 42.3-17.6 74.6-17.6 31.4 0 47.6 17.6 75.3 17.6 47.8-.7 88.7-82.5 100.7-119.3-64.1-30.2-59.3-88.5-59.3-90.9zM260.9 88.3c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.3 16.4-67 34.9-17.3 19.8-27.5 44.4-25.3 71.9 25.9 2 49.6-11.4 68.6-35.1z"/></svg><span>App Store</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card-v2" data-project-type="personal" data-project-id="side-focusboard" role="button" tabindex="0" onclick="openProjectModal('side-focusboard')" onkeydown="handleFeaturedProjectKey(event, 'side-focusboard')">
+                    <div class="project-card-v2-media">
+                        <img src="assets/images/side-projects/focusboard-main.png" alt="FocusBoard 캘린더와 집중 기록 화면">
+                    </div>
+                    <div class="project-card-v2-body">
+                        <div class="project-card-v2-meta">
+                            <span class="project-card-v2-type project-card-v2-type-personal">PERSONAL</span>
+                            <time>macOS App</time>
+                        </div>
+                        <h3 class="project-card-v2-title">FocusBoard</h3>
+                        <div class="project-card-v2-roles">
+                            <span class="project-card-v2-role">기획</span>
+                            <span class="project-card-v2-role">디자인</span>
+                            <span class="project-card-v2-role">macOS Developer</span>
+                        </div>
+                        <p class="project-card-v2-summary">집중 기록과 일정 관리를 결합한 macOS 제품을 기획·설계하고 App Store에 출시했습니다.</p>
+                        <div class="project-card-v2-tech" aria-label="사용 기술">
+                            <span class="project-card-v2-tech-icon" title="SwiftUI"><img src="assets/images/tech/swift.svg" alt="SwiftUI"></span>
+                            <span class="project-card-v2-tech-icon" title="Codex"><img src="assets/images/tech/codex.svg" alt="Codex"></span>
+                            <span class="project-card-v2-tech-icon project-card-v2-tech-icon-mono" title="Widget">WD</span>
+                            <span class="project-card-v2-tech-more" title="JSON Persistence">+1</span>
+                        </div>
+                        <div class="project-card-v2-footer">
+                            <button type="button" class="project-card-v2-cta" onclick="event.stopPropagation(); openProjectModal('side-focusboard')">View Project <span aria-hidden="true">↗</span></button>
+                            <a class="project-card-v2-store-link" href="https://apps.apple.com/kr/app/focusboard/id6765804921" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 25.9 4.7 52.6 14.1 80.2 12.6 36.7 58 126.7 105.3 125.2 24.8-.6 42.3-17.6 74.6-17.6 31.4 0 47.6 17.6 75.3 17.6 47.8-.7 88.7-82.5 100.7-119.3-64.1-30.2-59.3-88.5-59.3-90.9zM260.9 88.3c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.3 16.4-67 34.9-17.3 19.8-27.5 44.4-25.3 71.9 25.9 2 49.6-11.4 68.6-35.1z"/></svg><span>App Store</span></a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -763,105 +949,6 @@
         </div>
     </section>
 
-    <!-- Side Projects Section -->
-    <section class="side-projects" id="side-projects">
-        <div class="container">
-            <div class="side-projects-header">
-                <span class="side-projects-kicker">Product Thinking & Technical Experiment</span>
-                <h2 class="section-title">Side Projects</h2>
-                <p class="section-lead">실무 프로젝트와 별개로, 문제 정의부터 화면 흐름, 기술 구조, 실패 케이스까지 직접 검토하며 제품 사고와 iOS 기술 실험을 이어가고 있습니다.</p>
-            </div>
-
-            <div class="side-project-grid">
-                <article class="side-project-card-ui" data-project-id="side-note-cleaner" role="button" tabindex="0" onclick="openProjectModal('side-note-cleaner')" onkeydown="handleFeaturedProjectKey(event, 'side-note-cleaner')">
-                    <div class="side-project-card-media">
-                        <img src="assets/images/worksheet-cleanup/main.jpg" alt="Worksheet Cleanup 앱 메인 화면">
-                    </div>
-                    <div class="side-project-card-content">
-                        <div class="side-project-status-row">
-                            <span class="side-project-status">App Store Released</span>
-                            <span class="side-project-type">Personal Project</span>
-                        </div>
-                        <div class="featured-project-meta">
-                            <span>2025.11 ~ 2026.03</span>
-                            <span>Dev 2026.01 ~ 2026.02</span>
-                            <span>iOS 1 / Android 1 / PM 2 / Designer 1</span>
-                        </div>
-                        <h3>Worksheet Cleanup / OCR App</h3>
-                        <p>VisionKit과 OpenAI API를 활용해 영어 학습지 이미지를 분석하고, 프롬프트·응답 DTO·ACCEPT / REJECT 기반 triage 로직을 직접 설계한 App Store 출시 개인 프로젝트입니다.</p>
-                        <div class="side-project-meta">
-                            <span>SwiftUI</span>
-                            <span>VisionKit</span>
-                            <span>OpenAI API</span>
-                            <span>Structured Response</span>
-                        </div>
-                        <div class="side-project-actions">
-                            <button type="button" class="view-project-btn side-project-detail-btn" onclick="event.stopPropagation(); openProjectModal('side-note-cleaner')">View Details</button>
-                            <a class="side-project-cta side-project-store-link" href="https://apps.apple.com/kr/app/%ED%95%99%EC%8A%B5%EC%A7%80-%EC%A7%80%EC%9A%B0%EA%B0%9C-note-cleaner/id6757840733" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">App Store에서 보기</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="side-project-card-ui" data-project-id="side-mindly" role="button" tabindex="0" onclick="openProjectModal('side-mindly')" onkeydown="handleFeaturedProjectKey(event, 'side-mindly')">
-                    <div class="side-project-card-media side-project-card-appicon">
-                        <img src="assets/images/side-projects/mindly-appicon.png" alt="Mindly-iOS 앱 아이콘">
-                    </div>
-                    <div class="side-project-card-content">
-                        <div class="side-project-status-row">
-                            <span class="side-project-status side-project-status-muted">AI Tool Workflow</span>
-                            <span class="side-project-type">Side Project</span>
-                        </div>
-                        <div class="featured-project-meta">
-                            <span>2026.05 ~ 진행 중</span>
-                            <span>SwiftUI</span>
-                            <span>iOS 1 / Android 1 / Planner 1</span>
-                        </div>
-                        <h3>Mindly-iOS</h3>
-                        <p>저장한 링크와 메모를 AI 태그와 로컬 검색 인덱스로 정리해 다시 찾을 수 있게 만든 iOS 키워드 메모 앱입니다. AGENTS.md와 skill 기반 Codex workflow로 단계별 구현과 검증을 진행했습니다.</p>
-                        <div class="side-project-meta">
-                            <span>SwiftUI</span>
-                            <span>GRDB</span>
-                            <span>Share Extension</span>
-                            <span>AI Search</span>
-                        </div>
-                        <div class="side-project-actions">
-                            <button type="button" class="view-project-btn side-project-detail-btn" onclick="event.stopPropagation(); openProjectModal('side-mindly')">View Details</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="side-project-card-ui" data-project-id="side-focusboard" role="button" tabindex="0" onclick="openProjectModal('side-focusboard')" onkeydown="handleFeaturedProjectKey(event, 'side-focusboard')">
-                    <div class="side-project-card-media side-project-card-appicon side-project-card-appicon-green">
-                        <img src="assets/images/side-projects/focusboard-appicon.png" alt="FocusBoard 앱 아이콘">
-                    </div>
-                    <div class="side-project-card-content">
-                        <div class="side-project-status-row">
-                            <span class="side-project-status">App Store Released</span>
-                            <span class="side-project-type">Side Project</span>
-                        </div>
-                        <div class="featured-project-meta">
-                            <span>SwiftUI App</span>
-                            <span>macOS</span>
-                            <span>Codex Workflow</span>
-                        </div>
-                        <h3>FocusBoard</h3>
-                        <p>출석, 집중 타이머, Todo, 통계, 메뉴바, 위젯을 포함한 macOS 생산성 앱입니다. AGENTS.md, Codex agent, skill을 활용해 기능을 kickoff → 단계별 구현 → 검증 흐름으로 구축했습니다.</p>
-                        <div class="side-project-meta">
-                            <span>SwiftUI</span>
-                            <span>Widget</span>
-                            <span>JSON Persistence</span>
-                            <span>Codex</span>
-                        </div>
-                        <div class="side-project-actions">
-                            <button type="button" class="view-project-btn side-project-detail-btn" onclick="event.stopPropagation(); openProjectModal('side-focusboard')">View Details</button>
-                            <a class="side-project-cta side-project-store-link" href="https://apps.apple.com/kr/app/focusboard/id6765804921" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">App Store에서 보기</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <!-- 프로젝트 상세 모달 -->
     <div class="project-modal" id="projectModal">
         <div class="modal-content">
@@ -871,22 +958,28 @@
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
-            <div class="modal-header">
+            <div class="modal-header project-modal-v2-header">
+                <span class="project-modal-v2-kicker">PROJECT DETAIL</span>
+                <p class="project-modal-company" id="modalCompany">Company</p>
                 <h2 id="modalTitle">프로젝트 제목</h2>
                 <p class="project-period" id="modalPeriod">기간</p>
             </div>
             <div class="modal-body">
-                <div class="modal-section">
-                    <h3>프로젝트 개요</h3>
+                <div class="modal-section project-modal-v2-overview">
+                    <h3>Overview</h3>
                     <p id="modalDescription">프로젝트 설명이 여기에 표시됩니다.</p>
                 </div>
-                <div class="modal-section">
-                    <h3>사용 기술</h3>
+                <div class="modal-section project-modal-v2-team-role">
+                    <h3>Team &amp; Responsibility</h3>
+                    <div class="project-team-role" id="modalTeamRole"></div>
+                </div>
+                <div class="modal-section project-modal-v2-tech">
+                    <h3>Technical Scope</h3>
                     <div class="project-tech" id="modalTech"></div>
                 </div>
-                <div class="modal-section">
-                    <h3>상세 업무 설명</h3>
-                    <p id="modalFeatures">주요 기능이 여기에 표시됩니다.</p>
+                <div class="modal-section project-modal-v2-details">
+                    <h3>Project Story</h3>
+                    <div id="modalFeatures">주요 기능이 여기에 표시됩니다.</div>
                 </div>
             </div>
         </div>
@@ -912,27 +1005,33 @@
     </div>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact contact-v2" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Let's work together</h3>
-                    <p>새로운 프로젝트나 협업 기회에 대해 이야기 나누고 싶으시다면 언제든 연락주세요.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <span>amy.lee.d2@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                            </svg>
-                            <span>+82 10-6345-4342</span>
-                        </div>
-                    </div>
+            <header class="contact-v2-heading">
+                <p class="contact-v2-label">07 / CONTACT</p>
+                <h2>함께 해결할 iOS의 다음 문제를<br>이야기하고 싶습니다.</h2>
+            </header>
+            <div class="contact-v2-panel">
+                <div class="contact-v2-copy">
+                    <p class="contact-v2-kicker">AVAILABLE FOR CONVERSATION</p>
+                    <p>운영 중인 앱의 구조 개선, SwiftUI 전환, 디자인 시스템과 플랫폼화 경험이 필요한 팀이라면 편하게 연락해 주세요.</p>
+                </div>
+                <div class="contact-v2-actions" aria-label="연락 방법">
+                    <a class="contact-v2-action contact-v2-action-primary" href="mailto:amy.lee.d2@gmail.com">
+                        <span>EMAIL</span>
+                        <strong>amy.lee.d2@gmail.com</strong>
+                        <span aria-hidden="true">&#8599;</span>
+                    </a>
+                    <a class="contact-v2-action" href="tel:+821063454342">
+                        <span>PHONE</span>
+                        <strong>+82 10-6345-4342</strong>
+                        <span aria-hidden="true">&#8599;</span>
+                    </a>
+                    <a class="contact-v2-action" href="portfolio-pdf-compact.html" target="_blank" rel="noopener noreferrer">
+                        <span>PORTFOLIO PDF</span>
+                        <strong>인쇄용 포트폴리오 보기</strong>
+                        <span aria-hidden="true">&#8599;</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -941,7 +1040,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Portfolio. All rights reserved.</p>
+            <p>&copy; 2026 Lee Jieun. All rights reserved.</p>
             <div class="social-links">
                 <!-- GitHub 아이콘 (주석처리)
                 <a href="#" class="social-link">
@@ -962,28 +1061,42 @@
     </footer>
 
     <!-- 이미지 뷰어 모달 -->
-    <div id="imageViewerModal" class="image-viewer-modal">
-        <button class="image-viewer-close" onclick="closeImageViewer()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-        <button class="image-viewer-prev" onclick="prevImage()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-        </button>
-        <button class="image-viewer-next" onclick="nextImage()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-        <div class="image-viewer-content">
-            <img id="viewerImage" src="" alt="Screenshot">
-            <div class="image-viewer-counter">
-                <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+    <div id="imageViewerModal" class="image-viewer-modal" role="dialog" aria-modal="true" aria-label="프로젝트 이미지 상세 보기">
+        <div class="image-viewer-shell">
+            <header class="image-viewer-header">
+                <p>VISUAL EVIDENCE</p>
+                <div class="image-viewer-counter" aria-live="polite">
+                    <span id="currentImageIndex">01</span>
+                    <span aria-hidden="true">/</span>
+                    <span id="totalImages">01</span>
+                </div>
+                <button class="image-viewer-close" type="button" onclick="closeImageViewer()" aria-label="이미지 상세 보기 닫기">
+                    <span>CLOSE</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+            <div class="image-viewer-stage">
+                <button class="image-viewer-prev" type="button" onclick="prevImage()" aria-label="이전 이미지">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>PREV</span>
+                </button>
+                <figure class="image-viewer-content">
+                    <img id="viewerImage" src="" alt="프로젝트 이미지">
+                    <figcaption id="viewerCaption">프로젝트 이미지</figcaption>
+                </figure>
+                <button class="image-viewer-next" type="button" onclick="nextImage()" aria-label="다음 이미지">
+                    <span>NEXT</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
+            <p class="image-viewer-hint">이미지를 클릭해 프로젝트의 구조와 구현 결과를 확인할 수 있습니다. <span>ESC · ← →</span></p>
         </div>
     </div>
 

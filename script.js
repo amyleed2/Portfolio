@@ -79,6 +79,7 @@ projectCards.forEach((card, index) => {
 
 // Keyboard support for Featured Projects cards that use inline modal triggers.
 function handleFeaturedProjectKey(event, projectId) {
+    if (event.target.closest('button, a')) return;
     if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         openProjectModal(projectId);
@@ -373,6 +374,41 @@ if (techSkillTabs.length && techSkillCards.length) {
     selectTechCategory('ios-development');
     const initialSwiftUICard = document.querySelector('[data-tech-card][data-name="SwiftUI"]');
     selectTechSkill(initialSwiftUICard);
+}
+
+// Projects section ALL / WORK / PERSONAL filter.
+const projectFilterButtons = document.querySelectorAll('[data-project-filter]');
+const projectCardsV2 = document.querySelectorAll('.project-card-v2[data-project-type]');
+const projectFilterCounts = document.querySelectorAll('[data-filter-count]');
+
+function updateProjectFilterCounts() {
+    const counts = { all: projectCardsV2.length, work: 0, personal: 0 };
+    projectCardsV2.forEach(card => {
+        counts[card.dataset.projectType] = (counts[card.dataset.projectType] || 0) + 1;
+    });
+    projectFilterCounts.forEach(el => {
+        el.textContent = counts[el.dataset.filterCount] || 0;
+    });
+}
+
+function selectProjectFilter(filter) {
+    projectFilterButtons.forEach(button => {
+        const isSelected = button.dataset.projectFilter === filter;
+        button.classList.toggle('is-active', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+    });
+
+    projectCardsV2.forEach(card => {
+        const isVisible = filter === 'all' || card.dataset.projectType === filter;
+        card.hidden = !isVisible;
+    });
+}
+
+if (projectFilterButtons.length && projectCardsV2.length) {
+    updateProjectFilterCounts();
+    projectFilterButtons.forEach(button => {
+        button.addEventListener('click', () => selectProjectFilter(button.dataset.projectFilter));
+    });
 }
 
 // AI workflow step navigation.

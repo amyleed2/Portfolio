@@ -138,6 +138,9 @@ const projectData = {
                 <li>문서 체계, DesignSystem, SwiftUI 화면, GRDB 저장/검색 구조, AI 태그 생성/검색 흐름, Share Extension까지 iOS 앱 구조를 단계적으로 구성했습니다.</li>
                 <li>AI 도구를 활용하되 최종 설계 판단과 품질 검증은 직접 수행하는 개발 워크플로우 사례로 정리할 수 있습니다.</li>
             </ul>
+
+            <p><strong>App Store</strong></p>
+            <p><a class="side-project-cta modal-store-link" href="https://apps.apple.com/us/app/mindly-%EB%A7%88%EC%9D%B8%EB%93%A4%EB%A6%AC/id6778290115" target="_blank" rel="noopener noreferrer">App Store에서 보기</a></p>
         `
     },
 
@@ -826,6 +829,196 @@ const projectData = {
     }
 };
 
+// 모든 프로젝트 상세 화면은 동일한 PAAR 구조를 사용한다.
+// 수치는 기존 경력 자료에서 확인할 수 있는 기간, 인원, 앱·단계·산출물 수만 사용한다.
+const projectPaarData = {
+    'onestore-1': {
+        overview: 'Apple DMA 정책 변화에 대응해 ONEstore 글로벌 대체 앱 마켓의 iOS 구현 가능성을 검증한 프로젝트입니다.',
+        problem: ['국내에서 직접 개발·출시하기 어려운 제3자 앱 마켓을 Apple 문서와 제한된 개발 환경만으로 검토해야 했습니다.', 'MarketplaceKit 정책, entitlement, Hosted App 설치·업데이트 흐름이 사업 검토와 투자 판단에 연결되는 과제였습니다.'],
+        analyze: ['Apple Developer Documentation과 Apple Cork 기술 세션 내용을 기준으로 정책 제약과 구현 가능 범위를 분리했습니다.', '처음부터 제품화하지 않고 Prototype → Alpha → Beta 3단계로 검증해 불확실한 API와 사업 요구가 구조 전체로 번지는 위험을 관리했습니다.'],
+        action: ['iOS 파트 PL로 앱 아키텍처, 네트워크 모듈, JavaScript Interface와 MarketplaceKit 연결 범위를 설계했습니다.', '약 2주간 Apple Cork 기술 세션에 iOS 대표로 참석해 구현 제약을 확인하고 단계별 기능·리스크 문서에 반영했습니다.'],
+        result: ['Prototype·Alpha·Beta 3단계의 동작 앱과 iOS 구현 범위 문서를 산출했습니다.', '정책 문서, Apple 기술 세션, 단계별 실행 결과를 근거로 제3자 앱 마켓의 가능 범위와 남은 위험을 구분했습니다.'],
+        metrics: ['3단계 검증', 'Apple Cork 약 2주', 'iOS PL'],
+        additionalSections: [{
+            eyebrow: 'SPECIAL EXPERIENCE',
+            title: 'Apple Cork Technical Lab',
+            summary: '국내에서 재현하기 어려운 제3자 앱 마켓 환경과 MarketplaceKit 제약을 Apple 엔지니어와 직접 확인하기 위해 아일랜드 Cork 지사로 기술 출장을 다녀왔습니다.',
+            items: [
+                '2024.04.08~04.20 동안 기획 PM, 개발 PM, iOS, Backend 각 1명으로 구성된 4명의 기술 세션 참가자 중 iOS 대표로 참석했습니다.',
+                'Developer Documentation만으로 확정하기 어려웠던 entitlement, 설치·업데이트 흐름과 API 제약을 실제 Prototype으로 검증했습니다.',
+                '세션에서 확인한 정책·기술 답변을 귀국 후 iOS 구현 범위, 리스크 목록과 Prototype → Alpha → Beta 계획에 반영했습니다.'
+            ],
+            metrics: ['출장 2024.04.08~20', '참가 4명', 'iOS 대표']
+        }]
+    },
+    'onestore-2': {
+        overview: 'ONEstore 최초의 디자인 시스템을 공통 UI 코드, 디자인 토큰, Figma 자산과 배포 흐름으로 연결한 프로젝트입니다.',
+        problem: ['iOS·Android·Web과 디자인 조직이 같은 컴포넌트를 서로 다른 레이어와 명칭으로 정의해 반복 구현과 협업 비용이 발생했습니다.', 'Top Navigation Bar처럼 플랫폼별 동작이 다른 컴포넌트도 하나의 공통 개념과 예외 기준으로 설명할 방법이 필요했습니다.'],
+        analyze: ['모든 플랫폼 구현을 억지로 같게 만드는 대신 공통 개념, 플랫폼별 예외, 토큰과 컴포넌트 레이어를 분리했습니다.', '바이위클리 회의에서 회의록, 컴포넌트 정의서, 레이어·토큰 기준표를 검토 자료로 사용했습니다.'],
+        action: ['기술 파트 PM으로 iOS·Android·Web·디자인·기획 의견을 조율하고 비개발자도 판단할 수 있는 문서로 기술 제약을 설명했습니다.', 'SPM, Style Dictionary, Figma Code Connect를 연결하고 C레벨 보고 2회와 전사 공유 1회를 준비했습니다.'],
+        result: ['공통 컴포넌트, 디자인 토큰, SPM 배포, Code Connect와 자동화 흐름을 산출물로 정리했습니다.', '총 3회의 세미나를 통해 도입 이유, 사용 방법, 기존 업무 대비 변경점을 조직에 공유했습니다.'],
+        metrics: ['세미나 3회', 'SPM 배포', 'Code Connect']
+    },
+    'onestore-3': {
+        overview: '웹툰·웹소설·전자책·오디오북을 제공하는 ONEstory iOS 앱의 기능 개발과 운영을 담당한 프로젝트입니다.',
+        problem: ['콘텐츠 탐색·구매·보관·열람 흐름을 유지하면서 OS 변경, VOC, SDK 업데이트와 정기 배포를 함께 처리해야 했습니다.', '일부 WebView 화면을 Native로 전환하면서 기존 서비스 계약과 사용자 흐름을 유지해야 했습니다.'],
+        analyze: ['기존 UIKit·Objective-C·WebView 구조와 서버 연동 지점을 먼저 확인하고 Native 전환 범위를 화면 단위로 분리했습니다.', 'iPhone·iPad·Widget·오프라인 콘텐츠 사용 환경별로 상태와 화면 차이를 검수했습니다.'],
+        action: ['정기 배포, VOC와 OS 대응을 수행하고 WebView 화면 Native 전환, 위젯, iPad UI, SDK 연동 기능을 구현했습니다.', '콘텐츠 다운로드와 최근 본 작품 진입 등 열람 전후의 사용자 흐름을 기준으로 변경 영향을 확인했습니다.'],
+        result: ['2021.09~2023.12 동안 ONEstory iOS 운영과 기능 개발을 이어갔습니다.', 'Native 전환 화면, iPad 대응 UI, 최근 본 작품 위젯과 운영 배포 산출물을 남겼습니다.'],
+        metrics: ['운영 2년 이상', 'iPhone·iPad 대응', 'Widget 구현']
+    },
+    'encar-1': {
+        overview: '아키텍처가 적용되지 않은 UIKit·Objective-C 기반 운영 앱에 SwiftUI와 테스트 가능한 상태 구조를 도입한 개선 프로젝트입니다.',
+        problem: ['차량 옵션 필터 화면의 UI와 상태 변경이 결합돼 신규 요구사항 반영과 단위 테스트가 어려웠습니다.', '광고 SDK, Crashlytics, API 로그가 여러 위치에 분산돼 운영 이슈의 진입점과 영향 범위를 추적하기 어려웠습니다.'],
+        analyze: ['전체 앱을 한 번에 바꾸지 않고 의존성이 낮은 leaf 화면을 시작점으로 선정했습니다.', '동일 화면을 MVVM과 MVI 2개 구조로 비교해 입력·상태·출력 흐름과 테스트 가능성을 검토했습니다.'],
+        action: ['옵션 필터 화면을 SwiftUI로 재구현하고 UseCase 테스트와 기존 오류 수정을 함께 진행했습니다.', '광고 모듈 진입점, Crashlytics, API 요청·응답 로깅을 중앙화하고 Font·Color·Radius 토큰과 Semantic Color를 정의했습니다.'],
+        result: ['SwiftUI 전환 화면 1개와 MVVM·MVI 2개 설계 버전, UseCase 테스트를 산출했습니다.', '로깅과 광고 모듈 관리 지점을 중앙화하고 디자인 토큰 3개 범주의 초기 기준을 만들었습니다.'],
+        metrics: ['SwiftUI 화면 1개', '설계안 2종', '토큰 3범주']
+    },
+    'gsitm-1': {
+        overview: 'GS Retail 전사 모바일 앱 운영과 GS Fresh 차세대 커머스 앱 구축을 함께 수행한 프로젝트입니다.',
+        problem: ['10종 이상의 앱에서 사업부별 기능 요청, VOC, OS·Deprecated API, Crash와 정기·긴급 배포를 동시에 관리해야 했습니다.', 'GS Fresh 차세대 구축에서는 Android와 iOS의 사용자 시나리오, SSO, 환경, SDK 연동 기준을 오픈 전에 맞춰야 했습니다.'],
+        analyze: ['운영 이슈는 사용자 영향도와 배포 긴급도를 기준으로 분류하고 앱별 OS·API 영향 범위를 먼저 확인했습니다.', '차세대 프로젝트는 공통 사용자 흐름과 플랫폼별 구현 차이를 분리해 문서화하고 One-Source Multi Application의 환경·SSO 위험을 검토했습니다.'],
+        action: ['GS Fresh, GS수퍼마켓, 달리살다, 나만의 냉장고 등 10종 이상 앱의 기능 개발과 월 2회 정기 배포, 긴급 대응을 수행했습니다.', '모바일 파트 PL로 Android·iOS 범위, 사용자 시나리오, SSO와 WebView·API·외부 SDK 연동 문서를 조율했습니다.'],
+        result: ['10종 이상 운영 앱의 배포·VOC·OS·Crash 대응 흐름을 유지했습니다.', 'GS Fresh 차세대 앱의 플랫폼별 구현 범위와 오픈 전 확인 기준을 모바일 산출물로 정리했습니다.'],
+        metrics: ['운영 앱 10종+', '정기 배포 월 2회', 'Mobile PL']
+    },
+    'gsitm-2': {
+        overview: 'GS Retail 멤버십 앱 4종의 기능 개발과 운영을 담당한 경험입니다.',
+        problem: ['통합 멤버십·쿠폰·결제 기능을 제공하는 앱에서 채널별 요구사항과 운영 일정을 함께 관리해야 했습니다.', 'OS와 SDK 변경, VOC와 Crash를 정기 배포 흐름 안에서 지속적으로 처리해야 했습니다.'],
+        analyze: ['사용자 영향도와 장애 가능성을 기준으로 정기 배포와 긴급 대응 항목을 분리했습니다.', '앱별 공통 코드와 채널별 예외 범위를 확인한 뒤 변경 대상을 선정했습니다.'],
+        action: ['THE POP, GS수퍼마켓, 나만의 냉장고, 우리동네 딜리버리의 기능 개발과 운영 대응을 수행했습니다.', 'OS·Deprecated API·Crash Report를 점검하고 외부 프로젝트 개발 결과를 운영 관점에서 검수했습니다.'],
+        result: ['멤버십 앱 4종의 기능 개발, VOC와 OS 대응, 정기·긴급 배포 업무를 수행했습니다.', '월 2회 정기 배포를 기준으로 운영 변경과 검수 항목을 관리했습니다.'],
+        metrics: ['앱 4종', '정기 배포 월 2회', 'iOS·Android']
+    },
+    'digitaldime-1': {
+        overview: '중국 시장을 대상으로 주문·결제·매장 탐색을 제공한 O2O 커머스 Android 앱입니다.',
+        problem: ['국내 서비스와 다른 중국의 로그인, 지도, 결제 생태계를 Android 앱 안에서 하나의 주문 흐름으로 연결해야 했습니다.', '여러 외부 SDK의 생명주기와 오류를 함께 다뤄야 했습니다.'],
+        analyze: ['기능을 로그인·위치·주문·결제로 나누고 각 현지 SDK의 연동 지점과 실패 상태를 검토했습니다.', 'Native 화면과 서버 API, 외부 SDK의 책임을 분리해 구현 범위를 정했습니다.'],
+        action: ['Java 기반 Android 화면과 API 연동을 구현하고 WeChat·QQ·Baidu·Alipay SDK를 연결했습니다.', '기획·디자인·서버 개발자와 화면 상태와 플랫폼별 예외 조건을 조율했습니다.'],
+        result: ['2016.08~2017.01 동안 중국 시장용 Android 앱 1종을 개발했습니다.', '로그인·지도·결제에 필요한 중국 현지 SDK 4종의 연동 결과물을 구현했습니다.'],
+        metrics: ['Android 앱 1종', '현지 SDK 4종', '개발 6개월']
+    },
+    'digitaldime-2': {
+        overview: '중국 시장의 생수 주문 서비스를 모바일로 제공하기 위해 구축한 LuxeWater Android 앱입니다.',
+        problem: ['짧은 구축 기간 안에 브랜드 콘텐츠와 주문 WebView, 중국 현지 서비스 SDK를 Android 앱으로 연결해야 했습니다.', 'WebView와 Native SDK 사이의 상태 전달 및 플랫폼별 예외를 정의해야 했습니다.'],
+        analyze: ['콘텐츠·주문은 WebView, 로그인·결제 등 플랫폼 기능은 Native SDK가 담당하도록 경계를 검토했습니다.', 'JavaScript Interface의 호출 범위와 외부 SDK 실패 시 사용자 흐름을 구현 전에 정리했습니다.'],
+        action: ['Android WebView와 JavaScript Interface를 구현하고 중국 현지 로그인·결제 SDK를 연동했습니다.', '기획·디자인·서버 담당자와 화면 전환, API와 SDK 연결 조건을 맞췄습니다.'],
+        result: ['2015.11~12의 2개월 동안 중국 시장용 Android 앱 1종을 구축했습니다.', 'WebView 서비스와 Native 외부 SDK가 연결되는 하이브리드 앱 구조를 산출했습니다.'],
+        metrics: ['Android 앱 1종', '개발 2개월', '중국 시장']
+    },
+    'digitaldime-3': {
+        overview: '올가홀푸드 웹 서비스를 모바일 채널로 확장하기 위해 구축한 Android 커머스 앱입니다.',
+        problem: ['기존 웹 상품 탐색과 구매 흐름을 모바일 환경에 맞게 연결하면서 앱 전용 기능과 운영 대응을 추가해야 했습니다.', 'WebView, 바코드·QR, 푸시와 외부 SDK가 한 사용자 흐름에서 동작해야 했습니다.'],
+        analyze: ['웹에서 유지할 기능과 Android Native로 제공할 기능을 분리하고 브리지 호출과 오류 경계를 검토했습니다.', '상품 탐색·구매 과정에서 필요한 앱 권한과 SDK 연동 지점을 기준으로 구현 순서를 정했습니다.'],
+        action: ['Android 앱 화면, WebView 연동, 바코드·QR 인식, 푸시와 외부 SDK 연결을 구현했습니다.', '웹·서버·기획·디자인 담당자와 앱 진입 경로와 예외 상태를 조율했습니다.'],
+        result: ['2016.04~05의 2개월 동안 올가홀푸드 Android 앱 1종을 구축했습니다.', '기존 웹 커머스와 Native 기능을 연결하는 모바일 채널을 산출했습니다.'],
+        metrics: ['Android 앱 1종', '개발 2개월', 'Web·Native 연동']
+    },
+    'digitaldime-4': {
+        overview: '웹으로만 제공되던 사내 인트라넷을 임직원용 Android 앱으로 확장한 프로젝트입니다.',
+        problem: ['회의실 예약, 휴가 결재와 사내 소통 기능을 모바일에서 사용할 수 있도록 기존 인트라넷과 연결해야 했습니다.', '업무 데이터와 알림을 다루므로 로그인·API·푸시의 안정적인 연결이 필요했습니다.'],
+        analyze: ['웹 인트라넷 기능을 모바일 사용 빈도와 중요도에 따라 나누고 Native 화면과 API 범위를 정했습니다.', '로그인 상태, 결재·예약 결과, 푸시 진입 흐름을 사용자 시나리오별로 검토했습니다.'],
+        action: ['메인 Android 개발자로 화면, API, 로그인, 예약·결재와 푸시 기능을 구현하고 출시 후 운영을 담당했습니다.', '기획·디자인·서버 담당자와 요구사항부터 배포까지 전체 개발 흐름을 조율했습니다.'],
+        result: ['2015.07~09의 3개월 동안 임직원용 Android 앱 1종을 메인 개발자로 구축했습니다.', '웹 인트라넷의 회의실 예약과 휴가 결재를 모바일에서 수행할 수 있는 결과물을 배포·운영했습니다.'],
+        metrics: ['Android 앱 1종', '개발 3개월', '메인 개발']
+    },
+    'side-note-cleaner': {
+        overview: 'VisionKit과 OpenAI API를 연결해 영어 학습지 이미지의 처리 가능 여부를 판별하고 필기를 정리하는 iOS 앱입니다.',
+        problem: ['모든 이미지를 곧바로 AI 처리하면 토큰 비용, 낮은 품질 입력과 모델 실패를 앱에서 통제하기 어려웠습니다.', 'AI 결과를 그대로 신뢰하지 않고 처리 대상과 후속 작업을 앱이 판단할 구조가 필요했습니다.'],
+        analyze: ['이미지 입력 후 ACCEPT·REJECT, reason_code, should_run_cleanup을 반환하는 triage 단계를 먼저 두었습니다.', '출력 DTO를 구조화하고 이미지 리사이즈·압축과 짧은 응답 스키마를 적용해 요청 크기와 불필요한 토큰 출력을 관리했습니다.'],
+        action: ['iOS 앱 구조, VisionKit 입력, OpenAI Responses API 클라이언트, 프롬프트와 응답 DTO를 직접 설계·구현했습니다.', '모델 응답 조합을 앱에서 다시 검증하고 timeout·HTTP·parse·refusal 오류를 사용자 상태로 분리했습니다.'],
+        result: ['iOS 1명, Android 1명, 기획 2명, 디자이너 1명의 5명 구성에서 iOS 개발과 App Store 배포를 완료했습니다.', '2026.01~02의 2개월 집중 개발로 스캔·triage·정리 결과 흐름을 앱 1종으로 출시했습니다.'],
+        metrics: ['팀 5명', 'iOS 개발 2개월', 'App Store 출시']
+    },
+    'side-mindly': {
+        overview: '링크와 메모를 AI 태그와 로컬 검색 인덱스로 정리해 다시 찾을 수 있게 만든 iOS 키워드 메모 앱입니다.',
+        problem: ['저장한 링크와 짧은 메모는 시간이 지나면 어떤 키워드로 찾아야 할지 기억하기 어렵습니다.', 'AI 처리가 저장을 막거나 네트워크 실패로 로컬 검색까지 사용할 수 없게 만들면 안 됐습니다.'],
+        analyze: ['GRDB에 먼저 저장하고 AI 태그는 비동기로 생성하는 local-first 흐름을 선택했습니다.', '기본 검색은 FTS5 로컬 검색으로 유지하고 자연어 검색만 AI가 로컬 검색 조건으로 변환하도록 경계를 정했습니다.'],
+        action: ['iOS 앱 구조, SwiftUI 화면, GRDB 저장·검색, AI 태그·검색과 Share Extension을 구현했습니다.', 'AGENTS.md에는 반복 규칙만 두고 feature-plan 등 6개 Skill로 계획·구현·검색·보안 검토를 분리해 Codex 변경 범위를 통제했습니다.'],
+        result: ['iOS 1명, Android 1명, 기획 1명의 3명 구성에서 저장·태깅·검색·공유 흐름을 구현했습니다.', '메인·AI 검색·링크 상세의 대표 화면 3개와 단계별 빌드·실기기 QA 결과를 남겼습니다.'],
+        metrics: ['팀 3명', 'Codex Skill 6개', '대표 화면 3개']
+    },
+    'side-focusboard': {
+        overview: '출석, 집중 타이머, Todo, 통계, 메뉴바와 위젯을 제공하는 SwiftUI macOS 생산성 앱입니다.',
+        problem: ['여러 기능이 같은 일정·집중 데이터를 공유하므로 기능 추가가 저장소와 통계 계산을 동시에 흔들 수 있었습니다.', 'Codex가 요청 범위를 넘어 구조를 바꾸지 않도록 프로젝트 수준의 개발 통제가 필요했습니다.'],
+        analyze: ['local-first JSON 저장소를 공통 데이터 경계로 두고 MenuBarExtra와 Widget에는 비즈니스 로직을 넣지 않았습니다.', '기능별 kickoff 문서에서 goal, policy, file boundary, risk와 out-of-scope를 먼저 확정했습니다.'],
+        action: ['Attendance, Focus Timer, Todo, Statistics, MenuBarExtra, Widget, Schedule을 단계별로 구현했습니다.', '전문 Agent 3개와 feature-kickoff·implement-quick-surface·ship-check Skill 3개를 구성하고 단계·파일 범위를 제한한 프롬프트로 Codex를 운영했습니다.'],
+        result: ['주요 기능 7개와 macOS 앱·메뉴바·위젯 화면을 구현하고 App Store에 출시했습니다.', 'Agent 3개와 Skill 3개, 빌드·테스트·Preview·실행 QA를 포함한 반복 가능한 개발 하네스를 산출했습니다.'],
+        metrics: ['주요 기능 7개', 'Agent 3개', 'App Store 출시']
+    }
+};
+
+const projectRoleData = {
+    'onestore-1': 'iOS 파트 PL · 기술 검토, 아키텍처와 네트워크 모듈 설계, 단계별 구현 범위와 리스크 정리',
+    'onestore-2': '기술 파트 PM · 플랫폼 간 기준 조율, iOS 컴포넌트 구조와 디자인-코드 연결 흐름 설계',
+    'onestore-3': 'iOS 운영 개발 · 기능 개발, 정기 배포, VOC·OS 대응, Native 전환과 iPad·Widget 구현',
+    'encar-1': 'iOS 개발 · UIKit 레거시 분석, SwiftUI 전환, MVVM·MVI 비교 적용, 테스트와 로깅 중앙화',
+    'gsitm-1': 'Android·iOS 운영 개발 / Mobile PL · 전사 앱 운영과 GS Fresh 차세대 모바일 범위 조율',
+    'gsitm-2': 'Android·iOS 운영 개발 · 멤버십 앱 4종의 기능 개발, 배포, VOC·OS·Crash 대응',
+    'digitaldime-1': 'Android 개발 · O2O 주문 흐름과 중국 현지 로그인·지도·결제 SDK 연동',
+    'digitaldime-2': 'Android 개발 · WebView·JavaScript Interface와 중국 현지 SDK 연동',
+    'digitaldime-3': 'Android 개발 · 기존 웹 커머스와 Native 바코드·QR·푸시 기능 연결',
+    'digitaldime-4': '메인 Android 개발 · 요구사항 정리부터 화면·API·푸시 구현, 배포와 운영까지 담당',
+    'side-note-cleaner': 'iOS 개발 · 제품 흐름, 앱 아키텍처, VisionKit·OpenAI API, 프롬프트·DTO 설계와 App Store 배포',
+    'side-mindly': 'iOS 개발 · 앱 구조, SwiftUI, GRDB 검색, AI 태그·검색, Share Extension과 Codex 작업 환경 구성',
+    'side-focusboard': '기획·디자인·macOS 개발 · 기능 정의, SwiftUI 구현, 저장소·위젯·메뉴바와 Codex 하네스 구성'
+};
+
+const projectTeamData = {
+    'onestore-1': {
+        label: 'iOS 개발 파트 기준',
+        members: ['iOS 6명'],
+        position: 'iOS PL'
+    },
+    'onestore-2': {
+        label: '프로젝트 전체 구성',
+        members: ['iOS 3명', 'Android 3명', 'Designer 3명', 'Backend 1명', 'Frontend 1명'],
+        position: '기술 파트 PM'
+    },
+    'onestore-3': {
+        label: '모바일 개발 구성',
+        members: ['iOS 3명', 'Android 3명'],
+        position: 'iOS Developer'
+    },
+    'gsitm-1': {
+        label: 'GS Fresh 차세대 구축 기준',
+        members: ['iOS 2명', 'Android 2명', '총괄 1명'],
+        position: 'Mobile PL · iOS/Android'
+    },
+    'gsitm-2': {
+        label: '모바일 운영 구성',
+        members: ['iOS 2명', 'Android 2명', '총괄 1명'],
+        position: 'iOS/Android 운영 개발'
+    },
+    'side-note-cleaner': {
+        label: '사이드 프로젝트 전체 구성',
+        members: ['iOS 1명', 'Android 1명', 'Planner 2명', 'Designer 1명'],
+        position: 'iOS Developer'
+    },
+    'side-mindly': {
+        label: '사이드 프로젝트 전체 구성',
+        members: ['iOS 1명', 'Android 1명', 'Planner 1명'],
+        position: 'iOS Developer'
+    }
+};
+
+const projectCompanyData = {
+    'onestore-1': 'ONEstore',
+    'onestore-2': 'ONEstore',
+    'onestore-3': 'ONEstore',
+    'encar-1': 'Encar',
+    'gsitm-1': 'GS ITM',
+    'gsitm-2': 'GS ITM',
+    'digitaldime-1': 'Digitaldime',
+    'digitaldime-2': 'Digitaldime',
+    'digitaldime-3': 'Digitaldime',
+    'digitaldime-4': 'Digitaldime',
+    'side-note-cleaner': 'PERSONAL PROJECT',
+    'side-mindly': 'PERSONAL PROJECT',
+    'side-focusboard': 'PERSONAL PROJECT'
+};
+
 // 모달 열기
 function openProjectModal(projectId) {
     console.log('openProjectModal called with:', projectId);
@@ -841,8 +1034,13 @@ function openProjectModal(projectId) {
     // 모달 내용 업데이트
     document.getElementById('modalTitle').textContent = project.title;
     document.getElementById('modalPeriod').textContent = project.period;
+    const modalCompany = document.getElementById('modalCompany');
+    const companyName = projectCompanyData[projectId] || 'PROJECT';
+    modalCompany.textContent = companyName === 'PERSONAL PROJECT' ? 'PERSONAL' : companyName;
+    modalCompany.classList.toggle('is-personal', companyName === 'PERSONAL PROJECT');
     document.getElementById('modalDescription').textContent = project.description;
-    document.getElementById('modalFeatures').innerHTML = project.features;
+    renderProjectTeamRole(projectId);
+    renderProjectStory(projectId, project);
     
     // 기술 스택 업데이트
     const techContainer = document.getElementById('modalTech');
@@ -858,10 +1056,19 @@ function openProjectModal(projectId) {
     // 모달 표시
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // 이전 프로젝트에서 보던 위치와 관계없이 새 상세는 항상 헤더부터 보여준다.
+    const modalContent = modal.querySelector('.modal-content');
+    modal.scrollTop = 0;
+    if (modalContent) modalContent.scrollTop = 0;
+    requestAnimationFrame(() => {
+        modal.scrollTop = 0;
+        if (modalContent) modalContent.scrollTop = 0;
+    });
     
     // 스크린샷 그리드 스크롤 감지 및 클릭 이벤트 추가 (모달이 렌더링된 후)
     setTimeout(() => {
-        // 결과물 스크린샷 처리
+        // 결과물 스크린샷의 가로 스크롤 여부를 표시한다.
         const screenshotGrids = modal.querySelectorAll('.screenshot-grid');
         screenshotGrids.forEach(grid => {
             const images = grid.querySelectorAll('.screenshot-img');
@@ -873,46 +1080,243 @@ function openProjectModal(projectId) {
                 grid.setAttribute('data-has-scroll', 'false');
             }
             
-            // 각 이미지에 클릭 이벤트 추가
-            images.forEach((img, index) => {
-                img.style.cursor = 'pointer';
-                img.addEventListener('click', function() {
-                    // 같은 그리드 내의 모든 이미지를 배열로 변환
-                    const imageList = Array.from(images).map(image => ({
-                        src: image.src,
-                        alt: image.alt
-                    }));
-                    openImageViewer(imageList, index);
-                });
-            });
         });
-        
-        // 참조 이미지 처리 (설명용 이미지 - 가로)
-        const referenceImages = modal.querySelectorAll('.reference-img');
-        referenceImages.forEach(img => {
+
+        // 같은 프로젝트 상세에 포함된 시각 자료를 하나의 탐색 목록으로 묶는다.
+        const projectImages = Array.from(modal.querySelectorAll(
+            '.screenshot-img, .reference-img, .reference-img-vertical, .worksheet-screenshot-grid img'
+        ));
+        const imageList = projectImages.map(image => ({
+            src: image.src,
+            alt: image.alt
+        }));
+
+        projectImages.forEach((img, index) => {
             img.style.cursor = 'pointer';
-            img.addEventListener('click', function() {
-                // 단일 이미지로 뷰어 열기
-                openImageViewer([{
-                    src: img.src,
-                    alt: img.alt
-                }], 0);
-            });
-        });
-        
-        // 참조 이미지 처리 (설명용 이미지 - 세로)
-        const referenceImagesVertical = modal.querySelectorAll('.reference-img-vertical');
-        referenceImagesVertical.forEach(img => {
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', function() {
-                // 단일 이미지로 뷰어 열기
-                openImageViewer([{
-                    src: img.src,
-                    alt: img.alt
-                }], 0);
+            img.addEventListener('click', () => {
+                openImageViewer(imageList, index);
             });
         });
     }, 100);
+}
+
+function renderProjectStory(projectId, project) {
+    const story = document.getElementById('modalFeatures');
+    const paar = projectPaarData[projectId];
+
+    if (!story) return;
+    if (!paar) {
+        story.innerHTML = project.features;
+        decorateProjectStory();
+        return;
+    }
+
+    const legacy = document.createElement('div');
+    legacy.innerHTML = project.features;
+    const evidenceNodes = collectProjectEvidence(legacy);
+
+    story.innerHTML = `
+        ${renderProjectSnapshot(projectId, paar)}
+        ${renderPaarSection('Problem', 'problem', paar.problem)}
+        ${renderPaarSection('Analyze', 'analysis', paar.analyze)}
+        ${renderPaarSection('Action', 'action', paar.action)}
+        ${renderAdditionalProjectSections(paar.additionalSections)}
+        ${renderPaarSection('Result', 'result', paar.result, paar.metrics)}
+        <section class="project-story-block project-story-evidence is-result">
+            <div class="project-story-section-heading">
+                <span>06</span>
+                <div>
+                    <h4 class="project-story-heading">Evidence</h4>
+                    <p>위 판단과 구현 결과를 확인할 수 있는 화면, 구조도, 코드와 배포 자료입니다.</p>
+                </div>
+            </div>
+            <div class="project-story-evidence-content"></div>
+        </section>
+    `;
+
+    const evidence = story.querySelector('.project-story-evidence-content');
+    if (evidenceNodes.length) {
+        evidenceNodes.forEach(node => evidence.appendChild(node));
+    } else {
+        evidence.innerHTML = '<p>프로젝트 기간, 담당 범위와 구현 산출물을 경력 자료 기준으로 정리했습니다.</p>';
+    }
+}
+
+function renderAdditionalProjectSections(sections = []) {
+    return sections.map((section, index) => {
+        const metrics = section.metrics?.length
+            ? `<div class="project-story-metrics">${section.metrics.map(metric => `<span>${metric}</span>`).join('')}</div>`
+            : '';
+        const items = section.items.map(item => `<li>${item}</li>`).join('');
+
+        return `
+            <section class="project-story-block project-story-additional">
+                <div class="project-story-section-heading">
+                    <span>${String.fromCharCode(65 + index)}</span>
+                    <div>
+                        <small>${section.eyebrow}</small>
+                        <h4 class="project-story-heading">${section.title}</h4>
+                    </div>
+                </div>
+                <p class="project-story-additional-summary">${section.summary}</p>
+                ${metrics}
+                <ul>${items}</ul>
+            </section>
+        `;
+    }).join('');
+}
+
+function renderProjectSnapshot(projectId, paar) {
+    const outputs = paar.metrics.map(metric => `<span>${metric}</span>`).join('');
+
+    return `
+        <section class="project-story-snapshot">
+            <div class="project-story-section-heading">
+                <span>01</span>
+                <div>
+                    <h4>Project Snapshot</h4>
+                    <p>프로젝트의 목적, 담당 역할과 확인 가능한 결과를 먼저 요약했습니다.</p>
+                </div>
+            </div>
+            <div class="project-story-snapshot-grid">
+                <article>
+                    <span class="project-story-snapshot-label">PROJECT</span>
+                    <p>${paar.overview}</p>
+                </article>
+                <article>
+                    <span class="project-story-snapshot-label">KEY OUTPUTS</span>
+                    <div class="project-story-snapshot-outputs">${outputs}</div>
+                </article>
+            </div>
+        </section>
+    `;
+}
+
+function renderProjectTeamRole(projectId) {
+    const container = document.getElementById('modalTeamRole');
+    const team = projectTeamData[projectId];
+    const responsibility = projectRoleData[projectId];
+    if (!container) return;
+
+    const teamGroup = team ? `
+        <div class="project-team-role-group project-team-group">
+            <div class="project-team-role-heading">
+                <span>TEAM COMPOSITION</span>
+                <small>${team.label}</small>
+            </div>
+            <div class="project-team-badges">
+                ${team.members.map(member => `<span>${member}</span>`).join('')}
+            </div>
+        </div>
+    ` : '';
+
+    container.innerHTML = `
+        ${teamGroup}
+        <div class="project-team-role-group project-responsibility-group">
+            <div class="project-team-role-heading">
+                <span>MY RESPONSIBILITY</span>
+            </div>
+            <div class="project-responsibility-badges">
+                <strong>${team?.position || 'My Role'}</strong>
+                <p>${responsibility}</p>
+            </div>
+        </div>
+    `;
+}
+
+function renderPaarSection(title, tone, items, metrics = []) {
+    const metricHtml = metrics.length
+        ? `<div class="project-story-metrics">${metrics.map(metric => `<span>${metric}</span>`).join('')}</div>`
+        : '';
+    const itemHtml = items.map(item => `<li>${item}</li>`).join('');
+
+    const step = { problem: '02', analysis: '03', action: '04', result: '05' }[tone] || '';
+
+    return `
+        <section class="project-story-block project-story-paar is-${tone}">
+            <div class="project-story-section-heading">
+                <span>${step}</span>
+                <h4 class="project-story-heading">${title}</h4>
+            </div>
+            ${metricHtml}
+            <ul>${itemHtml}</ul>
+        </section>
+    `;
+}
+
+function collectProjectEvidence(container) {
+    const candidates = Array.from(container.querySelectorAll(
+        '.reference-image, .screenshot-grid, .worksheet-screenshot-grid, .modal-store-link'
+    ));
+
+    return candidates
+        .filter(node => !candidates.some(parent => parent !== node && parent.contains(node)))
+        .map(node => node.cloneNode(true));
+}
+
+function initializeProjectCompanyLabels() {
+    document.querySelectorAll('.project-card-v2[data-project-id]').forEach(card => {
+        const projectId = card.dataset.projectId;
+        const company = projectCompanyData[projectId];
+        if (!company) return;
+
+        card.querySelectorAll('.project-card-v2-company').forEach(label => label.remove());
+
+        const label = document.createElement('span');
+        label.className = 'project-card-v2-company';
+        label.textContent = company === 'PERSONAL PROJECT' ? 'PERSONAL' : company;
+        label.classList.toggle('is-personal', company === 'PERSONAL PROJECT');
+        card.appendChild(label);
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeProjectCompanyLabels);
+} else {
+    initializeProjectCompanyLabels();
+}
+
+// 기존 상세 콘텐츠를 유지하면서 제목 단위로 묶어 새 모달의 정보 위계를 만든다.
+function decorateProjectStory() {
+    const story = document.getElementById('modalFeatures');
+    if (!story) return;
+
+    const children = Array.from(story.children);
+    const fragment = document.createDocumentFragment();
+    let section = null;
+
+    children.forEach(child => {
+        const strong = child.matches('p') ? child.querySelector(':scope > strong') : null;
+
+        if (strong) {
+            section = document.createElement('section');
+            section.className = `project-story-block ${getProjectStoryClass(strong.textContent)}`;
+
+            const heading = document.createElement('h4');
+            heading.className = 'project-story-heading';
+            heading.textContent = strong.textContent.trim();
+            section.appendChild(heading);
+            fragment.appendChild(section);
+            return;
+        }
+
+        if (section) {
+            section.appendChild(child);
+        } else {
+            fragment.appendChild(child);
+        }
+    });
+
+    story.replaceChildren(fragment);
+}
+
+function getProjectStoryClass(title) {
+    const normalized = title.toLowerCase();
+    if (normalized.includes('problem')) return 'is-problem';
+    if (normalized.includes('analy') || normalized.includes('decision') || normalized.includes('architecture') || normalized.includes('verification')) return 'is-analysis';
+    if (normalized.includes('role') || normalized.includes('contribution') || normalized.includes('implementation') || normalized.includes('workflow') || normalized.includes('integration') || normalized.includes('담당')) return 'is-action';
+    if (normalized.includes('result') || normalized.includes('impact') || normalized.includes('status') || normalized.includes('screenshot') || normalized.includes('visual') || normalized.includes('app store')) return 'is-result';
+    return 'is-context';
 }
 
 // 모달 닫기
@@ -934,8 +1338,12 @@ document.addEventListener('click', function(e) {
 // ESC 키로 모달 닫기
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+        const imageViewer = document.getElementById('imageViewerModal');
+        if (imageViewer?.classList.contains('active')) {
+            closeImageViewer();
+            return;
+        }
         closeProjectModal();
-        closeImageViewer();
     }
 });
 
@@ -947,6 +1355,7 @@ let currentImageIndex = 0;
 function openImageViewer(images, startIndex = 0) {
     const modal = document.getElementById('imageViewerModal');
     const viewerImage = document.getElementById('viewerImage');
+    const viewerCaption = document.getElementById('viewerCaption');
     const currentIndexSpan = document.getElementById('currentImageIndex');
     const totalImagesSpan = document.getElementById('totalImages');
     
@@ -956,10 +1365,11 @@ function openImageViewer(images, startIndex = 0) {
     // 이미지 설정
     viewerImage.src = currentImageList[currentImageIndex].src;
     viewerImage.alt = currentImageList[currentImageIndex].alt;
+    viewerCaption.textContent = currentImageList[currentImageIndex].alt || '프로젝트 이미지';
     
     // 카운터 업데이트
-    currentIndexSpan.textContent = currentImageIndex + 1;
-    totalImagesSpan.textContent = currentImageList.length;
+    currentIndexSpan.textContent = String(currentImageIndex + 1).padStart(2, '0');
+    totalImagesSpan.textContent = String(currentImageList.length).padStart(2, '0');
     
     // 단일 이미지 여부 설정
     if (currentImageList.length === 1) {
@@ -977,7 +1387,8 @@ function openImageViewer(images, startIndex = 0) {
 function closeImageViewer() {
     const modal = document.getElementById('imageViewerModal');
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    const projectModal = document.getElementById('projectModal');
+    document.body.style.overflow = projectModal?.classList.contains('active') ? 'hidden' : '';
     currentImageList = [];
     currentImageIndex = 0;
 }
@@ -1001,11 +1412,13 @@ function nextImage() {
 // 뷰어 이미지 업데이트
 function updateViewerImage() {
     const viewerImage = document.getElementById('viewerImage');
+    const viewerCaption = document.getElementById('viewerCaption');
     const currentIndexSpan = document.getElementById('currentImageIndex');
     
     viewerImage.src = currentImageList[currentImageIndex].src;
     viewerImage.alt = currentImageList[currentImageIndex].alt;
-    currentIndexSpan.textContent = currentImageIndex + 1;
+    viewerCaption.textContent = currentImageList[currentImageIndex].alt || '프로젝트 이미지';
+    currentIndexSpan.textContent = String(currentImageIndex + 1).padStart(2, '0');
 }
 
 // 키보드 화살표로 이미지 넘기기
