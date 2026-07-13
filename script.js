@@ -269,6 +269,25 @@ if (projectFilterButtons.length && projectCardsV2.length) {
 // AI workflow step navigation.
 const aiWorkflowButtons = document.querySelectorAll('[data-ai-step-button]');
 const aiWorkflowPanels = document.querySelectorAll('[data-ai-step-panel]');
+const aiWorkflowDetails = document.querySelector('.ai-workflow-v2-details');
+
+function syncAIWorkflowDetailHeight() {
+    if (!aiWorkflowDetails || !aiWorkflowPanels.length) return;
+
+    let maximumHeight = 0;
+    aiWorkflowPanels.forEach(panel => {
+        const wasHidden = panel.hidden;
+        panel.hidden = false;
+        panel.classList.add('is-measuring');
+        maximumHeight = Math.max(maximumHeight, panel.scrollHeight);
+        panel.classList.remove('is-measuring');
+        panel.hidden = wasHidden;
+    });
+
+    if (maximumHeight > 0) {
+        aiWorkflowDetails.style.setProperty('--ai-workflow-detail-height', `${Math.ceil(maximumHeight)}px`);
+    }
+}
 
 function selectAIWorkflowStep(stepId) {
     aiWorkflowButtons.forEach(button => {
@@ -287,5 +306,16 @@ function selectAIWorkflowStep(stepId) {
 aiWorkflowButtons.forEach(button => {
     button.addEventListener('click', () => selectAIWorkflowStep(button.dataset.aiStepButton));
 });
+
+if (aiWorkflowDetails && aiWorkflowPanels.length) {
+    requestAnimationFrame(syncAIWorkflowDetailHeight);
+    document.fonts?.ready.then(syncAIWorkflowDetailHeight);
+
+    let aiWorkflowResizeTimer;
+    window.addEventListener('resize', () => {
+        window.clearTimeout(aiWorkflowResizeTimer);
+        aiWorkflowResizeTimer = window.setTimeout(syncAIWorkflowDetailHeight, 120);
+    });
+}
 
 console.log('Portfolio website loaded successfully! 🚀');
