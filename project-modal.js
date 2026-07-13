@@ -6,8 +6,8 @@ const projectData = {
     'side-note-cleaner': {
         title: '학습지 지우개 - Note Cleaner',
         period: '전체 2025.11 ~ 2026.03 · 개발 2026.01 ~ 2026.02',
-        description: '영어 학습지 이미지를 VisionKit으로 입력받고, OpenAI Responses API용 프롬프트와 응답 DTO를 직접 설계해 triage와 정리 결과로 연결한 App Store 출시 개인 사이드 프로젝트입니다.',
-        tech: ['iOS', 'Swift', 'SwiftUI', 'VisionKit', 'OpenAI API', 'Prompt Design', 'Structured Response', 'Clean Architecture', 'MVVM', 'RxSwift', 'Firebase Remote Config', 'Fastlane'],
+        description: '반복해서 사용하는 영어 학습지의 필기 영역을 제거해 문제집 원본에 가까운 이미지로 복원하는 앱입니다. VisionKit 문서 보정과 OpenAI 기반 Cleansing을 연결하고 App Store에 출시했습니다.',
+        tech: ['iOS', 'Swift', 'SwiftUI', 'VisionKit', 'OpenAI API', 'Prompt Design', 'Structured Response', 'Clean Architecture', 'MVVM', 'RxSwift', 'Firebase Remote Config', 'Fastlane', 'Cursor', 'Claude Code'],
         features: `
             <p><strong>Project Context</strong></p>
             <ul>
@@ -17,6 +17,7 @@ const projectData = {
 
             <p><strong>Problem</strong></p>
             <ul>
+                <li>같은 영어 학습지를 반복해서 풀려면 기존 필기와 채점 흔적을 지우고 원본 문제지에 가까운 상태로 복원할 방법이 필요했습니다.</li>
                 <li>모든 이미지를 바로 AI 처리로 넘기면 비용, 정확도, 실패 케이스 관리가 어려워질 수 있었습니다.</li>
                 <li>영어 학습지 여부, 이미지 품질, 후속 정리 필요 여부를 먼저 판별하는 triage 흐름이 필요했습니다.</li>
             </ul>
@@ -66,14 +67,15 @@ const projectData = {
 
             <p><strong>App Store</strong></p>
             <p><a class="side-project-cta modal-store-link" href="https://apps.apple.com/kr/app/%ED%95%99%EC%8A%B5%EC%A7%80-%EC%A7%80%EC%9A%B0%EA%B0%9C-note-cleaner/id6757840733" target="_blank" rel="noopener noreferrer">App Store에서 보기</a></p>
+            <p><a class="side-project-cta modal-store-link" href="https://slashpage.com/note-cleaner" target="_blank" rel="noopener noreferrer">개발자 페이지에서 보기</a></p>
         `
     },
 
     'side-mindly': {
         title: 'Mindly-iOS',
-        period: '2026.05 ~ 진행 중 · iOS 1 / Android 1 / Planner 1',
+        period: '2026.05 ~ 2026.07 · iOS 1 / Android 1 / Planner 1',
         description: '저장한 링크와 메모를 AI 태그와 로컬 검색 인덱스로 정리해, 나중에 키워드·태그·자연어로 다시 찾을 수 있게 만든 iOS 키워드 메모 앱입니다.',
-        tech: ['iOS', 'Swift', 'SwiftUI', 'GRDB', 'Apple Intelligence', 'Firebase Functions', 'OpenGraph', 'Share Extension', 'Codex', 'AGENTS.md', 'Skills'],
+        tech: ['iOS', 'Swift', 'SwiftUI', 'Clean Architecture', 'MVVM', 'GRDB', 'Apple Intelligence', 'Firebase Functions', 'Share Extension', 'Codex', 'Claude Code', 'AGENTS.md', 'Skills', 'Jenkins', 'Fastlane'],
         features: `
             <p><strong>Overview</strong></p>
             <ul>
@@ -91,7 +93,7 @@ const projectData = {
 
             <p><strong>My Role</strong></p>
             <ul>
-                <li>iOS 개발자로 제품 기획 정리, iOS 앱 구조 설계, SwiftUI 화면 구현, GRDB 로컬 저장소, AI 태그/검색 흐름, Share Extension, 실기기 QA를 담당했습니다.</li>
+                <li>iOS 전체 개발을 담당해 제품 요구사항 정리부터 Clean Architecture·MVVM 구조, SwiftUI 화면, GRDB 로컬 저장소, AI 태그·검색, Share Extension과 배포 흐름까지 구현했습니다.</li>
                 <li>총 3명 규모(iOS 1명, Android 1명, 기획 1명)에서 iOS 저장-태그 생성-검색-상세 관리 흐름을 구현했습니다.</li>
                 <li>Apple Intelligence와 Firebase Functions를 활용해 AI 태그 생성 및 AI 검색 fallback 구조를 설계했습니다.</li>
             </ul>
@@ -100,7 +102,7 @@ const projectData = {
             <div class="side-project-detail-grid">
                 <div class="side-project-detail">
                     <span>Context Design</span>
-                    <p>AGENTS.md에는 MVVM + UseCase + Repository, GRDB/FTS5 local search, AI provider, 민감 정보 로그 금지처럼 반복 규칙만 두고, PRD/Firebase/design 상세는 docs로 분리했습니다.</p>
+                    <p>Codex와 Claude Code가 같은 설계 경계를 따르도록 AGENTS.md에는 MVVM + UseCase + Repository, GRDB/FTS5 local search, AI provider와 보안 규칙처럼 반복 기준만 두고 PRD·Firebase·디자인 상세는 docs로 분리했습니다.</p>
                 </div>
                 <div class="side-project-detail">
                     <span>Skills</span>
@@ -124,13 +126,19 @@ const projectData = {
 
             <p><strong>Screenshots / Result</strong></p>
             <div class="reference-image worksheet-screenshot-strip">
-                <p class="reference-image-label">Mindly iOS Screens</p>
+                <p class="reference-image-label">Mindly App Store Screens</p>
                 <div class="worksheet-screenshot-grid">
-                    <img src="assets/images/side-projects/mindly/main.png" alt="Mindly 메인 노트 리스트 화면" class="reference-img-vertical">
-                    <img src="assets/images/side-projects/mindly/ai-search-loading.png" alt="Mindly AI 검색 로딩 화면" class="reference-img-vertical">
-                    <img src="assets/images/side-projects/mindly/note-links.png" alt="Mindly 링크 노트 상세 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/01-main.png" alt="Mindly 메인 노트 목록 App Store 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/02-create.png" alt="Mindly 링크와 텍스트 신규 노트 작성 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/03-share-extension.png" alt="외부 앱에서 Mindly로 링크를 저장하는 Share Extension 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/04-detail.png" alt="Mindly 노트 상세와 자동 태그 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/05-keyword-search.png" alt="Mindly 키워드와 태그 검색 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/06-ai-search.png" alt="Mindly 자연어 AI 검색 안내 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/07-natural-language-input.png" alt="Mindly 자연어 검색어 입력 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/08-ai-search-loading.png" alt="Mindly AI 검색 처리 화면" class="reference-img-vertical">
+                    <img src="assets/images/side-projects/mindly/appstore/09-ai-search-result.png" alt="Mindly AI 검색 결과 화면" class="reference-img-vertical">
                 </div>
-                <p class="code-explanation">노트 리스트, 자연어 기반 AI 검색, 링크 상세 화면을 통해 저장-탐색-상세 관리 흐름을 확인할 수 있습니다.</p>
+                <p class="code-explanation">노트 작성과 외부 앱 공유부터 자동 태그, 키워드·자연어 검색과 결과 확인까지 전체 사용자 흐름을 보여주는 App Store 자료입니다.</p>
             </div>
 
             <p><strong>Result / Status</strong></p>
@@ -215,7 +223,7 @@ const projectData = {
         title: '엔카닷컴 iOS 앱 개발 및 운영',
         period: '2025.06 ~ 2025.08',
         description: '운영 중인 엔카 iOS 앱에서 UIKit 레거시 화면을 SwiftUI + MVVM 구조로 전환하고, 광고 모듈과 로깅 구조를 정리해 운영 안정성을 높이는 개선 작업을 수행했습니다.',
-        tech: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'UIKit', 'MVVM', 'AppsFlyer', 'Braze', 'Firebase', 'Crashlytics', 'Alamofire', 'SnapKit', 'Cursor', 'Copilot'],
+        tech: ['iOS', 'Objective-C', 'Swift', 'SwiftUI', 'UIKit', 'MVVM', 'Swift Testing', 'AppsFlyer', 'Braze', 'Firebase', 'Crashlytics', 'Alamofire', 'SnapKit', 'Cursor', 'Copilot'],
         features: `
             <p><strong>Overview</strong></p>
             <ul>
@@ -864,19 +872,19 @@ const projectPaarData = {
     },
     'onestore-3': {
         overview: '웹툰·웹소설·전자책·오디오북을 제공하는 ONEstory iOS 앱의 기능 개발과 운영을 담당한 프로젝트입니다.',
-        problem: ['콘텐츠 탐색·구매·보관·열람 흐름을 유지하면서 OS 변경, VOC, SDK 업데이트와 정기 배포를 함께 처리해야 했습니다.', '일부 WebView 화면을 Native로 전환하면서 기존 서비스 계약과 사용자 흐름을 유지해야 했습니다.'],
-        analyze: ['기존 UIKit·Objective-C·WebView 구조와 서버 연동 지점을 먼저 확인하고 Native 전환 범위를 화면 단위로 분리했습니다.', 'iPhone·iPad·Widget·오프라인 콘텐츠 사용 환경별로 상태와 화면 차이를 검수했습니다.'],
-        action: ['정기 배포, VOC와 OS 대응을 수행하고 WebView 화면 Native 전환, 위젯, iPad UI, SDK 연동 기능을 구현했습니다.', '콘텐츠 다운로드와 최근 본 작품 진입 등 열람 전후의 사용자 흐름을 기준으로 변경 영향을 확인했습니다.'],
-        result: ['2021.09~2023.12 동안 ONEstory iOS 운영과 기능 개발을 이어갔습니다.', 'Native 전환 화면, iPad 대응 UI, 최근 본 작품 위젯과 운영 배포 산출물을 남겼습니다.'],
+        problem: ['콘텐츠 탐색·구매뿐 아니라 도서 다운로드, 보관, 삭제와 오프라인 열람 상태를 안정적으로 유지하면서 OS 변경, VOC와 정기 배포를 함께 처리해야 했습니다.', '뷰어 사용성을 개선하는 SDK와 소셜 로그인처럼 콘텐츠 진입 전후에 연결되는 외부 기능을 기존 서비스 흐름 안에 안정적으로 적용해야 했습니다.', '일부 WebView 화면을 Native로 전환하면서 기존 서비스 계약과 사용자 흐름을 유지해야 했습니다.'],
+        analyze: ['기존 UIKit·Objective-C·WebView 구조와 서버 연동 지점을 먼저 확인하고 도서 다운로드·삭제·보관 상태 및 Native 전환 범위를 화면 단위로 분리했습니다.', 'iPhone·iPad·Widget·오프라인 콘텐츠 환경별 상태를 검수하고, Eye Tracking SDK와 카카오톡·Apple 소셜 로그인 연동이 열람·인증 흐름에 미치는 영향을 확인했습니다.'],
+        action: ['도서 다운로드 DB와 보관·삭제 흐름을 관리하고, 다운로드한 콘텐츠가 오프라인에서도 열람되도록 상태와 화면 동작을 구현·운영했습니다.', '독서 사용성을 개선하는 Eye Tracking SDK를 적용하고 카카오톡·Apple 로그인 등 소셜 인증 SDK의 연동과 운영을 담당했습니다.', '정기 배포, VOC·OS 대응, 구매 목록 WebView의 Native 전환, 위젯과 iPad UI 기능을 구현했습니다.'],
+        result: ['2021.09~2023.12 동안 ONEstory iOS의 콘텐츠 다운로드·보관·삭제·오프라인 열람과 소셜 로그인 기능을 운영했습니다.', 'Eye Tracking SDK 적용, Native 전환 화면, iPad 대응 UI, 최근 본 작품 위젯과 운영 배포 산출물을 남겼습니다.'],
         metrics: ['운영 2년 이상', 'iPhone·iPad 대응', 'Widget 구현']
     },
     'encar-1': {
         overview: '아키텍처가 적용되지 않은 UIKit·Objective-C 기반 운영 앱에 SwiftUI와 테스트 가능한 상태 구조를 도입한 개선 프로젝트입니다.',
         problem: ['차량 옵션 필터 화면의 UI와 상태 변경이 결합돼 신규 요구사항 반영과 단위 테스트가 어려웠습니다.', '광고 SDK, Crashlytics, API 로그가 여러 위치에 분산돼 운영 이슈의 진입점과 영향 범위를 추적하기 어려웠습니다.'],
         analyze: ['전체 앱을 한 번에 바꾸지 않고 의존성이 낮은 leaf 화면을 시작점으로 선정했습니다.', '동일 화면을 MVVM과 MVI 2개 구조로 비교해 입력·상태·출력 흐름과 테스트 가능성을 검토했습니다.'],
-        action: ['옵션 필터 화면을 SwiftUI로 재구현하고 UseCase 테스트와 기존 오류 수정을 함께 진행했습니다.', '광고 모듈 진입점, Crashlytics, API 요청·응답 로깅을 중앙화하고 Font·Color·Radius 토큰과 Semantic Color를 정의했습니다.'],
-        result: ['SwiftUI 전환 화면 1개와 MVVM·MVI 2개 설계 버전, UseCase 테스트를 산출했습니다.', '로깅과 광고 모듈 관리 지점을 중앙화하고 디자인 토큰 3개 범주의 초기 기준을 만들었습니다.'],
-        metrics: ['SwiftUI 화면 1개', '설계안 2종', '토큰 3범주']
+        action: ['의존성이 낮은 화면 2개를 SwiftUI로 전환하고 MVVM·MVI 구조를 비교 적용했으며, Swift Testing으로 Unit Test를 작성했습니다.', '핵심 상태 변화와 UseCase를 우선 검증 대상으로 선정해 Test Coverage를 단계적으로 높이는 전략을 세웠습니다.', '프로젝트 규칙과 변경 범위를 AI 개발 도구가 일관되게 따르도록 Cursor Rules 도입을 위한 초기 구조와 작성 기준을 설계했습니다.', '광고 모듈 진입점, Crashlytics, API 요청·응답 로깅을 중앙화하고 Font·Color·Radius 토큰과 Semantic Color를 정의했습니다.'],
+        result: ['SwiftUI 전환 화면 2개와 MVVM·MVI 2개 설계 버전, Swift Testing 기반 Unit Test를 산출했습니다.', '테스트 우선순위와 Coverage 확대 전략, Cursor Rules 초기 설계 기준을 남겨 후속 레거시 전환과 AI 보조 개발의 시작점을 만들었습니다.', '로깅과 광고 모듈 관리 지점을 중앙화하고 디자인 토큰 3개 범주의 초기 기준을 만들었습니다.'],
+        metrics: ['SwiftUI 화면 2개', '설계안 2종', 'Swift Testing']
     },
     'gsitm-1': {
         overview: 'GS Retail 전사 모바일 앱 운영과 GS Fresh 차세대 커머스 앱 구축을 함께 수행한 프로젝트입니다.',
@@ -927,20 +935,31 @@ const projectPaarData = {
         metrics: ['Android 앱 1종', '개발 3개월', '메인 개발']
     },
     'side-note-cleaner': {
-        overview: 'VisionKit과 OpenAI API를 연결해 영어 학습지 이미지의 처리 가능 여부를 판별하고 필기를 정리하는 iOS 앱입니다.',
-        problem: ['모든 이미지를 곧바로 AI 처리하면 토큰 비용, 낮은 품질 입력과 모델 실패를 앱에서 통제하기 어려웠습니다.', 'AI 결과를 그대로 신뢰하지 않고 처리 대상과 후속 작업을 앱이 판단할 구조가 필요했습니다.'],
-        analyze: ['이미지 입력 후 ACCEPT·REJECT, reason_code, should_run_cleanup을 반환하는 triage 단계를 먼저 두었습니다.', '출력 DTO를 구조화하고 이미지 리사이즈·압축과 짧은 응답 스키마를 적용해 요청 크기와 불필요한 토큰 출력을 관리했습니다.'],
-        action: ['iOS 앱 구조, VisionKit 입력, OpenAI Responses API 클라이언트, 프롬프트와 응답 DTO를 직접 설계·구현했습니다.', '모델 응답 조합을 앱에서 다시 검증하고 timeout·HTTP·parse·refusal 오류를 사용자 상태로 분리했습니다.'],
-        result: ['iOS 1명, Android 1명, 기획 2명, 디자이너 1명의 5명 구성에서 iOS 개발과 App Store 배포를 완료했습니다.', '2026.01~02의 2개월 집중 개발로 스캔·triage·정리 결과 흐름을 앱 1종으로 출시했습니다.'],
+        overview: '같은 영어 학습지를 반복해서 사용할 수 있도록 필기 영역을 제거해 문제집 원본에 가까운 이미지로 복원하는 iOS 앱입니다.',
+        problem: ['풀이와 채점 흔적이 남은 학습지를 다시 사용하려면 필기 영역만 제거하고 인쇄된 문제와 레이아웃은 유지해야 했습니다.', '모든 이미지를 곧바로 AI 처리하면 토큰 비용, 낮은 품질 입력과 모델 실패를 앱에서 통제하기 어려웠습니다.', '기울어지거나 원근이 왜곡된 촬영 이미지는 AI Cleansing 전에 문서 형태로 보정할 필요가 있었습니다.'],
+        analyze: ['VisionKit 문서 스캔을 입력 단계에 배치해 이미지 경계 인식과 평탄화·원근 보정을 먼저 수행했습니다.', '이미지 입력 후 ACCEPT·REJECT, reason_code, should_run_cleanup을 반환하는 triage 단계를 두고 Cleansing 실행 여부를 앱이 결정하게 했습니다.', '필기 제거 기준과 보존해야 할 인쇄 영역을 프롬프트로 분리하고 구조화된 DTO, 이미지 리사이즈·압축과 짧은 응답 스키마로 요청 크기와 불필요한 토큰 출력을 관리했습니다.'],
+        action: ['iOS 앱 구조, VisionKit 스캔·평탄화 흐름, OpenAI Responses API 클라이언트, 필기 제거 프롬프트와 응답 DTO를 직접 설계·구현했습니다.', 'OpenAI 기반 Cleansing 결과를 그대로 사용하지 않고 status, reason_code, should_run_cleanup 조합과 timeout·HTTP·parse·refusal 오류를 앱에서 다시 검증했습니다.', 'Cursor와 Claude Code를 개발 보조 도구로 활용하고 최종 구조, 프롬프트, 응답 검증과 App Store 배포는 직접 결정·확인했습니다.'],
+        result: ['iOS 1명, Android 1명, 기획 2명, 디자이너 1명의 5명 구성에서 iOS 개발과 App Store 배포를 완료했습니다.', '2026.01~02의 2개월 집중 개발로 VisionKit 보정, triage, AI Cleansing과 결과 확인 흐름을 앱 1종으로 출시했습니다.'],
         metrics: ['팀 5명', 'iOS 개발 2개월', 'App Store 출시']
     },
     'side-mindly': {
         overview: '링크와 메모를 AI 태그와 로컬 검색 인덱스로 정리해 다시 찾을 수 있게 만든 iOS 키워드 메모 앱입니다.',
         problem: ['저장한 링크와 짧은 메모는 시간이 지나면 어떤 키워드로 찾아야 할지 기억하기 어렵습니다.', 'AI 처리가 저장을 막거나 네트워크 실패로 로컬 검색까지 사용할 수 없게 만들면 안 됐습니다.'],
         analyze: ['GRDB에 먼저 저장하고 AI 태그는 비동기로 생성하는 local-first 흐름을 선택했습니다.', '기본 검색은 FTS5 로컬 검색으로 유지하고 자연어 검색만 AI가 로컬 검색 조건으로 변환하도록 경계를 정했습니다.'],
-        action: ['iOS 앱 구조, SwiftUI 화면, GRDB 저장·검색, AI 태그·검색과 Share Extension을 구현했습니다.', 'AGENTS.md에는 반복 규칙만 두고 feature-plan 등 6개 Skill로 계획·구현·검색·보안 검토를 분리해 Codex 변경 범위를 통제했습니다.'],
-        result: ['iOS 1명, Android 1명, 기획 1명의 3명 구성에서 저장·태깅·검색·공유 흐름을 구현했습니다.', '메인·AI 검색·링크 상세의 대표 화면 3개와 단계별 빌드·실기기 QA 결과를 남겼습니다.'],
-        metrics: ['팀 3명', 'Codex Skill 6개', '대표 화면 3개']
+        action: ['iOS 전체 개발을 담당해 Clean Architecture·MVVM 구조, SwiftUI 화면, GRDB 저장·FTS5 검색, AI 태그·자연어 검색, Firebase Functions fallback과 Share Extension을 구현했습니다.', 'AGENTS.md에는 반복되는 아키텍처·데이터·보안 규칙만 유지하고 PRD와 기능 명세를 docs로 분리해 Codex와 Claude Code가 필요한 컨텍스트만 읽도록 구성했습니다.', 'feature-plan, ios-implementation, firebase-functions, grdb-search, swiftui-screen-scaffold, security-review 6개 Skill로 계획·구현·검색·보안 검토를 분리했습니다.', '구현 전 계획 보고와 승인, 수정 파일 제한, fallback 금지와 단계별 빌드·테스트를 프롬프트에 명시해 AI가 범위를 임의로 확장하지 않도록 통제했습니다.'],
+        result: ['iOS 1명, Android 1명, 기획 1명의 3명 구성에서 iOS 저장·태깅·검색·공유 흐름 전체를 구현했습니다.', 'Codex와 Claude Code를 분석·구현·리뷰에 활용하고 git diff/status, Xcode build/test, Preview, 실기기 QA와 Firebase 로그로 결과를 직접 검증했습니다.', 'App Store 사용자 흐름을 보여주는 화면 9개와 Jenkins·Fastlane 기반 배포 구성을 정리했습니다.'],
+        metrics: ['iOS 전체 개발', 'AI Skill 6개', 'App Store 화면 9개'],
+        additionalSections: [{
+            eyebrow: 'AI-ASSISTED ENGINEERING',
+            title: 'Codex와 Claude Code를 통제 가능한 개발 환경으로 구성',
+            summary: 'AI에게 구현을 바로 맡기지 않고 프로젝트 규칙, 역할별 Skill, 승인 단계와 검증 절차를 먼저 설계해 iOS 개발 전 과정에 적용했습니다.',
+            items: [
+                'AGENTS.md에는 MVVM·UseCase·Repository 의존성, GRDB/FTS5 local-first 검색, API Key와 민감 로그 금지처럼 모든 작업에 반복되는 규칙만 포함했습니다.',
+                '기능별 상세 맥락은 docs와 6개 Skill로 분리하고, 요청마다 필요한 문서와 파일만 지정해 불필요한 컨텍스트와 토큰 사용을 줄였습니다.',
+                '계획 보고 → 직접 검토·승인 → 파일 범위가 제한된 구현 → 빌드·테스트·실기기 QA 순서로 진행해 AI 결과가 설계 경계를 넘지 않게 했습니다.'
+            ],
+            metrics: ['Skill 6개', 'iOS 전체 개발', 'Codex · Claude Code']
+        }]
     },
     'side-focusboard': {
         overview: '출석, 집중 타이머, Todo, 통계, 메뉴바와 위젯을 제공하는 SwiftUI macOS 생산성 앱입니다.',
@@ -955,16 +974,16 @@ const projectPaarData = {
 const projectRoleData = {
     'onestore-1': 'iOS 파트 PL · 기술 검토, 아키텍처와 네트워크 모듈 설계, 단계별 구현 범위와 리스크 정리, 공통 디자인 컴포넌트 구축 및 상세 화면 구현',
     'onestore-2': '기술 파트 PM · 플랫폼 간 기준 조율, iOS 컴포넌트 구조와 디자인-코드 연결 흐름 설계',
-    'onestore-3': 'iOS 운영 개발 · 기능 개발, 정기 배포, VOC·OS 대응, Native 전환과 iPad·Widget 구현',
-    'encar-1': 'iOS 개발 · UIKit 레거시 분석, SwiftUI 전환, MVVM·MVI 비교 적용, 테스트와 로깅 중앙화',
+    'onestore-3': 'iOS 운영 개발 · 도서 다운로드·보관·삭제, Eye Tracking SDK와 소셜 로그인, Native 전환 및 iPad·Widget 구현',
+    'encar-1': 'iOS 개발 · SwiftUI 화면 2개 전환, MVVM·MVI 비교, Swift Testing Unit Test와 Coverage 전략, Cursor Rules 초기 설계',
     'gsitm-1': 'Android·iOS 운영 개발 / Mobile PL · 전사 앱 운영과 GS Fresh 차세대 모바일 범위 조율',
     'gsitm-2': 'Android·iOS 운영 개발 · 멤버십 앱 4종의 기능 개발, 배포, VOC·OS·Crash 대응',
     'digitaldime-1': 'Android 개발 · O2O 주문 흐름과 중국 현지 로그인·지도·결제 SDK 연동',
     'digitaldime-2': 'Android 개발 · WebView·JavaScript Interface와 중국 현지 SDK 연동',
     'digitaldime-3': 'Android 개발 · 기존 웹 커머스와 Native 바코드·QR·푸시 기능 연결',
     'digitaldime-4': '메인 Android 개발 · 요구사항 정리부터 화면·API·푸시 구현, 배포와 운영까지 담당',
-    'side-note-cleaner': 'iOS 개발 · 제품 흐름, 앱 아키텍처, VisionKit·OpenAI API, 프롬프트·DTO 설계와 App Store 배포',
-    'side-mindly': 'iOS 개발 · 앱 구조, SwiftUI, GRDB 검색, AI 태그·검색, Share Extension과 Codex 작업 환경 구성',
+    'side-note-cleaner': 'iOS 개발 · VisionKit 평탄화, OpenAI Cleansing, 프롬프트·DTO와 실패 검증 설계 및 App Store 배포',
+    'side-mindly': 'iOS 전체 개발 · Clean Architecture·MVVM, GRDB 검색, AI 태그·검색, Share Extension과 Codex·Claude Code 개발 환경 구성',
     'side-focusboard': '기획·디자인·macOS 개발 · 기능 정의, SwiftUI 구현, 저장소·위젯·메뉴바와 Codex 하네스 구성'
 };
 
