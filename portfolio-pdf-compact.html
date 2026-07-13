@@ -3,189 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이지은 | Senior iOS Developer Compact Portfolio</title>
+    <meta name="description" content="Senior iOS Application Developer 이지은의 인쇄용 포트폴리오">
+    <title>이지은 | Senior iOS Developer Print Portfolio</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="portfolio-pdf-compact.css">
+    <link rel="stylesheet" href="portfolio-pdf-compact.css?v=20260713">
 </head>
 <body>
-    <div class="compact-toolbar">
-        <a href="index.html">웹 포트폴리오로 돌아가기</a>
-        <button type="button" onclick="window.print()">Compact PDF로 저장</button>
-    </div>
+    <nav class="print-toolbar" aria-label="인쇄용 포트폴리오 도구">
+        <a href="index.html">웹 포트폴리오</a>
+        <a href="output/pdf/lee-jieun-ios-portfolio.pdf" download>PDF 다운로드</a>
+        <button type="button" onclick="window.print()">PDF로 저장</button>
+    </nav>
 
-    <main class="compact-document">
-        <section class="compact-cover">
-            <p class="eyebrow">Compact Portfolio</p>
-            <h1>이지은</h1>
-            <h2>Senior iOS Application Developer</h2>
-            <p>커머스·콘텐츠·플랫폼 도메인에서 10년 이상 모바일 앱을 개발하고 운영했습니다. 운영 안정화, 레거시 개선, SwiftUI 전환, 디자인 시스템 구축, AI-assisted workflow를 실무 맥락에 맞게 활용합니다.</p>
-            <div class="link-callout">
-                <strong>상세 프로젝트 이미지와 모달 내용은 웹 포트폴리오에서 확인해주세요.</strong>
-                <a href="https://amyleed2.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">https://amyleed2.github.io/Portfolio/</a>
+    <main class="print-document">
+        <section class="cover print-page">
+            <div class="cover-topline">
+                <span>PORTFOLIO · 2026</span>
+                <span>SEOUL · KOREA</span>
             </div>
-            <div class="contact-row">
+            <div class="cover-main">
+                <p class="cover-role">Senior iOS Application Developer</p>
+                <h1>운영의 복잡성을<br><em>구조와 기준으로 바꾸는</em><br>개발자, 이지은입니다.</h1>
+                <p class="cover-summary">Android와 iOS, SI 구축과 SM 운영, 고객사 프로젝트와 인하우스 서비스를 거치며 모바일 제품의 구축·배포·운영·개선을 경험했습니다. 레거시를 점진적으로 현대화하고, 여러 직군이 함께 사용할 수 있는 개발 기준을 만드는 데 강점이 있습니다.</p>
+            </div>
+            <dl class="cover-facts">
+                <div><dt>10+ Years</dt><dd>Mobile Application Development</dd></div>
+                <div><dt>Android → iOS</dt><dd>Cross-platform Experience</dd></div>
+                <div><dt>SI · SM · In-house</dt><dd>End-to-end Product Experience</dd></div>
+                <div><dt>4 Domains</dt><dd>Commerce · Content · Platform · Mobility</dd></div>
+            </dl>
+            <div class="cover-link">
+                <div>
+                    <span>FULL PORTFOLIO</span>
+                    <strong>상세 아키텍처·화면·프로젝트 자료는 웹에서 확인할 수 있습니다.</strong>
+                </div>
+                <a href="https://amyleed2.github.io/Portfolio/">amyleed2.github.io/Portfolio</a>
+            </div>
+            <footer class="cover-contact">
                 <span>amy.lee.d2@gmail.com</span>
                 <span>+82 10-6345-4342</span>
+            </footer>
+        </section>
+
+        <section class="print-section print-page about-page">
+            <header class="section-title"><span>01</span><div><p>ABOUT</p><h2>플랫폼을 넘나든 경험으로<br>모바일 제품의 전체 흐름을 봅니다.</h2></div></header>
+            <div class="about-intro">
+                <strong>저를 만든 네 가지 경험</strong>
+                <p>기술적 제약과 대안을 여러 직군이 이해할 수 있는 언어로 설명하고, 구현 결과가 개인의 지식으로 남지 않도록 코드·문서·공통 기준으로 정리합니다.</p>
             </div>
-        </section>
-
-        <section class="compact-section">
-            <h2>Summary</h2>
-            <ul class="summary-list">
-                <li><strong>Domain</strong> 커머스·콘텐츠·플랫폼 도메인에서 10년 이상의 모바일 앱 개발 경험을 보유했습니다.</li>
-                <li><strong>Modernization</strong> Objective-C / UIKit 레거시 분석부터 SwiftUI 전환까지 운영 앱의 구조 개선을 수행했습니다.</li>
-                <li><strong>Architecture</strong> Clean Architecture, MVVM, MVI, DI, Coordinator 기반의 구조 설계 경험이 있습니다.</li>
-                <li><strong>Workflow</strong> 디자인 시스템, 글로벌 앱 마켓 Prototype, AI-assisted development workflow 경험을 갖고 있습니다.</li>
-            </ul>
-        </section>
-
-        <section class="compact-section">
-            <h2>Core Strengths</h2>
-            <div class="mini-grid">
-                <article><h3>iOS App Architecture</h3><p>Clean Architecture, MVVM, Coordinator, DI 기반으로 유지보수 가능한 구조를 설계합니다.</p></article>
-                <article><h3>Operation & Stability</h3><p>정기·긴급 배포, OS 대응, VOC/Crash/API 로그 기반 운영 안정성 개선 경험이 있습니다.</p></article>
-                <article><h3>Legacy Modernization</h3><p>레거시 구조의 영향 범위를 나누고 SwiftUI/MVVM 전환 단위를 판단합니다.</p></article>
-                <article><h3>Design System</h3><p>공통 UI 컴포넌트, 디자인 토큰, Code Connect 기반 협업 구조를 정리했습니다.</p></article>
+            <div class="about-grid">
+                <article><span>01 · CROSS-PLATFORM</span><h3>Android에서 iOS까지</h3><p>Android 개발자 시절부터 iOS를 학습하고 GS Retail 앱을 양 플랫폼으로 운영했습니다. 이후 iOS 개발에 집중하기로 선택해 ONEstore에 iOS 개발자로 이직했습니다.</p><small>Android/iOS Operation · iOS Career Transition</small></article>
+                <article><span>02 · COMMUNICATION</span><h3>설명하고 기록하며 협업을 연결합니다</h3><p>기획·디자인·개발의 언어 차이를 조율하고 합의한 기준을 문서화합니다. 이 경험을 바탕으로 ONEstore Design System 기술 파트 PM을 맡아 배포 가능한 산출물로 연결했습니다.</p><small>Cross-functional Communication · Documentation</small></article>
+                <article><span>03 · MODERNIZATION</span><h3>레거시의 흐름을 다시 정리합니다</h3><p>UIKit을 SwiftUI로, WebView 구매 목록을 Native로 전환했습니다. MVVM·MVI로 상태 흐름을 분리하고 Swift Testing 기반 테스트를 작성하며 운영 앱을 점진적으로 개선했습니다.</p><small>UIKit → SwiftUI · WebView → Native · Testing</small></article>
+                <article><span>04 · PRODUCT RANGE</span><h3>구축과 운영, 여러 도메인을 경험했습니다</h3><p>웹에이전시 SI, 고객사 SM, 인하우스 서비스에서 B2B·B2C·사내 앱과 Native·Hybrid 앱을 개발했습니다. 커머스·콘텐츠·플랫폼·모빌리티 제품을 배포하고 운영했습니다.</p><small>SI · SM · In-house · 4 Domains</small></article>
             </div>
+            <aside class="recent-note"><span>RECENT UPDATE</span><p>Cursor, Claude Code, Codex의 작업 범위와 제한 조건을 직접 설계하고, 코드·빌드·테스트·수동 QA로 결과를 검증하는 AI-assisted 개발 방식을 개인 프로젝트에 적용하고 있습니다.</p></aside>
         </section>
 
-        <section class="compact-section">
-            <h2>Career</h2>
-            <div class="timeline-list">
-                <article><h3>Digitaldime</h3><p>2014.12 ~ 2017.05 · Android Developer</p><span>웹에이전시 환경에서 Android 기반 SI/SM 프로젝트를 수행했습니다. CafeUnion, LuxeWater, 올가홀푸드, MyD2 등 커머스/O2O/브랜드/사내 커뮤니케이션 앱의 화면 구현, API 연동, WebView 및 JavaScript Interface, 외부 SDK, 위치 기반 기능, 푸시, 결제/소셜 SDK 연동을 담당했습니다.</span></article>
-                <article><h3>GS ITM</h3><p>2017.06 ~ 2021.09 · Android/iOS Developer</p><span>GS Retail 전사 모바일 앱 10개 이상을 운영하고 GS 계열사 SI 프로젝트를 개발했습니다. 정기/긴급 배포, 기능 개발, OS 업데이트, deprecated API 검수, VOC/Crash/SDK 이슈 대응을 수행했고, 각 사업부 현업자와 요구사항·배포 일정·장애 영향 범위를 조율했습니다. GS Fresh 차세대 프로젝트에서는 모바일 파트 PL로 Android/iOS 구현 범위와 기술 스펙을 정리했습니다.</span></article>
-                <article><h3>ONEstore</h3><p>2021.09 ~ 2025.06 · iOS Developer</p><span>초기에는 ONEstory e-book iOS 앱 운영과 기능 개발을 담당했고, 이후 Apple DMA 정책 대응을 위해 ONEstore 사업부로 전배되어 글로벌 앱 마켓 Prototype과 디자인 시스템 구축을 수행했습니다. ONEstory에서는 정기 배포, VOC/OS 대응, 콘텐츠 뷰어·보관함·구매/대여 흐름·로그인·외부 SDK 연동, 위젯/iPad 대응을 담당했습니다.</span></article>
-                <article><h3>Encar</h3><p>2025.06 ~ 2025.08 · iOS Developer</p><span>운영 중인 Encar iOS 앱에서 UIKit/Objective-C 기반 레거시 구조를 파악하고 SwiftUI + MVVM 전환 범위를 담당했습니다. 제네시스 옵션 필터 화면 전환, 광고 모듈 통합, Crashlytics 로깅 중앙화, API 요청/응답 로깅 개선을 수행해 운영 이슈 추적 기준을 정리했습니다.</span></article>
-            </div>
-        </section>
-
-        <section class="compact-section page-break-before">
-            <h2>Representative Projects</h2>
-            <p class="section-note">아래 내용은 제출용 요약입니다. 상세 이미지, 아키텍처, 코드 예시, 결과 스크린샷은 웹 포트폴리오에서 확인할 수 있습니다.</p>
-            <div class="project-list">
-                <article>
-                    <h3>ONEstore Design System</h3>
-                    <p><strong>기간</strong> 2024.06 ~ 2025.06 · <strong>인원</strong> Android 3, iOS 3, 디자이너 3, BE 1, FE 1 · <strong>역할</strong> 디자인 시스템 개발파트 PM</p>
-                    <p>ONEstore 제품군에서 공통 UI 컴포넌트와 디자인 리소스를 일관되게 사용하기 위한 디자인 시스템 구축 프로젝트입니다. iOS 개발 파트 기준으로 컴포넌트 구조, 디자인 토큰, Style Dictionary, Figma Code Connect 연계 흐름을 검토하고 UXD팀 및 Android 개발자와 협업했습니다. 단순 UI 공통화가 아니라 디자인 기준과 iOS 구현 구조가 연결될 수 있도록 컴포넌트 사용 기준, 예외 케이스, 협업 커뮤니케이션을 정리했습니다.</p>
-                    <p class="tech-line">SwiftUI, Tuist, Figma, Design Token, Style Dictionary, Code Connect</p>
-                    <figure class="compact-evidence">
-                        <img src="assets/images/pdf-compact/design_deveolp_archi.jpg" alt="ONEstore 디자인 시스템 개발 구조">
-                        <img src="assets/images/pdf-compact/codeconnect1.jpg" alt="Figma Code Connect 결과 예시">
-                        <figcaption>디자인 시스템 구조와 Figma Code Connect 연계 예시</figcaption>
-                    </figure>
-                </article>
-                <article>
-                    <h3>ONEstore Global App Market Prototype</h3>
-                    <p><strong>기간</strong> 2024.01 ~ 2024.12 · <strong>인원</strong> iOS 6 · <strong>역할</strong> iOS PL / 아키텍처·네트워크 모듈 설계·공통 UI 구축·API 설계</p>
-                    <p>Apple DMA 정책 대응을 위한 글로벌 앱 마켓 Prototype 프로젝트입니다. MarketplaceKit 검토, 앱 아키텍처, 네트워크 모듈, JavaScript Interface 구조를 정리하고 Prototype → Alpha/Beta 단계의 iOS 구현 범위와 리스크를 관리했습니다. Apple Cork 오프라인 세션에서 확인한 DMA 정책, MarketplaceKit 적용 방향, iOS 구현 제약사항을 기술 검토에 반영했습니다.</p>
-                    <p class="tech-line">SwiftUI, Clean Architecture, MVVM, Tuist, MarketplaceKit, JavaScript Interface</p>
-                    <figure class="compact-evidence">
-                        <img src="assets/images/pdf-compact/apple_diagram.jpg" alt="Apple 대체 앱 마켓 설치 흐름 검토">
-                        <img src="assets/images/pdf-compact/project_architecture.jpg" alt="ONEstore Global App Market 모듈 아키텍처">
-                        <figcaption>Apple DMA 검토 흐름과 Prototype 아키텍처 자료</figcaption>
-                    </figure>
-                </article>
-                <article>
-                    <h3>GS Retail Mobile App Operation & GS Fresh Renewal</h3>
-                    <p><strong>기간</strong> 2017 ~ 2021 · <strong>인원</strong> Android 2, iOS 2, 총괄 1 · <strong>역할</strong> Android/iOS 운영 개발, 모바일 파트 PL</p>
-                    <p>GS Fresh, 달리살다, 미식일상, 배송기사님 전용 앱, 나만의 냉장고, GS 수퍼마켓 등 GS Retail 모바일 앱 10개 이상을 운영했습니다. 정기/긴급 배포, 기능 개발, OS 대응, deprecated API 검수, VOC/Crash/SDK 이슈 대응과 사업부 커뮤니케이션을 수행했습니다. GS Fresh 차세대 프로젝트에서는 Android/iOS 개발 범위, 사용자 시나리오, 플랫폼별 기술 스펙, 구현 문서와 협업 커뮤니케이션을 정리했습니다.</p>
-                    <p class="tech-line">Swift, Objective-C, Java, RxSwift, Firebase, Crashlytics, Alamofire, Moya, WKWebView, SSO</p>
-                </article>
-                <article>
-                    <h3>ONEstory iOS App 운영</h3>
-                    <p><strong>기간</strong> 2021.09 ~ 2023.12 · <strong>인원</strong> iOS 3, Android 3 · <strong>역할</strong> iOS 운영 개발</p>
-                    <p>ONEstory e-book iOS 앱의 운영과 기능 개발을 담당했습니다. 정기 배포, VOC 대응, OS 업데이트, 화면 개선, SDK 연동, 위젯 및 iPad 대응을 수행했습니다. 콘텐츠 뷰어, 보관함, 구매/대여 흐름, 로그인 및 외부 SDK 연동처럼 사용자가 콘텐츠를 탐색하고 읽는 과정에 필요한 기능을 유지보수했고, 배포 전 기능 검수와 오류 대응도 함께 수행했습니다.</p>
-                    <p class="tech-line">Swift, UIKit, Objective-C, SwiftUI, KeychainAccess, Kingfisher, Lottie, Amplitude</p>
-                    <figure class="compact-evidence single-image">
-                        <img src="assets/images/pdf-compact/onestory3.jpg" alt="ONEstory iOS 앱 화면">
-                        <figcaption>ONEstory 콘텐츠 서비스 운영 화면 예시</figcaption>
-                    </figure>
-                </article>
-                <article>
-                    <h3>Encar iOS App 운영 및 개선</h3>
-                    <p><strong>기간</strong> 2025.06 ~ 2025.08 · <strong>역할</strong> iOS 개발</p>
-                    <p>운영 중인 iOS 앱에서 UIKit/Objective-C 기반 레거시 구조를 파악하고 제네시스 옵션 필터 화면을 SwiftUI + MVVM 구조로 전환했습니다. 기존 UIKit 앱과의 연결 지점, 상태 관리 방식, 화면 전환 흐름, 테스트 가능성을 고려해 전환 범위를 정리했습니다. 광고 모듈 통합, Crashlytics 로깅 중앙화, API 요청/응답 로깅 개선도 수행했습니다.</p>
-                    <p class="tech-line">Objective-C, Swift, UIKit, SwiftUI, MVVM, AppsFlyer, Braze, Crashlytics, Alamofire</p>
-                    <figure class="compact-evidence single-image">
-                        <img src="assets/images/pdf-compact/encar_screenshot.jpg" alt="Encar SwiftUI 전환 화면">
-                        <figcaption>UIKit 레거시 화면의 SwiftUI 전환 결과 예시</figcaption>
-                    </figure>
-                </article>
-            </div>
-        </section>
-
-        <section class="compact-section">
-            <h2>Side Project</h2>
-            <article class="single-card">
-                <h3>학습지 지우개 Note Cleaner</h3>
-                <p><strong>기간</strong> 2025.11 ~ 2026.03 · <strong>역할</strong> iOS 앱 설계, 구현, App Store 배포</p>
-                <p>VisionKit과 OpenAI API 기반 영어 학습지 이미지 분석 앱을 설계·구현해 App Store에 출시했습니다. 모든 이미지를 바로 AI 처리로 넘기지 않고 영어 학습지 여부, 이미지 품질, 후속 정리 필요 여부를 먼저 판별하는 triage 흐름을 설계했습니다. 프롬프트, 응답 DTO, ACCEPT/REJECT, reason_code, should_run_cleanup 검증 흐름을 직접 구성하고 SwiftUI 상태 처리와 배포까지 담당했습니다.</p>
-                <p class="tech-line">SwiftUI, VisionKit, OpenAI API, Structured Response, Clean Architecture, MVVM, Firebase Remote Config, Fastlane</p>
-                <p class="store-link"><strong>App Store</strong> <a href="https://apps.apple.com/kr/app/%ED%95%99%EC%8A%B5%EC%A7%80-%EC%A7%80%EC%9A%B0%EA%B0%9C-note-cleaner/id6757840733" target="_blank" rel="noopener noreferrer">학습지 지우개 Note Cleaner</a></p>
-                <figure class="compact-evidence side-images">
-                    <img src="assets/images/pdf-compact/worksheet-main.jpg" alt="학습지 지우개 메인 화면">
-                    <img src="assets/images/pdf-compact/worksheet-cleanup-result.jpg" alt="학습지 지우개 정리 결과 화면">
-                    <figcaption>App Store 출시 앱의 메인 화면과 정리 결과 화면</figcaption>
-                </figure>
+        <section class="print-section career-section">
+            <header class="section-title"><span>02</span><div><p>CAREER</p><h2>10년 이상의 모바일 개발 경험</h2></div></header>
+            <article class="career-company">
+                <div class="career-heading"><div><span>2025.06 — 2025.08</span><h3>엔카닷컴</h3><p>플랫폼개발팀 · 매니저 · iOS Developer</p></div><strong>iOS APP MODERNIZATION</strong></div>
+                <p class="career-summary">아키텍처나 디자인 패턴 없이 UIKit·Objective-C로 구성된 운영 앱을 분석하고, 작은 화면부터 SwiftUI와 테스트 가능한 구조를 도입했습니다.</p>
+                <div class="career-projects">
+                    <div><b>UIKit 레거시 화면 2개의 SwiftUI 전환</b><p>MVVM·MVI 두 구조를 비교 적용하고 Swift Testing Unit Test와 Coverage 향상 전략을 수립했습니다.</p></div>
+                    <div><b>운영 코드 중앙화</b><p>Crashlytics와 API 요청·응답 로깅을 중앙화해 개발자별 로그 형식과 운영 분석 기준을 통일했습니다.</p></div>
+                    <div><b>iOS 디자인 시스템 초기 적용</b><p>Color·Font·Radius의 시맨틱 토큰과 컴포넌트 기준을 모듈로 구성해 신규 화면과 배포 버전에 적용했습니다.</p></div>
+                </div>
             </article>
-            <article class="single-card side-project-compact-card">
-                <h3>Mindly-iOS</h3>
-                <p><strong>기간</strong> 2026.05 ~ 진행 중 · <strong>인원</strong> iOS 1, Android 1, 기획 1 · <strong>역할</strong> iOS 앱 구조 설계 및 구현</p>
-                <p>저장한 링크와 메모를 AI 태그와 로컬 검색 인덱스로 정리해, 나중에 키워드·태그·자연어로 다시 찾을 수 있게 만든 iOS 키워드 메모 앱입니다. SwiftUI 화면, GRDB 로컬 저장소, AI 태그 생성/검색 흐름, Share Extension, 실기기 QA를 담당했습니다. Codex 작업에서는 AGENTS.md, PRD, feature-plan / ios-implementation / grdb-search / security-review skill을 활용해 단계별 구현 범위와 금지 조건을 명확히 했습니다.</p>
-                <p class="tech-line">SwiftUI, GRDB, Share Extension, AI Search, Firebase Functions, Codex, AGENTS.md, Skills</p>
-                <figure class="compact-evidence side-images mindly-images">
-                    <img src="assets/images/pdf-compact/mindly-main.jpg" alt="Mindly 메인 노트 리스트 화면">
-                    <img src="assets/images/pdf-compact/mindly-ai-search-loading.jpg" alt="Mindly AI 검색 화면">
-                    <img src="assets/images/pdf-compact/mindly-note-links.jpg" alt="Mindly 링크 노트 상세 화면">
-                    <figcaption>노트 리스트, 자연어 기반 AI 검색, 링크 상세 관리 화면</figcaption>
-                </figure>
+            <article class="career-company">
+                <div class="career-heading"><div><span>2021.09 — 2025.06</span><h3>ONEstore</h3><p>iOS 개발 · 기술 파트 PL / PM</p></div><strong>CONTENT → PLATFORM</strong></div>
+                <p class="career-summary">ONEstory 인하우스 콘텐츠 서비스 운영에서 시작해 Apple DMA 대응 글로벌 앱 마켓 기술 검토와 조직 최초 디자인 시스템 구축으로 역할을 확장했습니다.</p>
+                <div class="career-projects">
+                    <div><b>Global App Market Prototype <i>PL</i></b><p>MarketplaceKit feasibility, 아키텍처·네트워크·J/S Interface를 설계하고 Apple Cork Lab과 3단계 앱 검증을 수행했습니다.</p></div>
+                    <div><b>ONEstore Design System <i>PM</i></b><p>4계층 구조, 공통 컴포넌트, 토큰 자동화, Code Connect, SPM 배포와 전사 세미나 3회를 이끌었습니다.</p></div>
+                    <div><b>ONEstory iOS 운영</b><p>도서 다운로드·보관·삭제, 소셜 로그인, Eye Tracking SDK, 구매 목록 Native 전환과 정기 배포를 담당했습니다.</p></div>
+                </div>
             </article>
-            <article class="single-card side-project-compact-card">
-                <h3>FocusBoard</h3>
-                <p><strong>상태</strong> App Store 출시 · <strong>역할</strong> macOS 앱 설계, 구현, 출시 준비</p>
-                <p>출석, 집중 타이머, Todo, 통계, 메뉴바, 위젯을 포함한 macOS 생산성 앱입니다. 기능별 kickoff 문서로 goal, policy, file boundaries, risks, out-of-scope를 먼저 정리하고, implementation_reviewer / apple_surface_specialist / persistence_and_stats agent와 feature-kickoff / implement-quick-surface / ship-check skill을 활용해 기능 구현과 검증 흐름을 분리했습니다. App Store 제출 자료와 출시까지 진행했습니다.</p>
-                <p class="tech-line">SwiftUI, macOS, MenuBarExtra, Widget, App Group, JSON Persistence, Firebase Remote Config, Codex</p>
-                <p class="store-link"><strong>App Store</strong> <a href="https://apps.apple.com/kr/app/focusboard/id6765804921" target="_blank" rel="noopener noreferrer">FocusBoard</a></p>
-                <figure class="compact-evidence focusboard-image">
-                    <img src="assets/images/pdf-compact/focusboard-main.jpg" alt="FocusBoard 메인 화면 스크린샷">
-                    <figcaption>출석 캘린더, 집중 타이머, 오늘 요약, Todo 입력 흐름이 연결된 macOS 앱 화면</figcaption>
-                </figure>
+            <article class="career-company">
+                <div class="career-heading"><div><span>2017.06 — 2021.09</span><h3>GS ITM</h3><p>Mobile Developer · Android / iOS</p></div><strong>SI → RETAIL OPERATION</strong></div>
+                <p class="career-summary">GS 계열사 Android SI 프로젝트 후 GS Retail 운영팀으로 이동해 전사 모바일 앱 10종 이상을 운영하고 GS Fresh 차세대 구축의 Mobile PL을 맡았습니다.</p>
+                <div class="career-projects">
+                    <div><b>GS Retail 전사 앱 운영</b><p>기능 개발, 월별 정기·긴급 배포, VOC·Crash·OS·deprecated API 대응과 사업부 일정 조율을 수행했습니다.</p></div>
+                    <div><b>GS Fresh 차세대 구축 <i>PL</i></b><p>2개월 안에 Android/iOS 앱 4종을 구축하기 위해 공통 시나리오와 기술 feasibility, J/S Interface 규격을 정리했습니다.</p></div>
+                    <div><b>외부 개발 결과 인스팩션</b><p>외부 인력의 빠른 인볼브를 위한 가이드와 사이드 이펙 검수, 인수인계까지 운영자 관점에서 관리했습니다.</p></div>
+                </div>
+            </article>
+            <article class="career-company">
+                <div class="career-heading"><div><span>2014.11 — 2017.05</span><h3>Digitaldime</h3><p>Android Developer · Web Agency</p></div><strong>EARLY CAREER · SI / SM</strong></div>
+                <p class="career-summary">다양한 도메인의 Android Native·Hybrid 앱을 제안부터 출시와 운영까지 경험하고, 기획·디자인·서버·웹 개발자와 협업하는 기반을 만들었습니다.</p>
+                <div class="career-projects">
+                    <div><b>글로벌·커머스 SI</b><p>CafeUnion, LuxeWater 등 중국 시장 앱에서 WeChat·QQ·Baidu·Alipay와 WebView 연동을 구현했습니다.</p></div>
+                    <div><b>국내 브랜드·운영</b><p>올가홀푸드, 할리스커피, 폴리스쿨, SK FashionMall iPad 앱 등 브랜드·커머스 프로젝트를 수행했습니다.</p></div>
+                    <div><b>MyD2 인트라넷 앱</b><p>메인 Android 개발자로 회의실 예약·휴가 결재·푸시를 포함한 앱을 구축하고 운영했습니다.</p></div>
+                </div>
             </article>
         </section>
 
-        <section class="compact-section">
-            <h2>About Me</h2>
-            <div class="about-detail">
-                <p>Android 개발자로 시작해 iOS로 전향하는 과정에서 두 플랫폼의 화면 구조, 배포/운영 방식, SDK/API 연동 차이를 직접 학습했습니다. 이 경험은 GS Fresh 차세대 프로젝트에서 Android/iOS 개발 범위와 사용자 시나리오, 플랫폼별 기술 스펙을 맞추는 모바일 파트 조율 역할로 이어졌습니다.</p>
-                <p>운영 중인 앱에서는 기능 구현만큼 배포 안정성, 장애 추적, OS 변화 대응을 중요하게 봅니다. 레거시 구조는 한 번에 교체하기보다 현재 구조의 제약과 의존성을 먼저 파악하고, 영향 범위를 나누어 SwiftUI/MVVM 등으로 점진적으로 전환하는 방식을 선호합니다.</p>
-                <p>디자이너, 기획자, 서버/웹/모바일 개발자와 요구사항을 맞추는 협업을 꾸준히 해왔고, 반복되는 구현과 논의는 디자인 시스템, 공통 컴포넌트, 사용 기준으로 구조화하는 방식에 관심이 많습니다. AI 도구는 분석과 초안 작성에 활용하지만 최종 설계 판단과 코드 품질 검증은 직접 수행합니다.</p>
+        <section class="print-section print-page skills-page">
+            <header class="section-title"><span>03</span><div><p>TECH SKILLS</p><h2>프로젝트에서 사용한 기술을<br>역할에 따라 구분했습니다.</h2></div></header>
+            <div class="skill-groups">
+                <article><span>01</span><div><h3>iOS Development</h3><p>Swift · Objective-C · UIKit · SwiftUI · Combine · RxSwift</p></div></article>
+                <article><span>02</span><div><h3>Architecture &amp; Testing</h3><p>Clean Architecture · MVVM · MVI · Dependency Injection · XCTest · Swift Testing</p></div></article>
+                <article><span>03</span><div><h3>Build &amp; CI/CD</h3><p>Tuist · Jenkins · GitHub Actions · Fastlane · SPM</p></div></article>
+                <article><span>04</span><div><h3>Collaboration &amp; Tools</h3><p>Git · Bitbucket · SVN · Jira · Wiki · Slack · Teams · Figma · Zeplin · Postman · Swagger</p></div></article>
+                <article><span>05</span><div><h3>AI-assisted Development</h3><p>Claude Code · OpenAI Codex · Cursor · ChatGPT · Pencil · Figma Make</p></div></article>
+                <article><span>06</span><div><h3>Android</h3><p>Kotlin · Java · Native / Hybrid Application</p></div></article>
+            </div>
+            <div class="skill-context">
+                <h3>실사용 맥락</h3>
+                <div><b>RxSwift / Combine</b><p>GS Retail 운영 앱과 ONEstore 프로젝트에서 비동기 상태와 이벤트 흐름을 구성했습니다.</p></div>
+                <div><b>Clean Architecture / MVVM</b><p>Global App Market, Encar 전환 화면, Note Cleaner와 Mindly에서 화면·도메인·데이터 경계를 설계했습니다.</p></div>
+                <div><b>Tuist / Fastlane / Jenkins</b><p>프로젝트 생성·모듈 관리와 정기 배포, TestFlight/App Store 배포 흐름에 적용했습니다.</p></div>
+                <div><b>Design Token / Code Connect</b><p>ONEstore Design System에서 디자인 자산과 코드 리소스·스니펫을 연결했습니다.</p></div>
             </div>
         </section>
 
-        <section class="compact-section">
-            <h2>AI-Assisted Project Workflow</h2>
-            <div class="mini-grid">
-                <article><h3>Context Engineering</h3><p>요구사항, API 계약, 디자인 기준, 아키텍처 규칙을 먼저 정리해 AI가 같은 기준을 참조하도록 만듭니다.</p></article>
-                <article><h3>Token-efficient Prompting</h3><p>현재 단계의 변경 목표와 금지 조건만 전달해 불필요한 컨텍스트와 diff를 줄입니다.</p></article>
-                <article><h3>Guardrailed Implementation</h3><p>수정 대상 파일, 금지 파일, 보안 기준, 레이어 경계를 지정해 과한 변경을 막습니다.</p></article>
-                <article><h3>Developer-owned Verification</h3><p>AI 결과는 Xcode build/test, git diff/status, 실제 앱 실행, 수동 QA로 직접 검증합니다.</p></article>
+        <section class="print-section project-section">
+            <header class="section-title"><span>04</span><div><p>SELECTED PROJECTS</p><h2>문제와 판단, 역할과 결과로<br>대표 프로젝트를 정리했습니다.</h2></div></header>
+
+            <article class="featured-project">
+                <header><div><span>WORK · ONEstore · 2024.06—2025.06</span><h3>ONEstore Design System</h3><p>기술 파트 PM · 플랫폼 간 기준 조율, iOS 컴포넌트 구조와 디자인-코드 연결 흐름 설계</p></div><b>PM</b></header>
+                <div class="project-metrics"><span>초기 설계 4–5개월</span><span>아키텍처 4계층</span><span>세미나 3회</span></div>
+                <div class="paar-grid"><div><b>Problem</b><p>iOS·Android·Web·디자인 조직이 같은 컴포넌트를 서로 다른 명칭과 레이어로 정의해 반복 구현과 커뮤니케이션 비용이 발생했습니다.</p></div><div><b>Analyze</b><p>바이위클리 회의로 컴포넌트 정의·레이어·토큰 기준을 맞추고 Top Navigation Bar를 대표 사례로 공통 개념과 플랫폼 예외를 검증했습니다.</p></div><div><b>Action</b><p>Core → Style → Component → Screen 구조와 방법론을 설계했습니다. 토큰·공통 컴포넌트·SPM, Style Dictionary CI/CD와 Code Connect 스니펫을 구축했습니다.</p></div><div><b>Result</b><p>반복 설명과 해석 과정을 공통 문서·코드 기준으로 전환해 커뮤니케이션 비용과 신규 개발자의 초기 인볼브 부담을 낮췄습니다. 전사 세미나 3회로 활용 방법을 전파했습니다.</p></div></div>
+                <figure class="evidence two-up"><img src="assets/images/pdf-compact/design_deveolp_archi.jpg" alt="ONEstore 디자인 시스템 4계층 구조"><img src="assets/images/pdf-compact/codeconnect1.jpg" alt="ONEstore Figma Code Connect"><figcaption>Core–Style–Component–Screen 아키텍처와 Figma Code Connect 구현 자료</figcaption></figure>
+            </article>
+
+            <article class="featured-project">
+                <header><div><span>WORK · ONEstore · 2024.01—2024.12</span><h3>Global App Market Prototype</h3><p>iOS 파트 PL · 기술 feasibility, 아키텍처·네트워크·J/S Interface 설계, 공통 UI와 상세 화면 구현</p></div><b>PL</b></header>
+                <div class="project-metrics"><span>Prototype → Alpha → Beta</span><span>Apple Cork 약 2주</span><span>출장 참가 4명</span></div>
+                <div class="paar-grid"><div><b>Problem</b><p>EU DMA 기반 MarketplaceKit은 국내 개발·디버깅이 제한됐고 초기 문서도 불완전해 사업·투자 판단에 필요한 구현 가능성을 확인하기 어려웠습니다.</p></div><div><b>Analyze</b><p>Apple과 이메일·화상 미팅으로 누락 조건을 확인하고, 국가별 확장과 Presentation 교체를 고려해 Clean Architecture와 SwiftUI를 선택했습니다.</p></div><div><b>Action</b><p>팀의 iOS 대표로 Apple Cork Technical Lab에 참석해 설치·업데이트 흐름을 직접 구현했습니다. 귀국 후 실행 데이터를 C레벨 feasibility 보고와 3단계 개발 계획에 반영했습니다.</p></div><div><b>Result</b><p>3단계 동작 앱, 확장 가능한 아키텍처, 자체 네트워크 모듈과 구현 범위·리스크 문서를 산출해 투자 검토 과정의 기술 근거로 활용했습니다.</p></div></div>
+                <figure class="evidence two-up"><img src="assets/images/pdf-compact/apple_diagram.jpg" alt="Apple 대체 앱 마켓 설치 흐름"><img src="assets/images/pdf-compact/project_architecture.jpg" alt="ONEstore 글로벌 앱 마켓 아키텍처"><figcaption>Apple Cork Lab 이후 정리한 설치 Flow와 iOS 아키텍처 초안</figcaption></figure>
+            </article>
+
+            <article class="featured-project compact-feature">
+                <header><div><span>WORK · Encar · 2025.06—2025.08</span><h3>UIKit Legacy → SwiftUI Modernization</h3><p>iOS Developer · SwiftUI 화면 2개, 테스트 구조, 운영 코드 중앙화와 디자인 시스템 초기 적용</p></div></header>
+                <div class="project-metrics"><span>SwiftUI 전환 2개 화면</span><span>Swift Testing</span><span>3개 개선 축</span></div>
+                <div class="paar-grid"><div><b>Problem</b><p>UIKit·Objective-C 화면에 명확한 상태 구조와 테스트 경계가 없고 로그·리소스 선언도 파편화돼 있었습니다.</p></div><div><b>Action</b><p>Leaf 화면부터 MVVM·MVI 두 버전으로 SwiftUI 전환을 시작하고 Unit Test와 Coverage 전략을 적용했습니다. Crash/API 로그와 시맨틱 토큰을 중앙화했습니다.</p></div><div><b>Result</b><p>신규 화면이 따를 SwiftUI·테스트 시작점과 통일된 운영 분석 기준을 만들고, 토큰·컴포넌트를 실제 배포 화면에 적용했습니다.</p></div><div><b>Evidence</b><p>SwiftUI 화면, Swift Testing, 중앙 로그 규격, 디자인 토큰 모듈과 Cursor Rules 초기 설계</p></div></div>
+                <figure class="evidence single"><img src="assets/images/pdf-compact/encar_screenshot.jpg" alt="Encar SwiftUI 전환 화면"><figcaption>운영 UIKit 화면을 SwiftUI 구조로 전환한 결과</figcaption></figure>
+            </article>
+
+            <article class="featured-project compact-feature">
+                <header><div><span>WORK · GS ITM · 2018.06—2021.09</span><h3>GS Retail App Operation &amp; GS Fresh Renewal</h3><p>Android·iOS 운영 개발 / Mobile PL · 전사 앱 운영과 차세대 모바일 구축 범위 조율</p></div><b>PL</b></header>
+                <div class="project-metrics"><span>운영 앱 10종+</span><span>차세대 앱 4종</span><span>구축 2개월</span></div>
+                <div class="paar-grid"><div><b>Problem</b><p>서로 다른 사업부와 배포 주기를 가진 다수 앱의 안정성을 유지하는 동시에 Android/iOS 차세대 앱 4종을 단기간에 구축해야 했습니다.</p></div><div><b>Action</b><p>채널별 배포 범위와 Fastlane 흐름을 관리하고 VOC·Crash·OS 이슈를 대응했습니다. 차세대 구축에서는 공통 사용자 시나리오와 J/S Interface 규격을 선행했습니다.</p></div><div><b>Result</b><p>GS Retail 전사 앱 10종 이상을 운영했고, 양 플랫폼의 해석 차이와 재작업을 줄이며 2개월 안에 차세대 앱 4종을 오픈했습니다.</p></div><div><b>Operation</b><p>외부 개발자의 인볼브 가이드, 결과물 인스팩션, 사이드 이펙 검수와 인수인계까지 운영자 책임 범위로 수행했습니다.</p></div></div>
+            </article>
+        </section>
+
+        <section class="print-section print-page other-projects">
+            <header class="section-title small"><span>05</span><div><p>PROJECT ARCHIVE</p><h2>콘텐츠 운영부터 초기 Android SI까지</h2></div></header>
+            <div class="archive-grid">
+                <article class="wide"><span>WORK · ONEstore · 2021.09—2023.12</span><h3>ONEstory iOS Application 운영 및 개발</h3><p>웹툰·웹소설·전자책·오디오북 서비스에서 도서 다운로드·삭제·보관·오프라인 열람, 구매·대여, Kakao·Apple 소셜 로그인과 Eye Tracking SDK를 구현했습니다. WebView 구매 목록을 Native로 전환하고 iPad·Widget·정기 배포와 VOC·OS 대응을 담당했습니다.</p><small>Swift · UIKit · Objective-C · SwiftUI · iPad · Widget</small></article>
+                <article><span>WORK · Digitaldime</span><h3>CafeUnion</h3><p>중국 O2O 커머스 Android 앱. 주문 흐름과 WeChat·QQ·Baidu·Alipay SDK 4종을 연동했습니다.</p><small>Java · Android · O2O · China SDK</small></article>
+                <article><span>WORK · Digitaldime</span><h3>LuxeWater</h3><p>중국 생수 주문 서비스의 WebView·JavaScript Interface와 현지 로그인·결제 SDK를 구현했습니다.</p><small>Java · WebView · Hybrid App</small></article>
+                <article><span>WORK · Digitaldime</span><h3>올가홀푸드</h3><p>기존 웹 커머스에 Native 바코드·QR·푸시 기능을 연결한 Android 앱을 구축했습니다.</p><small>Android · Commerce · Barcode / QR</small></article>
+                <article><span>WORK · Digitaldime</span><h3>사내 인트라넷 MyD2</h3><p>메인 Android 개발자로 회의실 예약·휴가 결재·로그인·푸시를 구현하고 출시 후 운영했습니다.</p><small>Android · Intranet · Main Developer</small></article>
             </div>
         </section>
 
-        <section class="compact-section">
-            <h2>Tech Stack</h2>
-            <div class="tech-grid">
-                <p><strong>Core iOS</strong> Swift, Objective-C, UIKit, SwiftUI, Combine, RxSwift</p>
-                <p><strong>Architecture</strong> Clean Architecture, MVVM, MVI, DI, Coordinator</p>
-                <p><strong>Operation</strong> Firebase, Crashlytics, API Logging, Fastlane, XCTest</p>
-                <p><strong>Design / AI</strong> Figma, Design Token, Code Connect, Cursor, Claude Code, Codex, Copilot</p>
-            </div>
+        <section class="print-section personal-projects">
+            <header class="section-title"><span>06</span><div><p>PERSONAL PROJECTS</p><h2>제품 문제를 정의하고<br>출시까지 연결한 프로젝트입니다.</h2></div></header>
+            <article class="personal-card">
+                <div class="personal-copy"><span>iOS · APP STORE RELEASE</span><h3>학습지 지우개 · Note Cleaner</h3><p class="personal-role">팀 5명 · iOS 앱 설계·구현·배포</p><p>반복 사용하는 영어 학습지의 필기·채점 영역을 제거해 원본에 가까운 이미지로 복원합니다. VisionKit으로 문서 경계와 원근을 보정하고, OpenAI Cleansing 전에 ACCEPT/REJECT triage를 수행합니다. 프롬프트·응답 DTO·reason_code·should_run_cleanup 검증과 오류 처리를 직접 설계했습니다.</p><div class="project-metrics"><span>iOS 개발 2개월</span><span>VisionKit</span><span>App Store 출시</span></div><p class="links"><a href="https://apps.apple.com/kr/app/%ED%95%99%EC%8A%B5%EC%A7%80-%EC%A7%80%EC%9A%B0%EA%B0%9C-note-cleaner/id6757840733">App Store</a><a href="https://slashpage.com/note-cleaner">Developer Page</a></p></div>
+                <figure class="evidence phone-pair"><img src="assets/images/pdf-compact/worksheet-main.jpg" alt="Note Cleaner 메인 화면"><img src="assets/images/pdf-compact/worksheet-cleanup-result.jpg" alt="Note Cleaner 정리 결과"></figure>
+            </article>
+            <article class="personal-card">
+                <div class="personal-copy"><span>iOS · 2026.05—2026.07</span><h3>Mindly</h3><p class="personal-role">iOS 1 · Android 1 · Planner 1 / iOS 전체 개발</p><p>링크와 메모를 GRDB에 먼저 저장하고 AI 태그·자연어 검색으로 다시 찾는 local-first 앱입니다. Clean Architecture·MVVM, FTS5 검색, Share Extension, Firebase Functions fallback과 Jenkins·Fastlane 배포를 구현했습니다.</p><p>AGENTS.md에는 반복되는 아키텍처·데이터·보안 규칙만 두고 상세 맥락을 문서와 6개 Skill로 분리했습니다. 구현 전 계획 승인, 파일 범위 제한, build/test·실기기 QA로 Codex·Claude Code의 결과를 검증했습니다.</p><div class="project-metrics"><span>Skill 6개</span><span>App Store 화면 9개</span><span>iOS 전체 개발</span></div><p class="links"><a href="https://apps.apple.com/us/app/mindly-%EB%A7%88%EC%9D%B8%EB%93%A4%EB%A6%AC/id6778290115">App Store</a></p></div>
+                <figure class="evidence phone-trio"><img src="assets/images/pdf-compact/mindly-main.jpg" alt="Mindly 메인"><img src="assets/images/pdf-compact/mindly-note-links.jpg" alt="Mindly 링크 노트"><img src="assets/images/pdf-compact/mindly-ai-search-loading.jpg" alt="Mindly AI 검색"></figure>
+            </article>
+            <article class="personal-card horizontal">
+                <div class="personal-copy"><span>macOS · APP STORE RELEASE</span><h3>FocusBoard</h3><p class="personal-role">기획·디자인·macOS 개발</p><p>출석, 집중 타이머, Todo, 통계, 메뉴바와 위젯을 연결한 생산성 앱입니다. 기능별 kickoff 문서에 목표·정책·파일 경계·위험·out-of-scope를 고정하고, Agent 3개와 Skill 3개로 Codex의 구현과 검증 흐름을 분리했습니다.</p><div class="project-metrics"><span>주요 기능 7개</span><span>Agent 3개</span><span>App Store 출시</span></div><p class="links"><a href="https://apps.apple.com/kr/app/focusboard/id6765804921">App Store</a></p></div>
+                <figure class="evidence desktop"><img src="assets/images/pdf-compact/focusboard-main.jpg" alt="FocusBoard 메인 화면"></figure>
+            </article>
         </section>
 
-        <section class="compact-section closing-note">
-            <h2>More Details</h2>
-            <p>프로젝트별 상세 설명, 아키텍처 도식, 코드 예시, 화면 캡처, App Store 링크는 웹 포트폴리오에서 확인할 수 있습니다.</p>
-            <a href="https://amyleed2.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">https://amyleed2.github.io/Portfolio/</a>
+        <section class="print-section ai-page">
+            <header class="section-title"><span>07</span><div><p>AI WORKFLOW</p><h2>AI와 협업하는 기준을 설계하고<br>직접 검증합니다.</h2></div></header>
+            <div class="ai-principle"><span>DEVELOPER-OWNED PRINCIPLE</span><p>AI에게 구현 결정을 넘기지 않습니다. 사용자의 흐름과 개발 기준은 직접 정의하고, AI는 승인된 계획과 검증 가능한 범위 안에서 작업하도록 운영합니다.</p></div>
+            <ol class="workflow-list">
+                <li><span>01</span><div><b>Scenario Briefing</b><h3>기능보다 사용자 시나리오부터 설명합니다.</h3><p>문제, 진입 경로, 상태 변화, 성공·실패 조건을 기획서 수준으로 정리하고 코드 수정 전 흐름을 먼저 확인합니다.</p></div></li>
+                <li><span>02</span><div><b>Plan Before Code</b><h3>분석과 구현 계획을 먼저 보고받습니다.</h3><p>기존 구조, 영향 파일, 의존성, 위험과 구현 순서를 조사하게 하고 현재 아키텍처에 맞는지 직접 판단합니다.</p></div></li>
+                <li><span>03</span><div><b>Approval Gate</b><h3>승인한 단계만 순서대로 구현합니다.</h3><p>Domain·ViewModel·UI·테스트로 단계를 분리하고 각 결과를 확인한 뒤 다음 작업을 승인합니다.</p></div></li>
+                <li><span>04</span><div><b>Visual Specification</b><h3>문장으로 부족한 화면은 와이어프레임으로 전달합니다.</h3><p>정보 우선순위와 상태별 UI를 시각화해 AI가 화면 구조를 추측하지 않도록 합니다.</p></div></li>
+                <li><span>05</span><div><b>Harness &amp; Verification</b><h3>규칙과 검증 절차로 완료 조건을 고정합니다.</h3><p>AGENTS.md·Agent·Skill로 경계를 설정하고 diff, build/test, Preview·Simulator와 수동 QA로 완료를 판단합니다.</p></div></li>
+            </ol>
+        </section>
+
+        <section class="closing print-page">
+            <p>CONTACT</p>
+            <h2>더 자세한 프로젝트 맥락과<br>시각 자료는 웹 포트폴리오에서<br>확인해 주세요.</h2>
+            <a class="closing-link" href="https://amyleed2.github.io/Portfolio/">amyleed2.github.io/Portfolio</a>
+            <div class="closing-contact"><a href="mailto:amy.lee.d2@gmail.com">amy.lee.d2@gmail.com</a><a href="tel:+821063454342">+82 10-6345-4342</a></div>
+            <small>이지은 · Senior iOS Application Developer · 2026</small>
         </section>
     </main>
 </body>
